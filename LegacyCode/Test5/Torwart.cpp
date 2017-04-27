@@ -2,14 +2,13 @@
  * Torwart.cpp
  *
  *  Created on: Jun 14, 2016
- *      Author: hfmk
+ *  Author: hfmk
  */
 
 #include "Torwart.h"
 
 Torwart::Torwart() {
 	// TODO Auto-generated constructor stub
-
 }
 
 Torwart::~Torwart() {

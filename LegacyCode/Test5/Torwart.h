@@ -2,7 +2,7 @@
  * Torwart.h
  *
  *  Created on: Jun 14, 2016
- *      Author: hfmk
+ *  Author: hfmk
  */
 
 #ifndef TORWART_H_

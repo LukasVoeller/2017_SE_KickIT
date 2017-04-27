@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=kickit2
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kickit2
+CND_ARTIFACT_NAME_Debug=kickit_nb_project
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kickit_nb_project
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=kickit2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kickit2.tar
+CND_PACKAGE_NAME_Debug=kickitnbproject.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kickitnbproject.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=kickit2
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kickit2
+CND_ARTIFACT_NAME_Release=kickit_nb_project
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kickit_nb_project
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=kickit2.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kickit2.tar
+CND_PACKAGE_NAME_Release=kickitnbproject.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kickitnbproject.tar
 #
 # include compiler specific variables
 #
