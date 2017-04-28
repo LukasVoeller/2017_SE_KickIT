@@ -39,6 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/RowControl/MotorCommunicatorImpl.o \
 	${OBJECTDIR}/RowControl/RowControllerImpl.o \
 	${OBJECTDIR}/RowControl/TableControllerImpl.o \
+	${OBJECTDIR}/VirtualKicker/TableControllerMock.o \
+	${OBJECTDIR}/VirtualKicker/VirtualKicker.o \
 	${OBJECTDIR}/main.o
 
 
@@ -85,6 +87,16 @@ ${OBJECTDIR}/RowControl/TableControllerImpl.o: RowControl/TableControllerImpl.cp
 	${MKDIR} -p ${OBJECTDIR}/RowControl
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RowControl/TableControllerImpl.o RowControl/TableControllerImpl.cpp
+
+${OBJECTDIR}/VirtualKicker/TableControllerMock.o: VirtualKicker/TableControllerMock.cpp
+	${MKDIR} -p ${OBJECTDIR}/VirtualKicker
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VirtualKicker/TableControllerMock.o VirtualKicker/TableControllerMock.cpp
+
+${OBJECTDIR}/VirtualKicker/VirtualKicker.o: VirtualKicker/VirtualKicker.cpp
+	${MKDIR} -p ${OBJECTDIR}/VirtualKicker
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/VirtualKicker/VirtualKicker.o VirtualKicker/VirtualKicker.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

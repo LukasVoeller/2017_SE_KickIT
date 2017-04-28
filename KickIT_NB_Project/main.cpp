@@ -1,24 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.cpp
- * Author: student
- *
- * Created on 13. April 2017, 16:39
- */
 
 #include <cstdlib>
+#include <QApplication>
 
-using namespace std;
+#include <VirtualKicker/TableControllerMock.h>
+#include <RowControl/TableControllerInterface.hpp>
 
-/*
- */
+
+TableControllerInterface* tableController;
+
+
+
 int main(int argc, char** argv) {
 
-    return 0;
+//virtual mode - ball tracking and table control emulated by a virtual kicker
+#if 1
+    QApplication a(argc, argv);
+    
+    tableController = new TableControllerMock();
+    
+
+    return a.exec();
+#endif
+    
+    
+    
+//final mode
+#if 0
+    
+#endif
 }
 

@@ -12,6 +12,8 @@
       <itemPath>RowControl/RowControllerInterface.hpp</itemPath>
       <itemPath>RowControl/TableControllerImpl.hpp</itemPath>
       <itemPath>RowControl/TableControllerInterface.hpp</itemPath>
+      <itemPath>VirtualKicker/TableControllerMock.h</itemPath>
+      <itemPath>VirtualKicker/VirtualKicker.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -24,6 +26,8 @@
       <itemPath>RowControl/MotorCommunicatorImpl.cpp</itemPath>
       <itemPath>RowControl/RowControllerImpl.cpp</itemPath>
       <itemPath>RowControl/TableControllerImpl.cpp</itemPath>
+      <itemPath>VirtualKicker/TableControllerMock.cpp</itemPath>
+      <itemPath>VirtualKicker/VirtualKicker.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -87,6 +91,20 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="VirtualKicker/TableControllerMock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/TableControllerMock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKicker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKicker.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -148,6 +166,20 @@
             ex="false"
             tool="3"
             flavor2="0">
+      </item>
+      <item path="VirtualKicker/TableControllerMock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/TableControllerMock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKicker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKicker.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

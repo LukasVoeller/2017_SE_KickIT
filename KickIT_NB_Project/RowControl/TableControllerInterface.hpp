@@ -15,6 +15,10 @@
 #define TABLECONTROLLERINTERFACE_HPP
 
 
+class TableControllerInterface{
+    
+};
+
 
 #endif /* TABLECONTROLLERINTERFACE_HPP */
 
