@@ -408,82 +408,76 @@ void traction_and_motor() {
 					vector <Point> nonzero;
 					//cout << "nonzero:" << nonzero << endl;
 
-						if(countNonZero(imgThresholded) > 0) {
-							findNonZero(imgThresholded, nonzero);
+					if(countNonZero(imgThresholded) > 0) {
+						findNonZero(imgThresholded, nonzero);
+						t4 = std::chrono::high_resolution_clock::now();
 
-							t4 = std::chrono::high_resolution_clock::now();
+						Ballcenter = (nonzero.front() + nonzero.back());
+						Ballcenter.x = Ballcenter.x /2;
+						Ballcenter.y = Ballcenter.y /2;
 
-							Ballcenter = (nonzero.front() + nonzero.back());
-							Ballcenter.x = Ballcenter.x /2;
-							Ballcenter.y = Ballcenter.y /2;
-			
-							if(abs(Ballcenter.y-lasty) < 2) {
-								Ballcenter.y = lasty; 
-							}	//Kleine Hysterese für die Ballerkennung
+						if(abs(Ballcenter.y-lasty) < 2){ Ballcenter.y = lasty; } // Kleine Hysterese für die Ballerkennung
+						if(abs(Ballcenter.x-lastx) < 2){ Ballcenter.x = lastx; }
 
-							if(abs(Ballcenter.x-lastx) < 2) {
-								Ballcenter.x = lastx;
-							}
+						if(Ballcenter.x == lastx || Ballcenter.y == lasty) {
+							TorwartSoll.y = Ballcenter.y; // Wenn der Ball Steht
+						}
+						//else if(Ballcenter.x > lastx);//TorwartSoll.y = lasty; // Wenn der Ball zurückrollt
+			 			else {
+			 				TorwartSoll.y= (lasty-Ballcenter.y)/(lastx-Ballcenter.x)*TorwartSoll.x+(lastx*Ballcenter.y-Ballcenter.x*lasty)/(lastx-Ballcenter.x); //Geradengleichung
 
-							if(Ballcenter.x == lastx || Ballcenter.y == lasty) {		//Wenn der Ball Steht
-							 	TorwartSoll.y = Ballcenter.y; 
-						 	}
-
-							if(Ballcenter.x > lastx) {	//TorwartSoll.y = lasty; //Wenn der Ball zurückrollt								 	
-			 					TorwartSoll.y = (lasty-Ballcenter.y)/(lastx-Ballcenter.x)*TorwartSoll.x+(lastx*Ballcenter.y-Ballcenter.x*lasty)/(lastx-Ballcenter.x); //Geradengleichung
-					 			
-					 			if(TorwartSoll.y < TorwartMin.y || TorwartSoll.y > TorwartMax.y) {
-					 				TorwartSoll.y = lasty;
-				 				}
-					 			
-					 			if(abs(TorwartSoll.y-lasty) < 2) {
-					 				TorwartSoll.y = lasty;
-				 				}	//Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
-					 			
-					 			dummy = 0;
-					 		}
+			 				if(TorwartSoll.y < TorwartMin.y || TorwartSoll.y > TorwartMax.y) {
+			 					TorwartSoll.y = lasty;
+			 				}
 			 			}
-				 		else {
-				 			dummy++;
 
-				 			if(dummy == 80) {
-				 				TorwartSoll.y = TorwartMitte.y;
-				 				dummy = 0;
-				 			}
-				 		}
+			 			if(abs(TorwartSoll.y-lasty) < 2) {
+			 				TorwartSoll.y = lasty; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
+			 			}
 
-						//Daten << Ballcenter.x << ";" << Ballcenter.y << endl;
-						//y = (y2-y1)/(x2-x1)*25+(x2*y1-x1*y2)/(x2-x1)
-						//int driverin = pixel_to_driverin(TorwartSoll.y);
-				 		if(lvl==1) {
-							sent_position_to_driver(pixel_to_driverin(TorwartSoll.y)); // Driver ansteuern! Motor verfahren. Pixel to driverin rechnet um von Pixel auf Hex für den Driver
+						dummy = 0;
+					}
+					else{
+						dummy++;
+						
+						if(dummy == 80){
+							TorwartSoll.y = TorwartMitte.y;
+							dummy = 0;
 						}
-						else{
-							sent_position_to_driver2(pixel_to_driverin(TorwartSoll.y));
-						}
+					}
 
-						lastx = Ballcenter.x;
-						lasty = Ballcenter.y;
+					//Daten << Ballcenter.x << ";" << Ballcenter.y << endl;
+					//y = (y2-y1)/(x2-x1)*25+(x2*y1-x1*y2)/(x2-x1)
+					//int driverin = pixel_to_driverin(TorwartSoll.y);
+			 		if(lvl==1) {
+						sent_position_to_driver(pixel_to_driverin(TorwartSoll.y)); // Driver ansteuern! Motor verfahren. Pixel to driverin rechnet um von Pixel auf Hex für den Driver
+					}
+					else{
+						sent_position_to_driver2(pixel_to_driverin(TorwartSoll.y));
+					}
 
-						auto t5 = std::chrono::high_resolution_clock::now();
+					lastx = Ballcenter.x;
+					lasty = Ballcenter.y;
 
-						//draw the circle center ------------------------- Zum debuggen und Traction Beobachten
-						circle(cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
-						//draw the circle outline
-						circle(cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8,0);
+					auto t5 = std::chrono::high_resolution_clock::now();
 
-						circle(cv_img, TorwartSoll, 10, Scalar(255,0,0), 3, 8, 0);
-						line(cv_img, Ballcenter, TorwartSoll, Scalar(100, 100, 100), 2, 1, 0);
-						//break;
+					//draw the circle center ------------------------- Zum debuggen und Traction Beobachten
+					circle(cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
+					//draw the circle outline
+					circle(cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8,0);
 
-						/*
-							cout << "camera grab: " << chrono::duration_cast<chrono::microseconds>(t1-t0).count()
-					    	<< "\nimage convert: " << chrono::duration_cast<chrono::microseconds>(t2-t1).count()
-						    << "\nimage threshold: " << chrono::duration_cast<chrono::microseconds>(t3-t2).count()
-						    << "\npixel detect: " << chrono::duration_cast<chrono::microseconds>(t4-t3).count()
-						    << "\nmotor position: " << chrono::duration_cast<chrono::microseconds>(t5-t4).count()
-						 	<< "\ntotal: " << chrono::duration_cast<chrono::microseconds>(t5-t0).count() << endl << endl;
-			 	  		*/
+					circle(cv_img, TorwartSoll, 10, Scalar(255,0,0), 3, 8, 0);
+					line(cv_img, Ballcenter, TorwartSoll, Scalar(100, 100, 100), 2, 1, 0);
+					//break;
+
+					/*
+						cout << "camera grab: " << chrono::duration_cast<chrono::microseconds>(t1-t0).count()
+				    	<< "\nimage convert: " << chrono::duration_cast<chrono::microseconds>(t2-t1).count()
+					    << "\nimage threshold: " << chrono::duration_cast<chrono::microseconds>(t3-t2).count()
+					    << "\npixel detect: " << chrono::duration_cast<chrono::microseconds>(t4-t3).count()
+					    << "\nmotor position: " << chrono::duration_cast<chrono::microseconds>(t5-t4).count()
+					 	<< "\ntotal: " << chrono::duration_cast<chrono::microseconds>(t5-t0).count() << endl << endl;
+		 	  		*/
 				}
 
 				imshow("circles", cv_img);
