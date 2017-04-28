@@ -11,15 +11,17 @@
  * Created on 28. April 2017, 17:08
  */
 
-#ifndef VIRTUALKICKER_HPP
-#define VIRTUALKICKER_HPP
+#ifndef VIRTUALKICKERWINDOW_HPP
+#define VIRTUALKICKERWINDOW_HPP
 
 #include <QApplication>
 #include <QMainWindow>
 #include <QtGui>
 #include <QWidget>
 
-class VirtualKicker : public QWidget{
+#include "BallTrackerMock.hpp"
+
+class VirtualKickerWindow : public QWidget{
     private:
         QPoint* topLeft;
         QPoint* bottomRight;
@@ -34,10 +36,14 @@ class VirtualKicker : public QWidget{
         static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
         static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
         
+        //BallTrackerMock* btm;
+        
     public:
-        VirtualKicker();
+        VirtualKickerWindow();
+        //VirtualKickerWindow(BallTrackerMock* b);
         void paintEvent(QPaintEvent *event);
+        void mouseMoveEvent(QMouseEvent*);
 };
 
-#endif /* VIRTUALKICKER_HPP */
+#endif /* VIRTUALKICKERWINDOW_HPP */
 

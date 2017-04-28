@@ -15,16 +15,16 @@
 #define TABLECONTROLLERMOCK_HPP
 
 #include "../RowControl/TableControllerInterface.hpp"
-#include "VirtualKicker.hpp"
+#include "VirtualKickerWindow.hpp"
+
 
 class TableControllerMock : public TableControllerInterface{
     private:
-        VirtualKicker* vk;
+        VirtualKickerWindow* window;
     public:
         
-        static const int WINDOW_SIZE_X = 1000;
-        static const int WINDOW_SIZE_Y = 700;
         
+        TableControllerMock(VirtualKickerWindow* w);
         
         TableControllerMock();
         

@@ -4,4 +4,16 @@
         <activeConfTypeElem>4</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/VirtualKicker/BallTrackerMock.hpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/BallTracking/BallTrackerInterface.hpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/VirtualKicker/VirtualKicker.hpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/main.cpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/VirtualKicker/VirtualKickerWindow.cpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/VirtualKicker/VirtualKickerWindow.hpp</file>
+            <file>file:/home/student/Schreibtisch/SWE_2017_KickIT/KickIT/VirtualKicker/BallTrackerMock.cpp</file>
+        </group>
+    </open-files>
 </project-private>

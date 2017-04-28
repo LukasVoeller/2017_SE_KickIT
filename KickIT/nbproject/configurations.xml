@@ -7,6 +7,7 @@
       <itemPath>DataType/BallStatus.hpp</itemPath>
       <itemPath>BallTracking/BallTrackerImpl.hpp</itemPath>
       <itemPath>BallTracking/BallTrackerInterface.hpp</itemPath>
+      <itemPath>VirtualKicker/BallTrackerMock.hpp</itemPath>
       <itemPath>RowControl/MotorCommunicatorImpl.hpp</itemPath>
       <itemPath>RowControl/MotorCommunicatorInterface.hpp</itemPath>
       <itemPath>RowControl/RowControllerImpl.hpp</itemPath>
@@ -16,6 +17,7 @@
       <itemPath>VirtualKicker/TableControllerMock.hpp</itemPath>
       <itemPath>DataType/Vec2.hpp</itemPath>
       <itemPath>VirtualKicker/VirtualKicker.hpp</itemPath>
+      <itemPath>VirtualKicker/VirtualKickerWindow.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -25,11 +27,13 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>BallTracking/BallTrackerImpl.cpp</itemPath>
+      <itemPath>VirtualKicker/BallTrackerMock.cpp</itemPath>
       <itemPath>RowControl/MotorCommunicatorImpl.cpp</itemPath>
       <itemPath>RowControl/RowControllerImpl.cpp</itemPath>
       <itemPath>RowControl/TableControllerImpl.cpp</itemPath>
       <itemPath>VirtualKicker/TableControllerMock.cpp</itemPath>
-      <itemPath>VirtualKicker/VirtualKicker.cpp</itemPath>
+      <itemPath>VirtualKicker/VirtualKickerMock.cpp</itemPath>
+      <itemPath>VirtualKicker/VirtualKickerWindow.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -109,6 +113,10 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="VirtualKicker/BallTrackerMock.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VirtualKicker/BallTrackerMock.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VirtualKicker/TableControllerMock.cpp"
             ex="false"
             tool="1"
@@ -119,9 +127,22 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="VirtualKicker/VirtualKicker.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="VirtualKicker/VirtualKicker.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerMock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerWindow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerWindow.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -196,6 +217,10 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="VirtualKicker/BallTrackerMock.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VirtualKicker/BallTrackerMock.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VirtualKicker/TableControllerMock.cpp"
             ex="false"
             tool="1"
@@ -206,9 +231,22 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="VirtualKicker/VirtualKicker.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="VirtualKicker/VirtualKicker.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerMock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerWindow.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="VirtualKicker/VirtualKickerWindow.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

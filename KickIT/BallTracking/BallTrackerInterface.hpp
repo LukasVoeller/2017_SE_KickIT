@@ -12,11 +12,10 @@
 //#include <pylon/gige/BaslerGigEInstantCamera.h>
 
 class BallTrackerInterface{
-	public:
+    public:
 	virtual BallStatus* getBallStatus() = 0;
 	virtual void startTracking() = 0;
 	virtual void stopTracking() = 0;
-	virtual ~BallTracker() = 0;
 };
 
 

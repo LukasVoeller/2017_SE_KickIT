@@ -5,8 +5,10 @@
 #include <VirtualKicker/TableControllerMock.hpp>
 #include <RowControl/TableControllerInterface.hpp>
 
+#include "VirtualKicker/VirtualKicker.hpp"
 
 TableControllerInterface* tableController;
+BallTrackerInterface* ballTracker;
 
 
 
@@ -16,7 +18,13 @@ int main(int argc, char** argv) {
 #if 1
     QApplication a(argc, argv);
     
-    tableController = new TableControllerMock();
+    VirtualKicker::init();
+    
+    
+    tableController = VirtualKicker::getMockTableController();
+    ballTracker = VirtualKicker::getMockBallTracker();
+    
+    
     
     
 
