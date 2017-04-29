@@ -48,12 +48,6 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
-  <sourceRootList>
-    <Elem>BallTracking</Elem>
-    <Elem>DataType</Elem>
-    <Elem>RowControl</Elem>
-    <Elem>VirtualKicker</Elem>
-  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="4">

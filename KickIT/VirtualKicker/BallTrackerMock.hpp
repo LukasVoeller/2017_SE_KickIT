@@ -14,13 +14,12 @@
 #ifndef BALLTRACKERMOCK_HPP
 #define BALLTRACKERMOCK_HPP
 
-#include "VirtualKickerWindow.hpp"
 #include "../BallTracking/BallTrackerInterface.hpp"
+#include <QMouseEvent>
 
 class BallTrackerMock : public BallTrackerInterface{
 public:
     BallTrackerMock();
-    //BallTrackerMock(VirtualKickerWindow* w);
     
     virtual ~BallTrackerMock();
     
@@ -29,7 +28,7 @@ public:
     BallStatus* getBallStatus();
     void mouseMove(QMouseEvent* e);
 private:
-    //VirtualKickerWindow* window;
+    
 
 };
 

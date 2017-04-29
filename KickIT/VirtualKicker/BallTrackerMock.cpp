@@ -16,9 +16,6 @@
 BallTrackerMock::BallTrackerMock() {
 }
 
-//BallTrackerMock::BallTrackerMock(VirtualKickerWindow* w) {
-    //this->window = w;
-//}
 
 
 BallTrackerMock::~BallTrackerMock() {

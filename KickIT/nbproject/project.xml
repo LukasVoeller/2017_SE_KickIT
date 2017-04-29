@@ -9,12 +9,7 @@
             <header-extensions>hpp</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList>
-                <sourceRootElem>BallTracking</sourceRootElem>
-                <sourceRootElem>DataType</sourceRootElem>
-                <sourceRootElem>RowControl</sourceRootElem>
-                <sourceRootElem>VirtualKicker</sourceRootElem>
-            </sourceRootList>
+            <sourceRootList/>
             <confList>
                 <confElem>
                     <name>Debug</name>

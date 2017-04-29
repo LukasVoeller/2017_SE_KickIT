@@ -14,15 +14,20 @@
 #ifndef VIRTUALKICKERWINDOW_HPP
 #define VIRTUALKICKERWINDOW_HPP
 
-#include <QApplication>
-#include <QMainWindow>
+#include <Qt>
 #include <QtGui>
 #include <QWidget>
-
+#include <vector>
+#include <cstdlib>
 #include "BallTrackerMock.hpp"
 
 class VirtualKickerWindow : public QWidget{
     private:
+        
+        
+        
+        QPoint lastAdded;
+        
         QPoint* topLeft;
         QPoint* bottomRight;
         
@@ -36,13 +41,18 @@ class VirtualKickerWindow : public QWidget{
         static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
         static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
         
-        //BallTrackerMock* btm;
+        BallTrackerMock* btm;
+        std::vector<QPoint*> mouseTrail;
+        
         
     public:
         VirtualKickerWindow();
-        //VirtualKickerWindow(BallTrackerMock* b);
+        VirtualKickerWindow(BallTrackerMock* b);
         void paintEvent(QPaintEvent *event);
-        void mouseMoveEvent(QMouseEvent*);
+        void mouseMoveEvent(QMouseEvent* e);
+        
+        void mouseReleaseEvent(QMouseEvent* e);
+
 };
 
 #endif /* VIRTUALKICKERWINDOW_HPP */
