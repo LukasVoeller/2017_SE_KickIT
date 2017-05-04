@@ -16,7 +16,7 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
 8. Programm Test6Torwart starten
 9. Ersten und Dritten Regler so verschieben das nur noch der Ball zu erkennen ist
 10. In Test5 Werte anpassen (Werte der Regler aus 9.)
-  Bluelow:  210 (Wert kann variieren)
-  Greenlow: 210 (Wert kann variieren)
+  Bluelow:  210
+  Greenlow: 210 (Werte können variieren)
 11. Test5 kompilieren und starten
 12. Ersten Menüpunkt ausführen um zu kalibrieren
