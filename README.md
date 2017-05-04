@@ -9,7 +9,7 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
   <img src="https://github.com/LukasVoeller/SWE_2017_KickIT/blob/master/Images/IMG_20170504_164639.jpg" width="400"/>
 </p>
 
------------------------------- Kicker in Betrieb nehmen ------------------------------
+---------------------------------------------------- Kicker in Betrieb nehmen ----------------------------------------------------
 1. Das Programm Pylon Viewer starten
 2. In dem tab Devices mit der Kamera verbinden
 3. Wechseln zu dem Tab mit der verbundenden Kamera
