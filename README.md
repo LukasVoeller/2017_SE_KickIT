@@ -1,6 +1,6 @@
 # SWE_2017_KickIT
 A programm for an autonomous soccer table
-Authors: Philip Baumgartner, Viktor Koschmann, Lukas Völler
+created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
 
 ------------------------------ Kicker in Betrieb nehmen ------------------------------
 1. Das Programm Pylon Viewer starten
