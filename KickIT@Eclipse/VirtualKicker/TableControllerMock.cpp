@@ -16,7 +16,11 @@ TableControllerMock::TableControllerMock(VirtualKickerWindow* w){
 TableControllerMock::~TableControllerMock() {
 }
 
-void TableControllerMock::setBallSatus(BallStatus* b){
-    window->setKeeper(b->position.x);
+void TableControllerMock::setBallStatus(BallStatus* b){
+    window->setKeeper(b->position.y);
+
 }
 
+void TableControllerMock::setBallTrackerMock(BallTrackerMock* b){
+	btm = b;
+}

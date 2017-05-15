@@ -15,21 +15,22 @@
 #define VIRTUALKICKER_HPP
 
 #include "VirtualKickerWindow.hpp"
-#include "../RowControl/TableControllerInterface.hpp"
+#include "TableControllerMock.hpp"
 #include "BallTrackerMock.hpp"
 
 class VirtualKicker{
 
-    
+	private:
+		static VirtualKickerWindow* vkw;
+		static TableControllerMock* tc;
+		static BallTrackerMock* bt;
     
     
     public:
         static const int WINDOW_SIZE_X = 1000;
         static const int WINDOW_SIZE_Y = 700;
 
-        static VirtualKickerWindow* vkw;
-        static TableControllerInterface* tc;
-        static BallTrackerMock* bt;
+
 
         static void init(){
             
@@ -37,7 +38,7 @@ class VirtualKicker{
             bt = new BallTrackerMock();
             vkw = new VirtualKickerWindow(bt);
             tc = new TableControllerMock(vkw);
-            
+            bt->setTableController(tc);
             
             vkw->setFixedSize(WINDOW_SIZE_X,WINDOW_SIZE_Y);
             vkw->show();
@@ -47,19 +48,19 @@ class VirtualKicker{
             
         }
 
-        static TableControllerInterface* getMockTableController(){
+        static TableControllerMock* getMockTableController(){
             return tc;
             
         }
 
-        static BallTrackerInterface* getMockBallTracker(){
+        static BallTrackerMock* getMockBallTracker(){
             return bt;
         }
     
 };
 
 VirtualKickerWindow* VirtualKicker::vkw;
-TableControllerInterface* VirtualKicker::tc;
+TableControllerMock* VirtualKicker::tc;
 BallTrackerMock* VirtualKicker::bt;
 
 #endif /* VIRTUALKICKER_HPP */

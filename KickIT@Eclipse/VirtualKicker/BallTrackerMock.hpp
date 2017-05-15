@@ -15,6 +15,7 @@
 #define BALLTRACKERMOCK_HPP
 
 #include "../BallTracking/BallTrackerInterface.hpp"
+#include "../DataType/BallPos.hpp"
 #include <QMouseEvent>
 
 class BallTrackerMock : public BallTrackerInterface{
@@ -26,11 +27,13 @@ public:
     void startTracking(){}
     void stopTracking(){}
     BallStatus* getBallStatus();
-    void mouseMove(QMouseEvent* e);
+    void receiveMockBallPosition(BallPos* p);
     
     void setTableController(TableControllerInterface* t);
 private:
     TableControllerInterface* tableController;
+    void newBallPosition(BallPos* p);
+    BallStatus s;
 
 };
 

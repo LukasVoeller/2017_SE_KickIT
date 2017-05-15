@@ -7,7 +7,7 @@ VirtualKickerWindow::VirtualKickerWindow(BallTrackerMock* b) {
     
 //VirtualKickerWindow::VirtualKickerWindow() {
     setMouseTracking(true);
-    //this->btm = b;
+    this->btm = b;
     topLeft = new QPoint(TABLE_MARGIN,TABLE_MARGIN);
     bottomRight = new QPoint( WINDOW_SIZE_X - TABLE_MARGIN, WINDOW_SIZE_Y - TABLE_MARGIN);
     keeperBar = new QLine(topLeft->x()+20,topLeft->y()-10,topLeft->x()+20, bottomRight->y() +10);
@@ -16,12 +16,12 @@ VirtualKickerWindow::VirtualKickerWindow(BallTrackerMock* b) {
 }
 
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
-    btm->mouseMove(e);
     
-    if( (abs(e->pos().x() -lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))  > 50 && e->buttons() & Qt::LeftButton){
+    if( (abs(e->pos().x() -lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))  > 50 && (e->buttons() & Qt::LeftButton)){
         mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
         lastAdded.setX(e->pos().x());
         lastAdded.setY(e->pos().y());
+        btm->receiveMockBallPosition(new BallPos(e->pos().x(), e->pos().y()));
     }
     repaint();
 }
@@ -32,7 +32,7 @@ void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
 
 
 void VirtualKickerWindow::setKeeper(float pos){
-    this->keeper->setX(pos);
+    this->keeper->setY(pos);
     repaint();
 }
 
@@ -77,9 +77,9 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event){
 
     painter.drawRect(topLeft->x(),topLeft->y() , WINDOW_SIZE_X-2*TABLE_MARGIN, WINDOW_SIZE_Y - 2*TABLE_MARGIN);
     painter.drawLine(*keeperBar);
-    painter.setPen(QPen(Qt::blue, 20, Qt::DashDotLine, Qt::RoundCap));
+    painter.setPen(QPen(Qt::red, 20, Qt::DashDotLine, Qt::RoundCap));
     painter.drawPoint(*keeper);
-    
+    painter.setPen(QPen(Qt::blue, 20, Qt::DashDotLine, Qt::RoundCap));
     for(long unsigned int i = 0; i<mouseTrail.size(); i++){
         painter.drawPoint(*mouseTrail[i]);
         //std::cout << "p";

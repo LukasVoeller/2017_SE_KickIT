@@ -17,7 +17,7 @@ class BallTrackerInterface{
 	virtual BallStatus* getBallStatus() = 0;
 	virtual void startTracking() = 0;
 	virtual void stopTracking() = 0;
-        virtual void setTableController(TableControllerInterface* t) = 0;
+    virtual void setTableController(TableControllerInterface* t) = 0;
 };
 
 

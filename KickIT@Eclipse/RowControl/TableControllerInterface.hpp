@@ -19,7 +19,7 @@
 
 class TableControllerInterface{
 public:
-    virtual void setBallStatus(BallStatus* b){};
+    virtual void setBallStatus(BallStatus* b) = 0;
 };
 
 

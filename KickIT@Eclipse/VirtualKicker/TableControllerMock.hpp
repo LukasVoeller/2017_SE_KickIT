@@ -21,6 +21,7 @@
 class TableControllerMock : public TableControllerInterface{
     private:
         VirtualKickerWindow* window;
+        BallTrackerMock* btm;
     public:
         
         
@@ -30,7 +31,8 @@ class TableControllerMock : public TableControllerInterface{
         
         virtual ~TableControllerMock();
         
-        void setBallSatus(BallStatus* b);
+        void setBallStatus(BallStatus* b);
+        void setBallTrackerMock(BallTrackerMock* m);
 };
 
 #endif /* TABLECONTROLLERMOCK_HPP */

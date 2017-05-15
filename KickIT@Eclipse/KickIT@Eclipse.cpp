@@ -7,24 +7,26 @@
 
 #include "VirtualKicker/VirtualKicker.hpp"
 
-TableControllerInterface* tableController;
-BallTrackerInterface* ballTracker;
+
 
 
 
 int main(int argc, char** argv) {
 
-//virtual mode - ball tracking and table control emulated by a virtual kicker
+//virtual mode - ball tracking and table control simulated by a virtual kicker
 #if 1
+
+	TableControllerMock* tableController;
+	BallTrackerMock* ballTracker;
+
     QApplication a(argc, argv);
-
     VirtualKicker::init();
-
 
     tableController = VirtualKicker::getMockTableController();
     ballTracker = VirtualKicker::getMockBallTracker();
 
-    ballTracker->setTableController(tableController);
+    //tableController->setBallTrackerMock(ballTracker);
+    //ballTracker->setTableController(tableController);
 
     return a.exec();
 

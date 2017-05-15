@@ -12,9 +12,9 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+CFLAGS        = -m64 -pipe -g -D_REENTRANT -Wall -W -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -g -D_REENTRANT -Wall -W -fPIC $(DEFINES)
 INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -35,7 +35,7 @@ COMPRESS      = gzip -9f
 DISTNAME      = KickIT@Eclipse1.0.0
 DISTDIR = /home/stratos/Desktop/KickIT@Eclipse/.tmp/KickIT@Eclipse1.0.0
 LINK          = g++
-LFLAGS        = -m64 -Wl,-O1
+LFLAGS        = -m64
 LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
@@ -109,21 +109,21 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		KickIT@Eclipse.pro BallTracking/BallTrackerImpl.hpp \
 		BallTracking/BallTrackerInterface.hpp \
+		DataType/BallPos.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp \
 		RowControl/MotorCommunicatorImpl.hpp \
 		RowControl/MotorCommunicatorInterface.hpp \
 		RowControl/RowControllerImpl.hpp \
@@ -216,13 +216,13 @@ Makefile: KickIT@Eclipse.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
@@ -277,13 +277,13 @@ Makefile: KickIT@Eclipse.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
@@ -306,7 +306,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents BallTracking/BallTrackerImpl.hpp BallTracking/BallTrackerInterface.hpp DataType/BallStatus.hpp DataType/Vec2.hpp RowControl/MotorCommunicatorImpl.hpp RowControl/MotorCommunicatorInterface.hpp RowControl/RowControllerImpl.hpp RowControl/RowControllerInterface.hpp RowControl/TableControllerImpl.hpp RowControl/TableControllerInterface.hpp VirtualKicker/BallTrackerMock.hpp VirtualKicker/TableControllerMock.hpp VirtualKicker/VirtualKicker.hpp VirtualKicker/VirtualKickerWindow.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents BallTracking/BallTrackerImpl.hpp BallTracking/BallTrackerInterface.hpp DataType/BallPos.hpp DataType/BallStatus.hpp RowControl/MotorCommunicatorImpl.hpp RowControl/MotorCommunicatorInterface.hpp RowControl/RowControllerImpl.hpp RowControl/RowControllerInterface.hpp RowControl/TableControllerImpl.hpp RowControl/TableControllerInterface.hpp VirtualKicker/BallTrackerMock.hpp VirtualKicker/TableControllerMock.hpp VirtualKicker/VirtualKicker.hpp VirtualKicker/VirtualKickerWindow.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents KickIT@Eclipse.cpp BallTracking/BallTrackerImpl.cpp RowControl/MotorCommunicatorImpl.cpp RowControl/RowControllerImpl.cpp RowControl/TableControllerImpl.cpp VirtualKicker/BallTrackerMock.cpp VirtualKicker/TableControllerMock.cpp VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
 
 
@@ -349,7 +349,7 @@ compiler_clean:
 KickIT@Eclipse.o: KickIT@Eclipse.cpp VirtualKicker/TableControllerMock.hpp \
 		RowControl/TableControllerInterface.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp \
+		DataType/BallPos.hpp \
 		VirtualKicker/VirtualKickerWindow.hpp \
 		VirtualKicker/BallTrackerMock.hpp \
 		BallTracking/BallTrackerInterface.hpp \
@@ -365,7 +365,7 @@ MotorCommunicatorImpl.o: RowControl/MotorCommunicatorImpl.cpp RowControl/MotorCo
 RowControllerImpl.o: RowControl/RowControllerImpl.cpp RowControl/RowControllerImpl.hpp \
 		RowControl/RowControllerInterface.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp
+		DataType/BallPos.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerImpl.o RowControl/RowControllerImpl.cpp
 
 TableControllerImpl.o: RowControl/TableControllerImpl.cpp 
@@ -374,14 +374,14 @@ TableControllerImpl.o: RowControl/TableControllerImpl.cpp
 BallTrackerMock.o: VirtualKicker/BallTrackerMock.cpp VirtualKicker/BallTrackerMock.hpp \
 		BallTracking/BallTrackerInterface.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp \
+		DataType/BallPos.hpp \
 		RowControl/TableControllerInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerMock.o VirtualKicker/BallTrackerMock.cpp
 
 TableControllerMock.o: VirtualKicker/TableControllerMock.cpp VirtualKicker/TableControllerMock.hpp \
 		RowControl/TableControllerInterface.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp \
+		DataType/BallPos.hpp \
 		VirtualKicker/VirtualKickerWindow.hpp \
 		VirtualKicker/BallTrackerMock.hpp \
 		BallTracking/BallTrackerInterface.hpp
@@ -391,7 +391,7 @@ VirtualKickerWindow.o: VirtualKicker/VirtualKickerWindow.cpp VirtualKicker/Virtu
 		VirtualKicker/BallTrackerMock.hpp \
 		BallTracking/BallTrackerInterface.hpp \
 		DataType/BallStatus.hpp \
-		DataType/Vec2.hpp \
+		DataType/BallPos.hpp \
 		RowControl/TableControllerInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o VirtualKicker/VirtualKickerWindow.cpp
 

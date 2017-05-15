@@ -12,8 +12,9 @@
  */
 
 #include "BallTrackerMock.hpp"
+#include <iostream>
 
-BallTrackerMock::BallTrackerMock() {
+BallTrackerMock::BallTrackerMock():s() {
 }
 
 
@@ -25,10 +26,15 @@ BallStatus* BallTrackerMock::getBallStatus(){
     return NULL;
 }
 
-void BallTrackerMock::mouseMove(QMouseEvent* e){
-    
+void BallTrackerMock::receiveMockBallPosition(BallPos* p){
+    newBallPosition(p);
 }
 
 void BallTrackerMock::setTableController(TableControllerInterface* t){
     this->tableController = t;
+}
+
+void BallTrackerMock::newBallPosition(BallPos* p){
+	s.position.update(p);
+	tableController->setBallStatus(new BallStatus(p->x,p->y,0.0,0.0));
 }
