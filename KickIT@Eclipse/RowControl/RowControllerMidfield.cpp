@@ -8,3 +8,6 @@
 #include "RowControllerMidfield.hpp"
 
 
+RowControllerMidfield::RowControllerMidfield(){
+
+}

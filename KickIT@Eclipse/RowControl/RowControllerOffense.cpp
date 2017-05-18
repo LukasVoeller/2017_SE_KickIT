@@ -8,3 +8,6 @@
 #include "RowControllerOffense.hpp"
 
 
+RowControllerOffense::RowControllerOffense(){
+
+}
