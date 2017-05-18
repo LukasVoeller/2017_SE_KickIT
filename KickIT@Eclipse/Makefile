@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = KickIT@Eclipse1.0.0
-DISTDIR = /home/stratos/Desktop/KickIT@Eclipse/.tmp/KickIT@Eclipse1.0.0
+DISTDIR = /home/student/SWE_2017_KickIT/KickIT@Eclipse/.tmp/KickIT@Eclipse1.0.0
 LINK          = g++
 LFLAGS        = -m64
 LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -51,7 +51,11 @@ OBJECTS_DIR   = ./
 SOURCES       = KickIT@Eclipse.cpp \
 		BallTracking/BallTrackerImpl.cpp \
 		RowControl/MotorCommunicatorImpl.cpp \
+		RowControl/RowControllerDefense.cpp \
 		RowControl/RowControllerImpl.cpp \
+		RowControl/RowControllerKeeper.cpp \
+		RowControl/RowControllerMidfield.cpp \
+		RowControl/RowControllerOffense.cpp \
 		RowControl/TableControllerImpl.cpp \
 		VirtualKicker/BallTrackerMock.cpp \
 		VirtualKicker/TableControllerMock.cpp \
@@ -59,7 +63,11 @@ SOURCES       = KickIT@Eclipse.cpp \
 OBJECTS       = KickIT@Eclipse.o \
 		BallTrackerImpl.o \
 		MotorCommunicatorImpl.o \
+		RowControllerDefense.o \
 		RowControllerImpl.o \
+		RowControllerKeeper.o \
+		RowControllerMidfield.o \
+		RowControllerOffense.o \
 		TableControllerImpl.o \
 		BallTrackerMock.o \
 		TableControllerMock.o \
@@ -126,8 +134,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		DataType/BallStatus.hpp \
 		RowControl/MotorCommunicatorImpl.hpp \
 		RowControl/MotorCommunicatorInterface.hpp \
+		RowControl/RowControllerDefense.hpp \
 		RowControl/RowControllerImpl.hpp \
 		RowControl/RowControllerInterface.hpp \
+		RowControl/RowControllerKeeper.hpp \
+		RowControl/RowControllerMidfield.hpp \
+		RowControl/RowControllerOffense.hpp \
 		RowControl/TableControllerImpl.hpp \
 		RowControl/TableControllerInterface.hpp \
 		VirtualKicker/BallTrackerMock.hpp \
@@ -136,7 +148,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		VirtualKicker/VirtualKickerWindow.hpp KickIT@Eclipse.cpp \
 		BallTracking/BallTrackerImpl.cpp \
 		RowControl/MotorCommunicatorImpl.cpp \
+		RowControl/RowControllerDefense.cpp \
 		RowControl/RowControllerImpl.cpp \
+		RowControl/RowControllerKeeper.cpp \
+		RowControl/RowControllerMidfield.cpp \
+		RowControl/RowControllerOffense.cpp \
 		RowControl/TableControllerImpl.cpp \
 		VirtualKicker/BallTrackerMock.cpp \
 		VirtualKicker/TableControllerMock.cpp \
@@ -306,8 +322,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents BallTracking/BallTrackerImpl.hpp BallTracking/BallTrackerInterface.hpp DataType/BallPos.hpp DataType/BallStatus.hpp RowControl/MotorCommunicatorImpl.hpp RowControl/MotorCommunicatorInterface.hpp RowControl/RowControllerImpl.hpp RowControl/RowControllerInterface.hpp RowControl/TableControllerImpl.hpp RowControl/TableControllerInterface.hpp VirtualKicker/BallTrackerMock.hpp VirtualKicker/TableControllerMock.hpp VirtualKicker/VirtualKicker.hpp VirtualKicker/VirtualKickerWindow.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents KickIT@Eclipse.cpp BallTracking/BallTrackerImpl.cpp RowControl/MotorCommunicatorImpl.cpp RowControl/RowControllerImpl.cpp RowControl/TableControllerImpl.cpp VirtualKicker/BallTrackerMock.cpp VirtualKicker/TableControllerMock.cpp VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents BallTracking/BallTrackerImpl.hpp BallTracking/BallTrackerInterface.hpp DataType/BallPos.hpp DataType/BallStatus.hpp RowControl/MotorCommunicatorImpl.hpp RowControl/MotorCommunicatorInterface.hpp RowControl/RowControllerDefense.hpp RowControl/RowControllerImpl.hpp RowControl/RowControllerInterface.hpp RowControl/RowControllerKeeper.hpp RowControl/RowControllerMidfield.hpp RowControl/RowControllerOffense.hpp RowControl/TableControllerImpl.hpp RowControl/TableControllerInterface.hpp VirtualKicker/BallTrackerMock.hpp VirtualKicker/TableControllerMock.hpp VirtualKicker/VirtualKicker.hpp VirtualKicker/VirtualKickerWindow.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents KickIT@Eclipse.cpp BallTracking/BallTrackerImpl.cpp RowControl/MotorCommunicatorImpl.cpp RowControl/RowControllerDefense.cpp RowControl/RowControllerImpl.cpp RowControl/RowControllerKeeper.cpp RowControl/RowControllerMidfield.cpp RowControl/RowControllerOffense.cpp RowControl/TableControllerImpl.cpp VirtualKicker/BallTrackerMock.cpp VirtualKicker/TableControllerMock.cpp VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -359,14 +375,27 @@ KickIT@Eclipse.o: KickIT@Eclipse.cpp VirtualKicker/TableControllerMock.hpp \
 BallTrackerImpl.o: BallTracking/BallTrackerImpl.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o BallTracking/BallTrackerImpl.cpp
 
-MotorCommunicatorImpl.o: RowControl/MotorCommunicatorImpl.cpp RowControl/MotorCommunicatorImpl.hpp
+MotorCommunicatorImpl.o: RowControl/MotorCommunicatorImpl.cpp RowControl/MotorCommunicatorImpl.hpp \
+		RowControl/MotorCommunicatorInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorCommunicatorImpl.o RowControl/MotorCommunicatorImpl.cpp
+
+RowControllerDefense.o: RowControl/RowControllerDefense.cpp RowControl/RowControllerDefense.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerDefense.o RowControl/RowControllerDefense.cpp
 
 RowControllerImpl.o: RowControl/RowControllerImpl.cpp RowControl/RowControllerImpl.hpp \
 		RowControl/RowControllerInterface.hpp \
 		DataType/BallStatus.hpp \
 		DataType/BallPos.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerImpl.o RowControl/RowControllerImpl.cpp
+
+RowControllerKeeper.o: RowControl/RowControllerKeeper.cpp RowControl/RowControllerKeeper.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerKeeper.o RowControl/RowControllerKeeper.cpp
+
+RowControllerMidfield.o: RowControl/RowControllerMidfield.cpp RowControl/RowControllerMidfield.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerMidfield.o RowControl/RowControllerMidfield.cpp
+
+RowControllerOffense.o: RowControl/RowControllerOffense.cpp RowControl/RowControllerOffense.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerOffense.o RowControl/RowControllerOffense.cpp
 
 TableControllerImpl.o: RowControl/TableControllerImpl.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o RowControl/TableControllerImpl.cpp

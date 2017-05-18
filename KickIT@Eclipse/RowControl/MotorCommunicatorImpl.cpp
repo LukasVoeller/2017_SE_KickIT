@@ -24,3 +24,11 @@ bool MotorCommunicatorImpl::openPort(const char* port){
 */
     return 0;
 }
+
+void MotorCommunicatorImpl::moveTo(float y){
+
+}
+
+void MotorCommunicatorImpl::kick(){
+
+}

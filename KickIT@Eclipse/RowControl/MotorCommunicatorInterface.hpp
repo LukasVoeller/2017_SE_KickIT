@@ -14,7 +14,12 @@
 #ifndef MOTORCOMMUNICATORINTERFACE_HPP
 #define MOTORCOMMUNICATORINTERFACE_HPP
 
+class MotorCommunicatorInterface{
+	public:
+	virtual void moveTo(float y) = 0;
+	virtual void kick() = 0;
 
+};
 
 #endif /* MOTORCOMMUNICATORINTERFACE_HPP */
 

@@ -7,13 +7,21 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include "MotorCommunicatorInterface.hpp"
 
 #include <sys/types.h> //for sockets
 #include <sys/socket.h> // for sockets
 
-class MotorCommunicatorImpl{
+class MotorCommunicatorImpl : public MotorCommunicatorInterface{
+public:
+	void moveTo(float y);
+	void kick();
+	MotorCommunicatorImpl(){
+		//TODO verbindungsaufbau
+	}
+
 private:
-    int socketId;
+    //int socketId;
     bool openPort(const char* port);
 };
 
