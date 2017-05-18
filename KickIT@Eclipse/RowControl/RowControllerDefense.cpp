@@ -8,3 +8,6 @@
 #include "RowControllerDefense.hpp"
 
 
+RowControllerDefense::RowControllerDefense(){
+
+}

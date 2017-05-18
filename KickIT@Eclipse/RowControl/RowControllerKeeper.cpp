@@ -8,3 +8,6 @@
 #include "RowControllerKeeper.hpp"
 
 
+RowControllerKeeper::RowControllerKeeper(){
+
+}
