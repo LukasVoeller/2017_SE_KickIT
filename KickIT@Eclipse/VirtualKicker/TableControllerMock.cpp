@@ -17,6 +17,7 @@ TableControllerMock::~TableControllerMock() {
 }
 
 void TableControllerMock::setBallStatus(BallStatus* b){
+
     window->setKeeper(b->position.y);
 
 }

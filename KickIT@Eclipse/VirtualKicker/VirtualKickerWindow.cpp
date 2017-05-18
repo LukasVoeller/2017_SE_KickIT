@@ -74,7 +74,7 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event){
 
     //painter.drawEllipse(200, 80, 400, 240);
 
-
+    painter.drawRect(topLeft->x(), topLeft->y() + (bottomRight->y()-topLeft->y())/2 - 100 , 10,200);
     painter.drawRect(topLeft->x(),topLeft->y() , WINDOW_SIZE_X-2*TABLE_MARGIN, WINDOW_SIZE_Y - 2*TABLE_MARGIN);
     painter.drawLine(*keeperBar);
     painter.setPen(QPen(Qt::red, 20, Qt::DashDotLine, Qt::RoundCap));
