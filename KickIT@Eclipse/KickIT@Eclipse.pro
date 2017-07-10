@@ -25,7 +25,8 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            VirtualKicker/BallTrackerMock.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
-           VirtualKicker/VirtualKickerWindow.hpp
+           VirtualKicker/VirtualKickerWindow.hpp \
+           DataType/RowEnum.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            RowControl/MotorCommunicatorImpl.cpp \

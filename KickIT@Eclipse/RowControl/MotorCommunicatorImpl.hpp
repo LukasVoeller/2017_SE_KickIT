@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "MotorCommunicatorInterface.hpp"
+#include "../DataType/RowEnum.hpp"
 
 #include <sys/types.h> //for sockets
 #include <sys/socket.h> // for sockets
@@ -16,9 +17,7 @@ class MotorCommunicatorImpl : public MotorCommunicatorInterface{
 public:
 	void moveTo(float y);
 	void kick();
-	MotorCommunicatorImpl(){
-		//TODO verbindungsaufbau
-	}
+	MotorCommunicatorImpl(Row r);
 
 private:
     //int socketId;

@@ -13,6 +13,7 @@
 class RowControllerOffense : public RowControllerInterface{
 public:
 	RowControllerOffense();
+	void run(){};
 };
 
 

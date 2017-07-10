@@ -1,10 +1,11 @@
 #ifndef ROWCONTROLLERINTERFACE_HPP
 #define ROWCONTROLLERINTERFACE_HPP
 
+#include "MotorCommunicatorInterface.hpp"
 
 class RowControllerInterface{
-public:
-    virtual void run() = 0;
+protected:
+	MotorCommunicatorInterface* mcomm;
 };
 
 

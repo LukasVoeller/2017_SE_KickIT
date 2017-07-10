@@ -1,6 +1,23 @@
 
 
 #include "MotorCommunicatorImpl.hpp"
+#include <iostream>
+
+MotorCommunicatorImpl::MotorCommunicatorImpl(Row r){
+	//TODO verbindungsaufbau
+
+	switch(r){
+		case KEEPER:
+			std::cout << "...connecting to keeper driver..." << std::endl;
+
+
+
+
+			std::cout << "...done!" << std::endl;
+			break;
+	}
+}
+
 
 bool MotorCommunicatorImpl::openPort(const char* port){
     /*struct ifreq ifr;

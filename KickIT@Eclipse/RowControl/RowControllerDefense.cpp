@@ -6,8 +6,9 @@
  */
 
 #include "RowControllerDefense.hpp"
-
+#include "../DataType/RowEnum.hpp"
+#include "MotorCommunicatorImpl.hpp"
 
 RowControllerDefense::RowControllerDefense(){
-
+	mcomm = new MotorCommunicatorImpl(KEEPER);
 }

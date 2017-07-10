@@ -5,17 +5,21 @@
 #include <VirtualKicker/TableControllerMock.hpp>
 #include <RowControl/TableControllerInterface.hpp>
 
+#include "RowControl/TableControllerInterface.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
-
+#include "BallTracking/BallTrackerInterface.hpp"
+#include "RowControl/TableControllerImpl.hpp"
 
 
 int main(int argc, char** argv) {
 
-//virtual mode - ball tracking and table control simulated by a virtual kicker
-#if 1
+	TableControllerInterface* tableController;
+	BallTrackerInterface* ballTracker;
 
-	TableControllerMock* tableController;
-	BallTrackerMock* ballTracker;
+//virtual mode - ball tracking and table control simulated by a virtual kicker
+#if 0
+
+
 
     QApplication a(argc, argv);
     VirtualKicker::init();
@@ -31,7 +35,8 @@ int main(int argc, char** argv) {
 #endif
 
 //motor testing mode - ball position is simulated by graphical interface
-#if 0
+#if 1
+    tableController = new TableControllerImpl(1,0,0,0);
 
 #endif
 

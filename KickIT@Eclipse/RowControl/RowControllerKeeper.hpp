@@ -11,8 +11,11 @@
 
 
 class RowControllerKeeper : public RowControllerInterface{
+private:
+	MotorCommunicatorInterface* mcomm;
 public:
 	RowControllerKeeper();
+	void run(){};
 };
 
 
