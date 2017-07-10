@@ -16,7 +16,6 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            RowControl/MotorCommunicatorImpl.hpp \
            RowControl/MotorCommunicatorInterface.hpp \
            RowControl/RowControllerDefense.hpp \
-           RowControl/RowControllerImpl.hpp \
            RowControl/RowControllerInterface.hpp \
            RowControl/RowControllerKeeper.hpp \
            RowControl/RowControllerMidfield.hpp \
@@ -31,7 +30,6 @@ SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            RowControl/MotorCommunicatorImpl.cpp \
            RowControl/RowControllerDefense.cpp \
-           RowControl/RowControllerImpl.cpp \
            RowControl/RowControllerKeeper.cpp \
            RowControl/RowControllerMidfield.cpp \
            RowControl/RowControllerOffense.cpp \

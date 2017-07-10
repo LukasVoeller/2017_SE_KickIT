@@ -9,8 +9,6 @@
 
 
 
-
-
 int main(int argc, char** argv) {
 
 //virtual mode - ball tracking and table control simulated by a virtual kicker
@@ -30,13 +28,18 @@ int main(int argc, char** argv) {
 
     return a.exec();
 
+#endif
+
+//motor testing mode - ball position is simulated by graphical interface
+#if 0
 
 #endif
 
-
-
-//final mode
+//balltracking testing mode - table is simulated by graphical interface
 #if 0
+#endif
 
+//final mode - ready to play
+#if 0
 #endif
 }
