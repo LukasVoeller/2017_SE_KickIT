@@ -31,7 +31,7 @@ class TableControllerMock : public InterfaceTableController{
         
         virtual ~TableControllerMock();
         
-        void setBallStatus(BallStatus* b);
+        void setBallPos(float x, float y);
 
         void run(){};
         void stop(){};

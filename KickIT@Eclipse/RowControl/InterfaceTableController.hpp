@@ -7,14 +7,7 @@
 
 class InterfaceTableController{
 public:
-    virtual void setBallStatus(BallStatus* b) = 0;
-    virtual void setBallPos(float x, float y){
-    	std::cout << "TODO: algorithmus zur berechnung der Stangenpositionen" << std::endl;
-
-
-
-
-    };
+    virtual void setBallPos(float x, float y) = 0;
     virtual void run() = 0;
     virtual void stop() = 0;
 };
