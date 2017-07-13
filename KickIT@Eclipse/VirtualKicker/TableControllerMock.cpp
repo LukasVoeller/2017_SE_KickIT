@@ -1,5 +1,6 @@
 
 #include "TableControllerMock.hpp"
+#include <iostream>
 
 TableControllerMock::TableControllerMock() {
     
@@ -16,9 +17,9 @@ TableControllerMock::TableControllerMock(VirtualKickerWindow* w){
 TableControllerMock::~TableControllerMock() {
 }
 
-void TableControllerMock::setBallStatus(BallStatus* b){
-
-    window->setKeeper(b->position.y);
+void TableControllerMock::setBallPos(float x, float y){
+	std::cout << "pos update";
+    window->setKeeper(y);
 
 }
 

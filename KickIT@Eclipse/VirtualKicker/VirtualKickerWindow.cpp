@@ -41,6 +41,10 @@ void VirtualKickerWindow::setKeeper(float pos){
     repaint();
 }
 
+void setDefense(float pos){
+
+}
+
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event){
             
