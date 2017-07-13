@@ -2,6 +2,7 @@
 
 #include "MotorCommunicatorImpl.hpp"
 #include <iostream>
+#include <cstring>
 
 MotorCommunicatorImpl::MotorCommunicatorImpl(Row r){
 	//TODO verbindungsaufbau
@@ -9,28 +10,27 @@ MotorCommunicatorImpl::MotorCommunicatorImpl(Row r){
 	switch(r){
 		case KEEPER:
 			std::cout << "...connecting to keeper driver..." << std::endl;
-
-
-
-
-			std::cout << "...done!" << std::endl;
+			if(openPort("can0") == 0)
+				std::cout << "...done!" << std::endl;
+			else
+				std::cout << "...failed" << std::endl;
 			break;
 	}
 }
 
 
-bool MotorCommunicatorImpl::openPort(const char* port){
-    /*struct ifreq ifr;
+int MotorCommunicatorImpl::openPort(const char* port){
+    struct ifreq ifr;
     struct sockaddr_can addr;
 
     
-    this->socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+    socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
     if (socket < 0)
             return -1;
 
     addr.can_family = AF_CAN;
     
-    //strcpy(ifr.ifr_name, port); //c++ functions!!
+    strcpy(ifr.ifr_name, port); //c++ functions!!
     
     if (ioctl(socketId, SIOCGIFINDEX, &ifr) < 0)
             return (-1);
@@ -38,7 +38,7 @@ bool MotorCommunicatorImpl::openPort(const char* port){
     fcntl(socketId, F_SETFL, O_NONBLOCK);
     if (bind(socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0)
             return -1;
-*/
+
     return 0;
 }
 

@@ -11,7 +11,7 @@ CONFIG += qt debug
 # Input
 HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/BallTrackerInterface.hpp \
-           DataType/BallPos.hpp \
+           DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
            RowControl/MotorCommunicatorImpl.hpp \
            RowControl/MotorCommunicatorInterface.hpp \
@@ -22,7 +22,6 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            RowControl/RowControllerOffense.hpp \
            RowControl/TableControllerImpl.hpp \
            RowControl/TableControllerInterface.hpp \
-           VirtualKicker/BallTrackerMock.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
@@ -35,6 +34,5 @@ SOURCES += KickIT@Eclipse.cpp \
            RowControl/RowControllerMidfield.cpp \
            RowControl/RowControllerOffense.cpp \
            RowControl/TableControllerImpl.cpp \
-           VirtualKicker/BallTrackerMock.cpp \
            VirtualKicker/TableControllerMock.cpp \
            VirtualKicker/VirtualKickerWindow.cpp

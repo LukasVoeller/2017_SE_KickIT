@@ -10,11 +10,11 @@
 
 #include <iostream>
 
-class BallPos{
+class Vec2{
 public:
     float x;
     float y;
-    BallPos(float _x, float _y):x(_x),y(_y){
+    Vec2(float _x, float _y):x(_x),y(_y){
 
     }
     void update(float newx, float newy){
@@ -22,7 +22,7 @@ public:
     	y = newy;
     }
 
-    void update(BallPos* newp){
+    void update(Vec2* newp){
     	x = newp->x;
     	y = newp->y;
     	//delete newp;

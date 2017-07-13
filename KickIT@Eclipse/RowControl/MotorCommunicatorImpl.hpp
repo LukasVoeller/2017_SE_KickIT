@@ -20,8 +20,8 @@ public:
 	MotorCommunicatorImpl(Row r);
 
 private:
-    //int socketId;
-    bool openPort(const char* port);
+    int socketId;
+    int openPort(const char* port);
 };
 
 

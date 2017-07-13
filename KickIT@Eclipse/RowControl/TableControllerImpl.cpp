@@ -11,4 +11,16 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfiel
 	}
 }
 
+void TableControllerImpl::run(){
+
+}
+
+void TableControllerImpl::stop(){
+
+}
+
+void TableControllerImpl::setBallStatus(BallStatus* b){
+	currentBallStaus = *b;
+	delete b;
+}
 

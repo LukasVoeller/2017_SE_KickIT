@@ -10,6 +10,8 @@
 #include "BallTracking/BallTrackerInterface.hpp"
 #include "RowControl/TableControllerImpl.hpp"
 
+#define MODE 1
+
 
 int main(int argc, char** argv) {
 
@@ -17,7 +19,7 @@ int main(int argc, char** argv) {
 	BallTrackerInterface* ballTracker;
 
 //virtual mode - ball tracking and table control simulated by a virtual kicker
-#if 0
+#if MODE == 1
 
 
 
@@ -25,26 +27,29 @@ int main(int argc, char** argv) {
     VirtualKicker::init();
 
     tableController = VirtualKicker::getMockTableController();
-    ballTracker = VirtualKicker::getMockBallTracker();
 
-    //tableController->setBallTrackerMock(ballTracker);
-    //ballTracker->setTableController(tableController);
 
     return a.exec();
 
 #endif
 
 //motor testing mode - ball position is simulated by graphical interface
-#if 1
+#if MODE == 2
+    //initialize tablecontroller with only the keeper to be controlled
     tableController = new TableControllerImpl(1,0,0,0);
+
+    QApplication a(argc, argv);
+    VirtualKicker::init();
+
+    ballTracker = VirtualKicker::getMockBallTracker();
 
 #endif
 
 //balltracking testing mode - table is simulated by graphical interface
-#if 0
+#if MODE == 3
 #endif
 
 //final mode - ready to play
-#if 0
+#if MODE == 4
 #endif
 }

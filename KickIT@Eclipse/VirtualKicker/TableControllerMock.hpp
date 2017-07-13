@@ -16,12 +16,12 @@
 
 #include "../RowControl/TableControllerInterface.hpp"
 #include "VirtualKickerWindow.hpp"
+#include "../DataType/Vec2.hpp"
 
 
 class TableControllerMock : public TableControllerInterface{
     private:
         VirtualKickerWindow* window;
-        BallTrackerMock* btm;
     public:
         
         
@@ -32,7 +32,11 @@ class TableControllerMock : public TableControllerInterface{
         virtual ~TableControllerMock();
         
         void setBallStatus(BallStatus* b);
-        void setBallTrackerMock(BallTrackerMock* m);
+
+        void run(){};
+        void stop(){};
+
+        void setKickerWindow(VirtualKickerWindow* p);
 };
 
 #endif /* TABLECONTROLLERMOCK_HPP */

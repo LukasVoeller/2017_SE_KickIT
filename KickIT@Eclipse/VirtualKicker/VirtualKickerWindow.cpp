@@ -2,17 +2,21 @@
 
 
 #include "VirtualKickerWindow.hpp"
+#include "../DataType/Vec2.hpp"
 
-VirtualKickerWindow::VirtualKickerWindow(BallTrackerMock* b) {
+VirtualKickerWindow::VirtualKickerWindow():tc(NULL) {
     
 //VirtualKickerWindow::VirtualKickerWindow() {
     setMouseTracking(true);
-    this->btm = b;
     topLeft = new QPoint(TABLE_MARGIN,TABLE_MARGIN);
     bottomRight = new QPoint( WINDOW_SIZE_X - TABLE_MARGIN, WINDOW_SIZE_Y - TABLE_MARGIN);
-    keeperBar = new QLine(topLeft->x()+20,topLeft->y()-10,topLeft->x()+20, bottomRight->y() +10);
+    keeperBar = new QLine(topLeft->x()+50,topLeft->y()-10,topLeft->x()+50, bottomRight->y() +10);
     keeper = new QPoint(keeperBar->x1(), keeperBar->y1() + keeperBar->dy()/2);
     
+    defenseBar = new QLine(topLeft->x()+150,topLeft->y()-10,topLeft->x()+150, bottomRight->y() +10);
+    defense[0] = new QPoint(defenseBar->x1(), defenseBar->y1() + (defenseBar->dy()/3)*2);
+    defense[1] = new QPoint(defenseBar->x1(), defenseBar->y1() + defenseBar->dy()/3);
+
 }
 
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
@@ -21,9 +25,10 @@ void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
         mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
         lastAdded.setX(e->pos().x());
         lastAdded.setY(e->pos().y());
-        btm->receiveMockBallPosition(new BallPos(e->pos().x(), e->pos().y()));
+        tc->setBallPos(e->pos().x(), e->pos().y());
+        repaint();
     }
-    repaint();
+
 }
 
 void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
@@ -77,12 +82,20 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event){
     painter.drawRect(topLeft->x(), topLeft->y() + (bottomRight->y()-topLeft->y())/2 - 100 , 10,200);
     painter.drawRect(topLeft->x(),topLeft->y() , WINDOW_SIZE_X-2*TABLE_MARGIN, WINDOW_SIZE_Y - 2*TABLE_MARGIN);
     painter.drawLine(*keeperBar);
+    painter.drawLine(*defenseBar);
     painter.setPen(QPen(Qt::red, 20, Qt::DashDotLine, Qt::RoundCap));
     painter.drawPoint(*keeper);
+    painter.drawPoint(*defense[0]);
+    painter.drawPoint(*defense[1]);
+
     painter.setPen(QPen(Qt::blue, 20, Qt::DashDotLine, Qt::RoundCap));
     for(long unsigned int i = 0; i<mouseTrail.size(); i++){
         painter.drawPoint(*mouseTrail[i]);
         //std::cout << "p";
     }
 
+}
+
+void VirtualKickerWindow::setTableController(TableControllerInterface* t){
+	tc = t;
 }

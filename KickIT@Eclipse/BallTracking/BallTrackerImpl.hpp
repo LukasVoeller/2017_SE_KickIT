@@ -17,8 +17,9 @@
 class BallTrackerImpl : public BallTrackerInterface{
 
 	public:
+
 	virtual BallStatus* getBallStatus(){
-		return new BallStatus();
+
 	}
 
 	virtual void startTracking(){

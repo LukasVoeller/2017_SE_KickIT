@@ -19,12 +19,13 @@
 #include <QWidget>
 #include <vector>
 #include <cstdlib>
-#include "BallTrackerMock.hpp"
+
+#include "../RowControl/TableControllerInterface.hpp"
 
 class VirtualKickerWindow : public QWidget{
     private:
         
-        
+        TableControllerInterface* tc;
         
         QPoint lastAdded;
         
@@ -34,6 +35,9 @@ class VirtualKickerWindow : public QWidget{
         QLine* keeperBar;
         QPoint* keeper;
         
+        QPoint* defense[2];
+        QLine* defenseBar;
+
         static const int WINDOW_SIZE_X = 1000;
         static const int WINDOW_SIZE_Y = 700;
 
@@ -41,19 +45,19 @@ class VirtualKickerWindow : public QWidget{
         static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
         static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
         
-        BallTrackerMock* btm;
         std::vector<QPoint*> mouseTrail;
         
         
     public:
         VirtualKickerWindow();
-        VirtualKickerWindow(BallTrackerMock* b);
         void paintEvent(QPaintEvent *event);
         void mouseMoveEvent(QMouseEvent* e);
         
         void mouseReleaseEvent(QMouseEvent* e);
         
         void setKeeper(float pos);
+
+        void setTableController(TableControllerInterface* t);
 
 };
 
