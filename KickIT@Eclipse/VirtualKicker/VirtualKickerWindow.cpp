@@ -1,6 +1,3 @@
-
-
-
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
 
@@ -96,6 +93,6 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event){
 
 }
 
-void VirtualKickerWindow::setTableController(TableControllerInterface* t){
+void VirtualKickerWindow::setTableController(InterfaceTableController* t){
 	tc = t;
 }

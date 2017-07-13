@@ -1,14 +1,11 @@
-
-
-#ifndef TABLECONTROLLERINTERFACE_HPP
-#define TABLECONTROLLERINTERFACE_HPP
+#ifndef INTERFACETABLECONTROLLER_HPP
+#define INTERFACETABLECONTROLLER_HPP
 
 #include "../DataType/BallStatus.hpp"
 #include "../DataType/Vec2.hpp"
-
 #include <iostream>
 
-class TableControllerInterface{
+class InterfaceTableController{
 public:
     virtual void setBallStatus(BallStatus* b) = 0;
     virtual void setBallPos(float x, float y){
@@ -22,6 +19,5 @@ public:
     virtual void stop() = 0;
 };
 
-
-#endif /* TABLECONTROLLERINTERFACE_HPP */
+#endif /* INTERFACETABLECONTROLLER_HPP */
 

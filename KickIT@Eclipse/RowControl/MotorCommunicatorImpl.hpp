@@ -1,4 +1,3 @@
-
 #ifndef MOTORCOMMUNICATORIMPL_HPP
 #define MOTORCOMMUNICATORIMPL_HPP
 
@@ -7,21 +6,22 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "MotorCommunicatorInterface.hpp"
+#include "InterfaceMotorCommunicator.hpp"
 #include "../DataType/RowEnum.hpp"
 
 #include <sys/types.h> //for sockets
 #include <sys/socket.h> // for sockets
 
-class MotorCommunicatorImpl : public MotorCommunicatorInterface{
+class MotorCommunicatorImpl : public InterfaceMotorCommunicator{
 public:
+	MotorCommunicatorImpl(Row r);
 	void moveTo(float y);
 	void kick();
-	MotorCommunicatorImpl(Row r);
 
 private:
     int socketId;
     int openPort(const char* port);
+    void homing();
 };
 
 

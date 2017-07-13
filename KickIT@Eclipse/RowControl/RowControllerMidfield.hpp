@@ -1,20 +1,12 @@
-/*
- * RowControllerMidfield.hpp
- *
- *  Created on: 18.05.2017
- *      Author: student
- */
-
 #ifndef ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_
 #define ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_
-#include "RowControllerInterface.hpp"
+#include "InterfaceRowController.hpp"
 
+class RowControllerMidfield : public InterfaceRowController{
 
-class RowControllerMidfield : public RowControllerInterface{
 public:
 	RowControllerMidfield();
 	void run(){};
 };
-
 
 #endif /* ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_ */

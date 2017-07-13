@@ -1,21 +1,13 @@
-/*
- * RowControllerDefense.hpp
- *
- *  Created on: 18.05.2017
- *      Author: student
- */
-
 #ifndef ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_
 #define ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_
 
-#include "RowControllerInterface.hpp"
+#include "InterfaceRowController.hpp"
 
-class RowControllerDefense : public RowControllerInterface{
+class RowControllerDefense : public InterfaceRowController{
 
 public:
 	RowControllerDefense();
 	void run(){};
 };
-
 
 #endif /* ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_ */

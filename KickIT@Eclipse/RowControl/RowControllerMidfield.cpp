@@ -1,13 +1,7 @@
-/*
- * RowControllerMidfield.cpp
- *
- *  Created on: 18.05.2017
- *      Author: student
- */
-
 #include "RowControllerMidfield.hpp"
-
+#include "MotorCommunicatorImpl.hpp"
+#include "../DataType/RowEnum.hpp"
 
 RowControllerMidfield::RowControllerMidfield(){
-
+	mcomm = new MotorCommunicatorImpl(MIDFIELD);
 }

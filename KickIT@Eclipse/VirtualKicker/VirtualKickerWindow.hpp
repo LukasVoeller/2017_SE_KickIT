@@ -20,12 +20,12 @@
 #include <vector>
 #include <cstdlib>
 
-#include "../RowControl/TableControllerInterface.hpp"
+#include "../RowControl/InterfaceTableController.hpp"
 
 class VirtualKickerWindow : public QWidget{
     private:
         
-        TableControllerInterface* tc;
+        InterfaceTableController* tc;
         
         QPoint lastAdded;
         
@@ -57,7 +57,7 @@ class VirtualKickerWindow : public QWidget{
         
         void setKeeper(float pos);
 
-        void setTableController(TableControllerInterface* t);
+        void setTableController(InterfaceTableController* t);
 
 };
 

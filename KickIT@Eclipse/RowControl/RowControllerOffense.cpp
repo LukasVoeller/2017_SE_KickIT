@@ -1,13 +1,7 @@
-/*
- * RowControllerOffense.cpp
- *
- *  Created on: 18.05.2017
- *      Author: student
- */
-
 #include "RowControllerOffense.hpp"
-
+#include "MotorCommunicatorImpl.hpp"
+#include "../DataType/RowEnum.hpp"
 
 RowControllerOffense::RowControllerOffense(){
-
+	mcomm = new MotorCommunicatorImpl(OFFENSE);
 }

@@ -3,11 +3,11 @@
 #include <QApplication>
 
 #include <VirtualKicker/TableControllerMock.hpp>
-#include <RowControl/TableControllerInterface.hpp>
+#include <RowControl/InterfaceTableController.hpp>
 
-#include "RowControl/TableControllerInterface.hpp"
+#include "RowControl/InterfaceTableController.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
-#include "BallTracking/BallTrackerInterface.hpp"
+#include "BallTracking/InterfaceBallTracker.hpp"
 #include "RowControl/TableControllerImpl.hpp"
 
 #define MODE 1
@@ -15,7 +15,7 @@
 
 int main(int argc, char** argv) {
 
-	TableControllerInterface* tableController;
+	InterfaceTableController* tableController;
 	BallTrackerInterface* ballTracker;
 
 //virtual mode - ball tracking and table control simulated by a virtual kicker

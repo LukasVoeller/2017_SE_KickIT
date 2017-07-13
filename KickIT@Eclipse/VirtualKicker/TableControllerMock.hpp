@@ -14,12 +14,12 @@
 #ifndef TABLECONTROLLERMOCK_HPP
 #define TABLECONTROLLERMOCK_HPP
 
-#include "../RowControl/TableControllerInterface.hpp"
+#include "../RowControl/InterfaceTableController.hpp"
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
 
 
-class TableControllerMock : public TableControllerInterface{
+class TableControllerMock : public InterfaceTableController{
     private:
         VirtualKickerWindow* window;
     public:

@@ -10,18 +10,18 @@ CONFIG += qt debug
 
 # Input
 HEADERS += BallTracking/BallTrackerImpl.hpp \
-           BallTracking/BallTrackerInterface.hpp \
+           BallTracking/InterfaceBallTracker.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
            RowControl/MotorCommunicatorImpl.hpp \
-           RowControl/MotorCommunicatorInterface.hpp \
+           RowControl/InterfaceMotorCommunicator.hpp \
            RowControl/RowControllerDefense.hpp \
-           RowControl/RowControllerInterface.hpp \
+           RowControl/InterfaceRowController.hpp \
            RowControl/RowControllerKeeper.hpp \
            RowControl/RowControllerMidfield.hpp \
            RowControl/RowControllerOffense.hpp \
            RowControl/TableControllerImpl.hpp \
-           RowControl/TableControllerInterface.hpp \
+           RowControl/InterfaceTableController.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
