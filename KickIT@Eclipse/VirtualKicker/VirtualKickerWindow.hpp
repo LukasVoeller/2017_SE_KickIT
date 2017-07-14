@@ -38,17 +38,19 @@ class VirtualKickerWindow : public QWidget{
         QPoint* defense[2];
         QLine* defenseBar;
 
-        static const int WINDOW_SIZE_X = 1000;
-        static const int WINDOW_SIZE_Y = 700;
-
-        static const int TABLE_MARGIN = 60;
-        static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
-        static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
         
+
         std::vector<QPoint*> mouseTrail;
         
         
     public:
+        static const int WINDOW_SIZE_X = 1000;
+		static const int WINDOW_SIZE_Y = 700;
+
+		static const int TABLE_MARGIN = 60;
+		static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
+		static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
+
         VirtualKickerWindow();
         void paintEvent(QPaintEvent *event);
         void mouseMoveEvent(QMouseEvent* e);
@@ -56,9 +58,10 @@ class VirtualKickerWindow : public QWidget{
         void mouseReleaseEvent(QMouseEvent* e);
         
         void setKeeper(float pos);
+        void setDefense(float pos);
 
         void setTableController(InterfaceTableController* t);
-
+        float getDDist();
 };
 
 #endif /* VIRTUALKICKERWINDOW_HPP */

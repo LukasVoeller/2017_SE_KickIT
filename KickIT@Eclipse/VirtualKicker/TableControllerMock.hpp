@@ -24,10 +24,7 @@ class TableControllerMock : public InterfaceTableController{
         VirtualKickerWindow* window;
     public:
         
-        
-        TableControllerMock(VirtualKickerWindow* w);
-        
-        TableControllerMock();
+        TableControllerMock(bool keeper, bool defense, bool midfield, bool offense);
         
         virtual ~TableControllerMock();
         

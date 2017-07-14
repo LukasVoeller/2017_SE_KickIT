@@ -8,7 +8,7 @@
 class TableControllerImpl : public InterfaceTableController{
 private:
 	BallStatus currentBallStaus;
-	bool keeperActive, defenseActive, midfieldActive, offenseActive;
+
 	InterfaceRowController* keeperControl;
 	InterfaceRowController* defenseControl;
 	InterfaceRowController* midfieldControl;

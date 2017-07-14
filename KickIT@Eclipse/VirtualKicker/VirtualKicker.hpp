@@ -34,7 +34,7 @@ class VirtualKicker{
             
             
             vkw = new VirtualKickerWindow();
-            tc = new TableControllerMock();
+            tc = new TableControllerMock(true, true, false, false);
             
             tc->setKickerWindow(vkw);
             vkw->setTableController(tc);

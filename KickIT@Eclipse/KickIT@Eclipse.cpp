@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
 //motor testing mode - ball position is simulated by graphical interface
 #if MODE == 2
     //initialize tablecontroller with only the keeper to be controlled
-    tableController = new TableControllerImpl(1,0,0,0);
+    tableController = new TableControllerImpl(true,true,false,false);
 
     QApplication a(argc, argv);
     VirtualKicker::init();

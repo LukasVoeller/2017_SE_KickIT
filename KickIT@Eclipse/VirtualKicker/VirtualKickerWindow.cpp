@@ -16,6 +16,10 @@ VirtualKickerWindow::VirtualKickerWindow():tc(NULL) {
 
 }
 
+float VirtualKickerWindow::getDDist(){
+	return defenseBar->dy()/3;
+}
+
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
     
     if( (abs(e->pos().x() -lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))  > 50 && (e->buttons() & Qt::LeftButton)){
@@ -34,12 +38,14 @@ void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
 
 
 void VirtualKickerWindow::setKeeper(float pos){
-    this->keeper->setY(pos);
+    keeper->setY(pos);
     repaint();
 }
 
-void setDefense(float pos){
-
+void VirtualKickerWindow::setDefense(float pos){
+	defense[0]->setY(pos);
+	defense[1]->setY(pos+defenseBar->dy()/3);
+	repaint();
 }
 
 
