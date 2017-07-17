@@ -20,9 +20,17 @@ float VirtualKickerWindow::getDDist(){
 	return defenseBar->dy()/3;
 }
 
+Vec2* VirtualKickerWindow::getKeeperPositionalVector(){
+	return new Vec2(keeperBar->x1(),0);
+}
+
+Vec2* VirtualKickerWindow::getDefensePositionalVector(){
+	return new Vec2(defenseBar->x1(),0);
+}
+
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
     
-    if( (abs(e->pos().x() -lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))  > 50 && (e->buttons() & Qt::LeftButton)){
+    if( (abs(e->pos().x() -lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))  > 20 && (e->buttons() & Qt::LeftButton)){
         mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
         lastAdded.setX(e->pos().x());
         lastAdded.setY(e->pos().y());

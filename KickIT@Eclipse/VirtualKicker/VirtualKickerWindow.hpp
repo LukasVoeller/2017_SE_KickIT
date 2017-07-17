@@ -62,6 +62,9 @@ class VirtualKickerWindow : public QWidget{
 
         void setTableController(InterfaceTableController* t);
         float getDDist();
+
+        Vec2* getKeeperPositionalVector();
+        Vec2* getDefensePositionalVector();
 };
 
 #endif /* VIRTUALKICKERWINDOW_HPP */

@@ -12,17 +12,33 @@ public:
     virtual void stop() = 0;
 
 protected:
-    float* calculateRowPositions(float tableHeight, BallStatus* b, bool keeper, bool defense, bool midfield, bool offense, float yOffset=0, float dDist=0,
-    		float mDist = 0, float oDist = 0){
+    float* calculateRowPositions(float tableHeight, BallStatus* b,
+    		bool keeper, bool defense, bool midfield, bool offense, float yOffset=0, float dDist=0, float mDist = 0, float oDist = 0,
+			Vec2* keeperPositionalVector = 0, Vec2* keeperDirectionalVector = 0,
+			Vec2* defensePositionalVector = 0, Vec2* defenseDirectionalVector = 0,
+			Vec2* midfieldPositionalVector = 0, Vec2* midfieldDirectionalVector = 0,
+			Vec2* offensePositionalVector = 0, Vec2* offenseDirectionalVector = 0){
+
+    	b->movement.normalize();
+    	keeperDirectionalVector->normalize();
 
     	unsigned int arraySize = keeper ? 1 : 0 + defense ? 1 : 0 + midfield ? 1 : 0 + offense ? 1 : 0;
     	float* result = new float[arraySize];
     	if(keeper){
-    		float pos = 0;
-    		//TODO schnittpunkt zweier geraden
-    		result[0] = b->position.y;
+
+    		if(b->movement.cross(*keeperDirectionalVector)!=0){
+    			float factor = ( (*keeperPositionalVector - b->movement).cross(*keeperDirectionalVector) ) / b->movement.cross(*keeperDirectionalVector);
+
+    			result[0] = (b->position + b->movement*(-factor)).y;
+
+    		} else {
+    			result[0] = b->position.x;
+    		}
     	}
     	if(defense){
+
+    		//TODO aehnliche berechnung des schnittpunktes wie beim keeper
+
     		float pos = 0;
     		if(b->position.y < (tableHeight/2+yOffset))
     			pos = b->position.y;
@@ -31,6 +47,9 @@ protected:
     		result[1] = pos;
     	}
 
+    	//TODO speicherlecks
+    	delete keeperDirectionalVector;
+    	delete keeperPositionalVector;
 
     	return result;
     }

@@ -16,11 +16,15 @@ void TableControllerMock::setBallPos(float x, float y){
 
 	updateBallStatus(x,y);
 
-    float* positions = calculateRowPositions(window->TABLE_HEIGHT,&ballStatus, keeperActive, defenseActive, midfieldActive, offenseActive,
-    		window->TABLE_MARGIN, window->getDDist());
+    float* positions = calculateRowPositions(window->TABLE_HEIGHT, &ballStatus,
+    		keeperActive, defenseActive, midfieldActive, offenseActive, window->TABLE_MARGIN, window->getDDist(), 0, 0,
+    		window->getKeeperPositionalVector(), new Vec2(0,1));
+
 	if(keeperActive) window->setKeeper(positions[0]);
 	if(defenseActive) window->setDefense(positions[1]);
-    delete positions;
+
+
+	delete positions;
 
 }
 
