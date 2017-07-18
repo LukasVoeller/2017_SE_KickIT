@@ -11,4 +11,3 @@ class InterfaceMotorCommunicator{
 };
 
 #endif /* INTERFACEMOTORCOMMUNICATOR_HPP */
-

@@ -1,16 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   VirtualKicker.hpp
- * Author: student
- *
- * Created on 28. April 2017, 17:08
- */
-
 #ifndef VIRTUALKICKERWINDOW_HPP
 #define VIRTUALKICKERWINDOW_HPP
 
@@ -23,33 +10,31 @@
 #include "../RowControl/InterfaceTableController.hpp"
 
 class VirtualKickerWindow : public QWidget{
+
     private:
-        
         InterfaceTableController* tc;
         
         QPoint lastAdded;
         
         QPoint* topLeft;
-        QPoint* bottomRight;
         
         QLine* keeperBar;
         QPoint* keeper;
         
-        QPoint* defense[2];
         QLine* defenseBar;
-
-        
+        QPoint* defense[2];
 
         std::vector<QPoint*> mouseTrail;
-        
-        
+
     public:
-        static const int WINDOW_SIZE_X = 1000;
-		static const int WINDOW_SIZE_Y = 700;
+        static const int WINDOW_SIZE_X = 1024;
+		static const int WINDOW_SIZE_Y = 768;
 
 		static const int TABLE_MARGIN = 60;
-		static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
-		static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
+		//static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
+		//static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
+		static const double TABLE_WIDTH = 111.5*7;
+		static const double TABLE_HEIGHT = 68*7;
 
         VirtualKickerWindow();
         void paintEvent(QPaintEvent *event);
