@@ -14,20 +14,22 @@ public:
 protected:
     float* calculateRowPositions(float tableHeight, BallStatus* b,
     		bool keeper, bool defense, bool midfield, bool offense, float yOffset=0, float dDist=0, float mDist = 0, float oDist = 0,
-			Vec2* keeperPositionalVector = 0, Vec2* keeperDirectionalVector = 0,
-			Vec2* defensePositionalVector = 0, Vec2* defenseDirectionalVector = 0,
-			Vec2* midfieldPositionalVector = 0, Vec2* midfieldDirectionalVector = 0,
-			Vec2* offensePositionalVector = 0, Vec2* offenseDirectionalVector = 0){
+			Vec2* keeperPositionalVector = 0,
+			Vec2* defensePositionalVector = 0,
+			Vec2* midfieldPositionalVector = 0,
+			Vec2* offensePositionalVector = 0){
 
+    	Vec2* rowDirectionalVector = new Vec2(0,1);
+    	rowDirectionalVector->normalize();
     	b->movement.normalize();
-    	keeperDirectionalVector->normalize();
+
 
     	unsigned int arraySize = keeper ? 1 : 0 + defense ? 1 : 0 + midfield ? 1 : 0 + offense ? 1 : 0;
     	float* result = new float[arraySize];
     	if(keeper){
 
-    		if(b->movement.cross(*keeperDirectionalVector)!=0){
-    			float factor = ( (*keeperPositionalVector - b->movement).cross(*keeperDirectionalVector) ) / b->movement.cross(*keeperDirectionalVector);
+    		if(b->movement.cross(*rowDirectionalVector)!=0){
+    			float factor = ( (*keeperPositionalVector - b->movement).cross(*rowDirectionalVector) ) / b->movement.cross(*rowDirectionalVector);
 
     			result[0] = (b->position + b->movement*(-factor)).y;
 
@@ -48,7 +50,7 @@ protected:
     	}
 
     	//TODO speicherlecks
-    	delete keeperDirectionalVector;
+    	delete rowDirectionalVector;
     	delete keeperPositionalVector;
 
     	return result;
