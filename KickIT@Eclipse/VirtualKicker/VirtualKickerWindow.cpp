@@ -23,44 +23,7 @@ VirtualKickerWindow::VirtualKickerWindow():tc(NULL) {
     defense[1] = new QPoint(defenseBar->x1(), defenseBar->y1() + defenseBar->dy()/3);
 }
 
-float VirtualKickerWindow::getDDist(){
-	return defenseBar->dy()/3;
-}
-
-Vec2* VirtualKickerWindow::getKeeperPositionalVector(){
-	return new Vec2(keeperBar->x1(),0);
-}
-
-Vec2* VirtualKickerWindow::getDefensePositionalVector(){
-	return new Vec2(defenseBar->x1(),0);
-}
-
-void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e){
-    if((abs(e->pos().x() - lastAdded.x()) + abs(e->pos().y() - lastAdded.y())) > 20 && (e->buttons() & Qt::LeftButton)){
-        mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
-        lastAdded.setX(e->pos().x());
-        lastAdded.setY(e->pos().y());
-        tc->setBallPos(e->pos().x(), e->pos().y());
-        repaint();
-    }
-}
-
-void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
-    mouseTrail.clear();
-}
-
-void VirtualKickerWindow::setKeeper(float pos){
-    keeper->setY(pos);
-    repaint();
-}
-
-void VirtualKickerWindow::setDefense(float pos){
-	defense[0]->setY(pos);
-	defense[1]->setY(pos+defenseBar->dy()/3);
-	repaint();
-}
-
-void VirtualKickerWindow::paintEvent(QPaintEvent *event){
+void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
     QPen myPen(Qt::black, 2, Qt::SolidLine);
@@ -83,6 +46,46 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event){
     }
 }
 
-void VirtualKickerWindow::setTableController(InterfaceTableController* t){
+void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e) {
+    if((abs(e->pos().x() - lastAdded.x()) + abs(e->pos().y() - lastAdded.y())) > 20 && (e->buttons() & Qt::LeftButton)){
+        mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
+        lastAdded.setX(e->pos().x());
+        lastAdded.setY(e->pos().y());
+        tc->setBallPos(e->pos().x(), e->pos().y());
+        repaint();
+    }
+}
+
+void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
+    mouseTrail.clear();
+}
+
+void VirtualKickerWindow::setKeeper(float pos) {
+    keeper->setY(pos);
+    repaint();
+}
+
+void VirtualKickerWindow::setDefense(float pos) {
+	defense[0]->setY(pos);
+	defense[1]->setY(pos+defenseBar->dy()/3);
+	repaint();
+}
+
+void VirtualKickerWindow::setTableController(InterfaceTableController* t) {
 	tc = t;
 }
+
+Vec2* VirtualKickerWindow::getKeeperPositionalVector() {
+	return new Vec2(keeperBar->x1(),0);
+}
+
+Vec2* VirtualKickerWindow::getDefensePositionalVector() {
+	return new Vec2(defenseBar->x1(),0);
+}
+
+float VirtualKickerWindow::getDDist() {
+	return defenseBar->dy()/3;
+}
+
+
+
