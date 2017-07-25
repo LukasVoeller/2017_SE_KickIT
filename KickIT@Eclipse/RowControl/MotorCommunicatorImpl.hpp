@@ -21,7 +21,7 @@ public:
 private:
 	int socketId;
 
-	int openPort(const char* port);
+	int openPort();
 	int closePort();
 	int sendPort(struct can_frame *frame);
 	void readPort();

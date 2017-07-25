@@ -5,3 +5,7 @@
 RowControllerMidfield::RowControllerMidfield() {
 	mcomm = new MotorCommunicatorImpl(MIDFIELD);
 }
+
+void RowControllerMidfield::run() {
+
+}

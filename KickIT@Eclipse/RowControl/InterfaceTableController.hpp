@@ -62,11 +62,9 @@ protected:
 	BallStatus ballStatus;
 
 	void updateBallStatus(float x, float y) {
-
 		ballStatus.movement.x = ballStatus.position.x - x;
 		ballStatus.movement.y = ballStatus.position.y - y;
 		ballStatus.position.update(x, y);
-
 	}
 };
 

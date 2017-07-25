@@ -9,7 +9,7 @@ class TableControllerImpl: public InterfaceTableController {
 
 public:
 	TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense);
-	void setBallStatus(BallStatus* b);
+	void setBallPos(float x, float y);
 	void run();
 	void stop();
 

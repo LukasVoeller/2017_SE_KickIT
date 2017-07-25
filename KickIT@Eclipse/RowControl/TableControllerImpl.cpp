@@ -30,16 +30,15 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 	}
 }
 
+void TableControllerImpl::setBallPos(float x, float y){
+
+}
+
 void TableControllerImpl::run() {
 
 }
 
 void TableControllerImpl::stop() {
 
-}
-
-void TableControllerImpl::setBallStatus(BallStatus* b) {
-	currentBallStaus = *b;
-	delete b;
 }
 

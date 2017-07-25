@@ -5,3 +5,7 @@
 RowControllerKeeper::RowControllerKeeper() {
 	mcomm = new MotorCommunicatorImpl(KEEPER);
 }
+
+void RowControllerKeeper::run() {
+
+}

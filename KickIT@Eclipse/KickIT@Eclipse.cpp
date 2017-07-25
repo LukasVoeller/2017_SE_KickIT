@@ -9,7 +9,7 @@
 #include "RowControl/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 1
+#define MODE 2
 
 int main(int argc, char** argv) {
 
@@ -20,7 +20,6 @@ int main(int argc, char** argv) {
 #if MODE == 1
 
 	QApplication a(argc, argv);
-	VirtualKicker::init();
 
 	tableController = VirtualKicker::getMockTableController();
 
@@ -31,12 +30,11 @@ int main(int argc, char** argv) {
 //Motor testing mode - Ball position is simulated by graphical interface
 #if MODE == 2
 
-	tableController = new TableControllerImpl(true,true,false,false);
-
 	QApplication a(argc, argv);
-	VirtualKicker::init();
 
-	ballTracker = VirtualKicker::getMockBallTracker();
+	tableController = VirtualKicker::getTableController(true, false, false, false);
+
+	return a.exec();
 
 #endif
 

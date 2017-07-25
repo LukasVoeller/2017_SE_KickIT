@@ -6,9 +6,7 @@ class RowControllerMidfield: public InterfaceRowController {
 
 public:
 	RowControllerMidfield();
-	void run() {
-	}
-	;
+	void run();
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_ */

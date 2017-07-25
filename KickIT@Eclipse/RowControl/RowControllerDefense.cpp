@@ -5,3 +5,7 @@
 RowControllerDefense::RowControllerDefense() {
 	mcomm = new MotorCommunicatorImpl(DEFENSE);
 }
+
+void RowControllerDefense::run() {
+
+}

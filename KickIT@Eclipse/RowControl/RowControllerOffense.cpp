@@ -5,3 +5,7 @@
 RowControllerOffense::RowControllerOffense() {
 	mcomm = new MotorCommunicatorImpl(OFFENSE);
 }
+
+void RowControllerOffense::run() {
+
+}

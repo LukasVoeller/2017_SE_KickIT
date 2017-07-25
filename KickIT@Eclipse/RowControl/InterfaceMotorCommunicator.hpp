@@ -9,6 +9,8 @@ public:
 
 private:
 	virtual void homing() = 0;
+protected:
+	char* port;
 };
 
 #endif /* INTERFACEMOTORCOMMUNICATOR_HPP */
