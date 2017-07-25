@@ -7,6 +7,7 @@
 
 class InterfaceTableController {
 public:
+	//virtual ~InterfaceTableController(); //Warning without destructor
 	virtual void setBallPos(float x, float y) = 0;
 	virtual void run() = 0;
 	virtual void stop() = 0;

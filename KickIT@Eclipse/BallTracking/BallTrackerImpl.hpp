@@ -5,7 +5,7 @@ class BallTrackerImpl: public BallTrackerInterface {
 
 public:
 	virtual BallStatus* getBallStatus() {
-
+		return BallStatus;
 	}
 
 	virtual void startTracking() {

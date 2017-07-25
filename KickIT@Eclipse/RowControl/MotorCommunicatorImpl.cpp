@@ -50,20 +50,23 @@ int MotorCommunicatorImpl::openPort(const char* port) {
 
 	socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
-	if (socket < 0)
+	if (socket < 0) {
 		return -1;
+	}
 
 	addr.can_family = AF_CAN;
 	strcpy(ifr.ifr_name, port); //C++ functions!
 
-	if (ioctl(socketId, SIOCGIFINDEX, &ifr) < 0)
+	if (ioctl(socketId, SIOCGIFINDEX, &ifr) < 0) {
 		return -1;
+	}
 
 	addr.can_ifindex = ifr.ifr_ifindex;
 	fcntl(socketId, F_SETFL, O_NONBLOCK);
 
-	if (bind(socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0)
+	if (bind(socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
 		return -1;
+	}
 
 	homing();
 	return 0;
@@ -131,8 +134,8 @@ void MotorCommunicatorImpl::frameInit(int ID, int DLC, int Data_0, int Data_1,
 void MotorCommunicatorImpl::homing() {
 	cout << "Homen... ";
 
-	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);//Homen Command an RXPD0 1
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);//Sync
+	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Homen Command an RXPD0 1
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	sleep(25);
 
 	cout << "Gehomed" << endl;

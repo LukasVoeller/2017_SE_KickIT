@@ -3,6 +3,7 @@
 
 class InterfaceMotorCommunicator {
 public:
+	//virtual ~InterfaceMotorCommunicator(); //Warning without destructor
 	virtual void moveTo(float y) = 0;
 	virtual void kick() = 0;
 

@@ -1,27 +1,18 @@
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
 
-//Alle angaben in cm
-int scale = 7;
-
-double goalSize = 21 * scale;
-double tableDimensionY = 68 * scale;
-double tableDimensionX = 111.5 * scale;
-double goalToKeeper = 3.5 * scale;
-double goalToDefense = 18.5 * scale;
-
 VirtualKickerWindow::VirtualKickerWindow() :
 		tc(NULL) {
 	setMouseTracking(true);
 
 	topLeft = new QPoint(TABLE_MARGIN, TABLE_MARGIN);
 
-	keeperBar = new QLine(topLeft->x() + goalToKeeper, topLeft->y() - 30,
-			topLeft->x() + goalToKeeper, topLeft->y() + tableDimensionY + 30);
+	keeperBar = new QLine(topLeft->x() + this->GOAL_TO_KEEPER, topLeft->y() - 30,
+			topLeft->x() + this->GOAL_TO_KEEPER, topLeft->y() + this->TABLE_HEIGHT + 30);
 	keeper = new QPoint(keeperBar->x1(), keeperBar->y1() + keeperBar->dy() / 2);
 
-	defenseBar = new QLine(topLeft->x() + goalToDefense, topLeft->y() - 30,
-			topLeft->x() + goalToDefense, topLeft->y() + tableDimensionY + 30);
+	defenseBar = new QLine(topLeft->x() + this->GOAL_TO_DEFENSE, topLeft->y() - 30,
+			topLeft->x() + this->GOAL_TO_DEFENSE, topLeft->y() + this->TABLE_HEIGHT + 30);
 	defense[0] = new QPoint(defenseBar->x1(),
 			defenseBar->y1() + (defenseBar->dy() / 3) * 2);
 	defense[1] = new QPoint(defenseBar->x1(),
@@ -35,9 +26,9 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	painter.setPen(myPen);
 
 	painter.drawRect(topLeft->x() - 30,
-			topLeft->y() + tableDimensionY / 2 - goalSize / 2, 30, goalSize);//Tor
-	painter.drawRect(topLeft->x(), topLeft->y(), tableDimensionX,
-			tableDimensionY);				//Tisch
+			topLeft->y() + this->TABLE_HEIGHT / 2 - this->GOAL_SIZE / 2, 30, this->GOAL_SIZE);//Tor
+	painter.drawRect(topLeft->x(), topLeft->y(), this->TABLE_WIDTH,
+			this->TABLE_HEIGHT);				//Tisch
 
 	painter.drawLine(*keeperBar);
 	painter.drawLine(*defenseBar);
