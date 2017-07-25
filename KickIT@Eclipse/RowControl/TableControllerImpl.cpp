@@ -4,41 +4,41 @@
 #include "RowControllerMidfield.hpp"
 #include "RowControllerOffense.hpp"
 
-TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense){
+TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
+		bool midfield, bool offense) {
 
 	keeperActive = keeper;
 	defenseActive = defense;
 	midfieldActive = midfield;
 	offenseActive = offense;
 
-
-	if(keeperActive){
+	if (keeperActive) {
 		//initiate connection to the keeper-driver
 		keeperControl = new RowControllerKeeper();
 	}
-	if(defenseActive){
+	if (defenseActive) {
 		//initiate connection to the defense-driver
 		defenseControl = new RowControllerDefense();
 	}
-	if(midfieldActive){
+	if (midfieldActive) {
 		//initiate connection to the midfield-driver
 		midfieldControl = new RowControllerMidfield();
 	}
-	if(offenseActive){
+	if (offenseActive) {
 		//initiate connection to the offense-driver
 		offenseControl = new RowControllerOffense();
 	}
 }
 
-void TableControllerImpl::run(){
+void TableControllerImpl::run() {
 
 }
 
-void TableControllerImpl::stop(){
+void TableControllerImpl::stop() {
 
 }
 
-void TableControllerImpl::setBallStatus(BallStatus* b){
+void TableControllerImpl::setBallStatus(BallStatus* b) {
 	currentBallStaus = *b;
 	delete b;
 }

@@ -3,11 +3,13 @@
 
 #include "InterfaceRowController.hpp"
 
-class RowControllerDefense : public InterfaceRowController{
+class RowControllerDefense: public InterfaceRowController {
 
 public:
 	RowControllerDefense();
-	void run(){};
+	void run() {
+	}
+	;
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_ */

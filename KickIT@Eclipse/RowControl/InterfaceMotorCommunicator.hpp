@@ -1,12 +1,12 @@
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
-class InterfaceMotorCommunicator{
-	public:
+class InterfaceMotorCommunicator {
+public:
 	virtual void moveTo(float y) = 0;
 	virtual void kick() = 0;
 
-	private:
+private:
 	virtual void homing() = 0;
 };
 

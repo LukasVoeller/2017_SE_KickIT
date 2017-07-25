@@ -9,64 +9,64 @@ int readCanPort;
 
 using namespace std;
 
-MotorCommunicatorImpl::MotorCommunicatorImpl(Row r){
+MotorCommunicatorImpl::MotorCommunicatorImpl(Row r) {
 	//TODO Verbindungsaufbau
 
-	switch(r){
-		case KEEPER:
-			cout << "Connecting to keeper driver...";
-			if(openPort("can0") == 0)
-				cout << " done!" << endl;
-			else
-				cout << " failed" << endl;
-			break;
-		case DEFENSE:
-			cout << "Connecting to defense driver...";
-			if(openPort("can0") == 0)	//Auch can0 wie bei Keeper?
-				cout << " done!" << endl;
-			else
-				cout << " failed" << endl;
-			break;
-		case MIDFIELD:
-			cout << "Connecting to midfield driver...";
-			if(openPort("can0") == 0)	//Auch can0 wie bei Keeper?
-				cout << " done!" << endl;
-			else
-				cout << " failed" << endl;
-			break;
-		case OFFENSE:
-			cout << "Connecting to offense driver...";
-			if(openPort("can0") == 0)	//Auch can0 wie bei Keeper?
-				cout << " done!" << endl;
-			else
-				cout << " failed" << endl;
-			break;
+	switch (r) {
+	case KEEPER:
+		cout << "Connecting to keeper driver...";
+		if (openPort("can0") == 0)
+			cout << " done!" << endl;
+		else
+			cout << " failed" << endl;
+		break;
+	case DEFENSE:
+		cout << "Connecting to defense driver...";
+		if (openPort("can0") == 0)	//Auch can0 wie bei Keeper?
+			cout << " done!" << endl;
+		else
+			cout << " failed" << endl;
+		break;
+	case MIDFIELD:
+		cout << "Connecting to midfield driver...";
+		if (openPort("can0") == 0)	//Auch can0 wie bei Keeper?
+			cout << " done!" << endl;
+		else
+			cout << " failed" << endl;
+		break;
+	case OFFENSE:
+		cout << "Connecting to offense driver...";
+		if (openPort("can0") == 0)	//Auch can0 wie bei Keeper?
+			cout << " done!" << endl;
+		else
+			cout << " failed" << endl;
+		break;
 	}
 }
 
-int MotorCommunicatorImpl::openPort(const char* port){
-    struct ifreq ifr;
-    struct sockaddr_can addr;
+int MotorCommunicatorImpl::openPort(const char* port) {
+	struct ifreq ifr;
+	struct sockaddr_can addr;
 
-    socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
-    
-    if (socket < 0)
+	socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+
+	if (socket < 0)
 		return -1;
 
-    addr.can_family = AF_CAN;
-    strcpy(ifr.ifr_name, port); //C++ functions!
-    
-    if (ioctl(socketId, SIOCGIFINDEX, &ifr) < 0)
-		return -1;
-    
-    addr.can_ifindex = ifr.ifr_ifindex;
-    fcntl(socketId, F_SETFL, O_NONBLOCK);
+	addr.can_family = AF_CAN;
+	strcpy(ifr.ifr_name, port); //C++ functions!
 
-    if (bind(socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0)
+	if (ioctl(socketId, SIOCGIFINDEX, &ifr) < 0)
 		return -1;
 
-    homing();
-    return 0;
+	addr.can_ifindex = ifr.ifr_ifindex;
+	fcntl(socketId, F_SETFL, O_NONBLOCK);
+
+	if (bind(socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0)
+		return -1;
+
+	homing();
+	return 0;
 }
 
 int MotorCommunicatorImpl::closePort() {
@@ -107,7 +107,9 @@ void MotorCommunicatorImpl::readPort() {
 	}
 }
 
-void MotorCommunicatorImpl::frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) {
+void MotorCommunicatorImpl::frameInit(int ID, int DLC, int Data_0, int Data_1,
+		int Data_2, int Data_3, int Data_4, int Data_5, int Data_6,
+		int Data_7) {
 	int ret = openPort("can0");
 	struct can_frame frame;
 
@@ -126,22 +128,20 @@ void MotorCommunicatorImpl::frameInit(int ID, int DLC, int Data_0, int Data_1, i
 	closePort();
 }
 
-void MotorCommunicatorImpl::homing(){
+void MotorCommunicatorImpl::homing() {
 	cout << "Homen... ";
 
-	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00,
-			0x00);	//Homen Command an RXPD0 1
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-			0x00);	//Sync
+	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);//Homen Command an RXPD0 1
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);//Sync
 	sleep(25);
 
 	cout << "Gehomed" << endl;
 }
 
-void MotorCommunicatorImpl::moveTo(float y){
+void MotorCommunicatorImpl::moveTo(float y) {
 
 }
 
-void MotorCommunicatorImpl::kick(){
+void MotorCommunicatorImpl::kick() {
 
 }

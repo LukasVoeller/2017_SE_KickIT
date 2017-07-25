@@ -2,6 +2,6 @@
 #include "MotorCommunicatorImpl.hpp"
 #include "../DataType/RowEnum.hpp"
 
-RowControllerMidfield::RowControllerMidfield(){
+RowControllerMidfield::RowControllerMidfield() {
 	mcomm = new MotorCommunicatorImpl(MIDFIELD);
 }
