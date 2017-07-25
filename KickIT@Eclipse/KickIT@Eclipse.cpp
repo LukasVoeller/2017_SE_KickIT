@@ -19,24 +19,24 @@ int main(int argc, char** argv) {
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
 #if MODE == 1
 
-    QApplication a(argc, argv);
-    VirtualKicker::init();
+	QApplication a(argc, argv);
+	VirtualKicker::init();
 
-    tableController = VirtualKicker::getMockTableController();
+	tableController = VirtualKicker::getMockTableController();
 
-    return a.exec();
+	return a.exec();
 
 #endif
 
 //Motor testing mode - Ball position is simulated by graphical interface
 #if MODE == 2
 
-    tableController = new TableControllerImpl(true,true,false,false);
+	tableController = new TableControllerImpl(true,true,false,false);
 
-    QApplication a(argc, argv);
-    VirtualKicker::init();
+	QApplication a(argc, argv);
+	VirtualKicker::init();
 
-    ballTracker = VirtualKicker::getMockBallTracker();
+	ballTracker = VirtualKicker::getMockBallTracker();
 
 #endif
 

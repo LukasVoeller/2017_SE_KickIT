@@ -2,12 +2,13 @@
 #define ROWCONTROL_ROWCONTROLLERKEEPER_HPP_
 #include "InterfaceRowController.hpp"
 
-
-class RowControllerKeeper : public InterfaceRowController{
+class RowControllerKeeper: public InterfaceRowController {
 
 public:
 	RowControllerKeeper();
-	void run(){};
+	void run() {
+	}
+	;
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERKEEPER_HPP_ */

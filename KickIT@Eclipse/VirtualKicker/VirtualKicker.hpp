@@ -4,30 +4,30 @@
 #include "VirtualKickerWindow.hpp"
 #include "TableControllerMock.hpp"
 
-class VirtualKicker{
+class VirtualKicker {
 
-	private:
-		static VirtualKickerWindow* vkw;
-		static TableControllerMock* tc;
-    
-    public:
-        static const int WINDOW_SIZE_X = 1024;
-        static const int WINDOW_SIZE_Y = 768;
+private:
+	static VirtualKickerWindow* vkw;
+	static TableControllerMock* tc;
 
-        static void init(){
-            vkw = new VirtualKickerWindow();
-            tc = new TableControllerMock(true, true, false, false);
-            
-            tc->setKickerWindow(vkw);
-            vkw->setTableController(tc);
-            
-            vkw->setFixedSize(WINDOW_SIZE_X,WINDOW_SIZE_Y);
-            vkw->show();
-        }
+public:
+	static const int WINDOW_SIZE_X = 1024;
+	static const int WINDOW_SIZE_Y = 768;
 
-        static TableControllerMock* getMockTableController(){
-            return tc;
-        }
+	static void init() {
+		vkw = new VirtualKickerWindow();
+		tc = new TableControllerMock(true, true, false, false);
+
+		tc->setKickerWindow(vkw);
+		vkw->setTableController(tc);
+
+		vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
+		vkw->show();
+	}
+
+	static TableControllerMock* getMockTableController() {
+		return tc;
+	}
 };
 
 VirtualKickerWindow* VirtualKicker::vkw;

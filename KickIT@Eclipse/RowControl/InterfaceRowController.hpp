@@ -3,7 +3,7 @@
 
 #include "InterfaceMotorCommunicator.hpp"
 
-class InterfaceRowController{
+class InterfaceRowController {
 protected:
 	InterfaceMotorCommunicator* mcomm;
 };

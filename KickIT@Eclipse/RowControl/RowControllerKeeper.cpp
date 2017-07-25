@@ -2,6 +2,6 @@
 #include "MotorCommunicatorImpl.hpp"
 #include "../DataType/RowEnum.hpp"
 
-RowControllerKeeper::RowControllerKeeper(){
+RowControllerKeeper::RowControllerKeeper() {
 	mcomm = new MotorCommunicatorImpl(KEEPER);
 }

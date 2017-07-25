@@ -2,6 +2,6 @@
 #include "MotorCommunicatorImpl.hpp"
 #include "../DataType/RowEnum.hpp"
 
-RowControllerDefense::RowControllerDefense(){
+RowControllerDefense::RowControllerDefense() {
 	mcomm = new MotorCommunicatorImpl(DEFENSE);
 }

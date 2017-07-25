@@ -2,11 +2,13 @@
 #define ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_
 #include "InterfaceRowController.hpp"
 
-class RowControllerMidfield : public InterfaceRowController{
+class RowControllerMidfield: public InterfaceRowController {
 
 public:
 	RowControllerMidfield();
-	void run(){};
+	void run() {
+	}
+	;
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_ */

@@ -5,7 +5,7 @@
 #include "InterfaceTableController.hpp"
 #include "../DataType/BallStatus.hpp"
 
-class TableControllerImpl : public InterfaceTableController{
+class TableControllerImpl: public InterfaceTableController {
 private:
 	BallStatus currentBallStaus;
 
