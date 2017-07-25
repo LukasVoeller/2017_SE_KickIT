@@ -6,6 +6,13 @@
 #include "../DataType/BallStatus.hpp"
 
 class TableControllerImpl: public InterfaceTableController {
+
+public:
+	TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense);
+	void setBallStatus(BallStatus* b);
+	void run();
+	void stop();
+
 private:
 	BallStatus currentBallStaus;
 
@@ -13,11 +20,6 @@ private:
 	InterfaceRowController* defenseControl;
 	InterfaceRowController* midfieldControl;
 	InterfaceRowController* offenseControl;
-public:
-	TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense);
-	void setBallStatus(BallStatus* b);
-	void run();
-	void stop();
 };
 
 #endif /* TABLECONTROLLERIMPL_HPP */

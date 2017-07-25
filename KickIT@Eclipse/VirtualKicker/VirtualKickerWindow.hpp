@@ -29,11 +29,14 @@ public:
 	static const int WINDOW_SIZE_X = 1024;
 	static const int WINDOW_SIZE_Y = 768;
 
+	//All dimension values in centimeter
+	static const int SCALE = 7;
 	static const int TABLE_MARGIN = 60;
-	//static const int TABLE_WIDTH = WINDOW_SIZE_X - 2*TABLE_MARGIN;
-	//static const int TABLE_HEIGHT = WINDOW_SIZE_Y - 2*TABLE_MARGIN;
-	static const double TABLE_HEIGHT = 68 * 7;
-	static const double TABLE_WIDTH = 111.5 * 7;
+	static const double TABLE_HEIGHT = 68 * SCALE;
+	static const double TABLE_WIDTH = 111.5 * SCALE;
+	static const double GOAL_SIZE = 21 * SCALE;
+	static const double GOAL_TO_KEEPER = 3.5 * SCALE;
+	static const double GOAL_TO_DEFENSE = 18.5 * SCALE;
 
 private:
 	InterfaceTableController* tc;

@@ -14,6 +14,14 @@ TableControllerMock::~TableControllerMock() {
 
 }
 
+void TableControllerMock::run() {
+
+}
+
+void TableControllerMock::stop() {
+
+}
+
 void TableControllerMock::setBallPos(float x, float y) {
 	updateBallStatus(x, y);
     float* positions = calculateRowPositions(window->TABLE_HEIGHT, &ballStatus,

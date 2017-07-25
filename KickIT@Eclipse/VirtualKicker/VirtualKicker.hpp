@@ -6,10 +6,6 @@
 
 class VirtualKicker {
 
-private:
-	static VirtualKickerWindow* vkw;
-	static TableControllerMock* tc;
-
 public:
 	static const int WINDOW_SIZE_X = 1024;
 	static const int WINDOW_SIZE_Y = 768;
@@ -28,6 +24,11 @@ public:
 	static TableControllerMock* getMockTableController() {
 		return tc;
 	}
+
+private:
+	static VirtualKickerWindow* vkw;
+	static TableControllerMock* tc;
+
 };
 
 VirtualKickerWindow* VirtualKicker::vkw;
