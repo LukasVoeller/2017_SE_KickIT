@@ -2,8 +2,8 @@
 #define BALLTRACKER_HPP_
 #include "../DataType/BallStatus.hpp"
 #include "../RowControl/InterfaceTableController.hpp"
-//#include <pylon/PylonIncludes.h>
-//#include <pylon/gige/BaslerGigEInstantCamera.h>
+#include <pylon/PylonIncludes.h>
+#include <pylon/gige/BaslerGigEInstantCamera.h>
 
 class BallTrackerInterface {
 public:

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="KickIT@Eclipse">
+  <eAnnotations xmi:id="_KW5eAcYmEd-dJYwkGUnvHA" source="http://www.topcased.org/reverse">
+    <details xmi:id="_RmM9UMYmEd-dJYwkGUnvHA" key="PROJECT_CHARSET" value="UTF-8"/>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="Use Case View">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Oug3IIBpEduoHLDxP0HEYA" name="Actors"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_R1l80IBpEduoHLDxP0HEYA" name="Analysis Classes"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_47DVYIBpEduoHLDxP0HEYA" name="Domain Classes"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="__ftVMIBpEduoHLDxP0HEYA" name="External Entities">
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_xkzEEIBqEduoHLDxP0HEYA" name="External Entities Dynamic Data Flow General view"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_eruFQIBqEduoHLDxP0HEYA" name="Data Flow General View"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gSuC0IBrEduoHLDxP0HEYA" name="MySystem">
+      <nestedClassifier xmi:type="uml:StateMachine" xmi:id="_uFnK8IBrEduoHLDxP0HEYA" name="MySystem Behavioural"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GPdf0IBsEduoHLDxP0HEYA" name="AUseCase">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_I859gIBsEduoHLDxP0HEYA" name="ASequenceDiagram"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4UHtsIBoEduoHLDxP0HEYA" name="Logical View">
+    <packagedElement xmi:type="uml:Package" xmi:id="_LLvlME0uEd-ONPwW9OyryA" name="Source Artefacts">
+      <packagedElement xmi:type="uml:Class" xmi:id="_YGZ8UHFJEeed2c4NCHmxsg" name="BallTrackerImpl" visibility="public">
+        <eAnnotations xmi:id="_YGfb4HFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_YGfb4XFJEeed2c4NCHmxsg" key="C_FILENAME" value="BallTracking/BallTrackerImpl.cpp"/>
+          <details xmi:id="_YHC1gHFJEeed2c4NCHmxsg" key="H_FILENAME" value="BallTracking/BallTrackerImpl.hpp"/>
+          <details xmi:id="_YHDckHFJEeed2c4NCHmxsg" key="IFNDEF" value="BALLTRACKERIMPL_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_YHW-kHFJEeed2c4NCHmxsg" name="BALLTRACKERIMPL_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_ajUG0HFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YWdxkHFJEeed2c4NCHmxsg" name="InterfaceBallTracker" visibility="public">
+        <eAnnotations xmi:id="_YWdxkXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_YWdxknFJEeed2c4NCHmxsg" key="H_FILENAME" value="BallTracking/InterfaceBallTracker.hpp"/>
+          <details xmi:id="_YWdxk3FJEeed2c4NCHmxsg" key="IFNDEF" value="BALLTRACKER_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_YW1lAHFJEeed2c4NCHmxsg" name="BALLTRACKER_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_aogI0HFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YWtpMHFJEeed2c4NCHmxsg" name="../DataType/BallStatus" visibility="public" client="_YWdxkHFJEeed2c4NCHmxsg" supplier="_YWsbEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YWuQQXFJEeed2c4NCHmxsg" name="../RowControl/InterfaceTableController" visibility="public" client="_YWdxkHFJEeed2c4NCHmxsg" supplier="_YWuQQHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YpATEHFJEeed2c4NCHmxsg" name="BallStatus" visibility="public">
+        <eAnnotations xmi:id="_YpATEXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_YpA6IHFJEeed2c4NCHmxsg" key="H_FILENAME" value="DataType/BallStatus.hpp"/>
+          <details xmi:id="_YpA6IXFJEeed2c4NCHmxsg" key="IFNDEF" value="BALLSTATUS_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_YpNucHFJEeed2c4NCHmxsg" name="BALLSTATUS_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jpkgsHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_YpFyoXFJEeed2c4NCHmxsg" name="Vec2" visibility="public" client="_YpATEHFJEeed2c4NCHmxsg" supplier="_Y1RNcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Yw648HFJEeed2c4NCHmxsg" name="RowEnum" visibility="public">
+        <eAnnotations xmi:id="_Yw7gAHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_Yw7gAXFJEeed2c4NCHmxsg" key="H_FILENAME" value="DataType/RowEnum.hpp"/>
+          <details xmi:id="_Yw7gAnFJEeed2c4NCHmxsg" key="IFNDEF" value="ROWENUM_HPP"/>
+        </eAnnotations>
+        <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_YxBmoHFJEeed2c4NCHmxsg" name="Row" visibility="public">
+          <ownedLiteral xmi:id="_h32rcHFNEeed2c4NCHmxsg" name="KEEPER"/>
+          <ownedLiteral xmi:id="_h32rcXFNEeed2c4NCHmxsg" name="DEFENSE"/>
+          <ownedLiteral xmi:id="_h32rcnFNEeed2c4NCHmxsg" name="MIDFIELD"/>
+          <ownedLiteral xmi:id="_h32rc3FNEeed2c4NCHmxsg" name="OFFENSE"/>
+        </nestedClassifier>
+        <ownedAttribute xmi:id="_YxEp9HFJEeed2c4NCHmxsg" name="ROWENUM_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_h32rdHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Y1RNcHFJEeed2c4NCHmxsg" name="Vec2" visibility="public">
+        <eAnnotations xmi:id="_Y1SbkHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_Y1SbkXFJEeed2c4NCHmxsg" key="H_FILENAME" value="DataType/Vec2.hpp"/>
+          <details xmi:id="_Y1SbknFJEeed2c4NCHmxsg" key="IFNDEF" value="VEC2_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_Y1fP4HFJEeed2c4NCHmxsg" name="VEC2_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jE004HFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Y1XUEXFJEeed2c4NCHmxsg" name="iostream" visibility="public" client="_Y1RNcHFJEeed2c4NCHmxsg" supplier="_Y1XUEHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_Y1XUEnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_Y1XUE3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Y1XUFXFJEeed2c4NCHmxsg" name="math" visibility="public" client="_Y1RNcHFJEeed2c4NCHmxsg" supplier="_Y1XUFHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_Y1X7IHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_Y1X7IXFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZgJ9gHFJEeed2c4NCHmxsg" name="KickIT@Eclipse" visibility="private">
+        <eAnnotations xmi:id="_ZgJ9gXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ZgJ9gnFJEeed2c4NCHmxsg" key="C_FILENAME" value="KickIT@Eclipse.cpp"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_ZgzdwHFJEeed2c4NCHmxsg" name="MODE" visibility="private" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_hIPMYHFNEeed2c4NCHmxsg" name="readOnlyValue" value="1"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Zg7ZkHFJEeed2c4NCHmxsg" name="main" visibility="private" specification="_ZhKqIHFJEeed2c4NCHmxsg">
+          <ownedParameter xmi:id="_hIQagHFNEeed2c4NCHmxsg" name="argc" type="_4IaaMDBmEeC3ksERX4P2Ow"/>
+          <ownedParameter xmi:id="_hIQagXFNEeed2c4NCHmxsg" name="argv" type="_ZhASEHFJEeed2c4NCHmxsg" direction="inout"/>
+          <ownedParameter xmi:id="_hIRBkHFNEeed2c4NCHmxsg" name="" type="_4IaaMDBmEeC3ksERX4P2Ow" direction="return"/>
+          <language>C</language>
+          <body>{
+
+	InterfaceTableController* tableController;
+	BallTrackerInterface* ballTracker;
+
+//Virtual mode - Ball tracking and table control is simulated by the virtual kicker
+#if MODE == 1
+
+	QApplication a(argc, argv);
+	VirtualKicker::init();
+
+	tableController = VirtualKicker::getMockTableController();
+
+	return a.exec();
+
+#endif
+
+//Motor testing mode - Ball position is simulated by graphical interface
+#if MODE == 2
+
+	tableController = new TableControllerImpl(true,true,false,false);
+
+	QApplication a(argc, argv);
+	VirtualKicker::init();
+
+	ballTracker = VirtualKicker::getMockBallTracker();
+
+#endif
+
+//Balltracking testing mode - Table is simulated by graphical interface
+#if MODE == 3
+
+#endif
+
+//Final mode - Ready to play!
+#if MODE == 4
+
+#endif
+}</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ZhKqIHFJEeed2c4NCHmxsg" name="main" visibility="private" method="_Zg7ZkHFJEeed2c4NCHmxsg">
+          <ownedParameter xmi:id="_ZhLRMHFJEeed2c4NCHmxsg" name="argc" type="_4IaaMDBmEeC3ksERX4P2Ow"/>
+          <ownedParameter xmi:id="_ZhLRMXFJEeed2c4NCHmxsg" name="argv" type="_ZhASEHFJEeed2c4NCHmxsg" direction="inout"/>
+          <ownedParameter xmi:id="_ZhL4QHFJEeed2c4NCHmxsg" name="" type="_4IaaMDBmEeC3ksERX4P2Ow" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgWx0XFJEeed2c4NCHmxsg" name="cstdlib" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgWx0HFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ZgWx0nFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ZgWx03FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgWx1XFJEeed2c4NCHmxsg" name="QApplication" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgWx1HFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ZgXY4HFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ZgXY4XFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgXY43FJEeed2c4NCHmxsg" name="VirtualKicker/TableControllerMock" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgXY4nFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ZgXY5HFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ZgXY5XFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgX_8XFJEeed2c4NCHmxsg" name="RowControl/InterfaceTableController" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgX_8HFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgYnAXFJEeed2c4NCHmxsg" name="BallTracking/InterfaceBallTracker" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgYnAHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgZOEXFJEeed2c4NCHmxsg" name="RowControl/TableControllerImpl" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgZOEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ZgZOFHFJEeed2c4NCHmxsg" name="VirtualKicker/VirtualKicker" visibility="private" client="_ZgJ9gHFJEeed2c4NCHmxsg" supplier="_ZgZOE3FJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aKiXQHFJEeed2c4NCHmxsg" name="InterfaceMotorCommunicator" visibility="public">
+        <eAnnotations xmi:id="_aKi-UHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aKi-UXFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/InterfaceMotorCommunicator.hpp"/>
+          <details xmi:id="_aKi-UnFJEeed2c4NCHmxsg" key="IFNDEF" value="INTERFACEMOTORCOMMUNICATOR_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_aKlakHFJEeed2c4NCHmxsg" name="INTERFACEMOTORCOMMUNICATOR_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jW7RgHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aKxAwHFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public">
+        <eAnnotations xmi:id="_aKxn0HFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aKxn0XFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/InterfaceRowController.hpp"/>
+          <details xmi:id="_aKxn0nFJEeed2c4NCHmxsg" key="IFNDEF" value="INTERFACEROWCONTROLLER_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_aK1SMHFJEeed2c4NCHmxsg" name="INTERFACEROWCONTROLLER_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_iEkRwXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aKyO4HFJEeed2c4NCHmxsg" name="InterfaceMotorCommunicator" visibility="public" client="_aKxAwHFJEeed2c4NCHmxsg" supplier="_aKiXQHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aOvh0HFJEeed2c4NCHmxsg" name="InterfaceTableController" visibility="public">
+        <eAnnotations xmi:id="_aOwI4HFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aOwI4XFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/InterfaceTableController.hpp"/>
+          <details xmi:id="_aOwI4nFJEeed2c4NCHmxsg" key="IFNDEF" value="INTERFACETABLECONTROLLER_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_aO2PgHFJEeed2c4NCHmxsg" name="INTERFACETABLECONTROLLER_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_gfr-oHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aOxXAHFJEeed2c4NCHmxsg" name="../DataType/BallStatus" visibility="public" client="_aOvh0HFJEeed2c4NCHmxsg" supplier="_YWsbEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aOx-EXFJEeed2c4NCHmxsg" name="../DataType/Vec2" visibility="public" client="_aOvh0HFJEeed2c4NCHmxsg" supplier="_aOx-EHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aOx-E3FJEeed2c4NCHmxsg" name="iostream" visibility="public" client="_aOvh0HFJEeed2c4NCHmxsg" supplier="_Y1XUEHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_aOx-FHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aOx-FXFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aaKusHFJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="public">
+        <eAnnotations xmi:id="_aaKusXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aaKusnFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/MotorCommunicatorImpl.cpp"/>
+          <details xmi:id="_ahamMHFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/MotorCommunicatorImpl.hpp"/>
+          <details xmi:id="_ahamMXFJEeed2c4NCHmxsg" key="IFNDEF" value="MOTORCOMMUNICATORIMPL_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_aab0cHFJEeed2c4NCHmxsg" name="soc" type="_4IaaMDBmEeC3ksERX4P2Ow"/>
+        <ownedAttribute xmi:id="_aacbgHFJEeed2c4NCHmxsg" name="readCanPort" type="_4IaaMDBmEeC3ksERX4P2Ow"/>
+        <ownedAttribute xmi:id="_ahiiAHFJEeed2c4NCHmxsg" name="MOTORCOMMUNICATORIMPL_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jk6DIXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aaNK8HFJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="private" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_aaKusHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aaNK8nFJEeed2c4NCHmxsg" name="iostream" visibility="private" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_Y1XUEHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_aaNK83FJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aaNK9HFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aaNK9nFJEeed2c4NCHmxsg" name="stdio" visibility="private" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_aaNK9XFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_aaNK93FJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aaNK-HFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aaNyAXFJEeed2c4NCHmxsg" name="cstring" visibility="private" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_aaNyAHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_aaNyAnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aaNyA3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aaNyBXFJEeed2c4NCHmxsg" name="unistd" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_aaNyBHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_aaNyBnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aaNyB3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:id="_ageyEHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/c/documentation">
+          <details xmi:id="_agfZIHFJEeed2c4NCHmxsg" key="C_INLINE_COMMENT_AFTER_DECLARATION" value="//Für write in sendPort"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahb0UXFJEeed2c4NCHmxsg" name="net/if" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahb0UHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahb0UnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahb0U3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahb0VXFJEeed2c4NCHmxsg" name="linux/can" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahb0VHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahb0VnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahb0V3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahb0WXFJEeed2c4NCHmxsg" name="sys/ioctl" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahb0WHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahb0WnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahcbYHFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahcbYnFJEeed2c4NCHmxsg" name="fcntl" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahcbYXFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahcbY3FJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahcbZHFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahcbZXFJEeed2c4NCHmxsg" name="InterfaceMotorCommunicator" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_aKiXQHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahdCcXFJEeed2c4NCHmxsg" name="../DataType/RowEnum" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahdCcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahdCdHFJEeed2c4NCHmxsg" name="sys/types" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahdCc3FJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahdCdXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahdCdnFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:id="_aiVMMHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/c/documentation">
+          <details xmi:id="_aiVMMXFJEeed2c4NCHmxsg" key="H_INLINE_COMMENT_AFTER_DECLARATION" value="//for sockets"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ahdCeHFJEeed2c4NCHmxsg" name="sys/socket" visibility="public" client="_aaKusHFJEeed2c4NCHmxsg" supplier="_ahdCd3FJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_ahdCeXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ahdCenFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+        <eAnnotations xmi:id="_aiVMMnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/c/documentation">
+          <details xmi:id="_aiVMM3FJEeed2c4NCHmxsg" key="H_INLINE_COMMENT_AFTER_DECLARATION" value="//for sockets"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ai3-wHFJEeed2c4NCHmxsg" name="RowControllerDefense" visibility="public">
+        <eAnnotations xmi:id="_ai3-wXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_ai3-wnFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/RowControllerDefense.cpp"/>
+          <details xmi:id="_aj22MHFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/RowControllerDefense.hpp"/>
+          <details xmi:id="_aj22MXFJEeed2c4NCHmxsg" key="IFNDEF" value="ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_aj5ScHFJEeed2c4NCHmxsg" name="ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_iEpKQXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ai5M4XFJEeed2c4NCHmxsg" name="RowControllerDefense" visibility="private" client="_ai3-wHFJEeed2c4NCHmxsg" supplier="_ai3-wHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ai5M43FJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="private" client="_ai3-wHFJEeed2c4NCHmxsg" supplier="_aaKusHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_ai5M5XFJEeed2c4NCHmxsg" name="../DataType/RowEnum" visibility="private" client="_ai3-wHFJEeed2c4NCHmxsg" supplier="_ahdCcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aj22MnFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public" client="_ai3-wHFJEeed2c4NCHmxsg" supplier="_aKxAwHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_akg9gHFJEeed2c4NCHmxsg" name="RowControllerKeeper" visibility="public">
+        <eAnnotations xmi:id="_akg9gXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_akhkkHFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/RowControllerKeeper.cpp"/>
+          <details xmi:id="_alyv4HFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/RowControllerKeeper.hpp"/>
+          <details xmi:id="_alyv4XFJEeed2c4NCHmxsg" key="IFNDEF" value="ROWCONTROL_ROWCONTROLLERKEEPER_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_al1MIHFJEeed2c4NCHmxsg" name="ROWCONTROL_ROWCONTROLLERKEEPER_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_iCyJEHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_akiLoXFJEeed2c4NCHmxsg" name="RowControllerKeeper" visibility="private" client="_akg9gHFJEeed2c4NCHmxsg" supplier="_akg9gHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_akiLo3FJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="private" client="_akg9gHFJEeed2c4NCHmxsg" supplier="_aaKusHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_akiLpXFJEeed2c4NCHmxsg" name="../DataType/RowEnum" visibility="private" client="_akg9gHFJEeed2c4NCHmxsg" supplier="_ahdCcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_alyv4nFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public" client="_akg9gHFJEeed2c4NCHmxsg" supplier="_aKxAwHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_amhIoHFJEeed2c4NCHmxsg" name="RowControllerMidfield" visibility="public">
+        <eAnnotations xmi:id="_amhIoXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_amhIonFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/RowControllerMidfield.cpp"/>
+          <details xmi:id="_any7AHFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/RowControllerMidfield.hpp"/>
+          <details xmi:id="_any7AXFJEeed2c4NCHmxsg" key="IFNDEF" value="ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_an0wMHFJEeed2c4NCHmxsg" name="ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_iGXokHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_amiWwXFJEeed2c4NCHmxsg" name="RowControllerMidfield" visibility="private" client="_amhIoHFJEeed2c4NCHmxsg" supplier="_amhIoHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_amvyIHFJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="private" client="_amhIoHFJEeed2c4NCHmxsg" supplier="_aaKusHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_amvyInFJEeed2c4NCHmxsg" name="../DataType/RowEnum" visibility="private" client="_amhIoHFJEeed2c4NCHmxsg" supplier="_ahdCcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_any7AnFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public" client="_amhIoHFJEeed2c4NCHmxsg" supplier="_aKxAwHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aokXEHFJEeed2c4NCHmxsg" name="RowControllerOffense" visibility="public">
+        <eAnnotations xmi:id="_aokXEXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_aokXEnFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/RowControllerOffense.cpp"/>
+          <details xmi:id="_aphZUHFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/RowControllerOffense.hpp"/>
+          <details xmi:id="_aphZUXFJEeed2c4NCHmxsg" key="IFNDEF" value="ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_apjOgHFJEeed2c4NCHmxsg" name="ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_iCsCcXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aok-IXFJEeed2c4NCHmxsg" name="RowControllerOffense" visibility="private" client="_aokXEHFJEeed2c4NCHmxsg" supplier="_aokXEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aollMXFJEeed2c4NCHmxsg" name="MotorCommunicatorImpl" visibility="private" client="_aokXEHFJEeed2c4NCHmxsg" supplier="_aaKusHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_aollM3FJEeed2c4NCHmxsg" name="../DataType/RowEnum" visibility="private" client="_aokXEHFJEeed2c4NCHmxsg" supplier="_ahdCcHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_apiAYHFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public" client="_aokXEHFJEeed2c4NCHmxsg" supplier="_aKxAwHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_atD1gHFJEeed2c4NCHmxsg" name="TableControllerImpl" visibility="public">
+        <eAnnotations xmi:id="_atD1gXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_atD1gnFJEeed2c4NCHmxsg" key="C_FILENAME" value="RowControl/TableControllerImpl.cpp"/>
+          <details xmi:id="_a1IMYHFJEeed2c4NCHmxsg" key="H_FILENAME" value="RowControl/TableControllerImpl.hpp"/>
+          <details xmi:id="_a1IMYXFJEeed2c4NCHmxsg" key="IFNDEF" value="TABLECONTROLLERIMPL_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_a1Md0HFJEeed2c4NCHmxsg" name="TABLECONTROLLERIMPL_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_h7X5gXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_atFDoXFJEeed2c4NCHmxsg" name="TableControllerImpl" visibility="private" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_atD1gHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_atFqsXFJEeed2c4NCHmxsg" name="RowControllerKeeper" visibility="private" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_akg9gHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_atFqs3FJEeed2c4NCHmxsg" name="RowControllerDefense" visibility="private" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_ai3-wHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_atFqtXFJEeed2c4NCHmxsg" name="RowControllerMidfield" visibility="private" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_amhIoHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_atFqt3FJEeed2c4NCHmxsg" name="RowControllerOffense" visibility="private" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_aokXEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a1JagHFJEeed2c4NCHmxsg" name="InterfaceRowController" visibility="public" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_aKxAwHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a1KBkHFJEeed2c4NCHmxsg" name="InterfaceTableController" visibility="public" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_aOvh0HFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_a1KBknFJEeed2c4NCHmxsg" name="../DataType/BallStatus" visibility="public" client="_atD1gHFJEeed2c4NCHmxsg" supplier="_YWsbEHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_bPIn0HFJEeed2c4NCHmxsg" name="TableControllerMock" visibility="public">
+        <eAnnotations xmi:id="_bPIn0XFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_bPIn0nFJEeed2c4NCHmxsg" key="C_FILENAME" value="VirtualKicker/TableControllerMock.cpp"/>
+          <details xmi:id="_b3pZUHFJEeed2c4NCHmxsg" key="H_FILENAME" value="VirtualKicker/TableControllerMock.hpp"/>
+          <details xmi:id="_b3pZUXFJEeed2c4NCHmxsg" key="IFNDEF" value="TABLECONTROLLERMOCK_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_b3x8MHFJEeed2c4NCHmxsg" name="TABLECONTROLLERMOCK_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jPyHsHFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_bPP8kXFJEeed2c4NCHmxsg" name="TableControllerMock" visibility="private" client="_bPIn0HFJEeed2c4NCHmxsg" supplier="_bPIn0HFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_bPQjoHFJEeed2c4NCHmxsg" name="iostream" visibility="private" client="_bPIn0HFJEeed2c4NCHmxsg" supplier="_Y1XUEHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_bPQjoXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_bPQjonFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_b3rOgHFJEeed2c4NCHmxsg" name="../RowControl/InterfaceTableController" visibility="public" client="_bPIn0HFJEeed2c4NCHmxsg" supplier="_YWuQQHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_b3rOg3FJEeed2c4NCHmxsg" name="VirtualKickerWindow" visibility="public" client="_bPIn0HFJEeed2c4NCHmxsg" supplier="_chDisHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_b3rOhXFJEeed2c4NCHmxsg" name="../DataType/Vec2" visibility="public" client="_bPIn0HFJEeed2c4NCHmxsg" supplier="_aOx-EHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_cBlYcHFJEeed2c4NCHmxsg" name="VirtualKicker" visibility="public">
+        <eAnnotations xmi:id="_cBlYcXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_cBlYcnFJEeed2c4NCHmxsg" key="H_FILENAME" value="VirtualKicker/VirtualKicker.hpp"/>
+          <details xmi:id="_cBl_gHFJEeed2c4NCHmxsg" key="IFNDEF" value="VIRTUALKICKER_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_cBvwgHFJEeed2c4NCHmxsg" name="VIRTUALKICKER_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_hxXo8HFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_cBnNoHFJEeed2c4NCHmxsg" name="VirtualKickerWindow" visibility="public" client="_cBlYcHFJEeed2c4NCHmxsg" supplier="_chDisHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_cBnNonFJEeed2c4NCHmxsg" name="TableControllerMock" visibility="public" client="_cBlYcHFJEeed2c4NCHmxsg" supplier="_bPIn0HFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_chDisHFJEeed2c4NCHmxsg" name="VirtualKickerWindow" visibility="public">
+        <eAnnotations xmi:id="_chEJwHFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_chEJwXFJEeed2c4NCHmxsg" key="C_FILENAME" value="VirtualKicker/VirtualKickerWindow.cpp"/>
+          <details xmi:id="_dFV7gHFJEeed2c4NCHmxsg" key="H_FILENAME" value="VirtualKicker/VirtualKickerWindow.hpp"/>
+          <details xmi:id="_dFWikHFJEeed2c4NCHmxsg" key="IFNDEF" value="VIRTUALKICKERWINDOW_HPP"/>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_dFd3UHFJEeed2c4NCHmxsg" name="VIRTUALKICKERWINDOW_HPP" visibility="public" type="_YHMmgHFJEeed2c4NCHmxsg">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_jcr7QXFNEeed2c4NCHmxsg" name="readOnlyValue" value=""/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_chJpUXFJEeed2c4NCHmxsg" name="VirtualKickerWindow" visibility="private" client="_chDisHFJEeed2c4NCHmxsg" supplier="_chDisHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_chKQYHFJEeed2c4NCHmxsg" name="../DataType/Vec2" visibility="private" client="_chDisHFJEeed2c4NCHmxsg" supplier="_aOx-EHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFXwsXFJEeed2c4NCHmxsg" name="Qt" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_dFXwsHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_dFXwsnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_dFXws3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFXwtXFJEeed2c4NCHmxsg" name="QtGui" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_dFXwtHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_dFXwtnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_dFXwt3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFYXwXFJEeed2c4NCHmxsg" name="vector" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_dFYXwHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_dFYXwnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_dFYXw3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFYXxXFJEeed2c4NCHmxsg" name="QWidget" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_dFYXxHFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_dFYXxnFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_dFYXx3FJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFYXyHFJEeed2c4NCHmxsg" name="cstdlib" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_ZgWx0HFJEeed2c4NCHmxsg">
+        <eAnnotations xmi:id="_dFYXyXFJEeed2c4NCHmxsg" source="http://www.eclipse.org/umlgen/annotation/c">
+          <details xmi:id="_dFYXynFJEeed2c4NCHmxsg" key="STD_LIBRARY" value="true"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dFY-0HFJEeed2c4NCHmxsg" name="../RowControl/InterfaceTableController" visibility="public" client="_chDisHFJEeed2c4NCHmxsg" supplier="_YWuQQHFJEeed2c4NCHmxsg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Utn6QWmtEd-Hi4dLzjZ7BQ" name="Types">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_umMdEDBmEeC3ksERX4P2Ow" name="void"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1V1k4DBmEeC3ksERX4P2Ow" name="char"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_4IaaMDBmEeC3ksERX4P2Ow" name="int"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-Gwn8DBmEeC3ksERX4P2Ow" name="short"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_8yzckThEEeCCiOmwUXA8rg" name="long"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-l81MDhEEeCCiOmwUXA8rg" name="double"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AKRHoDhFEeCCiOmwUXA8rg" name="float"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_YHMmgHFJEeed2c4NCHmxsg" name="Macro" visibility="public"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ZhASEHFJEeed2c4NCHmxsg" name="char**" visibility="public" redefinedClassifier="_ZhA5IHFJEeed2c4NCHmxsg"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ZhA5IHFJEeed2c4NCHmxsg" name="char*" visibility="public" redefinedClassifier="_1V1k4DBmEeC3ksERX4P2Ow"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_WDwmwGmtEd-Hi4dLzjZ7BQ" name="Libs">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YWsbEHFJEeed2c4NCHmxsg" name="../DataType/BallStatus"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_YWuQQHFJEeed2c4NCHmxsg" name="../RowControl/InterfaceTableController"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Y1XUEHFJEeed2c4NCHmxsg" name="iostream"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Y1XUFHFJEeed2c4NCHmxsg" name="math"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgWx0HFJEeed2c4NCHmxsg" name="cstdlib"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgWx1HFJEeed2c4NCHmxsg" name="QApplication"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgXY4nFJEeed2c4NCHmxsg" name="VirtualKicker/TableControllerMock"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgX_8HFJEeed2c4NCHmxsg" name="RowControl/InterfaceTableController"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgYnAHFJEeed2c4NCHmxsg" name="BallTracking/InterfaceBallTracker"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgZOEHFJEeed2c4NCHmxsg" name="RowControl/TableControllerImpl"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ZgZOE3FJEeed2c4NCHmxsg" name="VirtualKicker/VirtualKicker"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aOx-EHFJEeed2c4NCHmxsg" name="../DataType/Vec2"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aaNK9XFJEeed2c4NCHmxsg" name="stdio"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aaNyAHFJEeed2c4NCHmxsg" name="cstring"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_aaNyBHFJEeed2c4NCHmxsg" name="unistd"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahb0UHFJEeed2c4NCHmxsg" name="net/if"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahb0VHFJEeed2c4NCHmxsg" name="linux/can"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahb0WHFJEeed2c4NCHmxsg" name="sys/ioctl"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahcbYXFJEeed2c4NCHmxsg" name="fcntl"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahdCcHFJEeed2c4NCHmxsg" name="../DataType/RowEnum"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahdCc3FJEeed2c4NCHmxsg" name="sys/types"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ahdCd3FJEeed2c4NCHmxsg" name="sys/socket"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dFXwsHFJEeed2c4NCHmxsg" name="Qt"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dFXwtHFJEeed2c4NCHmxsg" name="QtGui"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dFYXwHFJEeed2c4NCHmxsg" name="vector"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dFYXxHFJEeed2c4NCHmxsg" name="QWidget"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9yv5kIBoEduoHLDxP0HEYA" name="Component View">
+    <packagedElement xmi:type="uml:Component" xmi:id="_P8KOQNCzEdukztvu02l7OQ" name="AComponent Diagram by process"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-mdtwNCyEdukztvu02l7OQ" name="Deployment View"/>
+</uml:Model>
