@@ -29,6 +29,7 @@ private:
 			int Data_3, int Data_4, int Data_5, int Data_6, int Data_7);//Parameter?
 
 	void homing();
+	void driverInit();
 };
 
 #endif /* MOTORCOMMUNICATOR_HPP */

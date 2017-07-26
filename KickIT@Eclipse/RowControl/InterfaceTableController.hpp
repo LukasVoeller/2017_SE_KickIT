@@ -20,22 +20,26 @@ protected:
 			Vec2* midfieldPositionalVector = 0,
 			Vec2* offensePositionalVector = 0){
 
-    	Vec2* rowDirectionalVector = new Vec2(0,1);
-    	rowDirectionalVector->normalize();
+    	Vec2 rowDirectionalVector(0,-1);
+    	rowDirectionalVector.normalize();
     	b->movement.normalize();
 
-		unsigned int arraySize = keeper ? 1 : 0 + defense ? 1 :
-									0 + midfield ? 1 : 0 + offense ? 1 : 0;
-		float* result = new float[arraySize];
+		float* result = new float[keeper ? 1 : 0 + defense ? 1 : 0 + midfield ? 1 : 0 + offense ? 1 : 0];
 		if (keeper) {
 
-    		if(b->movement.cross(*rowDirectionalVector)!=0){
-    			float factor = ( (*keeperPositionalVector - b->movement).cross(*rowDirectionalVector) ) / b->movement.cross(*rowDirectionalVector);
+			float cross = b->movement.cross(rowDirectionalVector);
+    		if(cross!=0){
 
+    			float factor = ( (*keeperPositionalVector - b->movement).cross(rowDirectionalVector) ) / cross;
 				result[0] = (b->position + b->movement * (-factor)).y;
 
+    			//Vec2 C(rowDirectionalVector-b->position);
+    			//result[0] = (rowDirectionalVector.x*C.y - rowDirectionalVector.y*C.x) / cross;
+
+
 			} else {
-				result[0] = b->position.x;
+				//std::cout << "no intersection" << std::endl;
+				result[0] = b->position.y;
 			}
 		}
 		if (defense) {
@@ -51,7 +55,6 @@ protected:
 		}
 
     	//TODO speicherlecks
-    	delete rowDirectionalVector;
     	delete keeperPositionalVector;
 
 

@@ -4,8 +4,6 @@
 #include <cstring>
 #include <unistd.h>		//For write in sendPort
 
-int soc;
-int readCanPort;
 
 using namespace std;
 
@@ -13,7 +11,8 @@ MotorCommunicatorImpl::MotorCommunicatorImpl(Row r):socketId(0) {
 	switch (r) {
 	case KEEPER:
 		port = "can0";
-		homing();
+		driverInit();
+		//homing();
 		break;
 	default:
 		cout << "not implemented" << endl;
@@ -60,12 +59,12 @@ int MotorCommunicatorImpl::openPort() {
 }
 
 int MotorCommunicatorImpl::closePort() {
-	close(soc);
+	close(socketId);
 	return 0;
 }
 
 int MotorCommunicatorImpl::sendPort(struct can_frame *frame) {
-	int retval = write(soc, frame, sizeof(struct can_frame));
+	int retval = write(socketId, frame, sizeof(struct can_frame));
 	if (retval != sizeof(struct can_frame))
 		return -1;
 	return 0;
@@ -102,20 +101,19 @@ void MotorCommunicatorImpl::frameInit(int ID, int DLC, int Data_0, int Data_1,
 		int Data_2, int Data_3, int Data_4, int Data_5, int Data_6,
 		int Data_7) {
 
+	openPort();
 	struct can_frame frame;
-
-	frame.can_id = ID; 		//COB ID 200 für RxPDO1 + Can ID 1
-	frame.can_dlc = DLC; 	//Datacount
-	frame.data[0] = Data_0; //Data
-	frame.data[1] = Data_1;
-	frame.data[2] = Data_2;
+	frame.can_id = ID; //  COB ID 200 für RxPDO1 + Can ID 1
+	frame.can_dlc = DLC; // Datenanzahl
+	frame.data[0] = Data_0; // Daten
+	frame.data[1] = Data_1; //Daten
+	frame.data[2] = Data_2; //..
 	frame.data[3] = Data_3;
 	frame.data[4] = Data_4;
 	frame.data[5] = Data_5;
 	frame.data[6] = Data_6;
 	frame.data[7] = Data_7;
 	sendPort(&frame);
-
 	closePort();
 
 }
@@ -128,4 +126,30 @@ void MotorCommunicatorImpl::homing() {
 	sleep(25);
 
 	cout << "Gehomed" << endl;
+}
+
+void MotorCommunicatorImpl::driverInit() {
+
+	cout << "Reseten" << endl;
+	frameInit(0x601, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); // Reset Command
+	sleep(20);
+	cout << "Operational" << endl;
+	frameInit(0x00, 0x2, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	sleep(2);
+	cout << "ready to switch on" << endl;
+	frameInit(0x201, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	sleep(2);
+	cout << "switch on" << endl;
+	frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+	sleep(2);
+	cout << "homen: " << endl;
+	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Homen Command an RXPD0 1
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+	sleep(25);
+	cout << "gehomed" << endl;
+	frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+
 }

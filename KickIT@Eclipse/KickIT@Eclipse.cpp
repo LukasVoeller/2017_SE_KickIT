@@ -9,7 +9,7 @@
 #include "RowControl/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 3
+#define MODE 1
 
 int main(int argc, char** argv) {
 
