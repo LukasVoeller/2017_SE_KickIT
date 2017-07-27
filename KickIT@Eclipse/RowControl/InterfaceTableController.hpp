@@ -13,29 +13,30 @@ public:
 	virtual void stop() = 0;
 
 protected:
-    float* calculateRowPositions(float tableHeight, BallStatus* b,
-    		bool keeper, bool defense, bool midfield, bool offense, float yOffset=0, float dDist=0, float mDist = 0, float oDist = 0,
-			Vec2* keeperPositionalVector = 0,
-			Vec2* defensePositionalVector = 0,
-			Vec2* midfieldPositionalVector = 0,
-			Vec2* offensePositionalVector = 0){
+	float* calculateRowPositions(float tableHeight, BallStatus* b, bool keeper,
+			bool defense, bool midfield, bool offense, float yOffset = 0,
+			float dDist = 0, float mDist = 0, float oDist = 0,
+			Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
+			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =
+					0) {
 
-    	Vec2 rowDirectionalVector(0,-1);
-    	rowDirectionalVector.normalize();
-    	b->movement.normalize();
+		Vec2 rowDirectionalVector(0, -1);
+		rowDirectionalVector.normalize();
+		b->movement.normalize();
 
-		float* result = new float[keeper ? 1 : 0 + defense ? 1 : 0 + midfield ? 1 : 0 + offense ? 1 : 0];
+		float* result = new float[keeper ? 1 : 0 + defense ? 1 :
+									0 + midfield ? 1 : 0 + offense ? 1 : 0];
 		if (keeper) {
 
 			float cross = b->movement.cross(rowDirectionalVector);
-    		if(cross!=0){
+			if (cross != 0) {
 
-    			float factor = ( (*keeperPositionalVector - b->movement).cross(rowDirectionalVector) ) / cross;
+				float factor = ((*keeperPositionalVector - b->movement).cross(
+						rowDirectionalVector)) / cross;
 				result[0] = (b->position + b->movement * (-factor)).y;
 
-    			//Vec2 C(rowDirectionalVector-b->position);
-    			//result[0] = (rowDirectionalVector.x*C.y - rowDirectionalVector.y*C.x) / cross;
-
+				//Vec2 C(rowDirectionalVector-b->position);
+				//result[0] = (rowDirectionalVector.x*C.y - rowDirectionalVector.y*C.x) / cross;
 
 			} else {
 				//std::cout << "No intersection" << std::endl;
@@ -54,9 +55,8 @@ protected:
 			result[1] = pos;
 		}
 
-    	//TODO Speicherlecks
-    	delete keeperPositionalVector;
-
+		//TODO Speicherlecks
+		delete keeperPositionalVector;
 
 		return result;
 	}

@@ -30,7 +30,7 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 	}
 }
 
-void TableControllerImpl::setBallPos(float x, float y){
+void TableControllerImpl::setBallPos(float x, float y) {
 
 }
 

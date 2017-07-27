@@ -3,7 +3,7 @@
 #include "../DataType/RowEnum.hpp"
 
 RowControllerDefense::RowControllerDefense() {
-	mcomm = new MotorCommunicatorImpl(DEFENSE);
+	mcomm = new MotorComRS01(DEFENSE);
 }
 
 void RowControllerDefense::run() {

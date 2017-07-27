@@ -3,7 +3,7 @@
 #include "../DataType/RowEnum.hpp"
 
 RowControllerKeeper::RowControllerKeeper() {
-	mcomm = new MotorCommunicatorImpl(KEEPER);
+	mcomm = new MotorComPS01(KEEPER);
 }
 
 void RowControllerKeeper::run() {
