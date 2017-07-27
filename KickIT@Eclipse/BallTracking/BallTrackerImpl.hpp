@@ -1,24 +1,19 @@
 #ifndef BALLTRACKERIMPL_HPP
 #define BALLTRACKERIMPL_HPP
 
+#include "../DataType/BallStatus.hpp"
+#include "InterfaceBallTracker.hpp".hpp"
+
 class BallTrackerImpl: public BallTrackerInterface {
 
 public:
-	virtual BallStatus* getBallStatus() {
-		return BallStatus;
-	}
+	BallStatus* getBallStatus();
+	void startTracking();
+	void stopTracking();
+	~BallTrackerImpl();
 
-	virtual void startTracking() {
-		//CGrabResultPtr ptrGrabResult;
-	}
-
-	virtual void stopTracking() {
-
-	}
-
-	virtual ~BallTrackerImpl() {
-
-	}
+private:
+	void getCameraSettings();
 
 };
 

@@ -1,9 +1,15 @@
-#ifndef BALLTRACKER_HPP_
-#define BALLTRACKER_HPP_
+#ifndef BALLTRACKERINTERFACE_HPP_
+#define BALLTRACKERINTERFACE_HPP_
+
 #include "../DataType/BallStatus.hpp"
 #include "../RowControl/InterfaceTableController.hpp"
 #include <pylon/PylonIncludes.h>
 #include <pylon/gige/BaslerGigEInstantCamera.h>
+#include <opencv2/opencv.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/video/video.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 class BallTrackerInterface {
 public:
