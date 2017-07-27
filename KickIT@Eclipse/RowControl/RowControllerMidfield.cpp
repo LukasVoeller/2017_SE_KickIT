@@ -1,5 +1,5 @@
+#include <RowControl/MotorCom_Impl_PS01.hpp>
 #include "RowControllerMidfield.hpp"
-#include "MotorCommunicatorImpl.hpp"
 #include "../DataType/RowEnum.hpp"
 
 RowControllerMidfield::RowControllerMidfield() {

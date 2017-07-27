@@ -38,13 +38,13 @@ protected:
 
 
 			} else {
-				//std::cout << "no intersection" << std::endl;
+				//std::cout << "No intersection" << std::endl;
 				result[0] = b->position.y;
 			}
 		}
 		if (defense) {
 
-			//TODO aehnliche berechnung des schnittpunktes wie beim keeper
+			//TODO Aehnliche berechnung des schnittpunktes wie beim keeper
 
 			float pos = 0;
 			if (b->position.y < (tableHeight / 2 + yOffset))
@@ -54,7 +54,7 @@ protected:
 			result[1] = pos;
 		}
 
-    	//TODO speicherlecks
+    	//TODO Speicherlecks
     	delete keeperPositionalVector;
 
 

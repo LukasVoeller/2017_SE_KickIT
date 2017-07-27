@@ -4,6 +4,10 @@
 #include "InterfaceMotorCommunicator.hpp"
 
 class InterfaceRowController {
+public:
+
+private:
+
 protected:
 	InterfaceMotorCommunicator* mcomm;
 };

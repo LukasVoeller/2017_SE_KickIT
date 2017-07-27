@@ -13,7 +13,8 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/InterfaceBallTracker.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
-           RowControl/MotorCommunicatorImpl.hpp \
+           RowControl/MotorCom_Impl_PS01.hpp \
+	   RowControl/MotorCom_Impl_RS01.hpp \
            RowControl/InterfaceMotorCommunicator.hpp \
            RowControl/RowControllerDefense.hpp \
            RowControl/InterfaceRowController.hpp \
@@ -28,7 +29,8 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            DataType/RowEnum.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
-           RowControl/MotorCommunicatorImpl.cpp \
+	   RowControl/MotorCom_Impl_PS01.cpp \
+	   RowControl/MotorCom_Impl_RS01.cpp \
            RowControl/RowControllerDefense.cpp \
            RowControl/RowControllerKeeper.cpp \
            RowControl/RowControllerMidfield.cpp \

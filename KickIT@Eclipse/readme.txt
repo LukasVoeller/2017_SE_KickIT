@@ -3,7 +3,8 @@ Version: Neon.3 Release (4.6.3)
 
 OHNE QT Plugin
 
-
+Motor Nr1. Klein ohne Rotation 	-> PS01
+Motor Nr2. Groß mit Rotation 	-> RS01
 
 - bauen des projektes sollte ohne weiteres funktionieren
 - wenn man neue dateien erstellt, müssen diese in der KickIT@Eclipse.pro datei mit eingetragen werden
@@ -14,7 +15,6 @@ OHNE QT Plugin
 		TARGET = KickIT@Eclipse
 		INCLUDEPATH += .
 		CONFIG += qt debug
-
 
 	# danach wird mit dem befehl "qmake -o Makefile KickIT@Eclipse.pro" das makefile aktualisiert
 	# danach kann eclipse das projekt wieder bauen

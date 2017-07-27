@@ -1,5 +1,5 @@
+#include <RowControl/MotorCom_Impl_PS01.hpp>
 #include "RowControllerOffense.hpp"
-#include "MotorCommunicatorImpl.hpp"
 #include "../DataType/RowEnum.hpp"
 
 RowControllerOffense::RowControllerOffense() {
