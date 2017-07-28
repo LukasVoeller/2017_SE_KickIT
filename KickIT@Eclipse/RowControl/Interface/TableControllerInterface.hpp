@@ -5,7 +5,7 @@
 #include "../DataType/Vec2.hpp"
 #include <iostream>
 
-class InterfaceTableController {
+class TableControllerInterface {
 public:
 	//virtual ~InterfaceTableController(); //Warning without destructor
 	virtual void setBallPos(float x, float y) = 0;

@@ -1,8 +1,8 @@
 #ifndef ROWCONTROL_ROWCONTROLLERKEEPER_HPP_
 #define ROWCONTROL_ROWCONTROLLERKEEPER_HPP_
-#include "InterfaceRowController.hpp"
+#include "../Interface/RowControllerInterface.hpp"
 
-class RowControllerKeeper: public InterfaceRowController {
+class RowControllerKeeper: public RowControllerInterface {
 
 public:
 	RowControllerKeeper();

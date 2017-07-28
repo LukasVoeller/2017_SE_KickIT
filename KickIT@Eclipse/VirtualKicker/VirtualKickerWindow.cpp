@@ -70,7 +70,7 @@ void VirtualKickerWindow::setDefense(float pos) {
 	repaint();
 }
 
-void VirtualKickerWindow::setTableController(InterfaceTableController* t) {
+void VirtualKickerWindow::setTableController(TableControllerInterface* t) {
 	tc = t;
 }
 

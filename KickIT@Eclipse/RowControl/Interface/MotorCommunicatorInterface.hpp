@@ -1,7 +1,7 @@
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
-class InterfaceMotorCommunicator {
+class MotorCommunicatorInterface {
 public:
 	virtual void moveTo(float y) = 0;	//Redundant?
 	virtual void kick() = 0;			//Redundant?
@@ -22,6 +22,7 @@ private:
 
 protected:
 	char* port;		//Redundant?
+	//TODO Socket_id
 };
 
 #endif /* INTERFACEMOTORCOMMUNICATOR_HPP */

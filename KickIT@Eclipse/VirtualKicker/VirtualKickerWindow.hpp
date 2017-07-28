@@ -7,7 +7,7 @@
 #include <QWidget>
 #include <cstdlib>
 
-#include "../RowControl/InterfaceTableController.hpp"
+#include "../RowControl/Interface/TableControllerInterface.hpp"
 
 class VirtualKickerWindow: public QWidget {
 
@@ -20,7 +20,7 @@ public:
 
 	void setKeeper(float pos);
 	void setDefense(float pos);
-	void setTableController(InterfaceTableController* t);
+	void setTableController(TableControllerInterface* t);
 
 	Vec2* getKeeperPositionalVector();
 	Vec2* getDefensePositionalVector();
@@ -39,7 +39,7 @@ public:
 	static const double GOAL_TO_DEFENSE = 18.5 * SCALE;
 
 private:
-	InterfaceTableController* tc;
+	TableControllerInterface* tc;
 
 	QPoint lastAdded;
 	QPoint* topLeft;

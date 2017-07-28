@@ -6,15 +6,15 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "InterfaceMotorCommunicator.hpp"
 #include "../DataType/RowEnum.hpp"
 
 #include <sys/types.h> 	//For sockets
 #include <sys/socket.h> //For sockets
+#include "../Interface/MotorCommunicatorInterface.hpp"
 
-class MotorComRS01: public InterfaceMotorCommunicator {
+class MotorComRS01Impl: public MotorCommunicatorInterface {
 public:
-	MotorComRS01(Row r);
+	MotorComRS01Impl(Row r);
 	void moveTo(float y);
 	void kick();
 

@@ -23,9 +23,9 @@ public:
 		return tcm;
 	}
 
-	static TableControllerImpl* getTableController(bool keeper, bool defense, bool midfield, bool offense) {
+	static TableControllerImpl* getTableController() {
 		vkw = new VirtualKickerWindow();
-		tci = new TableControllerImpl(keeper, defense, midfield, offense);
+		tci = new TableControllerImpl(true, true, false, false);
 
 		vkw->setTableController(tci);
 

@@ -2,18 +2,18 @@
 #include <QApplication>
 
 #include <VirtualKicker/TableControllerMock.hpp>
-#include <RowControl/InterfaceTableController.hpp>
+#include <RowControl/Interface/TableControllerInterface.hpp>
 
-#include "RowControl/InterfaceTableController.hpp"
+#include "RowControl/Interface/TableControllerInterface.hpp"
 #include "BallTracking/InterfaceBallTracker.hpp"
-#include "RowControl/TableControllerImpl.hpp"
+#include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 1
+#define MODE 2
 
 int main(int argc, char** argv) {
 
-	InterfaceTableController* tableController;
+	TableControllerInterface* tableController;
 	BallTrackerInterface* ballTracker;
 
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 
 	QApplication a(argc, argv);
 
-	tableController = VirtualKicker::getTableController(true, false, false, false);
+	tableController = VirtualKicker::getTableController();
 
 	return a.exec();
 

@@ -1,11 +1,11 @@
 #ifndef TABLECONTROLLERIMPL_HPP
 #define TABLECONTROLLERIMPL_HPP
 
-#include "InterfaceRowController.hpp"
-#include "InterfaceTableController.hpp"
 #include "../DataType/BallStatus.hpp"
+#include "../Interface/RowControllerInterface.hpp"
+#include "../Interface/TableControllerInterface.hpp"
 
-class TableControllerImpl: public InterfaceTableController {
+class TableControllerImpl: public TableControllerInterface {
 
 public:
 	TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense);
@@ -16,10 +16,10 @@ public:
 private:
 	BallStatus currentBallStaus;
 
-	InterfaceRowController* keeperControl;
-	InterfaceRowController* defenseControl;
-	InterfaceRowController* midfieldControl;
-	InterfaceRowController* offenseControl;
+	RowControllerInterface* keeperControl;
+	RowControllerInterface* defenseControl;
+	RowControllerInterface* midfieldControl;
+	RowControllerInterface* offenseControl;
 };
 
 #endif /* TABLECONTROLLERIMPL_HPP */

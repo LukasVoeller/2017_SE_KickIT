@@ -1,8 +1,8 @@
 #ifndef ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_
 #define ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_
-#include "InterfaceRowController.hpp"
+#include "../Interface/RowControllerInterface.hpp"
 
-class RowControllerMidfield: public InterfaceRowController {
+class RowControllerMidfield: public RowControllerInterface {
 
 public:
 	RowControllerMidfield();

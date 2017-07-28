@@ -1,15 +1,15 @@
 #ifndef INTERFACEROWCONTROLLER_HPP
 #define INTERFACEROWCONTROLLER_HPP
 
-#include "InterfaceMotorCommunicator.hpp"
+#include "MotorCommunicatorInterface.hpp"
 
-class InterfaceRowController {
+class RowControllerInterface {
 public:
 
 private:
 
 protected:
-	InterfaceMotorCommunicator* mcomm;
+	MotorCommunicatorInterface* mcomm;
 };
 
 #endif /* INTERFACEROWCONTROLLER_HPP */

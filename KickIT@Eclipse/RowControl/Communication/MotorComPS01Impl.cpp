@@ -1,12 +1,12 @@
-#include <RowControl/MotorCom_Impl_PS01.hpp>
 #include <iostream>
 #include <stdio.h>
 #include <cstring>
 #include <unistd.h>		//For write in sendPort
+#include "MotorComPS01Impl.hpp"
 
 using namespace std;
 
-MotorComPS01::MotorComPS01(Row r) :
+MotorComPS01Impl::MotorComPS01Impl(Row r) :
 		m_SocketId(0) {
 	switch (r) {
 	case KEEPER:
@@ -20,15 +20,15 @@ MotorComPS01::MotorComPS01(Row r) :
 	}
 }
 
-void MotorComPS01::moveTo(float y) {
+void MotorComPS01Impl::moveTo(float y) {
 	//TODO
 }
 
-void MotorComPS01::kick() {
+void MotorComPS01Impl::kick() {
 	//TODO
 }
 
-int MotorComPS01::openPort(const char* port) {
+int MotorComPS01Impl::openPort(const char* port) {
 	struct ifreq ifr;
 	struct sockaddr_can addr;
 
@@ -52,19 +52,19 @@ int MotorComPS01::openPort(const char* port) {
 	return 0;
 }
 
-int MotorComPS01::closePort() {
+int MotorComPS01Impl::closePort() {
 	close(this->m_SocketId);
 	return 0;
 }
 
-int MotorComPS01::sendPort(struct can_frame *frame) {
+int MotorComPS01Impl::sendPort(struct can_frame *frame) {
 	int retval = write(m_SocketId, frame, sizeof(struct can_frame));
 	if (retval != sizeof(struct can_frame))
 		return -1;
 	return 0;
 }
 
-void MotorComPS01::readPort() {
+void MotorComPS01Impl::readPort() {
 	/*
 	 struct can_frame frame_rd;
 	 int recvbytes = 0;
@@ -93,7 +93,7 @@ void MotorComPS01::readPort() {
 	cout << "readPort() is not supported" << endl;
 }
 
-void MotorComPS01::frameInit(int ID, int DLC, int Data_0, int Data_1,
+void MotorComPS01Impl::frameInit(int ID, int DLC, int Data_0, int Data_1,
 		int Data_2, int Data_3, int Data_4, int Data_5, int Data_6,
 		int Data_7) {
 	//Version frame_init() form TestProject_colson_backup hopefully for LinMot PS01
@@ -114,7 +114,7 @@ void MotorComPS01::frameInit(int ID, int DLC, int Data_0, int Data_1,
 	closePort();
 }
 
-void MotorComPS01::driverInit() {
+void MotorComPS01Impl::driverInit() {
 	//Version driver_init() form TestProject_colson_backup hopefully for LinMot PS01
 
 	cout << "Reseten" << endl;
@@ -150,7 +150,7 @@ void MotorComPS01::driverInit() {
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 }
 
-void MotorComPS01::motorSwitchon() {
+void MotorComPS01Impl::motorSwitchon() {
 	//Version motor_switchon1() form TestProject_colson_backup hopefully for LinMot PS01
 
 	int i = 0;
@@ -175,7 +175,7 @@ void MotorComPS01::motorSwitchon() {
 	return;
 }
 
-void MotorComPS01::homing() {
+void MotorComPS01Impl::homing() {
 	//Version homing1() form TestProject_colson_backup hopefully for LinMot PS01
 
 	cout << "Homing" << endl;

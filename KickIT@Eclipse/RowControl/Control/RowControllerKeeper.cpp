@@ -1,9 +1,9 @@
-#include <RowControl/MotorCom_Impl_PS01.hpp>
+#include "../Communication/MotorComPS01Impl.hpp"
 #include "RowControllerKeeper.hpp"
 #include "../DataType/RowEnum.hpp"
 
 RowControllerKeeper::RowControllerKeeper() {
-	mcomm = new MotorComPS01(KEEPER);
+	mcomm = new MotorComPS01Impl(KEEPER);
 }
 
 void RowControllerKeeper::run() {

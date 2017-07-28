@@ -13,28 +13,28 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/InterfaceBallTracker.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
-           RowControl/MotorCom_Impl_PS01.hpp \
-	   RowControl/MotorCom_Impl_RS01.hpp \
-           RowControl/InterfaceMotorCommunicator.hpp \
-           RowControl/RowControllerDefense.hpp \
-           RowControl/InterfaceRowController.hpp \
-           RowControl/RowControllerKeeper.hpp \
-           RowControl/RowControllerMidfield.hpp \
-           RowControl/RowControllerOffense.hpp \
-           RowControl/TableControllerImpl.hpp \
-           RowControl/InterfaceTableController.hpp \
+           RowControl/Communication/MotorComPS01Impl.hpp \
+	   	   RowControl/Communication/MotorComRS01Impl.hpp \
+           RowControl/Interface/MotorCommunicatorInterface.hpp \
+           RowControl/Control/RowControllerDefense.hpp \
+           RowControl/Interface/RowControllerInterface.hpp \
+           RowControl/Control/RowControllerKeeper.hpp \
+           RowControl/Control/RowControllerMidfield.hpp \
+           RowControl/Control/RowControllerOffense.hpp \
+           RowControl/Control/TableControllerImpl.hpp \
+           RowControl/Interface/TableControllerInterface.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
            DataType/RowEnum.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
-	   RowControl/MotorCom_Impl_PS01.cpp \
-	   RowControl/MotorCom_Impl_RS01.cpp \
-           RowControl/RowControllerDefense.cpp \
-           RowControl/RowControllerKeeper.cpp \
-           RowControl/RowControllerMidfield.cpp \
-           RowControl/RowControllerOffense.cpp \
-           RowControl/TableControllerImpl.cpp \
+	   	   RowControl/Communication/MotorComPS01Impl.cpp \
+	   	   RowControl/Communication/MotorComRS01Impl.cpp \
+           RowControl/Control/RowControllerDefense.cpp \
+           RowControl/Control/RowControllerKeeper.cpp \
+           RowControl/Control/RowControllerMidfield.cpp \
+           RowControl/Control/RowControllerOffense.cpp \
+           RowControl/Control/TableControllerImpl.cpp \
            VirtualKicker/TableControllerMock.cpp \
            VirtualKicker/VirtualKickerWindow.cpp

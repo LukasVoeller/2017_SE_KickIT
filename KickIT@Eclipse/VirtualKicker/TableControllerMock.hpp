@@ -1,11 +1,11 @@
 #ifndef TABLECONTROLLERMOCK_HPP
 #define TABLECONTROLLERMOCK_HPP
 
-#include "../RowControl/InterfaceTableController.hpp"
+#include "../RowControl/Interface/TableControllerInterface.hpp"
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
 
-class TableControllerMock: public InterfaceTableController {
+class TableControllerMock: public TableControllerInterface {
 
 public:
 	TableControllerMock(bool keeper, bool defense, bool midfield, bool offense);
