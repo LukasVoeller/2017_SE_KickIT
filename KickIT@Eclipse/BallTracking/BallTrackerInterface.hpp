@@ -4,6 +4,12 @@
 #include "../RowControl/Interface/TableControllerInterface.hpp"
 #include <pylon/PylonIncludes.h>
 #include <pylon/gige/BaslerGigEInstantCamera.h>
+#include <opencv2/core/core.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/video/video.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 class BallTrackerInterface {
 public:
