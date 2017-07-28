@@ -1,3 +1,4 @@
+#include <BallTracking/BallTrackerInterface.hpp>
 #include <cstdlib>
 #include <QApplication>
 
@@ -5,7 +6,6 @@
 #include <RowControl/Interface/TableControllerInterface.hpp>
 
 #include "RowControl/Interface/TableControllerInterface.hpp"
-#include "BallTracking/InterfaceBallTracker.hpp"
 #include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 

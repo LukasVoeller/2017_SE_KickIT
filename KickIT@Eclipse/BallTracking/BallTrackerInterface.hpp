@@ -1,5 +1,5 @@
-#ifndef BALLTRACKER_HPP_
-#define BALLTRACKER_HPP_
+#ifndef BALLTRACKERINTERFACE_HPP_
+#define BALLTRACKERINTERFACE_HPP_
 #include "../DataType/BallStatus.hpp"
 #include "../RowControl/Interface/TableControllerInterface.hpp"
 #include <pylon/PylonIncludes.h>

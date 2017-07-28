@@ -10,7 +10,7 @@ CONFIG += qt debug
 
 # Input
 HEADERS += BallTracking/BallTrackerImpl.hpp \
-           BallTracking/InterfaceBallTracker.hpp \
+           BallTracking/BallTrackerInterface.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
            RowControl/Communication/MotorComPS01Impl.hpp \
