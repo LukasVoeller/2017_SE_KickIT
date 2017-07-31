@@ -13,7 +13,10 @@ public:
 	~BallTrackerImpl();
 
 private:
+	void camera_settings();
+	void setCameraSettings();
 	void getCameraSettings();
+
 
 };
 
