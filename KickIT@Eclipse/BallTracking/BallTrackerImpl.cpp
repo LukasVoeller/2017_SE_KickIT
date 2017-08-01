@@ -2,10 +2,24 @@
 #include "BallTrackerImpl.hpp"
 #include <iostream>
 
+#include <pylon/PylonIncludes.h>
+#include <pylon/gige/BaslerGigEInstantCamera.h>
+#include <opencv2/core/core.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/video/video.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 using namespace cv;
 using namespace std;
 using namespace Pylon;
+
+void BallTrackerImpl::setTableController(TableControllerInterface* t){
+
+}
+
+BallTrackerImpl::~BallTrackerImpl(){}
 
 //Kameraeinstellungen auslesen
 void BallTrackerImpl::getCameraSettings() {
@@ -218,7 +232,4 @@ void BallTrackerImpl::startTracking() {
 //	return new BallStatus();
 //}
 
-void BallTrackerImpl::stopTracking() {
-
-}
 

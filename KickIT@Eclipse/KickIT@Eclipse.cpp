@@ -41,6 +41,10 @@ int main(int argc, char** argv) {
 //Balltracking testing mode - Table is simulated by graphical interface
 #if MODE == 3
 
+	QApplication a(argc, argv);
+	VirtualKicker::getMockTableControllerWithBalltracker();
+	return a.exec();
+
 #endif
 
 //Final mode - Ready to play!

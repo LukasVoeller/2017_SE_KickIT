@@ -4,6 +4,9 @@
 #include "VirtualKickerWindow.hpp"
 #include "TableControllerMock.hpp"
 
+#include "../BallTracking/BallTrackerImpl.hpp"
+#include "../BallTracking/BallTrackerInterface.hpp"
+
 class VirtualKicker {
 
 public:
@@ -33,6 +36,16 @@ public:
 		vkw->show();
 
 		return tci;
+	}
+
+	static TableControllerMock* getMockTableControllerWithBalltracker(){
+
+		TableControllerMock* res = VirtualKicker::getMockTableController();
+
+		//BallTrackerInterface* bti = new BallTrackerImpl();
+
+
+
 	}
 
 private:

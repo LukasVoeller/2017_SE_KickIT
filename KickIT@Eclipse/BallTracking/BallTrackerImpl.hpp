@@ -9,7 +9,8 @@ class BallTrackerImpl: public BallTrackerInterface {
 public:
 	BallStatus* getBallStatus();
 	void startTracking();
-	void stopTracking();
+
+	void setTableController(TableControllerInterface* t);
 	~BallTrackerImpl();
 
 private:
