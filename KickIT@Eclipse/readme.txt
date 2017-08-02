@@ -20,9 +20,18 @@ Motor Nr2. Groß mit Rotation 	-> RS01
 	# danach kann eclipse das projekt wieder bauen
 	# im makefile müssen die die zeilen:
 	
+	# für pylon
+	
 	PYLON_ROOT ?= /opt/pylon5
 	CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
 	LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
+
+	# für opencv
+	
+	CXXFLAGS      += $(shell pkg-config --cflags opencv)
+	INCLUDEPATH   += /usr/local/include/opencv
+	LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+	LIBS          += $(shell pkg-config --libs opencv)
 
 	ergänzt werden
 
