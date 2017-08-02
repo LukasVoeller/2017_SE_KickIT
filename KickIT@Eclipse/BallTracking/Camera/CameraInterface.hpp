@@ -15,7 +15,7 @@ using namespace Pylon;
 class CameraInterface {
 
 public:
-	virtual CGrabResultPtr* getImage() = 0;
+	//virtual CGrabResultPtr* getImage() = 0;
 	virtual ~CameraInterface(){}
 private:
 	virtual void calibrate() = 0;

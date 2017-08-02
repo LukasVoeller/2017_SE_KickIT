@@ -2,30 +2,32 @@
 #include "BallTrackerImpl.hpp"
 #include <iostream>
 
-/*#include <pylon/PylonIncludes.h>
+#include <pylon/PylonIncludes.h>
 #include <pylon/gige/BaslerGigEInstantCamera.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/video/video.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>*/
+#include <opencv2/imgproc/imgproc.hpp>
 
-/*#ifdef PYLON_WIN_BUILD
+
+#ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
-#endif*/
+#endif
 
-/*using namespace cv;
+using namespace cv;
 using namespace std;
-using namespace Pylon;*/
+using namespace Pylon;
 
-/*int exitCode = 0;
+int exitCode = 0;
 Pylon::PylonAutoInitTerm autoInitTerm;
-CGrabResultPtr ptrGrabResult;*/
+CGrabResultPtr ptrGrabResult;
 
 BallTrackerImpl::BallTrackerImpl(){
 	std::cout << "BallTrackerImpl" << std::endl;
-	camera = new Camera();
+	//camera = new Camera();
+	startTracking();
 }
 
 
@@ -257,7 +259,7 @@ void BallTrackerImpl::threshold(){
 
 //Datei für Mittelpunkt-Koordinate des Balles
 void BallTrackerImpl::startTracking() {
-	/*int BlueLow = 234;
+	int BlueLow = 234;
 	int GreenLow = 206;
 	int RedLow = 0;
 
@@ -347,7 +349,7 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		Daten.close();
-		return;*/
+		return;
 }
 
 //BallStatus* BallTrackerImpl::getBallStatus() {

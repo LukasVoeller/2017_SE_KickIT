@@ -8,10 +8,11 @@ public:
 	Camera();
 	virtual ~Camera();
 
-	CGrabResultPtr* getImage(){}
+	//CGrabResultPtr* getImage(){}
 
 private:
 	void calibrate();
+
 
 };
 
