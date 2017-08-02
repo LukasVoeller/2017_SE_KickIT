@@ -7,6 +7,8 @@
 #include "../BallTracking/BallTrackerImpl.hpp"
 #include "../BallTracking/BallTrackerInterface.hpp"
 
+using namespace std;
+
 class VirtualKicker {
 
 public:
@@ -38,14 +40,17 @@ public:
 		return tci;
 	}
 
-	static TableControllerMock* getMockTableControllerWithBalltracker(){
-
+	static TableControllerMock* getMockTableControllerWithBalltracker() {
 		TableControllerMock* res = VirtualKicker::getMockTableController();
 
 		//BallTrackerInterface* bti = new BallTrackerImpl();
 
+		BallTrackerImpl st;
+		st.startTracking();
 
-
+		//st.threshold();
+		//st.getCameraSettings();
+		//st.camera_settings();
 	}
 
 private:

@@ -29,7 +29,7 @@
 									<listOptionValue builtIn="false" value="/usr/include/x86_64-linux-gnu/qt5"/>
 									<listOptionValue builtIn="false" value="/opt/pylon5"/>
 									<listOptionValue builtIn="false" value="/opt/pylon5/include"/>
-									<listOptionValue builtIn="false" value="/home/student/Desktop/Opencv/opencv-3.2.0/include"/>
+									<listOptionValue builtIn="false" value="/home/student/Downloads/opencv-3.2.0/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1402056513" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -38,7 +38,7 @@
 									<listOptionValue builtIn="false" value="/usr/include/x86_64-linux-gnu/qt5"/>
 									<listOptionValue builtIn="false" value="/opt/pylon5"/>
 									<listOptionValue builtIn="false" value="/opt/pylon5/include"/>
-									<listOptionValue builtIn="false" value="/home/student/Desktop/Opencv/opencv-3.2.0/include"/>
+									<listOptionValue builtIn="false" value="/home/student/Downloads/opencv-3.2.0/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1699194304" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -47,10 +47,11 @@
 								<option id="gnu.cpp.link.option.paths.616415276" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/KickIT@Eclipse}&quot;"/>
 									<listOptionValue builtIn="false" value="/opt/pylon5/include"/>
-									<listOptionValue builtIn="false" value="/home/student/Desktop/Opencv/opencv-3.2.0/include"/>
+									<listOptionValue builtIn="false" value="/home/student/Downloads/opencv-3.2.0/include"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.439631927" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;-L/opt/pylon5/lib64 -Wl,-E -lpylonbase -lpylonutility -lGenApi_gcc_v3_0_Basler_pylon_v5_0 -lGCBase_gcc_v3_0_Basler_pylon_v5_0&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;-L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.196902618" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -60,7 +61,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1527285631" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<option id="gnu.both.asm.option.include.paths.1032893457" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/include/x86_64-linux-gnu/qt5"/>
-									<listOptionValue builtIn="false" value="/home/student/Desktop/Opencv/opencv-3.2.0/include"/>
+									<listOptionValue builtIn="false" value="/home/student/Downloads/opencv-3.2.0/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.271147038" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
