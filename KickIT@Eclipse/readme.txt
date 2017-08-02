@@ -15,6 +15,10 @@ Motor Nr2. Groß mit Rotation 	-> RS01
 		TARGET = KickIT@Eclipse
 		INCLUDEPATH += .
 		CONFIG += qt debug
+		
+		CONFIG += thread
+		CONFIG += warn_off
+		CONFIG += C++11
 
 	# danach wird mit dem befehl "qmake -o Makefile KickIT@Eclipse.pro" das makefile aktualisiert
 	# danach kann eclipse das projekt wieder bauen

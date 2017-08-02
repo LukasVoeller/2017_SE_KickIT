@@ -45,8 +45,8 @@ public:
 
 		//BallTrackerInterface* bti = new BallTrackerImpl();
 
-		BallTrackerImpl st;
-		st.startTracking();
+		BallTrackerImpl* bti = new BallTrackerImpl();
+		//st.startTracking();
 
 		//st.threshold();
 		//st.getCameraSettings();

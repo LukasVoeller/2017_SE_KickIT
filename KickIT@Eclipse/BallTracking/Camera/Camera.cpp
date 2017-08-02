@@ -6,13 +6,24 @@
  */
 
 #include "Camera.hpp"
+#include <thread>
 
 Camera::Camera() {
-	// TODO Auto-generated constructor stub
+
+	std::cout << "camera" << std::endl;
+	std::thread c(&Camera::calibrate, this);
+	c.join();
 
 }
 
 Camera::~Camera() {
-	// TODO Auto-generated destructor stub
+
 }
 
+void Camera::calibrate(){
+
+	std::cout << "thread" << std::endl;
+
+
+
+}

@@ -2,26 +2,32 @@
 #include "BallTrackerImpl.hpp"
 #include <iostream>
 
-#include <pylon/PylonIncludes.h>
+/*#include <pylon/PylonIncludes.h>
 #include <pylon/gige/BaslerGigEInstantCamera.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/video/video.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgproc/imgproc.hpp>*/
 
-#ifdef PYLON_WIN_BUILD
+/*#ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
-#endif
+#endif*/
 
-using namespace cv;
+/*using namespace cv;
 using namespace std;
-using namespace Pylon;
+using namespace Pylon;*/
 
-int exitCode = 0;
+/*int exitCode = 0;
 Pylon::PylonAutoInitTerm autoInitTerm;
-CGrabResultPtr ptrGrabResult;
+CGrabResultPtr ptrGrabResult;*/
+
+BallTrackerImpl::BallTrackerImpl(){
+	std::cout << "BallTrackerImpl" << std::endl;
+	camera = new Camera();
+}
+
 
 void BallTrackerImpl::setTableController(TableControllerInterface* t){
 
@@ -31,7 +37,7 @@ BallTrackerImpl::~BallTrackerImpl(){}
 
 //Kameraeinstellungen auslesen
 void BallTrackerImpl::getCameraSettings() {
-	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
+	/*CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
 	cout << "Using device " << camera.GetDeviceInfo().GetModelName() << endl;
 	camera.Open();
 
@@ -45,12 +51,12 @@ void BallTrackerImpl::getCameraSettings() {
 	cout << "Höhe: " << width->GetValue() << endl;
 	cout << "Weite: " << height->GetValue() << endl;
 	cout << "Packetsize: " << packetsize->GetValue() << endl;
-	cout << "Belichtungszeit: " << exposuretime->GetValue() << endl << endl;
+	cout << "Belichtungszeit: " << exposuretime->GetValue() << endl << endl;*/
 }
 
 //Kameraeinstellungen vornehmen
 void BallTrackerImpl::setCameraSettings() {
-	char c;			//Eingabewert für I/O
+	/*char c;			//Eingabewert für I/O
 	int i = 0;		//Eingabewert für Höhe, Weite und Paketgröße
 	double j = 0;	//Eingabewert für Belichtungszeit
 	double y;
@@ -66,7 +72,7 @@ void BallTrackerImpl::setCameraSettings() {
 
 	height->SetValue(374);
 	width->SetValue(608);
-	packetsize->SetValue(1500);
+	packetsize->SetValue(1500);*/
 
 	/*cout << "Wollen Sie die Höhe verändern? y/n" << endl;
 	cin >> c;
@@ -113,7 +119,7 @@ void BallTrackerImpl::setCameraSettings() {
 
 //Menupunkt Kameraoperationen
 void BallTrackerImpl::camera_settings(){
-	int i = 0;
+	/*int i = 0;
 
 	cout << "Kameraeinstellungen" << endl;
 	cout << "Was moechten Sie tun:" << endl;
@@ -140,12 +146,12 @@ void BallTrackerImpl::camera_settings(){
 		break;
 	}
 
-	return;
+	return;*/
 }
 
 
 void BallTrackerImpl::threshold(){
-	int count = 0;
+	/*int count = 0;
 
 	namedWindow("Control", CV_WINDOW_AUTOSIZE); //Create a window called "Control"
 	int iLowH = 0;		//0
@@ -246,12 +252,12 @@ void BallTrackerImpl::threshold(){
 		// Error handling.
 		cerr << "An exception occurred." << endl << e.GetDescription() << endl;
 		exitCode = 1;
-	}
+	}*/
 }
 
 //Datei für Mittelpunkt-Koordinate des Balles
 void BallTrackerImpl::startTracking() {
-	int BlueLow = 234;
+	/*int BlueLow = 234;
 	int GreenLow = 206;
 	int RedLow = 0;
 
@@ -341,7 +347,7 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		Daten.close();
-		return;
+		return;*/
 }
 
 //BallStatus* BallTrackerImpl::getBallStatus() {

@@ -9,17 +9,13 @@
 MAKEFILE      = Makefile
 
 ####### Compiler, tools and options
-PYLON_ROOT ?= /opt/pylon5
 
 CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -m64 -pipe -g -D_REENTRANT -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -pipe -g -D_REENTRANT -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
-CXXFLAGS      += $(shell pkg-config --cflags opencv)
+CFLAGS        = -m64 -pipe -g -w -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -g -std=c++0x -w -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../../KickIT@Eclipse -I. -I../../KickIT@Eclipse -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
-INCLUDEPATH   += /usr/local/include/opencv
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,17 +33,27 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = KickIT@Eclipse1.0.0
-DISTDIR = /home/student/SWE_2017_KickIT/KickIT@Eclipse/build/.tmp/KickIT@Eclipse1.0.0
+DISTDIR = /home/student/Desktop/SWE_2017_KickIT/KickIT@Eclipse/build/.tmp/KickIT@Eclipse1.0.0
 LINK          = g++
 LFLAGS        = -m64
-LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread
-LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
-LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
-LIBS          += $(shell pkg-config --libs opencv)
+LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lpthread -lGL 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
 STRIP         = strip
+
+	# für pylon
+	
+	PYLON_ROOT ?= /opt/pylon5
+	CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
+	LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
+
+	# für opencv
+	
+	CXXFLAGS      += $(shell pkg-config --cflags opencv)
+	INCLUDEPATH   += /usr/local/include/opencv
+	LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+	LIBS          += $(shell pkg-config --libs opencv)
 
 ####### Output directory
 
@@ -57,6 +63,7 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../KickIT@Eclipse.cpp \
 		../BallTracking/BallTrackerImpl.cpp \
+		../BallTracking/Camera/Camera.cpp \
 		../RowControl/Communication/MotorComPS01Impl.cpp \
 		../RowControl/Communication/MotorComRS01Impl.cpp \
 		../RowControl/Control/RowControllerDefense.cpp \
@@ -68,6 +75,7 @@ SOURCES       = ../KickIT@Eclipse.cpp \
 		../VirtualKicker/VirtualKickerWindow.cpp 
 OBJECTS       = KickIT@Eclipse.o \
 		BallTrackerImpl.o \
+		Camera.o \
 		MotorComPS01Impl.o \
 		MotorComRS01Impl.o \
 		RowControllerDefense.o \
@@ -122,19 +130,22 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_off.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../../KickIT@Eclipse.pro ../BallTracking/BallTrackerImpl.hpp \
 		../BallTracking/BallTrackerInterface.hpp \
+		../BallTracking/Camera/Camera.hpp \
+		../BallTracking/Camera/CameraInterface.hpp \
 		../DataType/Vec2.hpp \
 		../DataType/BallStatus.hpp \
 		../RowControl/Communication/MotorComPS01Impl.hpp \
@@ -152,6 +163,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../VirtualKicker/VirtualKickerWindow.hpp \
 		../DataType/RowEnum.hpp ../KickIT@Eclipse.cpp \
 		../BallTracking/BallTrackerImpl.cpp \
+		../BallTracking/Camera/Camera.cpp \
 		../RowControl/Communication/MotorComPS01Impl.cpp \
 		../RowControl/Communication/MotorComRS01Impl.cpp \
 		../RowControl/Control/RowControllerDefense.cpp \
@@ -236,13 +248,14 @@ Makefile: ../KickIT@Eclipse.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_off.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
@@ -297,13 +310,14 @@ Makefile: ../KickIT@Eclipse.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_off.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/moc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/opengl.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/uic.prf:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/unix/thread.prf:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
@@ -326,8 +340,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -375,11 +389,24 @@ KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerInterface.hpp
 		../RowControl/Control/TableControllerImpl.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../VirtualKicker/VirtualKicker.hpp
+		../VirtualKicker/VirtualKicker.hpp \
+		../BallTracking/BallTrackerImpl.hpp \
+		../BallTracking/Camera/Camera.hpp \
+		../BallTracking/Camera/CameraInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o KickIT@Eclipse.o ../KickIT@Eclipse.cpp
 
-BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp 
+BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrackerInterface.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp \
+		../RowControl/Interface/TableControllerInterface.hpp \
+		../BallTracking/BallTrackerImpl.hpp \
+		../BallTracking/Camera/Camera.hpp \
+		../BallTracking/Camera/CameraInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o ../BallTracking/BallTrackerImpl.cpp
+
+Camera.o: ../BallTracking/Camera/Camera.cpp ../BallTracking/Camera/Camera.hpp \
+		../BallTracking/Camera/CameraInterface.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Camera.o ../BallTracking/Camera/Camera.cpp
 
 MotorComPS01Impl.o: ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComPS01Impl.hpp \
 		../DataType/RowEnum.hpp \

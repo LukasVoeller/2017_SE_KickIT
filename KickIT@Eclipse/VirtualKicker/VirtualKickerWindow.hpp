@@ -30,13 +30,13 @@ public:
 	static const int WINDOW_SIZE_Y = 768;
 
 	//All dimension values in centimeter
-	static const int SCALE = 7;
-	static const int TABLE_MARGIN = 60;
-	static const double TABLE_HEIGHT = 68 * SCALE;
-	static const double TABLE_WIDTH = 111.5 * SCALE;
-	static const double GOAL_SIZE = 21 * SCALE;
-	static const double GOAL_TO_KEEPER = 3.5 * SCALE;
-	static const double GOAL_TO_DEFENSE = 18.5 * SCALE;
+	static constexpr double SCALE = 7;
+	static constexpr double TABLE_MARGIN = 60;
+	static constexpr double TABLE_HEIGHT = 68 * SCALE;
+	static constexpr double TABLE_WIDTH = 111.5 * SCALE;
+	static constexpr double GOAL_SIZE = 21 * SCALE;
+	static constexpr double GOAL_TO_KEEPER = 3.5 * SCALE;
+	static constexpr double GOAL_TO_DEFENSE = 18.5 * SCALE;
 
 private:
 	TableControllerInterface* tc;

@@ -7,10 +7,15 @@ QT += widgets
 TARGET = KickIT@Eclipse
 INCLUDEPATH += .
 CONFIG += qt debug
+CONFIG += thread
+CONFIG += warn_off
+CONFIG += C++11
 
 # Input
 HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/BallTrackerInterface.hpp \
+           BallTracking/Camera/Camera.hpp \
+           BallTracking/Camera/CameraInterface.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
            RowControl/Communication/MotorComPS01Impl.hpp \
@@ -29,6 +34,7 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            DataType/RowEnum.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
+           BallTracking/Camera/Camera.cpp \
 	   	   RowControl/Communication/MotorComPS01Impl.cpp \
 	   	   RowControl/Communication/MotorComRS01Impl.cpp \
            RowControl/Control/RowControllerDefense.cpp \

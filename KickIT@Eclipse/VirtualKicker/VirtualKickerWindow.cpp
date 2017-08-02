@@ -1,8 +1,7 @@
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
 
-VirtualKickerWindow::VirtualKickerWindow() :
-		tc(NULL) {
+VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 	setMouseTracking(true);
 
 	topLeft = new QPoint(TABLE_MARGIN, TABLE_MARGIN);
