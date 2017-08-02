@@ -13,4 +13,3 @@ protected:
 };
 
 #endif /* INTERFACEROWCONTROLLER_HPP */
-
