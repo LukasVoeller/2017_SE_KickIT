@@ -1,3 +1,24 @@
+/********************************************************************************
+ * Software Engineering Projekt
+ * Hochschule Osnabrueck, Sommersemester 2017
+ *
+ * Programmname      : KickIT
+ * Version			 : 0.4.5-0001
+ *
+ * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
+ *
+ * Erstellt am       : 15. April 2017
+ *
+ * Verwendugszweck   : Software framework fuer einen autonomen Kickertisch
+ *
+ * Bibliotheken      : QT (v5.8)      - Grafische Oberfläche, Virtual Kicker
+ * 					   OpenCV (v2)    - Ballerkennung
+ *                     Pylon (v5.0.1) - Kamerabilddarstellung
+ *
+ * TODO              : Warnings beheben
+ *
+ ********************************************************************************/
+
 #include <BallTracking/BallTrackerInterface.hpp>
 #include <cstdlib>
 #include <QApplication>

@@ -225,7 +225,7 @@ void BallTrackerImpl::threshold(){
 				   		drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point() );
 				   	}
 				   	float radius = 5;
-				 	// minEnclosingCircle(Mat(contours),TorwartCenter,radius);
+				 	//minEnclosingCircle(Mat(contours),TorwartCenter,radius);
 
 				  	//Show in a window
 				 	//namedWindow( "Contours", CV_WINDOW_AUTOSIZE );
@@ -243,7 +243,7 @@ void BallTrackerImpl::threshold(){
 			cout << "test_1" << endl;
 		}
 	} catch (GenICam::GenericException &e) {
-		// Error handling.
+		//Error handling.
 		cerr << "An exception occurred." << endl << e.GetDescription() << endl;
 		exitCode = 1;
 	}
@@ -304,8 +304,8 @@ void BallTrackerImpl::startTracking() {
 						dilate(imgThresholded, imgThresholded,getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 
 						//morphological closing (fill small holes in the foreground)
-						// dilate(imgThresholded, imgThresholded,getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
-						// erode(imgThresholded, imgThresholded,getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+						//dilate(imgThresholded, imgThresholded,getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+						//erode(imgThresholded, imgThresholded,getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
 
 						vector<Point> nonzero;
 						//Mat nonzero;
@@ -319,9 +319,9 @@ void BallTrackerImpl::startTracking() {
 							if(abs(Ballcenter.y-lasty) < 2){Ballcenter.y = lasty;}
 							if(abs(Ballcenter.x-lastx) < 2){Ballcenter.x = lastx;}
 							cout << Ballcenter << endl;
-							// draw the circle center
+							//Draw the circle center
 							circle(cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
-							// draw the circle outline
+							//Draw the circle outline
 							circle(cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 							lasty = Ballcenter.y;
 							lastx = Ballcenter.x;

@@ -9,7 +9,6 @@ public:
 
 	virtual void setTableController(TableControllerInterface* t) = 0;
 	virtual ~BallTrackerInterface(){}
-
 };
 
 #endif /* BALLTRACKER_HPP_ */
