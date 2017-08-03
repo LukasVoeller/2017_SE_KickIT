@@ -8,6 +8,7 @@ class RowControllerKeeper: public RowControllerInterface {
 public:
 	RowControllerKeeper();
 	void run();
+
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERKEEPER_HPP_ */

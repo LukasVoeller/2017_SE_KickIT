@@ -15,6 +15,8 @@ MotorComPS01Impl::MotorComPS01Impl(Row r) {
 	case KEEPER:
 		this->port = "can0";
 		driverInit();
+		motorByHand();
+		//linearMovement(100);
 		break;
 	default:
 		cout << "Not implemented PS01" << endl;
@@ -30,7 +32,7 @@ void MotorComPS01Impl::kick() {
 	//TODO
 }
 
-int MotorComPS01Impl::openPort(const char* port) {
+int MotorComPS01Impl::openPort() {
 	struct ifreq ifr;
 	struct sockaddr_can addr;
 
@@ -68,30 +70,33 @@ int MotorComPS01Impl::sendPort(struct can_frame *frame) {
 
 void MotorComPS01Impl::readPort() {
 	/*
-	 struct can_frame frame_rd;
-	 int recvbytes = 0;
 
-	 read_can_port = 1;
-	 while (read_can_port) {
-	 struct timeval timeout = { 1, 0 };
-	 fd_set readSet;
-	 FD_ZERO(&readSet);
-	 FD_SET(soc, &readSet);
+	struct can_frame frame_rd;
+	int recvbytes = 0;
 
-	 if (select((soc + 1), &readSet, NULL, NULL, &timeout) >= 0) {
-	 if (!read_can_port)
-	 break;
-	 if (FD_ISSET(soc, &readSet)) {
-	 recvbytes = read(soc, &frame_rd, sizeof(struct can_frame));
-	 if (recvbytes) {
-	 printf("dlc = %d, data = %s\n", frame_rd.can_dlc,
-	 frame_rd.data);
-	 read_can_port = 0;
-	 }
-	 }
-	 }
-	 }
-	 */
+	read_can_port = 1;
+	while (read_can_port) {
+		struct timeval timeout = { 1, 0 };
+		fd_set readSet;
+		FD_ZERO(&readSet);
+		FD_SET(soc, &readSet);
+
+		if (select((soc + 1), &readSet, NULL, NULL, &timeout) >= 0) {
+			if (!read_can_port)
+				break;
+			if (FD_ISSET(soc, &readSet)) {
+				recvbytes = read(soc, &frame_rd, sizeof(struct can_frame));
+				if (recvbytes) {
+					printf("dlc = %d, data = %s\n", frame_rd.can_dlc,
+							frame_rd.data);
+					read_can_port = 0;
+				}
+			}
+		}
+	}
+
+	*/
+
 	cout << "readPort() is not supported" << endl;
 }
 
@@ -99,9 +104,8 @@ void MotorComPS01Impl::frameInit(int ID, int DLC, int Data_0, int Data_1,
 		int Data_2, int Data_3, int Data_4, int Data_5, int Data_6,
 		int Data_7) {
 	//Version frame_init() form TestProject_colson_backup for LinMot PS01
-	cout << "frameInit() PS01" << endl;
 
-	openPort("can0");
+	openPort();
 	struct can_frame frame;
 	frame.can_id = ID; 		//COB ID 200 für RxPDO1 + Can ID 1
 	frame.can_dlc = DLC; 	//Datenanzahl
@@ -121,41 +125,34 @@ void MotorComPS01Impl::driverInit() {
 	//Version driver_init() form TestProject_colson_backup for LinMot PS01
 	cout << "driverInit() PS01" << endl;
 
-	cout << "Reseten" << endl;
+	cout << "Reseten PS01" << endl;
 	frameInit(0x601, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); //Reset Command
-	frameInit(0x602, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); //Reset Command
-	frameInit(0x603, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); //Reset Command
 	sleep(20);
-	cout << "Operational" << endl;
+	cout << "Operational PS01" << endl;
 	frameInit(0x00, 0x2, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 	sleep(2);
-	cout << "Ready to switch on" << endl;
+	cout << "Ready to switch on PS01" << endl;
 	frameInit(0x201, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x202, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x203, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	sleep(2);
-	cout << "Switch on" << endl;
+	cout << "Switch on PS01" << endl;
 	frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x202, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x203, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	sleep(2);
-	cout << "Homing" << endl;
+	cout << "Homing PS01" << endl;
 	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x202, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Homen Command an RXPD0 1
-	frameInit(0x203, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Homen Command an RXPD0 1
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	sleep(25);
-	cout << "Homed" << endl;
+	cout << "Homed PS01" << endl;
 	frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x202, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x203, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 }
 
 void MotorComPS01Impl::motorSwitchon() {
 	//Version motor_switchon1() form TestProject_colson_backup for LinMot PS01
+
+	/*
+
 	cout << "motorSwitchon() PS01" << endl;
 
 	int i = 0;
@@ -178,19 +175,33 @@ void MotorComPS01Impl::motorSwitchon() {
 		break;
 	}
 	return;
+
+	*/
+
+	cout << "motorSwitchon() is not supported" << endl;
 }
 
 void MotorComPS01Impl::homing() {
 	//Version homing1() form TestProject_colson_backup for LinMot PS01
+
+	/*
+
 	cout << "homing() PS01" << endl;
 
 	frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Homen Command an RXPD0 1
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	sleep(20);
+
+	*/
+
+	cout << "homing() is not supported" << endl;
 }
 
 void MotorComPS01Impl::sendPositionToDriver(int driverin) {
 	//Version sent_position_to_driver1() form TestProject_colson_backup for LinMot PS01
+
+	/*
+
 	cout << "sendPositionToDriver() PS01" << endl;
 
 	this->nibble1 = !(this->nibble1);
@@ -206,44 +217,24 @@ void MotorComPS01Impl::sendPositionToDriver(int driverin) {
 	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 	return;
+
+	*/
+
+	cout << "sendPositionToDriver() is not supported" << endl;
 }
 
 void MotorComPS01Impl::motorByHand() {
-	//Version motor_by_hand1() form TestProject_colson_backup for LinMot PS01
+	//Custom version by Lukas
 	cout << "motorByHand() PS01" << endl;
 
-	int pos1;
-	int pos2;
-	int position;
-	cout << "Enter the position and confirm with enter" << endl;
-	cin >> position;
+	int position = 1;
 
-	position *= 10;
+	while(position != 0){
+		cout << "Enter position (Exit with 0): ";
+		cin >> position;
 
-	pos1 = (position & 255);
-	pos2 = (position >> 8);
-
-	this->nibble1 = !(this->nibble1);
-	cout << "Nibble: " << this->nibble1 << endl;
-	//FRAME_INIT Can_ID, DLC , Data, Data, Data, Data, Data, Data, Data, Data,
-	//Nibble has to change every new COmmand, therefore nibble =! nibble
-	//Position is transferred with two hex data, therefore pos1 pos2. Pos 1 are the lower 8 bits
-	//50 mm then corresponds to 500 in the data word as a hex number
-	//The last two data words in the 0x201 frame are for the maximum speed
-	frameInit(0x201, 0x8, 0x3F, 0x00, this->nibble1, 0x09, pos1, pos2, 0xBB,
-			0x08); //RXPDO 1
-	//This frame still belongs to the Got To Pos Command and is sent to RXPDO 2 therefore 0x301
-	//The data words 0 and 1 are here for the acceleration 100 in Dec corresponds to an acceleration of 10 m / s²
-	//The next two data words are for braking the scale is exactly like accelerating
-	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
-
-	this->nibble1 = !(this->nibble1);
-	cout << "Nibble: " << this->nibble1 << endl;
-	frameInit(0x201, 0x8, 0x3F, 0x00, this->nibble1, 0x09, pos1, pos2, 0xBB,
-			0x08); //RXPDO 1
-	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
+		linearMovement(position);
+	}
 }
 
 void MotorComPS01Impl::linearMovement(int positionL) {
@@ -258,16 +249,14 @@ void MotorComPS01Impl::linearMovement(int positionL) {
 	pos4 = (positionL >> 8);
 
 	this->nibble2 = !(this->nibble2);
-	cout << "Nibble2: " << this->nibble2 << endl;
-	frameInit(0x202, 0x8, 0x3F, 0x00, this->nibble2, 0x09, pos3, pos4, 0x50,
+	frameInit(0x201, 0x8, 0x3F, 0x00, this->nibble2, 0x09, pos3, pos4, 0x50,
 			0x10); //Moving to 15.0 cm (linear)
-	frameInit(0x302, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
+	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 
 	this->nibble2 = !(this->nibble2);
-	cout << "Nibble2: " << this->nibble2 << endl;
-	frameInit(0x202, 0x8, 0x3F, 0x00, this->nibble2, 0x09, pos3, pos4, 0x50,
+	frameInit(0x201, 0x8, 0x3F, 0x00, this->nibble2, 0x09, pos3, pos4, 0x50,
 			0x10); //Moving to 15.0 cm (linear)
-	frameInit(0x302, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
+	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //Sync
 }

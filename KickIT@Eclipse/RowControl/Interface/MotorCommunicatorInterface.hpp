@@ -6,9 +6,11 @@ public:
 	virtual void moveTo(float y) = 0;	//Redundant?
 	virtual void kick() = 0;			//Redundant?
 
+	virtual void linearMovement(int positionL) = 0;
+
 private:
 	//TODO Elternklassen für die folgenden vier Funktionen
-	virtual int openPort(const char* port) = 0;
+	virtual int openPort() = 0;
 	virtual int closePort() = 0;
 	virtual int sendPort(struct can_frame* frame) = 0;
 	virtual void readPort() = 0;
@@ -22,7 +24,7 @@ private:
 	//New Functions
 	virtual void sendPositionToDriver(int driverin) = 0;
 	virtual void motorByHand() = 0;
-	virtual void linearMovement(int positionL) = 0;
+
 	//Shooting Functions
 	virtual void shootingMove(int positionS) {}
 	virtual void rotation(int positionR) {}

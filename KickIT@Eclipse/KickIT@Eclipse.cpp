@@ -30,7 +30,7 @@
 #include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 3
+#define MODE 2
 
 int main(int argc, char** argv) {
 

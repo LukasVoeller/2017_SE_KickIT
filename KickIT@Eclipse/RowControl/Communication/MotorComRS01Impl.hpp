@@ -18,8 +18,10 @@ public:
 	void moveTo(float y);
 	void kick();
 
+	virtual void linearMovement(int positionL);
+
 private:
-	int openPort(const char* port);
+	int openPort();
 	int closePort();
 	int sendPort(struct can_frame *frame);
 	void readPort();
@@ -33,7 +35,7 @@ private:
 	//New Functions
 	virtual void sendPositionToDriver(int driverin);
 	virtual void motorByHand();
-	virtual void linearMovement(int positionL);
+
 	virtual void shootingMove(int positionS);
 	virtual void rotation(int positionR);
 	virtual void shoot1();

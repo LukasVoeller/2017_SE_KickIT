@@ -31,7 +31,7 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
-
+	keeperControl->moveTo(y);
 }
 
 void TableControllerImpl::run() {

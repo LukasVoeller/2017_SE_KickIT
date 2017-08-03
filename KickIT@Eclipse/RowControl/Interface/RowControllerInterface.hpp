@@ -5,7 +5,10 @@
 
 class RowControllerInterface {
 public:
-
+	//for testing
+	void moveTo(float y){
+		mcomm->linearMovement(y);
+	}
 private:
 
 protected:
