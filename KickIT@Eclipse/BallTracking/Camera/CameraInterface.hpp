@@ -19,6 +19,10 @@ public:
 	virtual ~CameraInterface(){}
 private:
 	virtual void calibrate() = 0;
+	virtual void getCameraSettings() = 0;
+	virtual void setCameraSettings() = 0;
+	virtual void camera_settings() = 0;
+	virtual void threshold() = 0;
 };
 
 

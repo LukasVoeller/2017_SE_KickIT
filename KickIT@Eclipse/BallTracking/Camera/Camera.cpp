@@ -31,9 +31,9 @@ using namespace Pylon;
 Camera::Camera() {
 
 	std::cout << "camera" << std::endl;
-	std::thread c(&Camera::calibrate, this);
-	c.join();
-
+	//std::thread c(&Camera::calibrate, this);
+	//c.join();
+	calibrate();
 }
 
 Camera::~Camera() {
@@ -75,5 +75,24 @@ void Camera::calibrate(){
 		}
 
 	}
+
+}
+
+//Kameraeinstellungen auslesen
+void Camera::getCameraSettings() {
+
+}
+
+//Kameraeinstellungen vornehmen
+void Camera::setCameraSettings() {
+
+}
+
+//Menupunkt Kameraoperationen
+void Camera::camera_settings(){
+
+}
+
+void Camera::threshold(){
 
 }
