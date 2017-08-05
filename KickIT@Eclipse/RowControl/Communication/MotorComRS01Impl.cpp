@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdio.h>
-#include <cstring>
+
 #include <unistd.h>		//For write in sendPort
 #include "MotorComRS01Impl.hpp"
 
@@ -100,26 +100,7 @@ void MotorComRS01Impl::readPort() {
 	cout << "readPort() is not supported" << endl;
 }
 
-void MotorComRS01Impl::frameInit(int ID, int DLC, int Data_0, int Data_1,
-		int Data_2, int Data_3, int Data_4, int Data_5, int Data_6,
-		int Data_7) {
-	//Version frame_init() form TestProject_colson_backup for LinMot RS01
 
-	openPort();
-	struct can_frame frame;
-	frame.can_id = ID; 		//COB ID 200 für RxPDO1 + Can ID 1
-	frame.can_dlc = DLC; 	//Datenanzahl
-	frame.data[0] = Data_0; //Daten
-	frame.data[1] = Data_1; //Daten
-	frame.data[2] = Data_2; //...
-	frame.data[3] = Data_3;
-	frame.data[4] = Data_4;
-	frame.data[5] = Data_5;
-	frame.data[6] = Data_6;
-	frame.data[7] = Data_7;
-	sendPort(&frame);
-	closePort();
-}
 
 void MotorComRS01Impl::driverInit() {
 	//Version driver_init() form TestProject_colson_backup for LinMot RS01
