@@ -12,20 +12,15 @@ public:
 	BallTrackerImpl();
 
 	BallStatus* getBallStatus();
-	void startTracking();
-	void threshold();
-	void camera_settings();
-	void setCameraSettings();
-	void getCameraSettings();
+
 
 	void setTableController(TableControllerInterface* t);
 	~BallTrackerImpl();
 
-	void stopTracking() {}
 
 private:
-
-	Camera* camera;
+	void startTracking();
+	void analyseImage();
 
 
 

@@ -12,6 +12,10 @@ public:
 
 private:
 	void calibrate();
+	void getCameraSettings();
+	void setCameraSettings();
+	void camera_settings();
+	void threshold();
 
 
 };
