@@ -6,24 +6,16 @@
 #include "Camera/Camera.hpp"
 
 class BallTrackerImpl: public BallTrackerInterface {
-
 public:
-
 	BallTrackerImpl();
-
+	~BallTrackerImpl();	//Virtual?
 	BallStatus* getBallStatus();
 
-
 	void setTableController(TableControllerInterface* t);
-	~BallTrackerImpl();
-
 
 private:
 	void startTracking();
 	void analyseImage();
-
-
-
 };
 
 #endif /* BALLTRACKERIMPL_HPP */
