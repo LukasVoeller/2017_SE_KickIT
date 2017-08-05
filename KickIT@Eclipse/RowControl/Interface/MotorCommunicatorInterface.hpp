@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <cstring>
+#include <iostream>
 
 class MotorCommunicatorInterface {
 public:
@@ -22,7 +23,6 @@ protected:
 
 	//TODO Elternklassen für die folgenden vier Funktionen
 	virtual int closePort() = 0;
-	virtual int sendPort(struct can_frame* frame) = 0;
 	virtual void readPort() = 0;
 
 	virtual void driverInit() = 0;
@@ -52,17 +52,25 @@ protected:
 		this->socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 		if (this->socketId < 0) {
 			return -1;
+		} else {
+			std::cout << "socketid: " << this->socketId << std::endl;
 		}
 
 		addr.can_family = AF_CAN;
 		strcpy(ifr.ifr_name, port);
 		if (ioctl(this->socketId, SIOCGIFINDEX, &ifr) < 0) {
+			std::cout << "ioctl failed port: " << port << std::endl;
 			return (-1);
 		}
 
 		addr.can_ifindex = ifr.ifr_ifindex;
-		fcntl(this->socketId, F_SETFL, O_NONBLOCK);
+		std::cout << "addr.can_ifindex: " << addr.can_ifindex  << std::endl;
+
+		if(fcntl(this->socketId, F_SETFL, O_NONBLOCK) < 0 ){
+			std::cout << "fcntl failed port: " << port << std::endl;
+		}
 		if (bind(this->socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
+			std::cout << "bind failed port: " << port << std::endl;
 			return -1;
 		}
 
@@ -86,6 +94,16 @@ protected:
 		frame.data[7] = Data_7;
 		sendPort(&frame);
 		closePort();
+	}
+
+	virtual int sendPort(struct can_frame *frame) {
+		int retval = write(socketId, frame, sizeof(struct can_frame));
+
+		if (retval != sizeof(struct can_frame)){
+			std::cout << "write failed port: " << port << " socketId: " << socketId << " retval: " << retval << " errno: " << strerror(errno) << std::endl;
+			return -1;
+		}
+		return 0;
 	}
 };
 

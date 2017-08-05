@@ -23,7 +23,6 @@ public:
 private:
 
 	int closePort();
-	int sendPort(struct can_frame *frame);
 	void readPort();
 
 	void driverInit();

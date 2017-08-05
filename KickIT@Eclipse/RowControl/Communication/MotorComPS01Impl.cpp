@@ -39,12 +39,6 @@ int MotorComPS01Impl::closePort() {
 	return 0;
 }
 
-int MotorComPS01Impl::sendPort(struct can_frame *frame) {
-	int retval = write(socketId, frame, sizeof(struct can_frame));
-	if (retval != sizeof(struct can_frame))
-		return -1;
-	return 0;
-}
 
 void MotorComPS01Impl::readPort() {
 	/*

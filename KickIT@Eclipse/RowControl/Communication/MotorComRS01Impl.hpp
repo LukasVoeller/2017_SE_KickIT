@@ -21,9 +21,8 @@ public:
 	virtual void linearMovement(int positionL);
 
 private:
-	int openPort();
+
 	int closePort();
-	int sendPort(struct can_frame *frame);
 	void readPort();
 
 	void driverInit();

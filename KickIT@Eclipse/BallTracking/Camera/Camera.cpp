@@ -41,7 +41,7 @@ Camera::~Camera() {
 }
 
 void Camera::calibrate(){
-	PylonAutoInitTerm autoInitTerm;
+	/*PylonAutoInitTerm autoInitTerm;
 	CGrabResultPtr ptrGrabResult;
 	CImageFormatConverter fc;
 	fc.OutputPixelFormat = PixelType_RGB8packed;
@@ -70,11 +70,11 @@ void Camera::calibrate(){
 				cv_img = cv::Mat(ptrGrabResult->GetHeight(), ptrGrabResult->GetWidth(), CV_8UC3, (uint8_t*) image.GetBuffer());
 				imshow("circles", cv_img);
 
-				waitKey(1);
+				waitKey(1); // macht evtl probleme
 			}
 		}
 
-	}
+	}*/
 
 }
 

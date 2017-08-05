@@ -31,41 +31,12 @@ void MotorComRS01Impl::kick() {
 	//TODO
 }
 
-int MotorComRS01Impl::openPort() {
-	struct ifreq ifr;
-	struct sockaddr_can addr;
-
-	this->socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
-	if (this->socketId < 0) {
-		return -1;
-	}
-
-	addr.can_family = AF_CAN;
-	strcpy(ifr.ifr_name, port);
-	if (ioctl(this->socketId, SIOCGIFINDEX, &ifr) < 0) {
-		return (-1);
-	}
-
-	addr.can_ifindex = ifr.ifr_ifindex;
-	fcntl(this->socketId, F_SETFL, O_NONBLOCK);
-	if (bind(this->socketId, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
-		return -1;
-	}
-
-	return 0;
-}
 
 int MotorComRS01Impl::closePort() {
 	close(this->socketId);
 	return 0;
 }
 
-int MotorComRS01Impl::sendPort(struct can_frame *frame) {
-	int retval = write(socketId, frame, sizeof(struct can_frame));
-	if (retval != sizeof(struct can_frame))
-		return -1;
-	return 0;
-}
 
 void MotorComRS01Impl::readPort() {
 
