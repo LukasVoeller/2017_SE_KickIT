@@ -1,5 +1,6 @@
 #ifndef BALLSTATUS_HPP_
 #define BALLSTATUS_HPP_
+
 #include "Vec2.hpp"
 
 class BallStatus {
@@ -13,7 +14,6 @@ public:
 
 	BallStatus() :
 			movement(0.0f, 0.0f), position(0.0f, 0.0f) {
-
 	}
 
 	float getVelocity() {

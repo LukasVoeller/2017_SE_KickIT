@@ -14,10 +14,11 @@ public:
 		y = 0;
 	}
 
-	Vec2(float _x, float _y) :
-			x(_x), y(_y) {
-
+	Vec2(float _x, float _y) {
+		this->x = _x;
+		this->y = _y;
 	}
+
 	void update(float newx, float newy) {
 		x = newx;
 		y = newy;
@@ -99,7 +100,6 @@ public:
 		Vec2 result = *this - reflectionImpulse;
 		return result;
 	}
-
 };
 
 #endif /* VEC2_HPP_ */

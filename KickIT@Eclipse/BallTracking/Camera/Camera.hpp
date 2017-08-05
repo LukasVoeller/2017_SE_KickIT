@@ -3,21 +3,18 @@
 
 #include "CameraInterface.hpp"
 
-class Camera : public CameraInterface{
+class Camera: public CameraInterface {
 public:
 	Camera();
 	virtual ~Camera();
-
 	//CGrabResultPtr* getImage(){}
 
 private:
 	void calibrate();
 	void getCameraSettings();
 	void setCameraSettings();
-	void camera_settings();
+	void cameraSettings();
 	void threshold();
-
-
 };
 
 #endif /* BALLTRACKING_CAMERA_HPP_ */
