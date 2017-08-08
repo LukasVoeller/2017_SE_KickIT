@@ -18,10 +18,17 @@
 #include <pylon/PylonGUI.h>
 #endif
 
+// Settings for using  Basler USB cameras.
+#include <pylon/usb/BaslerUsbInstantCamera.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+
+
 using namespace cv;
 using namespace std;
 using namespace Pylon;
 using namespace GenApi;
+
 
 Camera::Camera() {
 	cout << "Camera Constructor" << std::endl;
@@ -31,7 +38,7 @@ Camera::Camera() {
 	//calibrate();
 	Camera::setCameraSettings();
 	Camera::getCameraSettings();
-	Camera::threshold();
+	//Camera::threshold();
 }
 
 Camera::~Camera() {
@@ -49,8 +56,8 @@ void Camera::calibrate(){
 	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
 	camera.Open();
 
-	GenApi::CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	GenApi::CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
+	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
+	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
 
 	Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
 
@@ -66,7 +73,7 @@ void Camera::calibrate(){
 			if (ptrGrabResult->GrabSucceeded()) {
 				cout << "success" << endl;
 				fc.Convert(image, ptrGrabResult);
-				cv_img = cv::Mat(ptrGrabResult->GetHeight(),
+				cv_img = Mat(ptrGrabResult->GetHeight(),
 						ptrGrabResult->GetWidth(), CV_8UC3,
 						(uint8_t*) image.GetBuffer());
 				imshow("circles", cv_img);
@@ -82,6 +89,8 @@ void Camera::calibrate(){
 
 //Kameraeinstellungen vornehmen
 void Camera::setCameraSettings() {
+	PylonAutoInitTerm autoInitTerm;
+	CGrabResultPtr ptrGrabResult;
 	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
 	cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << endl;
 	camera.Open();
@@ -91,23 +100,36 @@ void Camera::setCameraSettings() {
 	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
 	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
 	CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
-	CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
+	//CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
+	CFloatPtr exposuretimeLowerLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsLowerLimit"));
+	CFloatPtr exposuretimeUpperLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsUpperLimit"));
+	CIntegerPtr exposuretimeTargetValue(camera.GetNodeMap().GetNode("AutoTargetValue"));
+	CIntegerPtr exposuretimeAuto(camera.GetNodeMap().GetNode("ExposureAuto"));
 /*
+	CEnumerationPtr ptrExposureAuto = nodeMap.GetNode("ExposureAuto");
+
+
 	CEnumEntryPtr ptrAutoXControlExposureTimePriority = ptrAutoXControlPriority->GetEntryByName(“ExposureTimePriority”);
 
 	camera.AutoExposureTimeLowerLimit.SetValue(camera.AutoExposureTimeLowerLimit.GetMin());
 	camera.AutoExposureTimeUpperLimit.SetValue(camera.AutoExposureTimeUpperLimit.GetMax());
-	// Set the target average gray value to 60% of the maximum gray value
+	//Set the target average gray value to 60% of the maximum gray value
 	camera.AutoTargetBrightness.SetValue(0.6);
 	// Enable Exposure Auto by setting the operation mode to Continuous
 	camera.ExposureAuto.SetValue(ExposureAuto_Continuous);
 */
-
+	//exposuretime->GetMin();
+	//exposuretime->GetMax();
+	exposuretimeLowerLimit->SetValue(1000.0);
+	exposuretimeUpperLimit->SetValue(1.0E6);
+	exposuretimeTargetValue->SetValue(128);
+	//exposuretimeAuto->SetValue(ExposureAuto_Continuous);
 	height->SetValue(374);
 	width->SetValue(608);
 	packetsize->SetValue(1500);
-	//exposuretime->SetValue();
-
+	//exposuretime->SetValue(128);
+	//exposuretime->GetMin();
+	//exposuretime->GetMax();
 	cout << "Kammeraeinstellungen vorgenohmen" << endl;
 
 
@@ -124,10 +146,10 @@ void Camera::getCameraSettings() {
 	cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << endl;
 	camera.Open();
 
-	GenApi::CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	GenApi::CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-	GenApi::CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
-	GenApi::CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
+	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
+	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
+	CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
+	CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
 
 	cout << "Aktuelle Kammeraparameter: " << endl;
 	camera.GetNodeMap().GetNode("Height");
