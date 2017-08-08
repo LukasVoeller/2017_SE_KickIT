@@ -5,6 +5,9 @@
 #include "../DataType/Vec2.hpp"
 #include <iostream>
 
+#include "../Interface/RowControllerInterface.hpp"
+#include "../DataType/BallStatus.hpp"
+
 class TableControllerInterface {
 public:
 	//virtual ~InterfaceTableController(); //Warning without destructor
@@ -12,7 +15,48 @@ public:
 	virtual void run() = 0;
 	virtual void stop() = 0;
 
+	void motorByHand() {
+		std::cout << "motorByHand()" << std::endl;
+
+		int position = 1;
+		int row = 0;
+
+		while(position != 0){
+			std::cout << "Enter row ( 0:keeper | 1:defense | 2:midfield | 3:offense - Exit with 0): " << std::endl;
+			std::cin >> row;
+			std::cout << "Enter position (Exit with 0): " << std::endl;
+			std::cin >> position;
+
+			switch (row){
+				case 0:
+					if(keeperActive)
+						keeperControl->moveTo(position);
+					else
+						std::cout << "keeper is not active" << std::endl;
+					break;
+
+				case 1:
+					if(defenseActive)
+						defenseControl->moveTo(position);
+					else
+						std::cout << "keeper is not active" << std::endl;
+					break;
+
+			}
+		}
+	}
+
 protected:
+
+	BallStatus currentBallStaus;
+
+	RowControllerInterface* keeperControl;
+	RowControllerInterface* defenseControl;
+	RowControllerInterface* midfieldControl;
+	RowControllerInterface* offenseControl;
+
+
+
 	float* calculateRowPositions(float tableHeight, BallStatus* b, bool keeper,
 			bool defense, bool midfield, bool offense, float yOffset = 0,
 			float dDist = 0, float mDist = 0, float oDist = 0,

@@ -12,38 +12,55 @@
 #include <cstring>
 #include <iostream>
 
+#include "../../DataType/RowEnum.hpp"
+
+static bool driversInitialized = true;
+
 class MotorCommunicatorInterface {
 public:
-	virtual void moveTo(float y) = 0;	//Redundant?
-	virtual void kick() = 0;			//Redundant?
+	virtual void kick() = 0;
 
-	virtual void linearMovement(int positionL) = 0;
+	void linearMovement(int position){
+		int pos1, pos2;
+
+		position *= 10;
+
+		pos1 = (position & 255);
+		pos2 = (position >> 8);
+
+		nibble = !(nibble);
+		// FRAME_INIT Can_ID, DLC , Data, Data, Data, Data, Data, Data, Data, Data,
+		// Nibble has to change every new COmmand, therefore nibble =! nibble
+		// Position is transferred with two hex data, therefore pos1 pos2. Pos 1 are the lower 8 bits
+		// 50 mm then corresponds to 500 in the data word as a hex number
+		// The last two data words in the 0x201 frame are for the maximum speed
+		frameInit(this->motorAddress1, 0x8, 0x3F, 0x00, nibble, 0x09, pos1, pos2, 0xFF, 0xFF); // RXPDO 1
+		// This frame still belongs to the Got To Pos Command and is sent to RXPDO 2 therefore 0x301
+		// The data words 0 and 1 are here for the acceleration 100 in Dec corresponds to an acceleration of 10 m / s²
+		//The next two data words are for braking the scale is exactly like accelerating
+		frameInit(this->motorAddress2, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
+		frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+
+		nibble = !(nibble);
+		frameInit(this->motorAddress1, 0x8, 0x3F, 0x00, nibble, 0x09, pos1, pos2, 0xFF, 0xFF); // RXPDO 1
+		frameInit(this->motorAddress2, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
+		frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+	}
 
 protected:
 
-	//TODO Elternklassen für die folgenden vier Funktionen
-	virtual int closePort() = 0;
-	virtual void readPort() = 0;
-
-	virtual void driverInit() = 0;
-	virtual void motorSwitchon() = 0;
-	virtual void homing() = 0;
-
-	//New Functions
-	virtual void sendPositionToDriver(int driverin) = 0;
-	virtual void motorByHand() = 0;
-
-	//Shooting Functions
-	virtual void shootingMove(int positionS) {}
-	virtual void rotation(int positionR) {}
-	virtual void shoot1() {}
-	virtual void shoot2() {}
-	virtual void trickshot() {}
-
+	Row row;
 	char* port;
 	int socketId;
-	int nibble1;
-	int nibble2;
+	int nibble;
+
+	int motorAddress1;
+	int motorAddress2;
+
+
+	virtual void homing() = 0;
+
+
 
 	virtual int openPort() {
 		struct ifreq ifr;
@@ -52,8 +69,6 @@ protected:
 		this->socketId = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 		if (this->socketId < 0) {
 			return -1;
-		} else {
-			std::cout << "socketid: " << this->socketId << std::endl;
 		}
 
 		addr.can_family = AF_CAN;
@@ -64,7 +79,6 @@ protected:
 		}
 
 		addr.can_ifindex = ifr.ifr_ifindex;
-		std::cout << "addr.can_ifindex: " << addr.can_ifindex  << std::endl;
 
 		if(fcntl(this->socketId, F_SETFL, O_NONBLOCK) < 0 ){
 			std::cout << "fcntl failed port: " << port << std::endl;
@@ -105,6 +119,72 @@ protected:
 		}
 		return 0;
 	}
+
+	void driverInit() {
+			std::cout << "----- driver init -----" << std::endl;
+			std::cout << std::endl;
+
+			std::cout << "reset PS01..." << std::endl;
+			frameInit(0x601, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); // Reset Command
+			sleep(2);
+			std::cout << "reset RS01..." << std::endl;
+			frameInit(0x602, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); // Reset Command
+			frameInit(0x603, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00); // Reset Command
+			sleep(20);
+			std::cout << "operational..." << std::endl;
+			frameInit(0x00, 0x2, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+			std::cout << "ready to switch on PS01..." << std::endl;
+			frameInit(0x201, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			sleep(2);
+			std::cout << "RS01..." << std::endl;
+			frameInit(0x202, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			frameInit(0x203, 0x8, 0x3E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+			frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+			sleep(2);
+
+			std::cout << "switch on PS01..." << std::endl;
+			frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			sleep(2);
+			std::cout << "RS01..." << std::endl;
+			frameInit(0x202, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			frameInit(0x203, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+			frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+
+			sleep(2);
+			std::cout << "homen  PS01..." << std::endl;
+			frameInit(0x201, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			sleep(2);
+			std::cout << "homen  RS01..." << std::endl;
+			frameInit(0x202, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);// Homen Command an RXPD0 1
+			frameInit(0x203, 0x8, 0x3F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);// Homen Command an RXPD0 1
+
+			frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+
+			sleep(25);
+
+			std::cout << "homed" << std::endl;
+			frameInit(0x201, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			sleep(2);
+			frameInit(0x202, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			frameInit(0x203, 0x8, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+			frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); // Sync
+
+			std::cout << std::endl;
+
+			driversInitialized = true;
+
+		}
+
+	void closePort() {
+		close(this->socketId);
+	}
+
+
 };
 
 #endif /* INTERFACEMOTORCOMMUNICATOR_HPP */

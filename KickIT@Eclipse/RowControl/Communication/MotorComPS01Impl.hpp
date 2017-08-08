@@ -15,23 +15,11 @@
 class MotorComPS01Impl: public MotorCommunicatorInterface {
 public:
 	MotorComPS01Impl(Row r);
-	void moveTo(float y);
 	void kick();
-
-	virtual void linearMovement(int positionL);
 
 private:
 
-	int closePort();
-	void readPort();
-
-	void driverInit();
-	void motorSwitchon();
 	void homing();
-
-	//New Functions
-	virtual void sendPositionToDriver(int driverin);
-	virtual void motorByHand();
 
 };
 
