@@ -17,8 +17,9 @@ public:
 	MotorComRS01Impl(Row r);
 	void kick();
 
-private:
+protected:
 
+	void driverInit();
 	void homing();
 };
 

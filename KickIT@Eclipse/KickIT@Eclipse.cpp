@@ -70,7 +70,8 @@ int main(int argc, char** argv) {
 
 //Final mode - Ready to play!
 #if MODE == 4
-	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
+
+	TableControllerImpl* t = new TableControllerImpl(true, false, false, false);
 	t->motorByHand();
 #endif
 }

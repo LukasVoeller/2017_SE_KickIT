@@ -19,29 +19,40 @@ public:
 		std::cout << "motorByHand()" << std::endl;
 
 		int position = 1;
-		int row = 0;
+		int row = 1;
 
-		while(position != 0){
-			std::cout << "Enter row ( 0:keeper | 1:defense | 2:midfield | 3:offense - Exit with 0): " << std::endl;
+		while(true){
+			std::cout << "Enter row [1:Keeper] [2:Defense] [3:Midfield] [4:Offense] (Exit with -1): ";
 			std::cin >> row;
-			std::cout << "Enter position (Exit with 0): " << std::endl;
-			std::cin >> position;
 
-			switch (row){
-				case 0:
-					if(keeperActive)
+			if(row == -1){
+				break;
+			}
+
+			while (true) {
+				std::cout << "Enter position (Exit with -1): ";
+				std::cin >> position;
+
+				if (row == 1) {
+					if (keeperActive) {
 						keeperControl->moveTo(position);
-					else
+					} else {
 						std::cout << "keeper is not active" << std::endl;
-					break;
+					}
+				}
 
-				case 1:
-					if(defenseActive)
+				if (row == 2) {
+					if (defenseActive) {
 						defenseControl->moveTo(position);
-					else
+					} else {
 						std::cout << "keeper is not active" << std::endl;
-					break;
+					}
+				}
 
+				if (row == -1) {
+					std::cout << "Mit -1 in dem If Gz!" << std::endl;
+					break;
+				}
 			}
 		}
 	}
@@ -54,8 +65,6 @@ protected:
 	RowControllerInterface* defenseControl;
 	RowControllerInterface* midfieldControl;
 	RowControllerInterface* offenseControl;
-
-
 
 	float* calculateRowPositions(float tableHeight, BallStatus* b, bool keeper,
 			bool defense, bool midfield, bool offense, float yOffset = 0,
