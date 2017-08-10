@@ -16,7 +16,7 @@ class MotorComRS01Impl: public MotorCommunicatorInterface {
 public:
 	MotorComRS01Impl(Row r);
 	void kick();
-
+	void linearMovement(int posotion);
 protected:
 
 	void driverInit();

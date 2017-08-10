@@ -30,7 +30,7 @@ public:
 
 	static TableControllerImpl* getTableController() {
 		vkw = new VirtualKickerWindow();
-		tci = new TableControllerImpl(true, false, false, false);
+		tci = new TableControllerImpl(true, true, false, false);
 
 		vkw->setTableController(tci);
 
@@ -45,7 +45,7 @@ public:
 
 		//BallTrackerInterface* bti = new BallTrackerImpl();
 
-		BallTrackerImpl* bti = new BallTrackerImpl();
+		//BallTrackerImpl* bti = new BallTrackerImpl();
 
 	}
 

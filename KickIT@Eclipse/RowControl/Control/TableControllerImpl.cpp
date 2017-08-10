@@ -7,10 +7,10 @@
 TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 		bool midfield, bool offense) {
 
-	keeperActive = keeper;
-	defenseActive = defense;
-	midfieldActive = midfield;
-	offenseActive = offense;
+	this->keeperActive = keeper;
+	this->defenseActive = defense;
+	this->midfieldActive = midfield;
+	this->offenseActive = offense;
 
 	if (keeperActive) {
 		//initiate connection to the keeper-driver
@@ -32,6 +32,7 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 
 void TableControllerImpl::setBallPos(float x, float y) {
 	keeperControl->moveTo(y);
+	defenseControl->moveTo(y);
 }
 
 void TableControllerImpl::run() {

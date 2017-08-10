@@ -49,7 +49,7 @@ void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e) {
 		mouseTrail.push_back(new QPoint(e->pos().x(), e->pos().y()));
 		lastAdded.setX(e->pos().x());
 		lastAdded.setY(e->pos().y());
-		tc->setBallPos(e->pos().x(), e->pos().y());
+		tc->setBallPos(e->pos().x(), 178 - e->pos().y());
 		repaint();
 	}
 }

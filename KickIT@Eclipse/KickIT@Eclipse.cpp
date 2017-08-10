@@ -19,7 +19,7 @@
  *
  ********************************************************************************/
 
-#include <BallTracking/BallTrackerInterface.hpp>
+//#include <BallTracking/BallTrackerInterface.hpp>
 #include <cstdlib>
 #include <QApplication>
 
@@ -35,7 +35,7 @@
 int main(int argc, char** argv) {
 
 	TableControllerInterface* tableController;
-	BallTrackerInterface* ballTracker;
+	//BallTrackerInterface* ballTracker;
 
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
 #if MODE == 1
@@ -71,7 +71,8 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	TableControllerImpl* t = new TableControllerImpl(true, false, false, false);
+	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
 	t->motorByHand();
+
 #endif
 }

@@ -134,4 +134,3 @@ void BallTrackerImpl::startTracking() {
 //BallStatus* BallTrackerImpl::getBallStatus() {
 //	return new BallStatus();
 //}
-

@@ -21,15 +21,12 @@ public:
 		int position = 1;
 		int row = 1;
 
-		while(true){
-			std::cout << "Enter row [1:Keeper] [2:Defense] [3:Midfield] [4:Offense] (Exit with -1): ";
+		while(row != -1){
+			position = 1;
+			std::cout << "Enter row [1:Keeper] [2:Defense] [3:Both] (Exit with -1): ";
 			std::cin >> row;
 
-			if(row == -1){
-				break;
-			}
-
-			while (true) {
+			while (position != -1) {
 				std::cout << "Enter position (Exit with -1): ";
 				std::cin >> position;
 
@@ -37,7 +34,7 @@ public:
 					if (keeperActive) {
 						keeperControl->moveTo(position);
 					} else {
-						std::cout << "keeper is not active" << std::endl;
+						std::cout << "Keeper is not active" << std::endl;
 					}
 				}
 
@@ -45,13 +42,17 @@ public:
 					if (defenseActive) {
 						defenseControl->moveTo(position);
 					} else {
-						std::cout << "keeper is not active" << std::endl;
+						std::cout << "Defense is not active" << std::endl;
 					}
 				}
 
-				if (row == -1) {
-					std::cout << "Mit -1 in dem If Gz!" << std::endl;
-					break;
+				if (row == 3) {
+					if (defenseActive && keeperActive) {
+						defenseControl->moveTo(position);
+						keeperControl->moveTo(position);
+					} else {
+						std::cout << "One or both are not active" << std::endl;
+					}
 				}
 			}
 		}
