@@ -2,19 +2,23 @@
 #define BALLTRACKING_CAMERA_HPP_
 
 #include "CameraInterface.hpp"
+#include <opencv2/core/core.hpp>
 
 class Camera: public CameraInterface {
 public:
 	Camera();
 	virtual ~Camera();
-	//CGrabResultPtr* getImage(){}
+	cv::Mat* getImage();
+	void threshold();
 
-private:
+protected:
 	void calibrate();
 	void getCameraSettings();
 	void setCameraSettings();
 	void cameraSettings();
-	void threshold();
+
+	CInstantCamera camera;
+
 };
 
 #endif /* BALLTRACKING_CAMERA_HPP_ */

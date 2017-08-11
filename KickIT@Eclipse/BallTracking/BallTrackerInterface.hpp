@@ -10,12 +10,11 @@ public:
 	virtual void setTableController(TableControllerInterface* t) = 0;
 	virtual ~BallTrackerInterface(){}
 
-private:
-	virtual void analyseImage() = 0;
-	virtual void startTracking() = 0;
+
 
 protected:
 	Camera* camera;
+	virtual void startTracking() = 0;
 };
 
 #endif /* BALLTRACKER_HPP_ */

@@ -30,7 +30,7 @@
 #include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 4
+#define MODE 3
 
 int main(int argc, char** argv) {
 
@@ -62,9 +62,10 @@ int main(int argc, char** argv) {
 //Balltracking testing mode - Table is simulated by graphical interface
 #if MODE == 3
 
-	QApplication a(argc, argv);
-	VirtualKicker::getMockTableControllerWithBalltracker();
-	return a.exec();
+	//QApplication a(argc, argv);
+	//VirtualKicker::getMockTableControllerWithBalltracker();
+	//return a.exec();
+	BallTrackerImpl* bti = new BallTrackerImpl();
 
 #endif
 

@@ -13,9 +13,8 @@ public:
 
 	void setTableController(TableControllerInterface* t);
 
-private:
+protected:
 	void startTracking();
-	void analyseImage();
 };
 
 #endif /* BALLTRACKERIMPL_HPP */
