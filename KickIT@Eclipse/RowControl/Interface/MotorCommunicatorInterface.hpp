@@ -18,11 +18,6 @@ public:
 	virtual void linearMovement(int position) = 0;
 
 protected:
-	//Check for first Run
-	bool initNibblePStranslational = false;
-	bool initNibbleRStranslational = false;
-	bool initNibbleRSrotary = false;
-
 	Row row;
 	char* port;
 	int socketId;
@@ -31,6 +26,16 @@ protected:
 
 	virtual void homing() = 0;
 	virtual void driverInit() = 0;
+
+	int switchedNibbleT() {
+		nibbleTranslational = !nibbleTranslational;
+		return nibbleTranslational;
+	}
+
+	int switchedNibbleR() {
+		nibbleRotary = !nibbleRotary;
+		return nibbleRotary;
+	}
 
 	int openPort() {
 		struct ifreq ifr;
@@ -61,10 +66,8 @@ protected:
 		return 0;
 	}
 
-	void frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) {
-		nibbleRotary = !nibbleRotary;
-		nibbleTranslational = !nibbleTranslational;
-
+	void frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2,
+			int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) {
 		openPort();
 
 		struct can_frame frame;

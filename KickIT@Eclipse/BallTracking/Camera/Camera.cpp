@@ -4,32 +4,24 @@
 #include <opencv2/video/video.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
-#include <pylon/gige/BaslerGigEInstantCamera.h>
-#include <pylon/PylonIncludes.h>
-#include <thread>
-
 #include "opencv2/imgproc.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
-
+#include <pylon/gige/BaslerGigEInstantCamera.h>
+#include <pylon/usb/BaslerUsbInstantCamera.h>
+#include <pylon/PylonIncludes.h>
 #include "Camera.hpp"
 
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
 #endif
 
-// Settings for using  Basler USB cameras.
-#include <pylon/usb/BaslerUsbInstantCamera.h>
 #define _CRT_SECURE_NO_WARNINGS
-
-
-
 
 using namespace cv;
 using namespace std;
 using namespace Pylon;
 using namespace GenApi;
-
 
 Camera::Camera() {
 	cout << "Camera Constructor" << std::endl;
@@ -50,32 +42,30 @@ void Camera::calibrate(){
 	PylonAutoInitTerm autoInitTerm;
 	CGrabResultPtr ptrGrabResult;
 	CImageFormatConverter fc;
-	fc.OutputPixelFormat = PixelType_RGB8packed;
 	CPylonImage image;
 	vector<Vec3f> circles;
-	cout << "thread" << endl;
 	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
+
+	fc.OutputPixelFormat = PixelType_RGB8packed;
+
 	camera.Open();
 
 	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
 	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-
 	Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
 
 	camera.StartGrabbing();
 
 	for (int i = 0; i < 5; i++) {
-		cout << i << endl;
 		while (camera.IsGrabbing()) {
 
-			camera.RetrieveResult(5000, ptrGrabResult,
-					TimeoutHandling_ThrowException);
+			camera.RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
 
 			if (ptrGrabResult->GrabSucceeded()) {
-				cout << "success" << endl;
+				cout << "Grabbing succeeded" << endl;
+
 				fc.Convert(image, ptrGrabResult);
-				cv_img = Mat(ptrGrabResult->GetHeight(),
-						ptrGrabResult->GetWidth(), CV_8UC3,
+				cv_img = Mat(ptrGrabResult->GetHeight(), ptrGrabResult->GetWidth(), CV_8UC3,
 						(uint8_t*) image.GetBuffer());
 				imshow("circles", cv_img);
 
@@ -86,7 +76,6 @@ void Camera::calibrate(){
 	}
 
 }
-
 
 //Kameraeinstellungen vornehmen
 void Camera::setCameraSettings() {
@@ -132,19 +121,13 @@ void Camera::setCameraSettings() {
 	//exposuretime->GetMin();
 	//exposuretime->GetMax();
 	cout << "Kammeraeinstellungen vorgenohmen" << endl;
-
-
-
-
-
-
 }
 
 //Kameraeinstellungen auslesen
 void Camera::getCameraSettings() {
-
 	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
-	cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << endl;
+	cout << "Using camera: " << camera.GetDeviceInfo().GetModelName() << endl;
+
 	camera.Open();
 
 	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
@@ -152,8 +135,7 @@ void Camera::getCameraSettings() {
 	CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
 	CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
 
-	cout << "Aktuelle Kammeraparameter: " << endl;
-	camera.GetNodeMap().GetNode("Height");
+	cout << "Aktuelle Kameraparameter: " << endl;
 	cout << "Höhe: " << width->GetValue() << endl;
 	cout << "Weite: " << height->GetValue() << endl;
 	cout << "Packetsize: " << packetsize->GetValue() << endl;
