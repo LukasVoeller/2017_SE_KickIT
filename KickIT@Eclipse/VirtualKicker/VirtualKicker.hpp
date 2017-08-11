@@ -45,7 +45,7 @@ public:
 
 		//BallTrackerInterface* bti = new BallTrackerImpl();
 
-		//BallTrackerImpl* bti = new BallTrackerImpl();
+		BallTrackerImpl* bti = new BallTrackerImpl();
 
 	}
 
