@@ -3,7 +3,7 @@
  * Hochschule Osnabrueck, Sommersemester 2017
  *
  * Programmname      : KickIT
- * Version			 : 0.4.5-0001
+ * Version			 : 0.4.6-0001
  *
  * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
  *
@@ -15,17 +15,15 @@
  * 					   OpenCV (v2)    - Ballerkennung
  *                     Pylon (v5.0.1) - Kamerabilddarstellung
  *
- * TODO              : Warnings beheben
+ * TODO              :
  *
  ********************************************************************************/
 
 //#include <BallTracking/BallTrackerInterface.hpp>
 #include <cstdlib>
 #include <QApplication>
-
 #include <VirtualKicker/TableControllerMock.hpp>
 #include <RowControl/Interface/TableControllerInterface.hpp>
-
 #include "RowControl/Interface/TableControllerInterface.hpp"
 #include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
@@ -41,31 +39,35 @@ int main(int argc, char** argv) {
 #if MODE == 1
 
 	QApplication a(argc, argv);
-
 	tableController = VirtualKicker::getMockTableController();
-
 	return a.exec();
 
 #endif
 
-//Motor testing mode - Ball position is simulated by graphical interface
+//Motor testing mode - The ball position is simulated with the GUI
 #if MODE == 2
 
 	QApplication a(argc, argv);
-
 	tableController = VirtualKicker::getTableController();
-
 	return a.exec();
 
 #endif
 
-//Balltracking testing mode - Table is simulated by graphical interface
+//Balltracking testing mode - The whole table is simulated with the GUI
 #if MODE == 3
 
+<<<<<<< HEAD
 	//QApplication a(argc, argv);
 	//VirtualKicker::getMockTableControllerWithBalltracker();
 	//return a.exec();
 	BallTrackerImpl* bti = new BallTrackerImpl();
+=======
+	QApplication a(argc, argv);
+
+	VirtualKicker::getMockTableControllerWithBalltracker();
+
+	return a.exec();
+>>>>>>> b051c602dfdc7afd67ddf4ffd136f16d3c949d74
 
 #endif
 
@@ -73,6 +75,7 @@ int main(int argc, char** argv) {
 #if MODE == 4
 
 	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
+
 	t->motorByHand();
 
 #endif
