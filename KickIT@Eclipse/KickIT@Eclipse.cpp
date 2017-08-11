@@ -3,7 +3,7 @@
  * Hochschule Osnabrueck, Sommersemester 2017
  *
  * Programmname      : KickIT
- * Version			 : 0.4.5-0001
+ * Version			 : 0.4.6-0001
  *
  * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
  *
@@ -15,17 +15,15 @@
  * 					   OpenCV (v2)    - Ballerkennung
  *                     Pylon (v5.0.1) - Kamerabilddarstellung
  *
- * TODO              : Warnings beheben
+ * TODO              :
  *
  ********************************************************************************/
 
 //#include <BallTracking/BallTrackerInterface.hpp>
 #include <cstdlib>
 #include <QApplication>
-
 #include <VirtualKicker/TableControllerMock.hpp>
 #include <RowControl/Interface/TableControllerInterface.hpp>
-
 #include "RowControl/Interface/TableControllerInterface.hpp"
 #include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
@@ -46,7 +44,7 @@ int main(int argc, char** argv) {
 
 #endif
 
-//Motor testing mode - Ball position is simulated by graphical interface
+//Motor testing mode - The ball position is simulated with the GUI
 #if MODE == 2
 
 	QApplication a(argc, argv);
@@ -55,11 +53,13 @@ int main(int argc, char** argv) {
 
 #endif
 
-//Balltracking testing mode - Table is simulated by graphical interface
+//Balltracking testing mode - The whole table is simulated with the GUI
 #if MODE == 3
 
 	QApplication a(argc, argv);
+
 	VirtualKicker::getMockTableControllerWithBalltracker();
+
 	return a.exec();
 
 #endif
@@ -68,6 +68,7 @@ int main(int argc, char** argv) {
 #if MODE == 4
 
 	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
+
 	t->motorByHand();
 
 #endif

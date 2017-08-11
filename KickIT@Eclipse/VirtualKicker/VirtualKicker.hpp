@@ -1,11 +1,10 @@
 #ifndef VIRTUALKICKER_HPP
 #define VIRTUALKICKER_HPP
 
+#include "../BallTracking/BallTrackerInterface.hpp"
+#include "../BallTracking/BallTrackerImpl.hpp"
 #include "VirtualKickerWindow.hpp"
 #include "TableControllerMock.hpp"
-
-#include "../BallTracking/BallTrackerImpl.hpp"
-#include "../BallTracking/BallTrackerInterface.hpp"
 
 using namespace std;
 
@@ -46,7 +45,6 @@ public:
 		//BallTrackerInterface* bti = new BallTrackerImpl();
 
 		BallTrackerImpl* bti = new BallTrackerImpl();
-
 	}
 
 private:
@@ -60,5 +58,4 @@ VirtualKickerWindow* VirtualKicker::vkw;
 TableControllerImpl* VirtualKicker::tci;
 TableControllerMock* VirtualKicker::tcm;
 
-#endif /* VIRTUALKICKER_HPP */
-
+#endif //VIRTUALKICKER_HPP

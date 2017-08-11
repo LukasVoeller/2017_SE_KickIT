@@ -18,8 +18,6 @@ public:
 
 private:
 	VirtualKickerWindow* window;
-
 };
 
-#endif /* TABLECONTROLLERMOCK_HPP */
-
+#endif //TABLECONTROLLERMOCK_HPP
