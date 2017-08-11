@@ -4,8 +4,7 @@
 #include "RowControllerMidfield.hpp"
 #include "RowControllerOffense.hpp"
 
-TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
-		bool midfield, bool offense) {
+TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense) {
 
 	this->keeperActive = keeper;
 	this->defenseActive = defense;
@@ -28,6 +27,7 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
 		//initiate connection to the offense-driver
 		offenseControl = new RowControllerOffense();
 	}
+
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {

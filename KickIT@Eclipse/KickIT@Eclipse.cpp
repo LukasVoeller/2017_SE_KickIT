@@ -41,9 +41,7 @@ int main(int argc, char** argv) {
 #if MODE == 1
 
 	QApplication a(argc, argv);
-
 	tableController = VirtualKicker::getMockTableController();
-
 	return a.exec();
 
 #endif
@@ -52,9 +50,7 @@ int main(int argc, char** argv) {
 #if MODE == 2
 
 	QApplication a(argc, argv);
-
 	tableController = VirtualKicker::getTableController();
-
 	return a.exec();
 
 #endif
