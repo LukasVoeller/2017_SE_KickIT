@@ -1,13 +1,12 @@
 #ifndef VIRTUALKICKERWINDOW_HPP
 #define VIRTUALKICKERWINDOW_HPP
 
-#include <Qt>
-#include <QtGui>
-#include <vector>
+#include "../RowControl/Interface/TableControllerInterface.hpp"
 #include <QWidget>
 #include <cstdlib>
-
-#include "../RowControl/Interface/TableControllerInterface.hpp"
+#include <vector>
+#include <QtGui>
+#include <Qt>
 
 class VirtualKickerWindow: public QWidget {
 
@@ -53,5 +52,4 @@ private:
 	std::vector<QPoint*> mouseTrail;
 };
 
-#endif /* VIRTUALKICKERWINDOW_HPP */
-
+#endif //VIRTUALKICKERWINDOW_HPP

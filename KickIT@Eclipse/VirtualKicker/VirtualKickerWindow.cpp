@@ -84,4 +84,3 @@ Vec2* VirtualKickerWindow::getDefensePositionalVector() {
 float VirtualKickerWindow::getDDist() {
 	return defenseBar->dy() / 3;
 }
-
