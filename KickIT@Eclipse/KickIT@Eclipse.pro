@@ -31,7 +31,8 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
-           DataType/RowEnum.hpp
+           DataType/RowEnum.hpp \
+           DataType/ThresholdRGB.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            BallTracking/Camera/Camera.cpp \

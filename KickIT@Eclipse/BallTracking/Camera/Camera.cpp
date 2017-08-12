@@ -11,48 +11,51 @@
 #include <pylon/usb/BaslerUsbInstantCamera.h>
 #include <pylon/PylonIncludes.h>
 #include "Camera.hpp"
+#include "../DataType/ThresholdRGB.hpp"
 
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
 #endif
 
 //#define _CRT_SECURE_NO_WARNINGS
-PylonAutoInitTerm autoInitTerm;
-CGrabResultPtr ptrGrabResult;
+Pylon::PylonAutoInitTerm autoInitTerm;
 
-using namespace cv;
 using namespace std;
-using namespace Pylon;
-using namespace GenApi;
 
-Camera::Camera():camera(CTlFactory::GetInstance().CreateFirstDevice()) {
-	cout << "Camera Constructor" << std::endl;
-	camera.Open();
-	camera.StartGrabbing();
+Camera::Camera(){
+	cout << "Camera Constructor" << endl;
+	camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
+	camera->Open();
+
 
 	this->setCameraSettings();
-	this->getCameraSettings();
-	this->threshold();
+	//this->getCameraSettings();
+
+	camera->StartGrabbing();
 }
 
 Camera::~Camera() {
 
 }
 
-Mat* Camera::getImage() {
+cv::Mat* Camera::getImage() {
+
 	CPylonImage image;
 	CImageFormatConverter fc;
 	CGrabResultPtr ptrGrabResult;
-	fc.OutputPixelFormat = PixelType_RGB8packed;
-	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-	Mat* cv_img = new Mat(width->GetValue(), height->GetValue(), CV_8UC3);
 
-	if (camera.IsGrabbing()) {
-		camera.RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
+	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
+	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
+	cv::Mat* cv_img = new cv::Mat(width->GetValue(), height->GetValue(), CV_8UC3);
+
+	fc.OutputPixelFormat = PixelType_RGB8packed;
+
+	if (camera->IsGrabbing()) {
+		camera->RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
 		if (ptrGrabResult->GrabSucceeded()) {
 			fc.Convert(image, ptrGrabResult);
-			*cv_img = Mat(ptrGrabResult->GetHeight(), ptrGrabResult->GetWidth(), CV_8UC3, (uint8_t*) image.GetBuffer());
+			*cv_img = cv::Mat(ptrGrabResult->GetHeight(), ptrGrabResult->GetWidth(), CV_8UC3, (uint8_t*) image.GetBuffer());
+			//cout << "grab succeeded" << endl;
 		} else {
 			cout << "grab failed" << endl;
 		}
@@ -69,33 +72,35 @@ void Camera::calibrate() {
 	CGrabResultPtr ptrGrabResult;
 	CImageFormatConverter fc;
 	CPylonImage image;
-	vector<Vec3f> circles;
+	vector<cv::Vec3f> circles;
+
+
 
 	fc.OutputPixelFormat = PixelType_RGB8packed;
 
 
-	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-	Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
+	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
+	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
+	cv::Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
 
 
 
 	for (int i = 0; i < 5; i++) {
-		while (camera.IsGrabbing()) {
+		while (camera->IsGrabbing()) {
 
-			camera.RetrieveResult(5000, ptrGrabResult,
+			camera->RetrieveResult(5000, ptrGrabResult,
 					TimeoutHandling_ThrowException);
 
 			if (ptrGrabResult->GrabSucceeded()) {
 				cout << "Grabbing succeeded" << endl;
 
 				fc.Convert(image, ptrGrabResult);
-				cv_img = Mat(ptrGrabResult->GetHeight(),
+				cv_img = cv::Mat(ptrGrabResult->GetHeight(),
 						ptrGrabResult->GetWidth(), CV_8UC3,
 						(uint8_t*) image.GetBuffer());
 				imshow("circles", cv_img);
 
-				waitKey(1); // macht evtl probleme
+				cv::waitKey(1); // macht evtl probleme
 			}
 		}
 
@@ -107,15 +112,13 @@ void Camera::calibrate() {
 void Camera::setCameraSettings() {
 	PylonAutoInitTerm autoInitTerm;
 	CGrabResultPtr ptrGrabResult;
-	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
-	Mat* cv_img = getImage();
-	cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << endl;
-	//camera.Open();
 
-	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-	CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
-	CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
+	cout << "Using device: " << camera->GetDeviceInfo().GetModelName() << endl;
+
+	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
+	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
+	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
+	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
 	//CFloatPtr exposuretimeLowerLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsLowerLimit"));
 	//CFloatPtr exposuretimeUpperLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsUpperLimit"));
 	//CIntegerPtr exposuretimeTargetValue(camera.GetNodeMap().GetNode("AutoTargetValue"));
@@ -135,26 +138,26 @@ void Camera::setCameraSettings() {
 	//exposuretime->SetValue(128);
 	//exposuretime->GetMin();
 	//exposuretime->GetMax();
-	cout << "Kammeraeinstellungen vorgenohmen" << endl;
+	cout << "Kammeraeinstellungen vorgenommen" << endl;
 }
 
 //Kameraeinstellungen auslesen
 void Camera::getCameraSettings() {
-	CInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
-	cout << "Using camera: " << camera.GetDeviceInfo().GetModelName() << endl;
 
-	camera.Open();
+	cout << "Using camera: " << camera->GetDeviceInfo().GetModelName() << endl;
 
-	CIntegerPtr width(camera.GetNodeMap().GetNode("Width"));
-	CIntegerPtr height(camera.GetNodeMap().GetNode("Height"));
-	CIntegerPtr packetsize(camera.GetNodeMap().GetNode("GevSCPSPacketSize"));
-	CFloatPtr exposuretime(camera.GetNodeMap().GetNode("ExposureTimeAbs"));
+
+	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
+	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
+	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
+	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
 
 	cout << "Aktuelle Kameraparameter: " << endl;
 	cout << "Höhe: " << width->GetValue() << endl;
 	cout << "Weite: " << height->GetValue() << endl;
 	cout << "Packetsize: " << packetsize->GetValue() << endl;
 	cout << "Belichtungszeit: " << exposuretime->GetValue() << endl << endl;
+
 }
 
 //Menupunkt Kameraoperationen
@@ -164,48 +167,53 @@ void Camera::cameraSettings() {
 
 
 //Grenzwertebestimmen
-void Camera::threshold() {
+ThresholdRGB* Camera::threshold() {
 
 	CGrabResultPtr ptrGrabResult;
 
-	namedWindow("Control", CV_WINDOW_AUTOSIZE); //Create a window called "Control"
-	int iLowH = 0;		//0
-	int iHighH = 255;	//179
+	cv::namedWindow("Control", CV_WINDOW_NORMAL); //Create a window called "Control"
+	cv::moveWindow("Control", 800 , 10);
 
-	int iLowS = 0;		//0
-	int iHighS = 255; 	//255
-
-	int iLowV = 0; 		//0
-	int iHighV = 255; 	//255
+	ThresholdRGB* result = new ThresholdRGB();
 
 	//Create trackbars in "Control" window
-	cvCreateTrackbar("LowB", "Control", &iLowH, 255); //Hue (0 - 179)
-	cvCreateTrackbar("HighB", "Control", &iHighH, 255);
+	cvCreateTrackbar("LowB", "Control", &result->blueLow, 255); //Hue (0 - 179)
+	cvCreateTrackbar("HighB", "Control", &result->blueHigh, 255);
 
-	cvCreateTrackbar("LowG", "Control", &iLowS, 255); //Saturation (0 - 255)
-	cvCreateTrackbar("HighG", "Control", &iHighS, 255);
+	cvCreateTrackbar("LowG", "Control", &result->greenLow, 255); //Saturation (0 - 255)
+	cvCreateTrackbar("HighG", "Control", &result->greenHigh, 255);
 
-	cvCreateTrackbar("LowR", "Control", &iLowV, 255); //Value (0 - 255)
-	cvCreateTrackbar("HighR", "Control", &iHighV, 255);
+	cvCreateTrackbar("LowR", "Control", &result->redLow, 255); //Value (0 - 255)
+	cvCreateTrackbar("HighR", "Control", &result->redHigh, 255);
 
-	//while (1) {
+	while (1) {
+		cv::Mat* cv_img = this->getImage();
+		cv::Mat imgHSV;
+		cv::Mat imgThresholded;
 
-		Mat* cv_img = getImage();
-		Mat imgHSV;
-		Mat imgThresholded;
+		try{
+			cv::inRange(*cv_img, cv::Scalar(result->blueLow, result->greenLow, result->redLow), cv::Scalar(result->blueHigh, result->greenHigh, result->redHigh), imgThresholded);
+			cv::erode(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)));
+			cv::dilate(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)));
 
-
-		inRange(*cv_img, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded);
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
-
+		} catch( cv::Exception& e ) {
+			const char* err_msg = e.what();
+			std::cout << "exception caught: " << err_msg << std::endl;
+		}
 
 		//Draw contours
 		imshow("Thresholded Image", imgThresholded);//show the thresholded image
 		imshow("Original", *cv_img);		//show the original image
+		cv::moveWindow("Original", 100 , 100);
+		cv::moveWindow("Thresholded Image", 200 , 500);
+		delete(cv_img);
+		if (cv::waitKey(30) == 27) {
+			cv::destroyWindow("Thresholded Image");
+			cv::destroyWindow("Original");
+			cv::destroyWindow("Control");
+			break;
+		}
 
-		waitKey(1);
-		//cout << "t" << endl;
-
-	//}
+	}
+	return result;
 }

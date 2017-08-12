@@ -3,13 +3,14 @@
 
 #include "CameraInterface.hpp"
 #include <opencv2/core/core.hpp>
+#include "../DataType/ThresholdRGB.hpp"
 
 class Camera: public CameraInterface {
 public:
 	Camera();
 	virtual ~Camera();
 	cv::Mat* getImage();
-	void threshold();
+	ThresholdRGB* threshold();
 
 protected:
 	void calibrate();
@@ -17,8 +18,9 @@ protected:
 	void setCameraSettings();
 	void cameraSettings();
 
-	CInstantCamera camera;
+	CInstantCamera* camera;
 
+	//cv::Mat cv_img;
 };
 
 #endif /* BALLTRACKING_CAMERA_HPP_ */

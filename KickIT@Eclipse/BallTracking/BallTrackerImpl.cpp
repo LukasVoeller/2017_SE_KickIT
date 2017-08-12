@@ -33,13 +33,7 @@ BallTrackerImpl::~BallTrackerImpl() {
 
 //Datei für Mittelpunkt-Koordinate des Balles
 void BallTrackerImpl::startTracking() {
-	int BlueLow = 234;
-	int GreenLow = 206;
-	int RedLow = 0;
-
-	int BlueHigh = 255;
-	int GreenHigh = 255;
-	int RedHigh = 255;
+	ThresholdRGB* threshold = camera->threshold();
 
 	//Datei für Mittelpunkt-Koordinate des Balles
 	double lastx = 0;
@@ -56,7 +50,9 @@ void BallTrackerImpl::startTracking() {
 		Mat imgHSV;
 		//cvtColor(cv_img, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
 
-		inRange(*cv_img, Scalar(BlueLow, GreenLow, RedLow), Scalar(BlueHigh, GreenHigh, RedHigh), imgThresholded); //Threshold the image
+		inRange(*cv_img, Scalar(threshold->blueLow, threshold->greenLow, threshold->redLow),
+				Scalar(threshold->blueHigh, threshold->greenHigh, threshold->redHigh), imgThresholded);
+
 		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 
@@ -75,19 +71,22 @@ void BallTrackerImpl::startTracking() {
 			if (abs(Ballcenter.x - lastx) < 2) {
 				Ballcenter.x = lastx;
 			}
-			cout << Ballcenter << endl;
 			//Draw the circle center
 			circle(*cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
 			//Draw the circle outline
 			circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 			lasty = Ballcenter.y;
 			lastx = Ballcenter.x;
+			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
 		}
 
 		//imshow("dif",dif);
 		imshow("circles", *cv_img);
 
-		waitKey(1);
+		if (cv::waitKey(30) == 27) {
+			cv::destroyWindow("Circles");
+			break;
+		}
 
 	}
 }

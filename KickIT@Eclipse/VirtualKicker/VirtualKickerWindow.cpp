@@ -3,7 +3,7 @@
 
 VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 	setMouseTracking(true);
-
+	ball = new QPoint();
 	topLeft = new QPoint(TABLE_MARGIN, TABLE_MARGIN);
 
 	keeperBar = new QLine(topLeft->x() + this->GOAL_TO_KEEPER, topLeft->y() - 30,
@@ -16,6 +16,11 @@ VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 			defenseBar->y1() + (defenseBar->dy() / 3) * 2);
 	defense[1] = new QPoint(defenseBar->x1(),
 			defenseBar->y1() + defenseBar->dy() / 3);
+}
+
+void VirtualKickerWindow::drawBall(float x, float y){
+	this->ball->setX(x);
+	this->ball->setY(y);
 }
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
@@ -41,6 +46,7 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	for (long unsigned int i = 0; i < mouseTrail.size(); i++) {
 		painter.drawPoint(*mouseTrail[i]);
 	}
+	painter.drawPoint(*ball);
 }
 
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e) {

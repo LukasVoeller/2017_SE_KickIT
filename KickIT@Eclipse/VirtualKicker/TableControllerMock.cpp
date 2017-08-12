@@ -39,6 +39,8 @@ void TableControllerMock::setBallPos(float x, float y) {
 		window->setDefense(positions[1]);
 	}
 
+
+
 	delete positions;
 }
 

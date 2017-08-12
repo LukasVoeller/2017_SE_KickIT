@@ -24,6 +24,7 @@ public:
 	Vec2* getKeeperPositionalVector();
 	Vec2* getDefensePositionalVector();
 	float getDDist();
+	void drawBall(float x, float y);
 
 	static const int WINDOW_SIZE_X = 1024;
 	static const int WINDOW_SIZE_Y = 768;
@@ -36,6 +37,7 @@ public:
 	static constexpr double GOAL_SIZE = 21 * SCALE;
 	static constexpr double GOAL_TO_KEEPER = 3.5 * SCALE;
 	static constexpr double GOAL_TO_DEFENSE = 18.5 * SCALE;
+
 
 private:
 	TableControllerInterface* tc;
@@ -50,6 +52,7 @@ private:
 	QPoint* defense[2];
 
 	std::vector<QPoint*> mouseTrail;
+	QPoint* ball;
 };
 
 #endif //VIRTUALKICKERWINDOW_HPP

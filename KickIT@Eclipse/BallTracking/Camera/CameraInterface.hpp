@@ -3,6 +3,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <pylon/PylonIncludes.h>
+#include "../DataType/ThresholdRGB.hpp"
 
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
@@ -15,7 +16,7 @@ public:
 	//virtual CGrabResultPtr* getImage() = 0;
 	virtual ~CameraInterface(){}
 	virtual cv::Mat* getImage() = 0;
-	virtual void threshold() = 0;
+	virtual ThresholdRGB* threshold() = 0;
 
 protected:
 	//Eventuell {} Schreibweise?

@@ -4,10 +4,13 @@
 #include "../RowControl/Interface/TableControllerInterface.hpp"
 #include "../DataType/BallStatus.hpp"
 #include "Camera/Camera.hpp"
+#include "../RowControl/Interface/TableControllerInterface.hpp"
 
 class BallTrackerInterface {
 public:
-	virtual void setTableController(TableControllerInterface* t) = 0;
+	virtual void setTableController(TableControllerInterface* t){
+		this->tableController = t;
+	}
 	virtual ~BallTrackerInterface(){}
 
 
@@ -15,6 +18,8 @@ public:
 protected:
 	Camera* camera;
 	virtual void startTracking() = 0;
+
+	TableControllerInterface* tableController;
 };
 
 #endif /* BALLTRACKER_HPP_ */
