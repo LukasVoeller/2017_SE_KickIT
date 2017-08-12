@@ -22,9 +22,9 @@ BallTrackerImpl::BallTrackerImpl() {
 	startTracking();
 }
 
-void BallTrackerImpl::setTableController(TableControllerInterface* t) {
+//void BallTrackerImpl::setTableController(TableControllerInterface* t) {
 
-}
+//}
 
 BallTrackerImpl::~BallTrackerImpl() {
 

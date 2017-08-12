@@ -4,7 +4,7 @@
 #include "../BallTracking/BallTrackerInterface.hpp"
 #include "../BallTracking/BallTrackerImpl.hpp"
 #include "VirtualKickerWindow.hpp"
-#include "TableControllerMock.hpp"
+#include "../RowControl/Interface/TableControllerInterface.hpp"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ public:
 	static const int WINDOW_SIZE_X = 1024;
 	static const int WINDOW_SIZE_Y = 768;
 
-	static TableControllerMock* getMockTableController() {
+	static TableControllerInterface* getMockTableController() {
 		vkw = new VirtualKickerWindow();
 		tcm = new TableControllerMock(true, true, false, false);
 
@@ -39,14 +39,13 @@ public:
 		return tci;
 	}
 
-	static TableControllerMock* getMockTableControllerWithBalltracker() {
-		TableControllerMock* tcm;
+	static TableControllerInterface* getMockTableControllerWithBalltracker() {
 
 		TableControllerInterface* res = VirtualKicker::getMockTableController();
 		BallTrackerImpl* bti = new BallTrackerImpl();
 		bti->setTableController(res);
 
-		return tcm;
+		return res;
 	}
 
 private:

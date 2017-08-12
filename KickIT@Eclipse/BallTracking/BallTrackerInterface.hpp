@@ -8,7 +8,7 @@
 
 class BallTrackerInterface {
 public:
-	virtual void setTableController(TableControllerInterface* t){
+	void setTableController(TableControllerInterface* t){
 		this->tableController = t;
 	}
 	virtual ~BallTrackerInterface(){}

@@ -24,7 +24,7 @@ void TableControllerMock::stop() {
 }
 
 void TableControllerMock::setBallPos(float x, float y) {
-	updateBallStatus(x, y);
+	/*updateBallStatus(x, y);
 
 	float* positions = calculateRowPositions(window->TABLE_HEIGHT, &ballStatus,
 			isKeeperActive, isDefenseActive, isMidfieldActive, isOffenseActive,
@@ -39,7 +39,8 @@ void TableControllerMock::setBallPos(float x, float y) {
 		window->setDefense(positions[1]);
 	}
 
-	delete positions;
+	delete positions;*/
+	std::cout << x << " " << y << std::endl;
 }
 
 void TableControllerMock::setKickerWindow(VirtualKickerWindow* p) {

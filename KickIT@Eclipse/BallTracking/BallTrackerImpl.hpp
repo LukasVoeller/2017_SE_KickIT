@@ -11,7 +11,7 @@ public:
 	~BallTrackerImpl();	//Virtual?
 	BallStatus* getBallStatus();
 
-	void setTableController(TableControllerInterface* t);
+	//void setTableController(TableControllerInterface* t);
 
 protected:
 	void startTracking();
