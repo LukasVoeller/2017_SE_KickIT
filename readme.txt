@@ -20,7 +20,7 @@ OHNE QT Plugin
 		CONFIG += warn_off
 		CONFIG += C++11
 
-	# Mit dem Befehl "qmake -o Makefile KickIT@Eclipse.pro" wird das Makefile aktualisiert.
+	# Mit dem Befehl "qmake -o Makefile ../KickIT@Eclipse.pro" wird im build Ordner das Makefile aktualisiert.
 	# Danach kann Eclipse das Projekt wieder bauen. Im Makefile müssen desweiteren die Zeilen:
 	
 	# Pylon
@@ -42,3 +42,55 @@ OHNE QT Plugin
 - Um in Eclipse die QT Klassen bekannt zu machen, kann man unter den Projekteigenschaften bei "C/C++ General" unter "Paths and Symbols" mit dem Button "Add" den 
   Pfad des QT Hauptverzeichnisses eintragen z.B. "/usr/include/x86_64-linux-gnu/qt5".
 - Ich habe noch Häkchen bei "add to all configurations" und "add to all languages" gemacht.
+
+-------------------------------------------------- CLEAN PC (Ubuntu 16.04) --------------------------------------------------
+1. ECLIPSE INSTALLIEREN
+	Eclipse IDE for C/C++ Developers: 
+	http://www.eclipse.org/downloads/packages/release/Neon/3
+	
+2. JDK & JRE INSTALLIEREN
+	sudo apt-get install openjdk-8-jdk
+	sudo apt-get install gcj-jre
+	
+3. GIT INSTALLIEREN & PROJEKT KLONEN
+	sudo apt-get install git
+	git clone https://github.com/LukasVoeller/SWE_2017_KickIT.git
+	
+4. QT INSTALLIEREN
+	sudo apt-get install qt5-default
+	
+5. OPENCV DOWNLOADEN & INSTALLIEREN
+	http://opencv.org/releases.html
+	sudo apt-get install build-essential
+	sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+	
+	Aus dem entpackten Verzeichnis in der Konsole ausführen:
+ 		mkdir build
+		cd build
+  		cmake ..
+ 		make -j4
+  		sudo make install
+	
+6. PYLON INSTALLIEREN
+	Aus dem Pylon Verzeichnis in der Konsole ausführen:
+		sudo tar -C /opt -xzf pylonSDK*.tar.gz
+		chmod -x setup-usb.sh
+		./setup-usb.sh
+
+7. MAKEFILE ANPASSEN
+...
+STRIP         = strip
+
+    # Pylon
+        PYLON_ROOT ?= /opt/pylon5
+        CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
+        LIBS          += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
+
+    # Opencv
+        CXXFLAGS      += $(shell pkg-config --cflags opencv)
+        INCLUDEPATH   += /usr/local/include/opencv
+        LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+        LIBS          += $(shell pkg-config --libs opencv)
+
+####### Output directory
+...
