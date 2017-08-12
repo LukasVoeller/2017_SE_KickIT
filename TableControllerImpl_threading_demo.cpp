@@ -4,7 +4,6 @@
 #include <pthread.h>
 #include <thread>
 
-
 using namespace std;
 
 void *RowController_1(void *threadid) {
