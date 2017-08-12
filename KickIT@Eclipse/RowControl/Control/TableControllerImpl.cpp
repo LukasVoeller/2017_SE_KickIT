@@ -6,24 +6,24 @@
 
 TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense) {
 
-	this->keeperActive = keeper;
-	this->defenseActive = defense;
-	this->midfieldActive = midfield;
-	this->offenseActive = offense;
+	this->isKeeperActive = keeper;
+	this->isDefenseActive = defense;
+	this->isMidfieldActive = midfield;
+	this->isOffenseActive = offense;
 
-	if (keeperActive) {
+	if (isKeeperActive) {
 		//initiate connection to the keeper-driver
 		keeperControl = new RowControllerKeeper();
 	}
-	if (defenseActive) {
+	if (isDefenseActive) {
 		//initiate connection to the defense-driver
 		defenseControl = new RowControllerDefense();
 	}
-	if (midfieldActive) {
+	if (isMidfieldActive) {
 		//initiate connection to the midfield-driver
 		midfieldControl = new RowControllerMidfield();
 	}
-	if (offenseActive) {
+	if (isOffenseActive) {
 		//initiate connection to the offense-driver
 		offenseControl = new RowControllerOffense();
 	}

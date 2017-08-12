@@ -38,7 +38,6 @@ public:
 	static constexpr double GOAL_TO_KEEPER = 3.5 * SCALE;
 	static constexpr double GOAL_TO_DEFENSE = 18.5 * SCALE;
 
-
 private:
 	TableControllerInterface* tc;
 

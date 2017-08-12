@@ -1,21 +1,23 @@
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
-#include <net/if.h>
+#include "../../DataType/RowEnum.hpp"
+#include <sys/socket.h>
 #include <linux/can.h>
 #include <sys/ioctl.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <sys/types.h>
-#include <sys/socket.h>
-#include <cstring>
+#include <unistd.h>
+#include <net/if.h>
 #include <iostream>
-#include "../../DataType/RowEnum.hpp"
+#include <fcntl.h>
+#include <cstring>
 
 class MotorCommunicatorInterface {
+
 public:
 	virtual void kick() = 0;
 	virtual void linearMovement(int position) = 0;
+	virtual ~MotorCommunicatorInterface() {}
 
 protected:
 	Row row;
@@ -71,9 +73,9 @@ protected:
 		openPort();
 
 		struct can_frame frame;
-		frame.can_id = ID; 		//COB ID 200 für RxPDO1 + Can ID 1
-		frame.can_dlc = DLC; 	//Datenanzahl
-		frame.data[0] = Data_0; //Daten
+		frame.can_id = ID; 		//COB ID 200 for RxPDO1 + Can ID 1
+		frame.can_dlc = DLC; 	//Datacount
+		frame.data[0] = Data_0; //Data
 		frame.data[1] = Data_1;
 		frame.data[2] = Data_2; //Nibble
 		frame.data[3] = Data_3;
@@ -93,14 +95,13 @@ protected:
 			std::cout << "write failed port!" << std::endl;
 			return -1;
 		}
+
 		return 0;
 	}
-
-
 
 	void closePort() {
 		close(this->socketId);
 	}
 };
 
-#endif /* INTERFACEMOTORCOMMUNICATOR_HPP */
+#endif //INTERFACEMOTORCOMMUNICATOR_HPP

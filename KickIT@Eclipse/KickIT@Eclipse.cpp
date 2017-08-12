@@ -3,7 +3,7 @@
  * Hochschule Osnabrueck, Sommersemester 2017
  *
  * Programmname      : KickIT
- * Version			 : 0.4.6-0001
+ * Version			 : 0.5.2-0001
  *
  * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
  *
@@ -56,18 +56,14 @@ int main(int argc, char** argv) {
 //Balltracking testing mode - The whole table is simulated with the GUI
 #if MODE == 3
 
-
 	//QApplication a(argc, argv);
 	//VirtualKicker::getMockTableControllerWithBalltracker();
 	//return a.exec();
 	//BallTrackerImpl* bti = new BallTrackerImpl();
 
 	QApplication a(argc, argv);
-
 	VirtualKicker::getMockTableControllerWithBalltracker();
-
 	return a.exec();
-
 
 #endif
 
@@ -75,7 +71,6 @@ int main(int argc, char** argv) {
 #if MODE == 4
 
 	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
-
 	t->motorByHand();
 
 #endif

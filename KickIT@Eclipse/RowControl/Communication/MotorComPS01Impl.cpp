@@ -23,6 +23,7 @@ void MotorComPS01Impl::homing() {
 }
 
 void MotorComPS01Impl::driverInit() {
+	sleep(1);
 	cout << "(1/6) Reset PS01:" << endl;
 	frameInit(0x601, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00);
 	sleep(20);
