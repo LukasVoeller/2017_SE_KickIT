@@ -42,17 +42,6 @@ RANLIB        =
 SED           = sed
 STRIP         = strip
 
-	# Pylon
-		PYLON_ROOT ?= /opt/pylon5
-		CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
-		LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
-
-	# Opencv
-		CXXFLAGS      += $(shell pkg-config --cflags opencv)
-		INCLUDEPATH   += /usr/local/include/opencv
-		LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
-		LIBS          += $(shell pkg-config --libs opencv)
-
 ####### Output directory
 
 OBJECTS_DIR   = ./
@@ -379,15 +368,15 @@ compiler_clean:
 
 ####### Compile
 
-KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../VirtualKicker/TableControllerMock.hpp \
+KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../RowControl/Control/TableControllerImpl.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp \
+		../VirtualKicker/TableControllerMock.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp \
-		../RowControl/Control/TableControllerImpl.hpp \
 		../VirtualKicker/VirtualKicker.hpp \
 		../BallTracking/BallTrackerInterface.hpp \
 		../BallTracking/Camera/Camera.hpp \
@@ -398,11 +387,11 @@ KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../VirtualKicker/TableControllerMock.hpp
 
 BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrackerInterface.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp \
 		../BallTracking/Camera/Camera.hpp \
 		../BallTracking/Camera/CameraInterface.hpp \
 		../DataType/ThresholdRGB.hpp \
@@ -424,18 +413,18 @@ MotorComRS01Impl.o: ../RowControl/Communication/MotorComRS01Impl.cpp ../RowContr
 		../RowControl/Interface/MotorCommunicatorInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorComRS01Impl.o ../RowControl/Communication/MotorComRS01Impl.cpp
 
-RowControllerDefense.o: ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Communication/MotorComRS01Impl.hpp \
-		../DataType/RowEnum.hpp \
+RowControllerDefense.o: ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerDefense.hpp \
+		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../RowControl/Control/RowControllerDefense.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp
+		../DataType/RowEnum.hpp \
+		../RowControl/Communication/MotorComRS01Impl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerDefense.o ../RowControl/Control/RowControllerDefense.cpp
 
-RowControllerKeeper.o: ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Communication/MotorComPS01Impl.hpp \
-		../DataType/RowEnum.hpp \
+RowControllerKeeper.o: ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerKeeper.hpp \
+		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../RowControl/Control/RowControllerKeeper.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp
+		../DataType/RowEnum.hpp \
+		../RowControl/Communication/MotorComPS01Impl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerKeeper.o ../RowControl/Control/RowControllerKeeper.cpp
 
 RowControllerMidfield.o: ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerMidfield.hpp \
@@ -452,34 +441,34 @@ RowControllerOffense.o: ../RowControl/Control/RowControllerOffense.cpp ../RowCon
 
 TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../RowControl/Control/TableControllerImpl.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
-		../RowControl/Control/RowControllerKeeper.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp \
 		../RowControl/Control/RowControllerDefense.hpp \
+		../RowControl/Control/RowControllerKeeper.hpp \
 		../RowControl/Control/RowControllerMidfield.hpp \
 		../RowControl/Control/RowControllerOffense.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o ../RowControl/Control/TableControllerImpl.cpp
 
 TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/TableControllerMock.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerMock.o ../VirtualKicker/TableControllerMock.cpp
 
 VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker/VirtualKickerWindow.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp
+		../DataType/RowEnum.hpp \
+		../DataType/BallStatus.hpp \
+		../DataType/Vec2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../VirtualKicker/VirtualKickerWindow.cpp
 
 ####### Install
