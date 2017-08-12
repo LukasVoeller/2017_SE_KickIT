@@ -1,8 +1,9 @@
-#include "TableControllerImpl.hpp"
-#include "RowControllerKeeper.hpp"
-#include "RowControllerDefense.hpp"
-#include "RowControllerMidfield.hpp"
-#include "RowControllerOffense.hpp"
+#include "../Control/TableControllerImpl.hpp"
+
+#include "../Control/RowControllerDefense.hpp"
+#include "../Control/RowControllerKeeper.hpp"
+#include "../Control/RowControllerMidfield.hpp"
+#include "../Control/RowControllerOffense.hpp"
 
 TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense) {
 

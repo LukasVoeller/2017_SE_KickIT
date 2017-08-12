@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include "../DataType/RowEnum.hpp"
-
 #include <sys/types.h> 	//For sockets
 #include <sys/socket.h> //For sockets
 #include "../Interface/MotorCommunicatorInterface.hpp"

@@ -20,12 +20,12 @@
  ********************************************************************************/
 
 //#include <BallTracking/BallTrackerInterface.hpp>
+#include <RowControl/Control/TableControllerImpl.hpp>
 #include <cstdlib>
 #include <QApplication>
 #include <VirtualKicker/TableControllerMock.hpp>
 #include <RowControl/Interface/TableControllerInterface.hpp>
 #include "RowControl/Interface/TableControllerInterface.hpp"
-#include "RowControl/Control/TableControllerImpl.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
 #define MODE 3

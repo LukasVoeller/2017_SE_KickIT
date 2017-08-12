@@ -1,7 +1,8 @@
+#include "../Communication/MotorComPS01Impl.hpp"
+
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>
-#include "MotorComPS01Impl.hpp"
 #include <thread>
 
 using namespace std;

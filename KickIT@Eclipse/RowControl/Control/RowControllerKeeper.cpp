@@ -1,5 +1,6 @@
+#include "../Control/RowControllerKeeper.hpp"
+
 #include "../Communication/MotorComPS01Impl.hpp"
-#include "RowControllerKeeper.hpp"
 #include "../DataType/RowEnum.hpp"
 
 RowControllerKeeper::RowControllerKeeper() {
