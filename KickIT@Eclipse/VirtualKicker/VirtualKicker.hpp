@@ -42,7 +42,7 @@ public:
 	static TableControllerInterface* getMockTableControllerWithBalltracker() {
 
 		TableControllerInterface* res = VirtualKicker::getMockTableController();
-		BallTrackerImpl* bti = new BallTrackerImpl();
+		BallTrackerImpl* bti = new BallTrackerImpl(res);
 		bti->setTableController(res);
 
 		return res;

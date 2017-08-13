@@ -20,8 +20,9 @@ VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 }
 
 void VirtualKickerWindow::drawBall(float x, float y){
-	this->ball->setX(x);
-	this->ball->setY(y);
+	this->ball->setX(x+115);
+	this->ball->setY(y+115);
+	repaint();
 }
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
