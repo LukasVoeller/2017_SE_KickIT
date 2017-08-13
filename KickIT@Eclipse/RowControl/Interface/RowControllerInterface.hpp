@@ -7,7 +7,8 @@ class RowControllerInterface {
 
 public:
 	void moveTo(float y){
-		mcomm->linearMovement(y);
+
+		mcomm->linearMovement((int)y);
 	}
 
 protected:

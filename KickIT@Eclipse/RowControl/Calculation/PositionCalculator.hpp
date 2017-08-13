@@ -5,22 +5,20 @@
 
 class PositionCalculator {
 public:
-	static float tableHeight;
+	float tableHeight;
 
-	static bool isKeeperActive;
-	static bool isDefenseActive;
-	static bool isMidfieldActive;
-	static bool isOffenseActive;
+	bool isKeeperActive = false;
+	bool isDefenseActive = false;
+	bool isMidfieldActive = false;
+	bool isOffenseActive = false;
 
-	static float playerGapDefense;
-	static float playerGapMidfield;
-	static float playerGapOffense;
+	float playerGapDefense = 0;
+	float playerGapMidfield = 0;
+	float playerGapOffense = 0;
 
-	static Vec2 rowDirectionalVector;
+	Vec2 rowDirectionalVector;
 
-	static float* calcPositionsSimple(BallStatus* bs, float yOffset = 0) {
-		rowDirectionalVector.normalize();
-		bs->movement.normalize();
+	float* calcPositionsSimple(BallStatus* bs, float yOffset = 0) {
 
 		//Calculate how many fields are needed
 		float* result = new float[isKeeperActive ? 1 : 0 + isDefenseActive ? 1 :
@@ -28,27 +26,28 @@ public:
 									0 + isOffenseActive ? 1 : 0];
 
 		if (isKeeperActive) {
-			result[0] = bs->position->y;
+			result[0] = bs->position.y;
 		}
 
 		if (isDefenseActive) {
-			if (bs->position->y <= tableHeight / 2) {
-				result[1] = bs->position->y - playerGapDefense / 2;
-			} else if (bs->position->y > tableHeight / 2) {
-				result[1] = bs->position->y + playerGapDefense / 2;
+			if (bs->position.y <= tableHeight / 2) {
+				result[1] = bs->position.y - playerGapDefense / 2;
+
+			} else if (bs->position.y > tableHeight / 2) {
+				result[1] = bs->position.y + playerGapDefense / 2;
 			}
 		}
-
 		return result;
 	}
 
 	static float* calcPositionsVectorial(BallStatus* b, float yOffset = 0,
 			Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
-			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector = 0) {
+			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =
+					0) {
 
 	}
 };
 
-PositionCalculator::rowDirectionalVector(0, -1);
+//PositionCalculator::rowDirectionalVector(0, -1);
 
 #endif //ROWCONTROL_CALCULATION_POSITIONCALCULATOR_HPP_

@@ -6,6 +6,7 @@
 #include "../DataType/BallStatus.hpp"
 #include "../DataType/Vec2.hpp"
 #include <iostream>
+#include "../Calculation/PositionCalculator.hpp"
 
 class TableControllerInterface {
 
@@ -65,6 +66,8 @@ protected:
 	bool isDefenseActive;
 	bool isMidfieldActive;
 	bool isOffenseActive;
+
+	PositionCalculator* calc;
 
 	BallStatus currentBallStaus;
 	RowControllerInterface* keeperControl;

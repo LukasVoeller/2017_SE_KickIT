@@ -24,11 +24,11 @@
 #include <cstdlib>
 #include <QApplication>
 #include <VirtualKicker/TableControllerMock.hpp>
-#include <RowControl/Interface/TableControllerInterface.hpp>
+#include "../BallTracking/BallTrackerInterface.hpp"
 #include "RowControl/Interface/TableControllerInterface.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
 
-#define MODE 3
+#define MODE 4
 
 int main(int argc, char** argv) {
 
@@ -70,8 +70,10 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	TableControllerImpl* t = new TableControllerImpl(true, true, false, false);
-	t->motorByHand();
+	TableControllerInterface* tci = new TableControllerImpl(true, true, false, false);
+	BallTrackerInterface* bti = new BallTrackerImpl(tci);
+
+	//tci->motorByHand();
 
 #endif
 }

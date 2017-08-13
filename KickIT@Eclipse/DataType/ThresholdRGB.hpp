@@ -10,7 +10,7 @@ class ThresholdRGB{
 		int greenLow = 0;
 		int greenHigh = 255;
 
-		int blueLow = 0;
+		int blueLow = 190;
 		int blueHigh = 255;
 };
 
