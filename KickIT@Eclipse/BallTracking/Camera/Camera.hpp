@@ -19,8 +19,6 @@ protected:
 	void cameraSettings();
 
 	CInstantCamera* camera;
-
-	//cv::Mat cv_img;
 };
 
-#endif /* BALLTRACKING_CAMERA_HPP_ */
+#endif //BALLTRACKING_CAMERA_HPP_

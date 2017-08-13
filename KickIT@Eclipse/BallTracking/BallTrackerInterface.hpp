@@ -13,8 +13,6 @@ public:
 	}
 	virtual ~BallTrackerInterface(){}
 
-
-
 protected:
 	Camera* camera;
 	virtual void startTracking() = 0;
@@ -22,4 +20,4 @@ protected:
 	TableControllerInterface* tableController;
 };
 
-#endif /* BALLTRACKER_HPP_ */
+#endif //BALLTRACKER_HPP_

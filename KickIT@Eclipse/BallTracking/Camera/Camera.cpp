@@ -1,21 +1,6 @@
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/video/video.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/opencv.hpp>
 #include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
-#include <pylon/gige/BaslerGigEInstantCamera.h>
-#include <pylon/usb/BaslerUsbInstantCamera.h>
-#include <pylon/PylonIncludes.h>
 #include "Camera.hpp"
-#include "../DataType/ThresholdRGB.hpp"
-
-#ifdef PYLON_WIN_BUILD
-#include <pylon/PylonGUI.h>
-#endif
 
 //#define _CRT_SECURE_NO_WARNINGS
 Pylon::PylonAutoInitTerm autoInitTerm;
@@ -26,7 +11,6 @@ Camera::Camera(){
 	cout << "Camera Constructor" << endl;
 	camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
 	camera->Open();
-
 
 	this->setCameraSettings();
 	//this->getCameraSettings();
@@ -39,7 +23,6 @@ Camera::~Camera() {
 }
 
 cv::Mat* Camera::getImage() {
-
 	CPylonImage image;
 	CImageFormatConverter fc;
 	CGrabResultPtr ptrGrabResult;
@@ -55,13 +38,12 @@ cv::Mat* Camera::getImage() {
 		if (ptrGrabResult->GrabSucceeded()) {
 			fc.Convert(image, ptrGrabResult);
 			*cv_img = cv::Mat(ptrGrabResult->GetHeight(), ptrGrabResult->GetWidth(), CV_8UC3, (uint8_t*) image.GetBuffer());
-			//cout << "grab succeeded" << endl;
+			//cout << "Grab succeeded" << endl;
 		} else {
-			cout << "grab failed" << endl;
+			cout << "Grab failed" << endl;
 		}
-
 	} else {
-		cout << "camera not grabbing" << endl;
+		cout << "Camera not grabbing" << endl;
 	}
 
 	return cv_img;
@@ -74,16 +56,11 @@ void Camera::calibrate() {
 	CPylonImage image;
 	vector<cv::Vec3f> circles;
 
-
-
 	fc.OutputPixelFormat = PixelType_RGB8packed;
-
 
 	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
 	cv::Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
-
-
 
 	for (int i = 0; i < 5; i++) {
 		while (camera->IsGrabbing()) {
@@ -100,7 +77,7 @@ void Camera::calibrate() {
 						(uint8_t*) image.GetBuffer());
 				imshow("circles", cv_img);
 
-				cv::waitKey(1); // macht evtl probleme
+				cv::waitKey(1);
 			}
 		}
 
@@ -143,9 +120,7 @@ void Camera::setCameraSettings() {
 
 //Kameraeinstellungen auslesen
 void Camera::getCameraSettings() {
-
 	cout << "Using camera: " << camera->GetDeviceInfo().GetModelName() << endl;
-
 
 	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
@@ -157,18 +132,15 @@ void Camera::getCameraSettings() {
 	cout << "Weite: " << height->GetValue() << endl;
 	cout << "Packetsize: " << packetsize->GetValue() << endl;
 	cout << "Belichtungszeit: " << exposuretime->GetValue() << endl << endl;
-
 }
 
 //Menupunkt Kameraoperationen
 void Camera::cameraSettings() {
-	//TO DO
+	//TODO
 }
-
 
 //Grenzwertebestimmen
 ThresholdRGB* Camera::threshold() {
-
 	CGrabResultPtr ptrGrabResult;
 
 	cv::namedWindow("Control", CV_WINDOW_NORMAL); //Create a window called "Control"
@@ -198,7 +170,7 @@ ThresholdRGB* Camera::threshold() {
 
 		} catch( cv::Exception& e ) {
 			const char* err_msg = e.what();
-			std::cout << "exception caught: " << err_msg << std::endl;
+			std::cout << "Exception caught: " << err_msg << std::endl;
 		}
 
 		//Draw contours

@@ -1,8 +1,3 @@
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/video/video.hpp>
-#include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
@@ -30,7 +25,6 @@ BallTrackerImpl::~BallTrackerImpl() {
 
 }
 
-
 //Datei für Mittelpunkt-Koordinate des Balles
 void BallTrackerImpl::startTracking() {
 	ThresholdRGB* threshold = camera->threshold();
@@ -41,20 +35,24 @@ void BallTrackerImpl::startTracking() {
 
 	//Eigenschaften für Bildanalyse
 	Mat imgThresholded;
-
 	vector<Vec3f> circles;
-	while (1) {
 
+	while (1) {
 		Mat* cv_img = camera->getImage();
 		Point Ballcenter(0, 0);
 		Mat imgHSV;
 		//cvtColor(cv_img, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
 
-		inRange(*cv_img, Scalar(threshold->blueLow, threshold->greenLow, threshold->redLow),
-				Scalar(threshold->blueHigh, threshold->greenHigh, threshold->redHigh), imgThresholded);
+		inRange(*cv_img,
+				Scalar(threshold->blueLow, threshold->greenLow,
+						threshold->redLow),
+				Scalar(threshold->blueHigh, threshold->greenHigh,
+						threshold->redHigh), imgThresholded);
 
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+		erode(imgThresholded, imgThresholded,
+				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+		dilate(imgThresholded, imgThresholded,
+				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 
 		vector<Point> nonzero;
 		//Mat nonzero;
@@ -87,7 +85,6 @@ void BallTrackerImpl::startTracking() {
 			cv::destroyWindow("Circles");
 			break;
 		}
-
 	}
 }
 

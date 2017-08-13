@@ -4,7 +4,6 @@
 #include "../../DataType/Vec2.hpp"
 
 class PositionCalculator {
-
 public:
 	static float tableHeight;
 
@@ -48,7 +47,7 @@ public:
 			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector = 0) {
 
 	}
-}
+};
 
 PositionCalculator::rowDirectionalVector(0, -1);
 

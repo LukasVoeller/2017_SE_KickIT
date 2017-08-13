@@ -17,4 +17,4 @@ protected:
 	void startTracking();
 };
 
-#endif /* BALLTRACKERIMPL_HPP */
+#endif //BALLTRACKERIMPL_HPP

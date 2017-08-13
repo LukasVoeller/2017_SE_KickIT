@@ -94,3 +94,18 @@ STRIP         = strip
 
 ####### Output directory
 ...
+
+8. PCAN ADAPTER EINSTLLUNGEN
+	cd /etc/network
+	sudo nano interfaces
+	
+	Hinzufügen:
+		auto can0
+		iface can0 inet manual
+		pre-up ip link set can0 type can bitrate 500000
+		up /sbin/ifconfig can0 up
+		down /sbin/ifconfig can0 down
+
+	Danach:
+		Strg+O
+		Strg+X

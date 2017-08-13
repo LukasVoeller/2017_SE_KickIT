@@ -13,19 +13,16 @@ using namespace Pylon;
 
 class CameraInterface {
 public:
-	//virtual CGrabResultPtr* getImage() = 0;
 	virtual ~CameraInterface(){}
 	virtual cv::Mat* getImage() = 0;
 	virtual ThresholdRGB* threshold() = 0;
 
 protected:
-	//Eventuell {} Schreibweise?
 	virtual void calibrate() = 0;
 	virtual void getCameraSettings() = 0;
 	virtual void setCameraSettings() = 0;
 	virtual void cameraSettings() = 0;
 
-
 };
 
-#endif
+#endif //CameraInterface_HPP_
