@@ -12,9 +12,15 @@ using namespace GenApi;
 int exitCode = 0;
 
 BallTrackerImpl::BallTrackerImpl() {
-	std::cout << "BallTrackerImpl" << std::endl;
 	camera = new Camera();
 	startTracking();
+}
+
+BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
+	this->tableController = tci;
+	camera = new Camera();
+	startTracking();
+
 }
 
 //void BallTrackerImpl::setTableController(TableControllerInterface* t) {

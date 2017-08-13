@@ -40,7 +40,8 @@ void TableControllerMock::setBallPos(float x, float y) {
 	}
 
 	delete positions;*/
-	std::cout << x << " " << y << std::endl;
+
+	window->drawBall(x,y);
 }
 
 void TableControllerMock::setKickerWindow(VirtualKickerWindow* p) {
