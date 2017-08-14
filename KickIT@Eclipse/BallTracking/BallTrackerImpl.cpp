@@ -56,9 +56,9 @@ void BallTrackerImpl::startTracking() {
 						threshold->redHigh), imgThresholded);
 
 		erode(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+				getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
 		dilate(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+				getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
 
 		vector<Point> nonzero;
 		//Mat nonzero;
@@ -81,7 +81,10 @@ void BallTrackerImpl::startTracking() {
 			circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 			lasty = Ballcenter.y;
 			lastx = Ballcenter.x;
-			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
+			if(abs(Ballcenter.y-lasty) < 2) {
+				Ballcenter.y = lasty; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
+			}
+			tableController->setBallPos(Ballcenter.x, Ballcenter.y - 177);
 		}
 
 		//imshow("dif",dif);

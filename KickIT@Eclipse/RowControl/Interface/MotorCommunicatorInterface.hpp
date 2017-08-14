@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fcntl.h>
 #include <cstring>
+#include <bitset>
 
 class MotorCommunicatorInterface {
 
@@ -23,19 +24,19 @@ protected:
 	Row row;
 	char* port;
 	int socketId;
-	int nibbleRotary = 1;
-	int nibbleTranslational = 1;
+	char nibbleRotary = 1;
+	char nibbleTranslational = 1;
 
 	virtual void homing() = 0;
 	virtual void driverInit() = 0;
 
 	int switchedNibbleT() {
-		nibbleTranslational++;
+		nibbleTranslational = !nibbleTranslational;
 		return nibbleTranslational;
 	}
 
 	int switchedNibbleR() {
-		nibbleRotary++;
+		nibbleRotary = !nibbleRotary;
 		return nibbleRotary;
 	}
 
@@ -83,6 +84,22 @@ protected:
 		frame.data[5] = Data_5;
 		frame.data[6] = Data_6;
 		frame.data[7] = Data_7;
+
+		std::cout << "############ frameInit()" << std::endl;
+
+		std::bitset<8> id_bits(frame.can_id);
+		std::cout << "#" << id_bits << "#";
+
+		std::bitset<8> dlc_bits(frame.can_dlc);
+		std::cout << dlc_bits << "#";
+
+		for(int i = 0; i < 8; i++){
+			//std::cout << frame.data[i] << std::endl;
+			std::bitset<8> y(frame.data[i]);
+			std::cout << y.to_ulong() << "#";
+		}
+
+		std::cout << std::endl;
 
 		sendPort(&frame);
 		closePort();
