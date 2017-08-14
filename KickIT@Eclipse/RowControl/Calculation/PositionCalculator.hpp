@@ -30,12 +30,13 @@ public:
 		}
 
 		if (isDefenseActive) {
-			if (bs->position.y <= tableHeight / 2) {
+			/*if (bs->position.y <= tableHeight / 2) {
 				result[1] = bs->position.y - playerGapDefense / 2;
 
 			} else if (bs->position.y > tableHeight / 2) {
 				result[1] = bs->position.y + playerGapDefense / 2;
-			}
+			}*/
+			result[1] = bs->position.y;
 		}
 		return result;
 	}

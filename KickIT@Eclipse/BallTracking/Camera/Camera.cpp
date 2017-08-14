@@ -109,10 +109,16 @@ void Camera::setCameraSettings() {
 	//exposuretimeTargetValue->SetValue(128);
 	//exposuretimeAuto->SetValue(ExposureAuto_Continuous);
 
+<<<<<<< HEAD
 	CameraConfig cc;
 	width->SetValue(cc.width);
 	height->SetValue(cc.height);
 	packetsize->SetValue(cc.packetsize);
+=======
+	height->SetValue(360);
+	width->SetValue(592);
+	packetsize->SetValue(1500);
+>>>>>>> add41788371ef9a09811c818344318fcd30fb913
 
 	//exposuretime->SetValue(128);
 	//exposuretime->GetMin();
@@ -143,6 +149,8 @@ void Camera::cameraSettings() {
 
 //Grenzwertebestimmen
 ThresholdRGB* Camera::threshold() {
+	bool movedOriginal = false;
+	bool movedThresholded = false;
 	CGrabResultPtr ptrGrabResult;
 
 	cv::namedWindow("Control", CV_WINDOW_NORMAL); //Create a window called "Control"
@@ -179,8 +187,14 @@ ThresholdRGB* Camera::threshold() {
 		//Draw contours
 		imshow("Thresholded Image", imgThresholded);//show the thresholded image
 		imshow("Original", *cv_img);		//show the original image
-		cv::moveWindow("Original", 100 , 100);
-		cv::moveWindow("Thresholded Image", 200 , 500);
+		if(!movedOriginal) {
+			cv::moveWindow("Original", 100 , 100);
+			movedOriginal = true;
+		}
+		if(!movedThresholded){
+			cv::moveWindow("Thresholded Image", 200 , 500);
+			movedThresholded = true;
+		}
 		delete(cv_img);
 		if (cv::waitKey(30) == 27) {
 			cv::destroyWindow("Thresholded Image");
