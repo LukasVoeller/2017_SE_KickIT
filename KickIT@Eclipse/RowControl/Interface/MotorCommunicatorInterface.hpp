@@ -1,7 +1,6 @@
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
-#include "../../DataType/RowEnum.hpp"
 #include <sys/socket.h>
 #include <linux/can.h>
 #include <sys/ioctl.h>
@@ -12,6 +11,7 @@
 #include <fcntl.h>
 #include <cstring>
 #include <bitset>
+#include "../../DataType/RowEnum.hpp"
 
 class MotorCommunicatorInterface {
 
@@ -85,7 +85,7 @@ protected:
 		frame.data[6] = Data_6;
 		frame.data[7] = Data_7;
 
-		std::cout << "############ frameInit()" << std::endl;
+		/*std::cout << "############ frameInit()" << std::endl;
 
 		std::bitset<8> id_bits(frame.can_id);
 		std::cout << "#" << id_bits << "#";
@@ -99,7 +99,7 @@ protected:
 			std::cout << y.to_ulong() << "#";
 		}
 
-		std::cout << std::endl;
+		std::cout << std::endl;*/
 
 		sendPort(&frame);
 		closePort();

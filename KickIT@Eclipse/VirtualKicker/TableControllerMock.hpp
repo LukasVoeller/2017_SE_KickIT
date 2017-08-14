@@ -16,7 +16,8 @@ public:
 	void setBallPos(float x, float y);
 	void setKickerWindow(VirtualKickerWindow* p);
 
-private:
+protected:
+	virtual Vec2* pixelToMM(int xPixel, int yPixel){}
 	VirtualKickerWindow* window;
 };
 

@@ -33,7 +33,7 @@ BallTrackerImpl::~BallTrackerImpl() {
 
 //Datei für Mittelpunkt-Koordinate des Balles
 void BallTrackerImpl::startTracking() {
-	ThresholdRGB* threshold = camera->threshold();
+	CameraConfig* threshold = camera->threshold();
 
 	//Datei für Mittelpunkt-Koordinate des Balles
 	double lastx = 0;
@@ -57,9 +57,9 @@ void BallTrackerImpl::startTracking() {
 						threshold->redHigh), imgThresholded);
 
 		erode(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 		dilate(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 
 		vector<Point> nonzero;
 		//Mat nonzero;
@@ -85,16 +85,17 @@ void BallTrackerImpl::startTracking() {
 			if(abs(Ballcenter.y-lasty) < 2) {
 				Ballcenter.y = lasty; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
 			}
-			tableController->setBallPos(Ballcenter.x, Ballcenter.y - 177);
+			//cout << Ballcenter << endl;
+			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
 		}
 
 		//imshow("dif",dif);
-		imshow("circles", *cv_img);
+		//imshow("circles", *cv_img);
 
-		if (cv::waitKey(30) == 27) {
-			cv::destroyWindow("Circles");
-			break;
-		}
+		//if (cv::waitKey(30) == 27) {
+			//cv::destroyWindow("Circles");
+			//break;
+		//}
 	}
 }
 

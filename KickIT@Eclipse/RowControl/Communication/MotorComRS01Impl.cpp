@@ -57,17 +57,17 @@ void MotorComRS01Impl::driverInit(){
 }
 
 void MotorComRS01Impl::linearMovement(int position){
-	cout << "rs move to: " << position << endl;
-	position += 150;							//Rescale center to zero
-	if(position > 300) position = 300;			//Check if position is within range
-	if(position < 0) position = 0;				//Check if position is within range
+	//position += 150;							//Rescale center to zero
+	if(position > 280) position = 280;			//Check if position is within range
+	if(position < 20) position = 20;				//Check if position is within range
+	//cout << "rs move to: " << position << endl;
 
 	int pos1, pos2;
 	position *= 10;
 	pos1 = (position & 255);
 	pos2 = (position >> 8);
 
-	frameInit(0x202, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x08);
+	frameInit(0x202, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x40);
 	frameInit(0x302, 0x8, 0x2C, 0x00, 0x2C, 0x00, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 

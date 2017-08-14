@@ -3,7 +3,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <pylon/PylonIncludes.h>
-#include "../DataType/ThresholdRGB.hpp"
+#include "CameraConfig.hpp"
 
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
@@ -15,7 +15,7 @@ class CameraInterface {
 public:
 	virtual ~CameraInterface(){}
 	virtual cv::Mat* getImage() = 0;
-	virtual ThresholdRGB* threshold() = 0;
+	virtual CameraConfig* threshold() = 0;
 
 protected:
 	virtual void calibrate() = 0;

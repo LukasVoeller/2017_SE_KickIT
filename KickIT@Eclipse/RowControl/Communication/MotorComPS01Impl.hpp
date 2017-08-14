@@ -6,9 +6,10 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "../DataType/RowEnum.hpp"
 #include <sys/types.h> 	//For sockets
 #include <sys/socket.h> //For sockets
+
+#include "../../DataType/RowEnum.hpp"
 #include "../Interface/MotorCommunicatorInterface.hpp"
 
 class MotorComPS01Impl: public MotorCommunicatorInterface {

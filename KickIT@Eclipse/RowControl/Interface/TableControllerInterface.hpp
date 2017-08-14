@@ -3,17 +3,16 @@
 
 #include "../Interface/RowControllerInterface.hpp"
 #include "../DataType/BallStatus.hpp"
-#include "../DataType/BallStatus.hpp"
 #include "../DataType/Vec2.hpp"
 #include <iostream>
+
+#include "../../DataType/BallStatus.hpp"
 #include "../Calculation/PositionCalculator.hpp"
 
 class TableControllerInterface {
 
 public:
 	virtual void setBallPos(float x, float y) = 0;
-	virtual void run() = 0;
-	virtual void stop() = 0;
 	virtual ~TableControllerInterface() {}
 
 	void motorByHand() {
@@ -61,6 +60,9 @@ public:
 	}
 
 protected:
+	int tableHeight;
+	int tableWidth;
+
 	BallStatus ballStatus;
 	bool isKeeperActive;
 	bool isDefenseActive;
@@ -80,6 +82,9 @@ protected:
 		ballStatus.movement.y = ballStatus.position.y - y;
 		ballStatus.position.update(x, y);
 	}*/
+
+	virtual Vec2* pixelToMM(int xPixel, int yPixel) = 0;
+
 };
 
 #endif //INTERFACETABLECONTROLLER_HPP

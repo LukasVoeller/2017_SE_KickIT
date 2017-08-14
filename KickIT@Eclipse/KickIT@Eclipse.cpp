@@ -27,7 +27,6 @@
 #include "../BallTracking/BallTrackerInterface.hpp"
 #include "RowControl/Interface/TableControllerInterface.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
-#include "../DataType/CameraConfig.hpp"
 
 
 #define MODE 4
@@ -72,10 +71,8 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	CameraConfig cc;
-	cc.printConfig();
-	//TableControllerInterface* tci = new TableControllerImpl(true, true, false, false);
-	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
+	TableControllerInterface* tci = new TableControllerImpl(true, true, false, false);
+	BallTrackerInterface* bti = new BallTrackerImpl(tci);
 
 	//tci->motorByHand();
 

@@ -16,6 +16,7 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/BallTrackerInterface.hpp \
            BallTracking/Camera/Camera.hpp \
            BallTracking/Camera/CameraInterface.hpp \
+           BallTracking/Camera/CameraConfig.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
            RowControl/Communication/MotorComPS01Impl.hpp \
@@ -31,8 +32,7 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
-           DataType/RowEnum.hpp \
-           DataType/ThresholdRGB.hpp
+           DataType/RowEnum.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            BallTracking/Camera/Camera.cpp \

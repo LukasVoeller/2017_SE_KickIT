@@ -5,6 +5,7 @@
 #include "../Control/RowControllerMidfield.hpp"
 #include "../Control/RowControllerOffense.hpp"
 #include "../Calculation/PositionCalculator.hpp"
+#include "../../BallTracking/Camera/CameraConfig.hpp"
 #include <iostream>
 
 TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense) {
@@ -36,29 +37,49 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfiel
 	this->calc->isDefenseActive = defense;
 	this->calc->isMidfieldActive = midfield;
 	this->calc->isOffenseActive = offense;
-	//calc->playerGapDefense =
+
+	this->tableHeight = 680;
+	this->tableWidth = 1115;
+
+	//Calculator Config
+
+	calc->playerGapDefense = 230;
+	calc->tableHeight = 680;
+	calc->offsetTopSideDefense = 72.72;
+	calc->offsetBottomSideDefense = 298.182;
+	calc->offsetTopSideKeeper = 327.273;
 
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
-	ballStatus.position.x = x;
-	ballStatus.position.y = y;
-	ballStatus.movement.update(x,y);
+
+	Vec2* v = this->pixelToMM(x,y);
+
+	ballStatus.position.x = v->x;
+	ballStatus.position.y = v->y;
+	ballStatus.movement.update(v->x,v->y);
+	delete(v);
+
 	float* positions = calc->calcPositionsSimple(&ballStatus);
 
-	std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;
+	//std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;
 
-	//keeperControl->moveTo(positions[0]);
+	keeperControl->moveTo(positions[0]);
 	defenseControl->moveTo(positions[1]);
 
 	delete(positions);
 }
 
-void TableControllerImpl::run() {
+Vec2* TableControllerImpl::pixelToMM(int xPixel, int yPixel){
+	//std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
+	Vec2* result = new Vec2();
+	CameraConfig cc;
 
-}
+	result->x = (float)xPixel * ((float)this->tableWidth / (float)cc.width);
+	result->y = (float)yPixel * ((float)this->tableHeight / (float)cc.height);
 
-void TableControllerImpl::stop() {
+	//std::cout << "on table: " << " x: " << result->x << " y: " << result->y << std::endl;
 
+	return result;
 }
 

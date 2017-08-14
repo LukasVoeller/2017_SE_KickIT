@@ -1,7 +1,7 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "Camera.hpp"
-#include "../DataType/CameraConfig.hpp"
+#include "../BallTracking/Camera/CameraConfig.hpp"
 
 //#define _CRT_SECURE_NO_WARNINGS
 Pylon::PylonAutoInitTerm autoInitTerm;
@@ -109,16 +109,10 @@ void Camera::setCameraSettings() {
 	//exposuretimeTargetValue->SetValue(128);
 	//exposuretimeAuto->SetValue(ExposureAuto_Continuous);
 
-<<<<<<< HEAD
 	CameraConfig cc;
 	width->SetValue(cc.width);
 	height->SetValue(cc.height);
 	packetsize->SetValue(cc.packetsize);
-=======
-	height->SetValue(360);
-	width->SetValue(592);
-	packetsize->SetValue(1500);
->>>>>>> add41788371ef9a09811c818344318fcd30fb913
 
 	//exposuretime->SetValue(128);
 	//exposuretime->GetMin();
@@ -148,7 +142,8 @@ void Camera::cameraSettings() {
 }
 
 //Grenzwertebestimmen
-ThresholdRGB* Camera::threshold() {
+CameraConfig* Camera::threshold() {
+	CameraConfig* result = new CameraConfig();
 	bool movedOriginal = false;
 	bool movedThresholded = false;
 	CGrabResultPtr ptrGrabResult;
@@ -156,17 +151,15 @@ ThresholdRGB* Camera::threshold() {
 	cv::namedWindow("Control", CV_WINDOW_NORMAL); //Create a window called "Control"
 	cv::moveWindow("Control", 800 , 10);
 
-	//TODO Replace ThresholdRGB with CameraConfig
-	ThresholdRGB* result = new ThresholdRGB();
 
 	//Create trackbars in "Control" window
-	cvCreateTrackbar("LowB", "Control", &result->blueLow, 255); //Hue (0 - 179)
-	cvCreateTrackbar("HighB", "Control", &result->blueHigh, 255);
+	cvCreateTrackbar("LowB", "Control", &(result->blueLow), 255); //Hue (0 - 179)
+	cvCreateTrackbar("HighB", "Control", &(result->blueHigh), 255);
 
-	cvCreateTrackbar("LowG", "Control", &result->greenLow, 255); //Saturation (0 - 255)
-	cvCreateTrackbar("HighG", "Control", &result->greenHigh, 255);
+	cvCreateTrackbar("LowG", "Control", &(result->greenLow), 255); //Saturation (0 - 255)
+	cvCreateTrackbar("HighG", "Control", &(result->greenHigh), 255);
 
-	cvCreateTrackbar("LowR", "Control", &result->redLow, 255); //Value (0 - 255)
+	cvCreateTrackbar("LowR", "Control", &(result->redLow), 255); //Value (0 - 255)
 	cvCreateTrackbar("HighR", "Control", &result->redHigh, 255);
 
 	while (1) {
@@ -204,5 +197,8 @@ ThresholdRGB* Camera::threshold() {
 		}
 
 	}
+
+	result->saveConfig();
+
 	return result;
 }

@@ -3,14 +3,13 @@
 
 #include "CameraInterface.hpp"
 #include <opencv2/core/core.hpp>
-#include "../DataType/ThresholdRGB.hpp"
 
 class Camera: public CameraInterface {
 public:
 	Camera();
 	virtual ~Camera();
 	cv::Mat* getImage();
-	ThresholdRGB* threshold();
+	CameraConfig* threshold();
 
 protected:
 	void calibrate();

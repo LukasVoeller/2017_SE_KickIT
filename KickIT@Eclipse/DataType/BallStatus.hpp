@@ -1,7 +1,7 @@
 #ifndef BALLSTATUS_HPP_
 #define BALLSTATUS_HPP_
 
-#include "Vec2.hpp"
+#include "../DataType/Vec2.hpp"
 
 class BallStatus {
 public:

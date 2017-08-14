@@ -8,8 +8,7 @@ class TableControllerImpl: public TableControllerInterface {
 public:
 	TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense);
 	void setBallPos(float x, float y);
-	void run();
-	void stop();
+	Vec2* pixelToMM(int xPixel, int yPixel);
 };
 
 #endif /* TABLECONTROLLERIMPL_HPP */

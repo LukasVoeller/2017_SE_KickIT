@@ -16,27 +16,34 @@ public:
 	float playerGapMidfield = 0;
 	float playerGapOffense = 0;
 
+	float offsetTopSideDefense = 0;
+	float offsetBottomSideDefense = 0;
+
+	float offsetTopSideKeeper = 0;
+
 	Vec2 rowDirectionalVector;
 
 	float* calcPositionsSimple(BallStatus* bs, float yOffset = 0) {
 
 		//Calculate how many fields are needed
-		float* result = new float[isKeeperActive ? 1 : 0 + isDefenseActive ? 1 :
-									0 + isMidfieldActive ? 1 :
-									0 + isOffenseActive ? 1 : 0];
+		float* result = new float[isKeeperActive ? 1 : 0 + isDefenseActive ? 1 :0 + isMidfieldActive ? 1 :0 + isOffenseActive ? 1 : 0];
 
 		if (isKeeperActive) {
-			result[0] = bs->position.y;
+			result[0] = bs->position.y - offsetTopSideKeeper;
 		}
 
 		if (isDefenseActive) {
-			/*if (bs->position.y <= tableHeight / 2) {
-				result[1] = bs->position.y - playerGapDefense / 2;
-
+			if (bs->position.y <= tableHeight / 2) {
+				//std::cout << "kleiner: " << std::endl;
+				//std::cout << "original: " << bs->position.y << std::endl;
+				result[1] = bs->position.y - offsetTopSideDefense;
+				//std::cout << "dann: " << result[1] << std::endl;
 			} else if (bs->position.y > tableHeight / 2) {
-				result[1] = bs->position.y + playerGapDefense / 2;
-			}*/
-			result[1] = bs->position.y;
+				//std::cout << "groesser: " << std::endl;
+				//std::cout << "original: " << bs->position.y << std::endl;
+				result[1] = bs->position.y - offsetBottomSideDefense;
+				//std::cout << "dann: " << result[1] << std::endl;
+			}
 		}
 		return result;
 	}

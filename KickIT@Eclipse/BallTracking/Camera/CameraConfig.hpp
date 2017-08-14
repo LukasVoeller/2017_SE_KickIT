@@ -1,8 +1,8 @@
 #ifndef DATATYPE_CAMERACONFIG_HPP_
 #define DATATYPE_CAMERACONFIG_HPP_
 
-#include <iostream>
 #include <fstream>
+#include <sstream>
 
 class CameraConfig {
 public:
