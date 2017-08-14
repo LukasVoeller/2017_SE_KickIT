@@ -49,6 +49,7 @@ void BallTrackerImpl::startTracking() {
 		Mat imgHSV;
 		//cvtColor(cv_img, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
 
+		//TODO Replace ThresholdRGB with CameraConfig
 		inRange(*cv_img,
 				Scalar(threshold->blueLow, threshold->greenLow,
 						threshold->redLow),

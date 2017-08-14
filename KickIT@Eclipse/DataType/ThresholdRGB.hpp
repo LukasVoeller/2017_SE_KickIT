@@ -1,18 +1,23 @@
 #ifndef THRESHOLDRGB_HPP_
 #define THRESHOLDRGB_HPP_
 
-class ThresholdRGB{
+#include "../DataType/CameraConfig.hpp"
 
-	public:
-		int redLow = 0;
-		int redHigh = 255;
+class ThresholdRGB {
 
-		int greenLow = 0;
-		int greenHigh = 255;
+public:
+	int redLow = cc.redLow;
+	int redHigh = cc.redHigh;
 
-		int blueLow = 190;
-		int blueHigh = 255;
+	int greenLow = cc.greenLow;
+	int greenHigh = cc.greenHigh;
+
+	int blueLow = cc.blueLow;
+	int blueHigh = cc.blueHigh;
+
+private:
+	CameraConfig cc;
+
 };
-
 
 #endif

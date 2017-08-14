@@ -1,0 +1,9 @@
+RedLow: 0
+RedHigh: 255
+GreenLow: 0
+GreenHigh: 255
+BlueLow: 190
+BlueHigh: 250
+Width: 608
+Height: 374
+Packetsize: 1500

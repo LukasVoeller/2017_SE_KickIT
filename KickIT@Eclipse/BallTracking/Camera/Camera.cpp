@@ -1,6 +1,7 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "Camera.hpp"
+#include "../DataType/CameraConfig.hpp"
 
 //#define _CRT_SECURE_NO_WARNINGS
 Pylon::PylonAutoInitTerm autoInitTerm;
@@ -108,9 +109,10 @@ void Camera::setCameraSettings() {
 	//exposuretimeTargetValue->SetValue(128);
 	//exposuretimeAuto->SetValue(ExposureAuto_Continuous);
 
-	height->SetValue(374);
-	width->SetValue(608);
-	packetsize->SetValue(1500);
+	CameraConfig cc;
+	width->SetValue(cc.width);
+	height->SetValue(cc.height);
+	packetsize->SetValue(cc.packetsize);
 
 	//exposuretime->SetValue(128);
 	//exposuretime->GetMin();
@@ -146,6 +148,7 @@ ThresholdRGB* Camera::threshold() {
 	cv::namedWindow("Control", CV_WINDOW_NORMAL); //Create a window called "Control"
 	cv::moveWindow("Control", 800 , 10);
 
+	//TODO Replace ThresholdRGB with CameraConfig
 	ThresholdRGB* result = new ThresholdRGB();
 
 	//Create trackbars in "Control" window
