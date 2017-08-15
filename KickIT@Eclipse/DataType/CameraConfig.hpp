@@ -109,4 +109,5 @@ private:
 	}
 };
 
+
 #endif //DATATYPE_CAMERACONFIG_HPP_
