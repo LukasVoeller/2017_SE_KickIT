@@ -7,7 +7,6 @@ class RowControllerOffense: public RowControllerInterface {
 
 public:
 	RowControllerOffense();
-	void run();
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_ */

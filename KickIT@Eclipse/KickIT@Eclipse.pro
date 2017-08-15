@@ -16,9 +16,10 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            BallTracking/BallTrackerInterface.hpp \
            BallTracking/Camera/Camera.hpp \
            BallTracking/Camera/CameraInterface.hpp \
-           BallTracking/Camera/CameraConfig.hpp \
            DataType/Vec2.hpp \
            DataType/BallStatus.hpp \
+           DataType/TableConfig.hpp \
+           DataType/CameraConfig.hpp \
            RowControl/Communication/MotorComPS01Impl.hpp \
 	   	   RowControl/Communication/MotorComRS01Impl.hpp \
            RowControl/Interface/MotorCommunicatorInterface.hpp \
@@ -29,6 +30,7 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            RowControl/Control/RowControllerOffense.hpp \
            RowControl/Control/TableControllerImpl.hpp \
            RowControl/Interface/TableControllerInterface.hpp \
+           RowControl/Calculation/Calculator.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \

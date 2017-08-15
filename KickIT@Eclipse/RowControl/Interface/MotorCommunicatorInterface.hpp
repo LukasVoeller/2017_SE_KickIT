@@ -1,6 +1,7 @@
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
+#include "../../DataType/RowEnum.hpp"
 #include <sys/socket.h>
 #include <linux/can.h>
 #include <sys/ioctl.h>
@@ -11,23 +12,21 @@
 #include <fcntl.h>
 #include <cstring>
 #include <bitset>
-#include "../../DataType/RowEnum.hpp"
 
 class MotorCommunicatorInterface {
 
 public:
-	virtual void kick() = 0;
 	virtual void linearMovement(int position) = 0;
+	virtual void rotate(int amount){};
 	virtual ~MotorCommunicatorInterface() {}
 
 protected:
 	Row row;
 	char* port;
 	int socketId;
-	char nibbleRotary = 1;
 	char nibbleTranslational = 1;
+	char nibbleRotary = 1;
 
-	virtual void homing() = 0;
 	virtual void driverInit() = 0;
 
 	int switchedNibbleT() {
@@ -85,24 +84,22 @@ protected:
 		frame.data[6] = Data_6;
 		frame.data[7] = Data_7;
 
-		/*std::cout << "############ frameInit()" << std::endl;
+		sendPort(&frame);
+		closePort();
 
+		/*Backup
+		std::cout << "############ frameInit()" << std::endl;
 		std::bitset<8> id_bits(frame.can_id);
 		std::cout << "#" << id_bits << "#";
-
 		std::bitset<8> dlc_bits(frame.can_dlc);
 		std::cout << dlc_bits << "#";
-
 		for(int i = 0; i < 8; i++){
 			//std::cout << frame.data[i] << std::endl;
 			std::bitset<8> y(frame.data[i]);
 			std::cout << y.to_ulong() << "#";
 		}
-
-		std::cout << std::endl;*/
-
-		sendPort(&frame);
-		closePort();
+		std::cout << std::endl;
+		*/
 	}
 
 	int sendPort(struct can_frame *frame) {

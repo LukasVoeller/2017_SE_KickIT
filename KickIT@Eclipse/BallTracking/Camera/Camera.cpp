@@ -1,7 +1,7 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "Camera.hpp"
-#include "../BallTracking/Camera/CameraConfig.hpp"
+#include "../../DataType/CameraConfig.hpp"
 
 //#define _CRT_SECURE_NO_WARNINGS
 Pylon::PylonAutoInitTerm autoInitTerm;
@@ -46,6 +46,8 @@ cv::Mat* Camera::getImage() {
 	} else {
 		cout << "Camera not grabbing" << endl;
 	}
+
+
 
 	return cv_img;
 }
@@ -113,8 +115,8 @@ void Camera::setCameraSettings() {
 	width->SetValue(cc.width);
 	height->SetValue(cc.height);
 	packetsize->SetValue(cc.packetsize);
+	exposuretime->SetValue(cc.exposureTime);
 
-	//exposuretime->SetValue(128);
 	//exposuretime->GetMin();
 	//exposuretime->GetMax();
 	cout << "Kammeraeinstellungen vorgenommen" << endl;

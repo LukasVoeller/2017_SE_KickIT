@@ -1,5 +1,4 @@
 #include "../Communication/MotorComPS01Impl.hpp"
-
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>
@@ -13,14 +12,6 @@ MotorComPS01Impl::MotorComPS01Impl(Row r) {
 	this->row = r;
 	thread c(&MotorComPS01Impl::driverInit, this);
 	c.detach();
-}
-
-void MotorComPS01Impl::kick() {
-	cout << "kick() is not implemented" << endl;
-}
-
-void MotorComPS01Impl::homing() {
-	cout << "homing() is not implemented" << endl;
 }
 
 void MotorComPS01Impl::driverInit() {
@@ -54,11 +45,12 @@ void MotorComPS01Impl::driverInit() {
 }
 
 void MotorComPS01Impl::linearMovement(int position){
-
-	//cout << "ps move to: " << position << endl;
+	position = position - 340;
 
 	if(position > 77) position = 77;			//Check if position is within range
 	if(position < -80) position = -80;			//Check if position is within range
+
+	cout << "PS is moving to: " << position << endl;
 
 	int pos1, pos2;
 	position *= 10;
@@ -69,13 +61,11 @@ void MotorComPS01Impl::linearMovement(int position){
 	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 
-	/*frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x08);
+	/*Backup
+	frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x08);
 	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);*/
-
-	//sleep(0.3);
-
-	//cout << "pos1/pos2: " << pos1 << " " << pos2 << endl;
+	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	sleep(0.3);
+	cout << "pos1/pos2: " << pos1 << " " << pos2 << endl;
+	*/
 }
-
-

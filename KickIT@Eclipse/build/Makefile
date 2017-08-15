@@ -144,9 +144,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../BallTracking/BallTrackerInterface.hpp \
 		../BallTracking/Camera/Camera.hpp \
 		../BallTracking/Camera/CameraInterface.hpp \
-		../BallTracking/Camera/CameraConfig.hpp \
 		../DataType/Vec2.hpp \
 		../DataType/BallStatus.hpp \
+		../DataType/TableConfig.hpp \
+		../DataType/CameraConfig.hpp \
 		../RowControl/Communication/MotorComPS01Impl.hpp \
 		../RowControl/Communication/MotorComRS01Impl.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
@@ -157,6 +158,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../RowControl/Control/RowControllerOffense.hpp \
 		../RowControl/Control/TableControllerImpl.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
+		../RowControl/Calculation/Calculator.hpp \
 		../VirtualKicker/TableControllerMock.hpp \
 		../VirtualKicker/VirtualKicker.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp \
@@ -339,7 +341,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../BallTracking/Camera/CameraConfig.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
 
 
@@ -386,7 +388,7 @@ KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../RowControl/Control/TableControllerImp
 		../DataType/RowEnum.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/PositionCalculator.hpp \
+		../RowControl/Calculation/Calculator.hpp \
 		../VirtualKicker/TableControllerMock.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp \
 		../BallTracking/BallTrackerInterface.hpp \
@@ -403,15 +405,14 @@ BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrack
 		../DataType/RowEnum.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/PositionCalculator.hpp \
+		../RowControl/Calculation/Calculator.hpp \
 		../BallTracking/Camera/Camera.hpp \
 		../BallTracking/Camera/CameraInterface.hpp \
 		../BallTracking/BallTrackerImpl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o ../BallTracking/BallTrackerImpl.cpp
 
 Camera.o: ../BallTracking/Camera/Camera.cpp ../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp \
-		../BallTracking/Camera/CameraConfig.hpp
+		../BallTracking/Camera/CameraInterface.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Camera.o ../BallTracking/Camera/Camera.cpp
 
 MotorComPS01Impl.o: ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComPS01Impl.hpp \
@@ -450,19 +451,18 @@ RowControllerOffense.o: ../RowControl/Control/RowControllerOffense.cpp ../RowCon
 		../DataType/RowEnum.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerOffense.o ../RowControl/Control/RowControllerOffense.cpp
 
-TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../RowControl/Control/TableControllerImpl.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
+TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../RowControl/Control/RowControllerMidfield.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../RowControl/Control/RowControllerDefense.hpp \
+		../RowControl/Control/RowControllerOffense.hpp \
+		../RowControl/Control/TableControllerImpl.hpp \
+		../RowControl/Interface/TableControllerInterface.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/PositionCalculator.hpp \
-		../RowControl/Control/RowControllerDefense.hpp \
-		../RowControl/Control/RowControllerKeeper.hpp \
-		../RowControl/Control/RowControllerMidfield.hpp \
-		../RowControl/Control/RowControllerOffense.hpp \
-		../BallTracking/Camera/CameraConfig.hpp
+		../RowControl/Calculation/Calculator.hpp \
+		../RowControl/Control/RowControllerKeeper.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o ../RowControl/Control/TableControllerImpl.cpp
 
 TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/TableControllerMock.hpp \
@@ -472,7 +472,7 @@ TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker
 		../DataType/RowEnum.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/PositionCalculator.hpp \
+		../RowControl/Calculation/Calculator.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerMock.o ../VirtualKicker/TableControllerMock.cpp
 
@@ -483,7 +483,7 @@ VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker
 		../DataType/RowEnum.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/PositionCalculator.hpp
+		../RowControl/Calculation/Calculator.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../VirtualKicker/VirtualKickerWindow.cpp
 
 ####### Install

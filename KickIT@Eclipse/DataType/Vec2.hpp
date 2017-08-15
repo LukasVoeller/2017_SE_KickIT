@@ -24,6 +24,15 @@ public:
 		y = newy;
 	}
 
+	Vec2 toTarget(const Vec2& destination){
+
+
+		Vec2 res;
+		res.x = destination.x - this->x;
+		res.y = destination.y - this->y;
+		return res;
+	}
+
 	void update(Vec2* newp) {
 		x = newp->x;
 		y = newp->y;
@@ -99,6 +108,10 @@ public:
 		reflectionImpulse = reflectionImpulse * 2;
 		Vec2 result = *this - reflectionImpulse;
 		return result;
+	}
+
+	bool equals(const Vec2 v){
+		return this->x == v.x && this->y == v.y;
 	}
 };
 

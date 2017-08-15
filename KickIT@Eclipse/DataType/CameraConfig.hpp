@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <iostream>
 
 class CameraConfig {
 public:
@@ -15,6 +16,7 @@ public:
 	int width;
 	int height;
 	int packetsize;
+	int exposureTime;
 
 	CameraConfig(){
 		loadConfig();
@@ -39,13 +41,14 @@ public:
 				    case 7: width = value; break;
 				    case 8: height = value; break;
 				    case 9: packetsize = value; break;
+				    case 10: exposureTime = value; break;
 				}
 				valueID++;
 			}
 
 			configFile.close();
 		} else {
-			std::cout << "ERROR: Unable to open config file" << std::endl;
+			std::cout << "ERROR: Unable to open camera config file" << std::endl;
 		}
 	}
 
@@ -60,7 +63,9 @@ public:
 				<< "BlueHigh: " << blueHigh << "\n"
 				<< "Width: " << width << "\n"
 				<< "Height: " << height << "\n"
-				<< "Packetsize: " << packetsize << std::endl;
+				<< "Packetsize: " << packetsize << "\n"
+				<< "ExposureTime: " << exposureTime
+				<< std::endl;
 
 		outfile.close();
 	}
@@ -72,7 +77,8 @@ public:
 				<< greenHigh << "\n" << "BlueLow: " << blueLow << "\n"
 				<< "BlueHigh: " << blueHigh << "\n" << "Width: " << width
 				<< "\n" << "Height: " << height << "\n" << "Packetsize: "
-				<< packetsize << "\n" << std::endl;
+				<< packetsize << "\n"
+				<< "ExposureTime: "  << exposureTime << "\n" << std::endl;
 	}
 
 private:
@@ -87,7 +93,9 @@ private:
 				"BlueHigh: 0\n"
 				"Width: 0\n"
 				"Height: 0\n"
-				"Packetsize: 0\n" << std::endl;
+				"Packetsize: 0\n"
+				"ExposureTime: 0\n"
+				<< std::endl;
 
 		outfile.close();
 	}

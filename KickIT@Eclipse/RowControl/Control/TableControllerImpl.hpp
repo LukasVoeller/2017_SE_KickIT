@@ -11,5 +11,5 @@ public:
 	Vec2* pixelToMM(int xPixel, int yPixel);
 };
 
-#endif /* TABLECONTROLLERIMPL_HPP */
+#endif //TABLECONTROLLERIMPL_HPP
 

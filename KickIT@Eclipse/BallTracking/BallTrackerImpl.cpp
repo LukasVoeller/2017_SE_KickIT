@@ -1,5 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
+#include <math.h>
 
 #include "BallTrackerInterface.hpp"
 #include "BallTrackerImpl.hpp"
@@ -82,20 +83,22 @@ void BallTrackerImpl::startTracking() {
 			circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 			lasty = Ballcenter.y;
 			lastx = Ballcenter.x;
-			if(abs(Ballcenter.y-lasty) < 2) {
-				Ballcenter.y = lasty; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
+			if( (pow((Ballcenter.y-lasty),2) + pow((Ballcenter.x-lastx),2)) < 8 ) {
+				lasty = Ballcenter.y; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
+				lastx = Ballcenter.x;
+				tableController->setBallPos(Ballcenter.x, Ballcenter.y);
 			}
 			//cout << Ballcenter << endl;
-			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
+
 		}
 
 		//imshow("dif",dif);
-		//imshow("circles", *cv_img);
+		imshow("circles", *cv_img);
 
-		//if (cv::waitKey(30) == 27) {
-			//cv::destroyWindow("Circles");
-			//break;
-		//}
+		if (cv::waitKey(30) == 27) {
+			cv::destroyWindow("circles");
+			break;
+		}
 	}
 }
 

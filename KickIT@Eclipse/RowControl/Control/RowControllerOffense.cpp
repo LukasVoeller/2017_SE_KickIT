@@ -5,7 +5,3 @@
 RowControllerOffense::RowControllerOffense() {
 
 }
-
-void RowControllerOffense::run() {
-
-}

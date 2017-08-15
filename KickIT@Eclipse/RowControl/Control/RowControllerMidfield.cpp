@@ -6,7 +6,3 @@
 RowControllerMidfield::RowControllerMidfield() {
 
 }
-
-void RowControllerMidfield::run() {
-
-}

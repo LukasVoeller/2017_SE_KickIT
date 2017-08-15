@@ -3,7 +3,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <pylon/PylonIncludes.h>
-#include "CameraConfig.hpp"
+#include "DataType/CameraConfig.hpp"
 
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>

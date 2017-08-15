@@ -29,6 +29,16 @@ public:
 
 		return *this;
 	}
+
+	void update(float x, float y){
+		Vec2 newPos(x,y);
+		std::cout << "new pos x: " << x << " new y: " << y << std::endl;
+		if(!(newPos.x == position.x) )
+			movement = position.toTarget(newPos);
+
+		position.update(x,y);
+
+	}
 };
 
-#endif /* BALLSTATUS_HPP_ */
+#endif //BALLSTATUS_HPP_

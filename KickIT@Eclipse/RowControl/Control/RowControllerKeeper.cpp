@@ -6,7 +6,3 @@
 RowControllerKeeper::RowControllerKeeper() {
 	mcomm = new MotorComPS01Impl(KEEPER);
 }
-
-void RowControllerKeeper::run() {
-
-}

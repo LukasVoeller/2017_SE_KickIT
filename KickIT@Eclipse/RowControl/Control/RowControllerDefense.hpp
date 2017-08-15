@@ -7,7 +7,12 @@ class RowControllerDefense: public RowControllerInterface {
 
 public:
 	RowControllerDefense();
-	void run();
+	void kick(int strength); //Parameter Deklaration != Parameter Implementation
+	virtual void up();
+	virtual void down();
+
+protected:
+	void kickThread();
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_ */

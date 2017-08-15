@@ -2,12 +2,11 @@
 #define INTERFACETABLECONTROLLER_HPP
 
 #include "../Interface/RowControllerInterface.hpp"
+#include "../../DataType/BallStatus.hpp"
+#include "../Calculation/Calculator.hpp"
 #include "../DataType/BallStatus.hpp"
 #include "../DataType/Vec2.hpp"
 #include <iostream>
-
-#include "../../DataType/BallStatus.hpp"
-#include "../Calculation/PositionCalculator.hpp"
 
 class TableControllerInterface {
 
@@ -16,7 +15,7 @@ public:
 	virtual ~TableControllerInterface() {}
 
 	void motorByHand() {
-		std::cout << "motorByHand()" << std::endl;
+		std::cout << "MOTOR BY HAND" << std::endl;
 
 		int position = 1;
 		int row = 1;
@@ -41,7 +40,16 @@ public:
 
 				if (row == 2) {
 					if (isDefenseActive) {
-						defenseControl->moveTo(position);
+
+						if(position == 1){
+
+							defenseControl->kick(0);
+
+
+						}else{
+							defenseControl->moveTo(position);
+						}
+
 					} else {
 						std::cout << "Defense is not active" << std::endl;
 					}
@@ -60,16 +68,16 @@ public:
 	}
 
 protected:
-	int tableHeight;
-	int tableWidth;
-
-	BallStatus ballStatus;
 	bool isKeeperActive;
 	bool isDefenseActive;
 	bool isMidfieldActive;
 	bool isOffenseActive;
 
-	PositionCalculator* calc;
+	int tableHeight;
+	int tableWidth;
+
+	Calculator* calc;
+	BallStatus ballStatus;
 
 	BallStatus currentBallStaus;
 	RowControllerInterface* keeperControl;
@@ -77,14 +85,15 @@ protected:
 	RowControllerInterface* midfieldControl;
 	RowControllerInterface* offenseControl;
 
-	/*void updateBallStatus(float x, float y) {
+	virtual Vec2* pixelToMM(int xPixel, int yPixel) = 0;
+
+	/*Backup
+	void updateBallStatus(float x, float y) {
 		ballStatus.movement.x = ballStatus.position.x - x;
 		ballStatus.movement.y = ballStatus.position.y - y;
 		ballStatus.position.update(x, y);
-	}*/
-
-	virtual Vec2* pixelToMM(int xPixel, int yPixel) = 0;
-
+	}
+	*/
 };
 
 #endif //INTERFACETABLECONTROLLER_HPP

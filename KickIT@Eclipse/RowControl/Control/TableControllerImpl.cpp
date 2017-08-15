@@ -1,15 +1,14 @@
-#include "../Control/TableControllerImpl.hpp"
-
-#include "../Control/RowControllerDefense.hpp"
-#include "../Control/RowControllerKeeper.hpp"
+#include "../DataType/CameraConfig.hpp"
 #include "../Control/RowControllerMidfield.hpp"
+#include "../Control/RowControllerDefense.hpp"
 #include "../Control/RowControllerOffense.hpp"
-#include "../Calculation/PositionCalculator.hpp"
-#include "../../BallTracking/Camera/CameraConfig.hpp"
+#include "../Control/TableControllerImpl.hpp"
+#include "../Control/RowControllerKeeper.hpp"
+#include "../Calculation/Calculator.hpp"
 #include <iostream>
 
-TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfield, bool offense) {
-
+TableControllerImpl::TableControllerImpl(bool keeper, bool defense,
+		bool midfield, bool offense) {
 	this->isKeeperActive = keeper;
 	this->isDefenseActive = defense;
 	this->isMidfieldActive = midfield;
@@ -32,51 +31,48 @@ TableControllerImpl::TableControllerImpl(bool keeper, bool defense, bool midfiel
 		offenseControl = new RowControllerOffense();
 	}
 
-	this->calc = new PositionCalculator();
-	this->calc->isKeeperActive = keeper;
-	this->calc->isDefenseActive = defense;
-	this->calc->isMidfieldActive = midfield;
-	this->calc->isOffenseActive = offense;
-
 	this->tableHeight = 680;
 	this->tableWidth = 1115;
-
-	//Calculator Config
-
-	calc->playerGapDefense = 230;
-	calc->tableHeight = 680;
-	calc->offsetTopSideDefense = 72.72;
-	calc->offsetBottomSideDefense = 298.182;
-	calc->offsetTopSideKeeper = 327.273;
-
+	this->calc = new Calculator();
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
+	Vec2* v = this->pixelToMM(x, y);
+	ballStatus.update(v->x, v->y);
+	delete (v);
 
-	Vec2* v = this->pixelToMM(x,y);
+	//Check if pall is in the right position for a shot
+	//calc->calcIfKick(&ballStatus);
+	//if(isDefenseActive && calc->kick[0]) defenseControl->kick(0);
+	//if(isMidfieldActive && calc->kick[1]) midfieldControl->kick(0);
+	//if(isOffenseActive && calc->kick[2]) offenseControl->kick(0);
 
-	ballStatus.position.x = v->x;
-	ballStatus.position.y = v->y;
-	ballStatus.movement.update(v->x,v->y);
-	delete(v);
-
-	float* positions = calc->calcPositionsSimple(&ballStatus);
-
+	//Coordinate players
+	calc->calcPositionsSimple(&ballStatus);
+	if (isKeeperActive) {
+		keeperControl->moveTo(calc->positions[0]);
+		std::cout << " keeper to : " << calc->positions[0] << std::endl;
+	}
+	if (isDefenseActive)
+		defenseControl->moveTo(calc->positions[1]);
+	if (isMidfieldActive)
+		midfieldControl->moveTo(calc->positions[2]);
+	if (isOffenseActive)
+		offenseControl->moveTo(calc->positions[3]);
 	//std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;
 
-	keeperControl->moveTo(positions[0]);
-	defenseControl->moveTo(positions[1]);
-
-	delete(positions);
+	//if(up[0]) defenseControl->up();
+	//else defenseControl->down();
 }
 
-Vec2* TableControllerImpl::pixelToMM(int xPixel, int yPixel){
+Vec2* TableControllerImpl::pixelToMM(int xPixel, int yPixel) {
 	//std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
 	Vec2* result = new Vec2();
 	CameraConfig cc;
 
-	result->x = (float)xPixel * ((float)this->tableWidth / (float)cc.width);
-	result->y = (float)yPixel * ((float)this->tableHeight / (float)cc.height);
+	result->x = (float) xPixel * ((float) this->tableWidth / (float) cc.width);
+	result->y = (float) yPixel
+			* ((float) this->tableHeight / (float) cc.height);
 
 	//std::cout << "on table: " << " x: " << result->x << " y: " << result->y << std::endl;
 
