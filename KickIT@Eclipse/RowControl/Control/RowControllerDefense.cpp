@@ -36,3 +36,19 @@ void RowControllerDefense::kickThread(){
 	mcomm->rotate(0);
 	this->isShooting = false;
 }
+
+void RowControllerDefense::moveTo(float y){
+
+
+
+
+	if(y<=this->tc.tableHeight/2){
+
+		mcomm->linearMovement( (int)(y-tc.offsetTopSideDefense) );
+
+	} else if(y>this->tc.tableHeight/2){
+		mcomm->linearMovement( (int)(y-tc.offsetTopSideDefense - tc.playerGapDefense) );
+	}
+
+
+}

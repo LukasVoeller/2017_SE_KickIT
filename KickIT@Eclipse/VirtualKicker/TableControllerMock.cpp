@@ -1,14 +1,8 @@
 #include "TableControllerMock.hpp"
 #include <iostream>
 
-TableControllerMock::TableControllerMock(bool keeper, bool defense,
-		bool midfield, bool offense) :
-		window(NULL) {
+TableControllerMock::TableControllerMock() : window(NULL) {
 
-	isKeeperActive = keeper;
-	isDefenseActive = defense;
-	isMidfieldActive = midfield;
-	isOffenseActive = offense;
 }
 
 TableControllerMock::~TableControllerMock() {

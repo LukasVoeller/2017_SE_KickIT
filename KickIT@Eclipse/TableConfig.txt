@@ -1,5 +1,5 @@
-tableHeight: 680
 tableWidth: 1115
+tableHeight: 680
 isKeeperActive: 1
 isDefenseActive: 1
 isMidfieldActive: 0

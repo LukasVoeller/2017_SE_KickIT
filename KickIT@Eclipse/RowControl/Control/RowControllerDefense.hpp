@@ -10,6 +10,7 @@ public:
 	void kick(int strength); //Parameter Deklaration != Parameter Implementation
 	virtual void up();
 	virtual void down();
+	void moveTo(float y);
 
 protected:
 	void kickThread();

@@ -49,11 +49,11 @@ void MotorComRS01Impl::driverInit(){
 }
 
 void MotorComRS01Impl::linearMovement(int position){
-	position += 150;							//Rescale center to zero
+
 	if(position > 280) position = 280;			//Check if position is within range
 	if(position < 20) position = 20;			//Check if position is within range
 
-	cout << "RS is moving to: " << position << endl;
+	//cout << "RS is moving to: " << position << endl;
 
 	int pos1, pos2;
 	position *= 10;

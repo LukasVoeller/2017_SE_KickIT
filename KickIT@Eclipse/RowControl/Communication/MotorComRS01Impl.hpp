@@ -12,7 +12,7 @@ class MotorComRS01Impl: public MotorCommunicatorInterface {
 
 public:
 	MotorComRS01Impl(Row r);
-	void linearMovement(int posotion);
+	void linearMovement(int position);
 	void rotate(int amount);
 
 protected:

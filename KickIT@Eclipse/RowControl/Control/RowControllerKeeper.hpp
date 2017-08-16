@@ -3,11 +3,13 @@
 
 #include "../Interface/RowControllerInterface.hpp"
 
+
 class RowControllerKeeper: public RowControllerInterface {
 
 public:
 	RowControllerKeeper();
 	void run();
+	void moveTo(float y);
 
 };
 

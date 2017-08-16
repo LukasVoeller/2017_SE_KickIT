@@ -34,40 +34,61 @@ public:
 		delete (kick);
 	}
 
-	void calcPositionsSimple(BallStatus* bs, float yOffset = 0) {
+	void calcPositionsSimple(BallStatus* bs) {
 		if (tc.isKeeperActive) {
-			std::cout << "Directional-X: " << bs->movement.x << std::endl;
-			std::cout << "Directional-Y: " << bs->movement.y << std::endl;
+			//std::cout << "positional-X: " << bs->position.x << std::endl;
+			//std::cout << "positional-Y: " << bs->position.y << std::endl;
+			//std::cout << "Directional-X: " << bs->movement.x << std::endl;
+			//std::cout << "Directional-Y: " << bs->movement.y << std::endl;
 
 			if ( bs->movement.x < 0 ) {
+
 				float m = bs->movement.y / bs->movement.x;
-				float pos = bs->position.y + (bs->position.x - tc.distGoalToKeeper) * m;
+				m*=(-1);
+				float pos = ((bs->position.x - tc.distGoalToKeeper) * m) + bs->position.y;
+				//float pos = bs->position.y + (bs->position.x - tc.distGoalToKeeper) * m;
+
+				//std::cout << "Keeper to: " << pos << std::endl;
 				positions[0] = pos;
-			} else {
+			}
+			if ( bs->movement.x > 0) {
 				positions[0] = 340;
 			}
 		}
+
+		if (tc.isDefenseActive) {
+
+			if ( bs->movement.x < 0 ) {
+
+				float m = bs->movement.y / bs->movement.x;
+				m*=(-1);
+				float pos = ((bs->position.x - tc.distGoalToDefense) * m) + bs->position.y;
+				//float pos = bs->position.y + (bs->position.x - tc.distGoalToKeeper) * m;
+
+				//std::cout << "Keeper to: " << pos << std::endl;
+				positions[1] = pos;
+			}
+			if ( bs->movement.x > 0) {
+				positions[1] = 200;
+			}
+
+		}
+
 	}
 
 	void calcIfKick(BallStatus* bs, float yOffset = 0) {
-		std::cout << abs(positions[1] + tc.offsetTopSideDefense - bs->position.y)
-				<< std::endl;
-		std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
-		std::cout
-				<< abs(
-						positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense
-								- bs->position.y) << std::endl;
-		std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
+		//std::cout << abs(positions[1] + tc.offsetTopSideDefense - bs->position.y) << std::endl;
+		//std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
+		//std::cout << abs(positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense - bs->position.y) << std::endl;
+		//std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
 
-		if ((abs(positions[1] + tc.offsetTopSideDefense - bs->position.y)
-				< tc.shotTriggerRange
-				&& abs(bs->position.x - tc.distGoalToDefense)
-						< tc.shotTriggerRange)
-				|| (abs(
-						positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense
-								- bs->position.y) < tc.shotTriggerRange
-						&& abs(bs->position.x - tc.distGoalToDefense)
-								< tc.shotTriggerRange)) {
+		if ((abs(positions[1] + tc.offsetTopSideDefense - bs->position.y)< tc.shotTriggerRange
+				&&
+				abs(bs->position.x - tc.distGoalToDefense) < tc.shotTriggerRange)
+				||
+				(abs(positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense - bs->position.y) < tc.shotTriggerRange
+						&&
+						abs(bs->position.x - tc.distGoalToDefense) < tc.shotTriggerRange)) {
 
 			kick[0] = true;
 		}

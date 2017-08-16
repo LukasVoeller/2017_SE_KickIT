@@ -21,23 +21,21 @@ public:
 	}
 
 	BallStatus & operator=(const BallStatus & bs) {
-		movement.x = bs.movement.x;
-		movement.y = bs.movement.y;
+		this->movement.x = bs.movement.x;
+		this->movement.y = bs.movement.y;
 
-		position.x = bs.position.x;
-		position.y = bs.position.y;
+		this->position.x = bs.position.x;
+		this->position.y = bs.position.y;
 
 		return *this;
 	}
 
 	void update(float x, float y){
 		Vec2 newPos(x,y);
-		std::cout << "new pos x: " << x << " new y: " << y << std::endl;
-		if(!(newPos.x == position.x) )
-			movement = position.toTarget(newPos);
+		//std::cout << "new pos x: " << x << " new y: " << y << std::endl;
 
-		position.update(x,y);
-
+		this->movement = this->position.toTarget(newPos);
+		this->position.update(x,y);
 	}
 };
 

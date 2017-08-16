@@ -49,8 +49,8 @@ public:
 				int value = getNumber(line);
 
 				switch(valueID){
-				    case 1: tableHeight = value; break;
-				    case 2: tableWidth = value; break;
+				    case 1: tableWidth = value; break;
+				    case 2: tableHeight = value; break;
 				    case 3: isKeeperActive = value; break;
 				    case 4: isDefenseActive = value; break;
 				    case 5: isMidfieldActive = value; break;
@@ -84,8 +84,8 @@ public:
 	void saveConfig() {
 		std::ofstream outfile("TableConfig.txt");
 
-		outfile << "tableHeight: " << tableHeight << "\n"
-				<< "tableWidth: " << tableWidth << "\n"
+		outfile << "tableWidth: " << tableWidth << "\n"
+				<< "tableHeight: " << tableHeight << "\n"
 				<< "isKeeperActive: " << isKeeperActive << "\n"
 				<< "isDefenseActive: " << isDefenseActive << "\n"
 				<< "isMidfieldActive: " << isMidfieldActive << "\n"
@@ -119,8 +119,9 @@ private:
 	void createEmptyFile() {
 		std::ofstream outfile("TableConfig.txt");
 
-		outfile << "tableHeight: 0\n"
+		outfile <<
 				"tableWidth: 0\n"
+				"tableHeight: 0\n"
 				"isKeeperActive: 0\n"
 				"isDefenseActive: 0\n"
 				"isMidfieldActive: 0\n"

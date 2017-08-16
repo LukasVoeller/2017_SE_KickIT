@@ -2,18 +2,13 @@
 #define INTERFACEROWCONTROLLER_HPP
 
 #include "MotorCommunicatorInterface.hpp"
+#include "../../DataType/TableConfig.hpp"
 #include <cstdlib>
 
 class RowControllerInterface {
 
 public:
-	void moveTo(float y) {
-		int castedY = (int) y;
-		//if (std::abs(castedY - lastY) >= 6) {
-			mcomm->linearMovement(castedY);
-			//lastY = castedY;
-		//}
-	}
+	virtual void moveTo(float y) = 0;
 
 	virtual void up() {}
 	virtual void down() {}
@@ -21,10 +16,11 @@ public:
 
 protected:
 	MotorCommunicatorInterface* mcomm;
-	int lastY = 0;
 
 	bool isUp = false;
 	bool isShooting = false;
+
+	TableConfig tc;
 };
 
 #endif //INTERFACEROWCONTROLLER_HPP

@@ -8,7 +8,7 @@
 class TableControllerMock: public TableControllerInterface {
 
 public:
-	TableControllerMock(bool keeper, bool defense, bool midfield, bool offense);
+	TableControllerMock();
 	virtual ~TableControllerMock();
 
 	void run();
@@ -17,7 +17,7 @@ public:
 	void setKickerWindow(VirtualKickerWindow* p);
 
 protected:
-	virtual Vec2* pixelToMM(int xPixel, int yPixel){}
+	virtual Vec2 pixelToMM(float xPixel, float yPixel){}
 	VirtualKickerWindow* window;
 };
 

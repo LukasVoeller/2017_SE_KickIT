@@ -20,13 +20,11 @@ public:
 	}
 
 	void update(float newx, float newy) {
-		x = newx;
-		y = newy;
+		this->x = newx;
+		this->y = newy;
 	}
 
 	Vec2 toTarget(const Vec2& destination){
-
-
 		Vec2 res;
 		res.x = destination.x - this->x;
 		res.y = destination.y - this->y;
@@ -34,8 +32,8 @@ public:
 	}
 
 	void update(Vec2* newp) {
-		x = newp->x;
-		y = newp->y;
+		this->x = newp->x;
+		this->y = newp->y;
 		//delete newp;
 	}
 

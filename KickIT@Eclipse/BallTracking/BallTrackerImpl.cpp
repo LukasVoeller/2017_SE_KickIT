@@ -81,10 +81,12 @@ void BallTrackerImpl::startTracking() {
 			circle(*cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
 			//Draw the circle outline
 			circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
-			lasty = Ballcenter.y;
-			lastx = Ballcenter.x;
-			if( (pow((Ballcenter.y-lasty),2) + pow((Ballcenter.x-lastx),2)) < 8 ) {
-				lasty = Ballcenter.y; // Kleine Hysterese, dass der Motor nicht bei jedem neuen angesteuerten Pixel verfährt
+
+			//if( (pow((Ballcenter.y-lasty),2) + pow((Ballcenter.x-lastx),2)) > 4 ) {  // only send new position if it is different
+
+			if(abs(lastx-Ballcenter.x) > 16 || abs(lasty-Ballcenter.y) > 16){ // only send new position if it is different
+				//std::cout << "new pos x: " << Ballcenter.x << " y " << Ballcenter.y << std::endl;
+				lasty = Ballcenter.y;
 				lastx = Ballcenter.x;
 				tableController->setBallPos(Ballcenter.x, Ballcenter.y);
 			}
@@ -93,12 +95,12 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		//imshow("dif",dif);
-		imshow("circles", *cv_img);
+		//imshow("circles", *cv_img);
 
-		if (cv::waitKey(30) == 27) {
-			cv::destroyWindow("circles");
-			break;
-		}
+		//if (cv::waitKey(30) == 27) {
+			//cv::destroyWindow("circles");
+			//break;
+		//}
 	}
 }
 

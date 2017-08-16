@@ -7,6 +7,7 @@ class RowControllerOffense: public RowControllerInterface {
 
 public:
 	RowControllerOffense();
+	void moveTo(float y){}
 };
 
 #endif /* ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_ */

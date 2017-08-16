@@ -16,7 +16,7 @@ public:
 
 	static TableControllerInterface* getMockTableController() {
 		vkw = new VirtualKickerWindow();
-		tcm = new TableControllerMock(true, true, false, false);
+		tcm = new TableControllerMock();
 
 		tcm->setKickerWindow(vkw);
 		vkw->setTableController(tcm);
@@ -29,7 +29,7 @@ public:
 
 	static TableControllerImpl* getTableController() {
 		vkw = new VirtualKickerWindow();
-		tci = new TableControllerImpl(true, true, false, false);
+		tci = new TableControllerImpl();
 
 		vkw->setTableController(tci);
 

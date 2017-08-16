@@ -2,6 +2,8 @@
 #define INTERFACETABLECONTROLLER_HPP
 
 #include "../Interface/RowControllerInterface.hpp"
+#include "../../DataType/TableConfig.hpp"
+#include "../../DataType/CameraConfig.hpp"
 #include "../../DataType/BallStatus.hpp"
 #include "../Calculation/Calculator.hpp"
 #include "../DataType/BallStatus.hpp"
@@ -12,7 +14,12 @@ class TableControllerInterface {
 
 public:
 	virtual void setBallPos(float x, float y) = 0;
-	virtual ~TableControllerInterface() {}
+	virtual ~TableControllerInterface() {
+		delete this->keeperControl;
+		delete this->defenseControl;
+		delete this->midfieldControl;
+		delete this->offenseControl;
+	}
 
 	void motorByHand() {
 		std::cout << "MOTOR BY HAND" << std::endl;
@@ -31,7 +38,7 @@ public:
 				std::cin >> position;
 
 				if (row == 1) {
-					if (isKeeperActive) {
+					if (tc.isKeeperActive) {
 						keeperControl->moveTo(position);
 					} else {
 						std::cout << "Keeper is not active" << std::endl;
@@ -39,7 +46,7 @@ public:
 				}
 
 				if (row == 2) {
-					if (isDefenseActive) {
+					if (tc.isDefenseActive) {
 
 						if(position == 1){
 
@@ -56,7 +63,7 @@ public:
 				}
 
 				if (row == 3) {
-					if (isDefenseActive && isKeeperActive) {
+					if (tc.isDefenseActive && tc.isKeeperActive) {
 						defenseControl->moveTo(position);
 						keeperControl->moveTo(position);
 					} else {
@@ -68,15 +75,9 @@ public:
 	}
 
 protected:
-	bool isKeeperActive;
-	bool isDefenseActive;
-	bool isMidfieldActive;
-	bool isOffenseActive;
-
-	int tableHeight;
-	int tableWidth;
-
-	Calculator* calc;
+	CameraConfig cc;
+	TableConfig tc;
+	Calculator calculator;
 	BallStatus ballStatus;
 
 	BallStatus currentBallStaus;
@@ -85,7 +86,7 @@ protected:
 	RowControllerInterface* midfieldControl;
 	RowControllerInterface* offenseControl;
 
-	virtual Vec2* pixelToMM(int xPixel, int yPixel) = 0;
+	virtual Vec2 pixelToMM(float xPixel, float yPixel) = 0;
 
 	/*Backup
 	void updateBallStatus(float x, float y) {

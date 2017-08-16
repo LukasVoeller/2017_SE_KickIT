@@ -1,10 +1,10 @@
-RedLow: 0
+RedLow: 37
 RedHigh: 255
-GreenLow: 126
+GreenLow: 163
 GreenHigh: 255
-BlueLow: 117
+BlueLow: 130
 BlueHigh: 255
 Width: 592
 Height: 360
 Packetsize: 1500
-ExposureTime: 4500
+ExposureTime: 7500
