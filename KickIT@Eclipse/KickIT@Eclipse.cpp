@@ -3,7 +3,7 @@
  * Hochschule Osnabrueck, Sommersemester 2017
  *
  * Programmname      : KickIT
- * Version			 : 0.5.2-0001
+ * Version			 : 0.7.0-0001
  *
  * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
  *
