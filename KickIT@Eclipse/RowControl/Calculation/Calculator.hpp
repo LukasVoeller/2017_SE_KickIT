@@ -50,9 +50,10 @@ public:
 
 				//std::cout << "Keeper to: " << pos << std::endl;
 				positions[0] = pos;
-			}
-			if ( bs->movement.x > 0) {
+			}else if ( bs->movement.x > 0) {
 				positions[0] = 340;
+			}else if (bs->movement.x == 0){
+				positions[0] = bs->position.y;
 			}
 		}
 
@@ -76,13 +77,13 @@ public:
 
 	}
 
-	void calcIfKick(BallStatus* bs, float yOffset = 0) {
+	void calcIfKick(BallStatus* bs) {
 		//std::cout << abs(positions[1] + tc.offsetTopSideDefense - bs->position.y) << std::endl;
 		//std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
 		//std::cout << abs(positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense - bs->position.y) << std::endl;
 		//std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
 
-		if ((abs(positions[1] + tc.offsetTopSideDefense - bs->position.y)< tc.shotTriggerRange
+		/*if ((abs(positions[1] + tc.offsetTopSideDefense - bs->position.y)< tc.shotTriggerRange
 				&&
 				abs(bs->position.x - tc.distGoalToDefense) < tc.shotTriggerRange)
 				||
@@ -91,7 +92,15 @@ public:
 						abs(bs->position.x - tc.distGoalToDefense) < tc.shotTriggerRange)) {
 
 			kick[0] = true;
+		}*/
+
+		if(bs->position.x < 557 && bs->position.x > 180 && bs->movement.x < 0){
+			kick[0] = true;
+			//std::cout << "kick" << std::endl;
+		} else {
+			kick[0] = false;
 		}
+
 	}
 
 	void calcIfUp(BallStatus* bs, float yOffset = 0) {

@@ -19,6 +19,7 @@ public:
 	virtual void linearMovement(int position) = 0;
 	virtual void rotate(int amount){};
 	virtual ~MotorCommunicatorInterface() {}
+	//static bool homingNecessary;
 
 protected:
 	Row row;
@@ -117,5 +118,7 @@ protected:
 		close(this->socketId);
 	}
 };
+
+
 
 #endif //INTERFACEMOTORCOMMUNICATOR_HPP

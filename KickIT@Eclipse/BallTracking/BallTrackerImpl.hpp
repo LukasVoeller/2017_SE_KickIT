@@ -17,6 +17,7 @@ public:
 
 protected:
 	void startTracking();
+	bool showImage = true;
 };
 
 #endif //BALLTRACKERIMPL_HPP

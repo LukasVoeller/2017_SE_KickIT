@@ -28,6 +28,7 @@
 #include "../BallTracking/BallTrackerInterface.hpp"
 #include "RowControl/Interface/TableControllerInterface.hpp"
 #include "VirtualKicker/VirtualKicker.hpp"
+#include "RowControl/Interface/MotorCommunicatorInterface.hpp"
 
 #define MODE 4
 

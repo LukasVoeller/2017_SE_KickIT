@@ -43,7 +43,7 @@ void BallTrackerImpl::startTracking() {
 	//Eigenschaften für Bildanalyse
 	Mat imgThresholded;
 	vector<Vec3f> circles;
-
+	int nz;
 	while (1) {
 		Mat* cv_img = camera->getImage();
 		Point Ballcenter(0, 0);
@@ -66,7 +66,9 @@ void BallTrackerImpl::startTracking() {
 		//Mat nonzero;
 
 		//cout << "nonzero:" << nonzero << endl;
-		if (countNonZero(imgThresholded) > 0) {
+		nz = countNonZero(imgThresholded);
+		if (nz > 0 && nz < 500) {
+			//std::cout << nz << std::endl;
 			findNonZero(imgThresholded, nonzero);
 			Ballcenter = (nonzero.front() + nonzero.back());
 			Ballcenter.x = Ballcenter.x / 2;
@@ -95,11 +97,11 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		//imshow("dif",dif);
-		//imshow("circles", *cv_img);
+		//if(showImage) imshow("circles", *cv_img);
 
-		//if (cv::waitKey(30) == 27) {
+		//if (cv::waitKey(30) == 27 && showImage) {
 			//cv::destroyWindow("circles");
-			//break;
+			//showImage = false;
 		//}
 	}
 }

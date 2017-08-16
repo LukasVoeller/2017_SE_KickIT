@@ -31,9 +31,9 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	Vec2 v = this->pixelToMM(x, y);
 	ballStatus.update(v.x, v.y);		//Ballposition form now on in milimeters
 
-	//Check if pall is in the right position for a shot
-	//calc->calcIfKick(&ballStatus);
-	//if(isDefenseActive && calc->kick[0]) defenseControl->kick(0);
+	//Check if ball is in the right position for some shots
+	this->calculator.calcIfKick(&ballStatus);
+	if(tc.isDefenseActive && this->calculator.kick[0]) defenseControl->kick(3);
 	//if(isMidfieldActive && calc->kick[1]) midfieldControl->kick(0);
 	//if(isOffenseActive && calc->kick[2]) offenseControl->kick(0);
 
@@ -48,17 +48,16 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	//if (tc.isOffenseActive) offenseControl->moveTo(calculator.positions[3]);
 	//std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;
 
-	//if(up[0]) defenseControl->up();
 	//else defenseControl->down();
 }
 
 Vec2 TableControllerImpl::pixelToMM(float xPixel, float yPixel) {
-	std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
+	/*std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
 
 	std::cout << "tw: " << tc.tableWidth << std::endl;
 	std::cout << "th: " << tc.tableHeight << std::endl;
 	std::cout << "pw: " << cc.width << std::endl;
-	std::cout << "ph: " << cc.height << std::endl;
+	std::cout << "ph: " << cc.height << std::endl;*/
 
 
 	Vec2 result;
@@ -67,7 +66,7 @@ Vec2 TableControllerImpl::pixelToMM(float xPixel, float yPixel) {
 	result.x = xPixel * ((float) this->tc.tableWidth / (float) this->cc.width);
 	result.y = yPixel * ((float) this->tc.tableHeight / (float) this->cc.height);
 
-	std::cout << "on table: " << " x: " << result.x << " y: " << result.y << std::endl;
+	//std::cout << "on table: " << " x: " << result.x << " y: " << result.y << std::endl;
 
 	return result;
 }
