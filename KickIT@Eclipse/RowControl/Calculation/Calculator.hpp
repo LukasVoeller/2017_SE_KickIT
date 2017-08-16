@@ -109,7 +109,7 @@ public:
 
 	}
 
-	static float* calcPositionsVectorial(BallStatus* b, float yOffset = 0,
+	void calcPositionsVectorial(BallStatus* b, float yOffset = 0,
 			Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
 			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =
 					0) {

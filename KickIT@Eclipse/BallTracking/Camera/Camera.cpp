@@ -99,6 +99,8 @@ void Camera::setCameraSettings() {
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
 	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
 	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
+	GenApi::CFloatPtr offsetx(camera->GetNodeMap().GetNode("OffsetX"));
+	GenApi::CFloatPtr offsety(camera->GetNodeMap().GetNode("OffsetY"));
 	//CFloatPtr exposuretimeLowerLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsLowerLimit"));
 	//CFloatPtr exposuretimeUpperLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsUpperLimit"));
 	//CIntegerPtr exposuretimeTargetValue(camera.GetNodeMap().GetNode("AutoTargetValue"));
@@ -116,6 +118,8 @@ void Camera::setCameraSettings() {
 	height->SetValue(cc.height);
 	packetsize->SetValue(cc.packetsize);
 	exposuretime->SetValue(cc.exposureTime);
+	offsetx->SetValue(cc.offsetx);
+	offsety->SetValue(cc.offsety);
 
 	//exposuretime->GetMin();
 	//exposuretime->GetMax();

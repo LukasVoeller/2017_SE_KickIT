@@ -17,6 +17,8 @@ public:
 	int height;
 	int packetsize;
 	int exposureTime;
+	int offsetx;
+	int offsety;
 
 	CameraConfig(){
 		loadConfig();
@@ -42,6 +44,8 @@ public:
 				    case 8: height = value; break;
 				    case 9: packetsize = value; break;
 				    case 10: exposureTime = value; break;
+				    case 11: offsetx = value; break;
+				    case 12: offsety = value; break;
 				}
 				valueID++;
 			}
@@ -64,7 +68,9 @@ public:
 				<< "Width: " << width << "\n"
 				<< "Height: " << height << "\n"
 				<< "Packetsize: " << packetsize << "\n"
-				<< "ExposureTime: " << exposureTime
+				<< "ExposureTime: " << exposureTime <<"\n"
+				<< "OffsetX: " << offsetx << "\n"
+				<< "OffsetY: " << offsety
 				<< std::endl;
 
 		outfile.close();
@@ -78,7 +84,8 @@ public:
 				<< "BlueHigh: " << blueHigh << "\n" << "Width: " << width
 				<< "\n" << "Height: " << height << "\n" << "Packetsize: "
 				<< packetsize << "\n"
-				<< "ExposureTime: "  << exposureTime << "\n" << std::endl;
+				<< "ExposureTime: "  << exposureTime << "\n"
+				<< "OffsetX: " << "\n" << "OffsetY: " << std::endl;
 	}
 
 private:
@@ -95,6 +102,8 @@ private:
 				"Height: 0\n"
 				"Packetsize: 0\n"
 				"ExposureTime: 0\n"
+				"OffsetX: 0\n"
+				"OffsetY: 0\n"
 				<< std::endl;
 
 		outfile.close();
