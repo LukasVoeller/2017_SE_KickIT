@@ -45,8 +45,8 @@ void MotorComPS01Impl::driverInit() {
 }
 
 void MotorComPS01Impl::linearMovement(int position){
-	if(position > 75) position = 75;			//Check if position is within range
-	if(position < -70) position = -70;			//Check if position is within range
+	if(position > 65) position = 65;			//Check if position is within range
+	if(position < -60) position = -60;			//Check if position is within range
 
 	//cout << "PS is moving to: " << position << endl;
 

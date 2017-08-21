@@ -20,6 +20,7 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            DataType/BallStatus.hpp \
            DataType/TableConfig.hpp \
            DataType/CameraConfig.hpp \
+           DataType/MotorConfig.hpp \
            RowControl/Communication/MotorComPS01Impl.hpp \
 	   	   RowControl/Communication/MotorComRS01Impl.hpp \
            RowControl/Interface/MotorCommunicatorInterface.hpp \

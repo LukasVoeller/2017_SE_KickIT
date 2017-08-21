@@ -41,7 +41,6 @@ AR            = ar cqs
 RANLIB        = 
 SED           = sed
 STRIP         = strip
-
 	# Pylon
 		PYLON_ROOT ?= /opt/pylon5
 		CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
@@ -148,6 +147,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../DataType/BallStatus.hpp \
 		../DataType/TableConfig.hpp \
 		../DataType/CameraConfig.hpp \
+		../DataType/MotorConfig.hpp \
 		../RowControl/Communication/MotorComPS01Impl.hpp \
 		../RowControl/Communication/MotorComRS01Impl.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
@@ -341,7 +341,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
 
 
@@ -381,11 +381,13 @@ compiler_clean:
 
 ####### Compile
 
-KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../RowControl/Control/TableControllerImpl.hpp \
+KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../DataType/TableConfig.hpp \
+		../RowControl/Control/TableControllerImpl.hpp \
 		../RowControl/Interface/TableControllerInterface.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/CameraConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
@@ -403,6 +405,8 @@ BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrack
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
+		../DataType/CameraConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
@@ -412,7 +416,8 @@ BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrack
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o ../BallTracking/BallTrackerImpl.cpp
 
 Camera.o: ../BallTracking/Camera/Camera.cpp ../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp
+		../BallTracking/Camera/CameraInterface.hpp \
+		../DataType/CameraConfig.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Camera.o ../BallTracking/Camera/Camera.cpp
 
 MotorComPS01Impl.o: ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComPS01Impl.hpp \
@@ -429,6 +434,7 @@ RowControllerDefense.o: ../RowControl/Control/RowControllerDefense.cpp ../RowCon
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
 		../RowControl/Communication/MotorComRS01Impl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerDefense.o ../RowControl/Control/RowControllerDefense.cpp
 
@@ -436,25 +442,30 @@ RowControllerKeeper.o: ../RowControl/Control/RowControllerKeeper.cpp ../RowContr
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
 		../RowControl/Communication/MotorComPS01Impl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerKeeper.o ../RowControl/Control/RowControllerKeeper.cpp
 
 RowControllerMidfield.o: ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerMidfield.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp
+		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerMidfield.o ../RowControl/Control/RowControllerMidfield.cpp
 
 RowControllerOffense.o: ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/RowControllerOffense.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp
+		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerOffense.o ../RowControl/Control/RowControllerOffense.cpp
 
-TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../RowControl/Control/RowControllerMidfield.hpp \
+TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../DataType/CameraConfig.hpp \
+		../RowControl/Control/RowControllerMidfield.hpp \
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
 		../RowControl/Control/RowControllerDefense.hpp \
 		../RowControl/Control/RowControllerOffense.hpp \
 		../RowControl/Control/TableControllerImpl.hpp \
@@ -470,6 +481,8 @@ TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
+		../DataType/CameraConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
@@ -481,6 +494,8 @@ VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker
 		../RowControl/Interface/RowControllerInterface.hpp \
 		../RowControl/Interface/MotorCommunicatorInterface.hpp \
 		../DataType/RowEnum.hpp \
+		../DataType/TableConfig.hpp \
+		../DataType/CameraConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp

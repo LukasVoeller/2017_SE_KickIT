@@ -9,7 +9,7 @@ Pylon::PylonAutoInitTerm autoInitTerm;
 using namespace std;
 
 Camera::Camera(){
-	cout << "Camera Constructor" << endl;
+	//cout << "Camera Constructor" << endl;
 	camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
 	camera->Open();
 
@@ -99,8 +99,8 @@ void Camera::setCameraSettings() {
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
 	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
 	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
-	GenApi::CFloatPtr offsetx(camera->GetNodeMap().GetNode("OffsetX"));
-	GenApi::CFloatPtr offsety(camera->GetNodeMap().GetNode("OffsetY"));
+	GenApi::CIntegerPtr offsetx(camera->GetNodeMap().GetNode("OffsetX"));
+	GenApi::CIntegerPtr offsety(camera->GetNodeMap().GetNode("OffsetY"));
 	//CFloatPtr exposuretimeLowerLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsLowerLimit"));
 	//CFloatPtr exposuretimeUpperLimit(camera.GetNodeMap().GetNode("AutoExposureTimeAbsUpperLimit"));
 	//CIntegerPtr exposuretimeTargetValue(camera.GetNodeMap().GetNode("AutoTargetValue"));
@@ -113,6 +113,8 @@ void Camera::setCameraSettings() {
 	//exposuretimeTargetValue->SetValue(128);
 	//exposuretimeAuto->SetValue(ExposureAuto_Continuous);
 
+	//std::cout << "offsetX: " << offsetX->G
+
 	CameraConfig cc;
 	width->SetValue(cc.width);
 	height->SetValue(cc.height);
@@ -120,7 +122,6 @@ void Camera::setCameraSettings() {
 	exposuretime->SetValue(cc.exposureTime);
 	offsetx->SetValue(cc.offsetx);
 	offsety->SetValue(cc.offsety);
-
 	//exposuretime->GetMin();
 	//exposuretime->GetMax();
 	cout << "Kammeraeinstellungen vorgenommen" << endl;
