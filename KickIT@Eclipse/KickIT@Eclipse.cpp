@@ -30,7 +30,7 @@
 #include "VirtualKicker/VirtualKicker.hpp"
 #include "RowControl/Interface/MotorCommunicatorInterface.hpp"
 
-#define MODE 4
+#define MODE 1
 
 int main(int argc, char** argv) {
 
