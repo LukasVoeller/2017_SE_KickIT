@@ -5,7 +5,7 @@ GreenHigh: 255
 BlueLow: 114
 BlueHigh: 255
 Width: 592
-Height: 360
+Height: 352
 Packetsize: 1500
 ExposureTime: 4000
 OffsetX: 16
