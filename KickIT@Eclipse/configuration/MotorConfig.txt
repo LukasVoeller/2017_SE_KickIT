@@ -1,0 +1,60 @@
+# configuration for all motors
+# values have to be blank-space separated from the name
+# supported types are "int" and "string"
+
+########################################################
+
+
+string port can0								#comment
+
+int keeperAccelerationTranslational 80 		    #comment
+int keeperAccelerationRotary 0 			    	#comment
+int keeperDecelerationTranslational 0 		    #comment
+int keeperDecelerationRotary 0 			    	#comment
+int keeperSpeedTranslational 0 			    	#comment
+int keeperSpeedRotary 0 					    #comment
+int keeperMotorAddressTranslational 0 		    #comment
+int keeperMotorAddressRotary 0 			    	#comment
+int keeperMotorAddressTranslationalReset 0    	#comment
+int keeperMotorAddressRotaryReset 0 		    #comment
+int keeperSleepAfterInit 0 				    	#comment
+int keeperSleepAfterHoming 25 				    #comment
+
+int defenseAccelerationTranslational 0 	    	#comment
+int defenseAccelerationRotary 0 			    #comment
+int defenseDecelerationTranslational 0 	    	#comment
+int defenseDecelerationRotary 0 			    #comment
+int defenseSpeedTranslational 0 			    #comment
+int defenseSpeedRotary 0 					    #comment
+int defenseMotorAddressTranslational 0 	    	#comment
+int defenseMotorAddressRotary 0 			    #comment
+int defenseMotorAddressTranslationalReset 0 	#comment
+int defenseMotorAddressRotaryReset 0     		#comment
+int defenseSleepAfterInit 0     				#comment
+int defenseSleepAfterHoming 0     				#comment
+
+int midfieldAccelerationTranslational 0     	#comment
+int midfieldAccelerationRotary 0     			#comment
+int midfieldDecelerationTranslational 0     	#comment
+int midfieldDecelerationRotary 0     			#comment
+int midfieldSpeedTranslational 0     			#comment
+int midfieldSpeedRotary 0     					#comment
+int midfieldMotorAddressTranslational 0     	#comment
+int midfieldMotorAddressRotary 0     			#comment
+int midfieldMotorAddressTranslationalReset 0   	#comment
+int midfieldMotorAddressRotaryReset 0     		#comment
+int midfieldSleepAfterInit 0     				#comment
+int midfieldSleepAfterHoming 0     				#comment
+
+int offenseAccelerationTranslational 0     		#comment
+int offenseAccelerationRotary 0     			#comment
+int offenseDecelerationTranslational 0     		#comment
+int offenseDecelerationRotary 0     			#comment
+int offenseSpeedTranslational 0     			#comment
+int offenseSpeedRotary 0     					#comment
+int offenseMotorAddressTranslational 0     		#comment
+int offenseMotorAddressRotary 0     			#comment
+int offenseMotorAddressTranslationalReset 0    	#comment
+int offenseMotorAddressRotaryReset 0     		#comment
+int offenseSleepAfterInit 0     				#comment
+int offenseSleepAfterHoming 0     				#comment
