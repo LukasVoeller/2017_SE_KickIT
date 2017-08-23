@@ -35,7 +35,8 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            VirtualKicker/TableControllerMock.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
-           DataType/RowEnum.hpp
+           DataType/RowEnum.hpp \
+           Util/ConfigReader.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            BallTracking/Camera/Camera.cpp \
@@ -47,4 +48,5 @@ SOURCES += KickIT@Eclipse.cpp \
            RowControl/Control/RowControllerOffense.cpp \
            RowControl/Control/TableControllerImpl.cpp \
            VirtualKicker/TableControllerMock.cpp \
-           VirtualKicker/VirtualKickerWindow.cpp
+           VirtualKicker/VirtualKickerWindow.cpp \
+           Util/ConfigReader.cpp

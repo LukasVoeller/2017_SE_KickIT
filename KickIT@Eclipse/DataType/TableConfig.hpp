@@ -4,8 +4,11 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "../Util/ConfigReader.hpp"
 
 class TableConfig {
+protected:
+	ConfigReader cr;
 
 public:
 	float tableHeight;
@@ -19,12 +22,10 @@ public:
 	float playerGapDefense;
 	float playerGapMidfield;
 	float playerGapOffense;
-
 	float distGoalToKeeper;
 	float distGoalToDefense;
 	float distGoalToMidfield;
 	float distGoalToOffense;
-
 	float offsetTopSideKeeper;
 	float offsetBottomSideKeeper;
 	float offsetTopSideDefense;
@@ -35,124 +36,65 @@ public:
 	float offsetBottomSideOffense;
 	float shotTriggerRange;
 
-	TableConfig(){
+	TableConfig():cr("configuration/TableConfig.txt"){
 		loadConfig();
 	}
 
 	void loadConfig() {
-		std::ifstream configFile("TableConfig.txt");
-		std::string line;
-		int valueID = 1;
 
-		if (configFile.is_open()) {
-			while (getline(configFile, line)) {
-				int value = getNumber(line);
+		tableWidth = cr.getIntValue("tableWidth");
+		tableHeight = cr.getIntValue("tableHeight");
+		isKeeperActive = cr.getIntValue("isKeeperActive");
+		isDefenseActive = cr.getIntValue("isDefenseActive");
+		isMidfieldActive = cr.getIntValue("isMidfieldActive");
+		isOffenseActive = cr.getIntValue("isOffenseActive");
+		playerGapDefense = cr.getIntValue("playerGapDefense");
+		playerGapMidfield = cr.getIntValue("playerGapMidfield");
+		playerGapOffense = cr.getIntValue("playerGapOffense");
+		distGoalToKeeper = cr.getIntValue("distGoalToKeeper");
+		distGoalToDefense = cr.getIntValue("distGoalToDefense");
+		distGoalToMidfield = cr.getIntValue("distGoalToMidfield");
+		distGoalToOffense = cr.getIntValue("distGoalToOffense");
+		offsetTopSideKeeper = cr.getIntValue("offsetTopSideKeeper");
+		offsetBottomSideKeeper = cr.getIntValue("offsetBottomSideKeeper");
+		offsetTopSideDefense = cr.getIntValue("offsetTopSideDefense");
+		offsetBottomSideDefense = cr.getIntValue("offsetBottomSideDefense");
+		offsetTopSideMidfield = cr.getIntValue("offsetTopSideMidfield");
+		offsetBottomSideMidfield = cr.getIntValue("offsetBottomSideMidfield");
+		offsetTopSideOffense = cr.getIntValue("offsetTopSideOffense");
+		offsetBottomSideOffense = cr.getIntValue("offsetBottomSideOffense");
+		shotTriggerRange = cr.getIntValue("shotTriggerRange");
 
-				switch(valueID){
-				    case 1: tableWidth = value; break;
-				    case 2: tableHeight = value; break;
-				    case 3: isKeeperActive = value; break;
-				    case 4: isDefenseActive = value; break;
-				    case 5: isMidfieldActive = value; break;
-				    case 6: isOffenseActive = value; break;
-				    case 7: playerGapDefense = value; break;
-				    case 8: playerGapMidfield = value; break;
-				    case 9: playerGapOffense = value; break;
-				    case 10: distGoalToKeeper = value; break;
-				    case 11: distGoalToDefense = value; break;
-				    case 12: distGoalToMidfield = value; break;
-				    case 13: distGoalToOffense = value; break;
-				    case 14: offsetTopSideKeeper = value; break;
-				    case 15: offsetBottomSideKeeper = value; break;
-				    case 16: offsetTopSideDefense = value; break;
-				    case 17: offsetBottomSideDefense = value; break;
-				    case 18: offsetTopSideMidfield = value; break;
-				    case 19: offsetBottomSideMidfield = value; break;
-				    case 20: offsetTopSideOffense = value; break;
-				    case 21: offsetBottomSideOffense = value; break;
-				    case 22: shotTriggerRange = value; break;
-				}
-				valueID++;
-			}
-
-			configFile.close();
-		} else {
-			std::cout << "ERROR: Unable to open calculator config file" << std::endl;
-		}
 	}
 
 	void saveConfig() {
-		std::ofstream outfile("TableConfig.txt");
-
-		outfile << "tableWidth: " << tableWidth << "\n"
-				<< "tableHeight: " << tableHeight << "\n"
-				<< "isKeeperActive: " << isKeeperActive << "\n"
-				<< "isDefenseActive: " << isDefenseActive << "\n"
-				<< "isMidfieldActive: " << isMidfieldActive << "\n"
-				<< "isOffenseActive: " << isOffenseActive << "\n"
-				<< "playerGapDefense: " << playerGapDefense << "\n"
-				<< "playerGapMidfield: " << playerGapMidfield << "\n"
-				<< "playerGapOffense: " << playerGapOffense << "\n"
-				<< "distGoalToKeeper: " << distGoalToKeeper << "\n"
-				<< "distGoalToDefense: " << distGoalToDefense << "\n"
-				<< "distGoalToMidfield: " << distGoalToMidfield << "\n"
-				<< "distGoalToOffense: " << distGoalToOffense << "\n"
-				<< "offsetTopSideKeeper: " << offsetTopSideKeeper << "\n"
-				<< "offsetBottomSideKeeper: " << offsetBottomSideKeeper << "\n"
-				<< "offsetTopSideDefense: " << offsetTopSideDefense << "\n"
-				<< "offsetBottomSideDefense: " << offsetBottomSideDefense << "\n"
-				<< "offsetTopSideMidfield: " << offsetTopSideMidfield << "\n"
-				<< "offsetBottomSideMidfield: " << offsetBottomSideMidfield << "\n"
-				<< "offsetTopSideOffense: " << offsetTopSideOffense << "\n"
-				<< "offsetBottomSideOffense: " << offsetBottomSideOffense << "\n"
-				<< "shotTriggerRange: " << shotTriggerRange
-				<< std::endl;
-
-		outfile.close();
+		cr.setIntValue("tableWidth",tableWidth);
+		cr.setIntValue("tableHeight",tableHeight);
+		cr.setIntValue("isKeeperActive",isKeeperActive);
+		cr.setIntValue("isDefenseActive",isDefenseActive);
+		cr.setIntValue("isMidfieldActive",isMidfieldActive);
+		cr.setIntValue("isOffenseActive",isOffenseActive);
+		cr.setIntValue("playerGapDefense",playerGapDefense);
+		cr.setIntValue("playerGapMidfield",playerGapMidfield);
+		cr.setIntValue("playerGapOffense",playerGapOffense);
+		cr.setIntValue("distGoalToKeeper",distGoalToKeeper);
+		cr.setIntValue("distGoalToDefense",distGoalToDefense);
+		cr.setIntValue("distGoalToMidfield",distGoalToMidfield);
+		cr.setIntValue("distGoalToOffense",distGoalToOffense);
+		cr.setIntValue("offsetTopSideKeeper",offsetTopSideKeeper);
+		cr.setIntValue("offsetBottomSideKeeper",offsetBottomSideKeeper);
+		cr.setIntValue("offsetTopSideDefense",offsetTopSideDefense);
+		cr.setIntValue("offsetBottomSideDefense",offsetBottomSideDefense);
+		cr.setIntValue("offsetTopSideMidfield",offsetTopSideMidfield);
+		cr.setIntValue("offsetBottomSideMidfield",offsetBottomSideMidfield);
+		cr.setIntValue("offsetTopSideOffense",offsetTopSideOffense);
+		cr.setIntValue("offsetBottomSideOffense",offsetBottomSideOffense);
+		cr.setIntValue("shotTriggerRange",shotTriggerRange);
+		cr.writeOut();
 	}
 
 	void printConfig() {
 
-	}
-
-private:
-	void createEmptyFile() {
-		std::ofstream outfile("TableConfig.txt");
-
-		outfile <<
-				"tableWidth: 0\n"
-				"tableHeight: 0\n"
-				"isKeeperActive: 0\n"
-				"isDefenseActive: 0\n"
-				"isMidfieldActive: 0\n"
-				"isOffenseActive: 0\n"
-				"playerGapDefense: 0\n"
-				"playerGapMidfield: 0\n"
-				"playerGapOffense: 0\n"
-				"distGoalToKeeper: 0\n"
-				"distGoalToDefense: 0\n"
-				"distGoalToMidfield: 0\n"
-				"distGoalToOffense: 0\n"
-				"offsetTopSideKeeper: 0\n"
-				"offsetBottomSideKeeper: 0\n"
-				"offsetTopSideDefense: 0\n"
-				"offsetBottomSideDefense: 0\n"
-				"offsetTopSideMidfield: 0\n"
-				"offsetBottomSideMidfield: 0\n"
-				"offsetTopSideOffense: 0\n"
-				"offsetBottomSideOffense: 0\n"
-				"shotTriggerRange: 0"
-				<< std::endl;
-
-		outfile.close();
-	}
-
-	int getNumber(std::string s) {
-		std::istringstream iss(s);
-		std::string temp;
-		int number;
-		iss >> temp >> number;
-		return number;
 	}
 };
 

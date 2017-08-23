@@ -8,14 +8,14 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "Config.hpp"
+#include "ConfigReader.hpp"
 
-Config::Config(const char* filename) {
+ConfigReader::ConfigReader(const char* filename) {
     this->filename = filename;
     this->readFile();
 }
 
-int Config::readFile() {
+int ConfigReader::readFile() {
 
     //std::string filename(c);
     std::ifstream configFile(this->filename);
@@ -48,7 +48,7 @@ int Config::readFile() {
 
 }
 
-std::string Config::getStringValue(const char *name) {
+std::string ConfigReader::getStringValue(const char *name) {
     if(this->strings.find(name) != this->strings.end()) {
         return this->strings[name];
     } else {
@@ -56,7 +56,7 @@ std::string Config::getStringValue(const char *name) {
     }
 }
 
-int Config::getIntValue(const char *name) {
+int ConfigReader::getIntValue(const char *name) {
     if(this->values.find(name) != this->values.end()) {
         return this->values[name];
     } else {
@@ -64,18 +64,18 @@ int Config::getIntValue(const char *name) {
     }
 }
 
-void Config::setStringValue(const char *name, const char *value) {
+void ConfigReader::setStringValue(const char *name, const char *value) {
     std::string n(value);
     this->strings[name] = n;
     this->valueChanged = true;
 }
 
-void Config::setIntValue(const char *name, const int value) {
+void ConfigReader::setIntValue(const char *name, const int value) {
     this->values[name] = value;
     this->valueChanged = true;
 }
 
-void Config::writeOut() {
+void ConfigReader::writeOut() {
     if(this->valueChanged){
 
         std::ifstream configFile(this->filename);

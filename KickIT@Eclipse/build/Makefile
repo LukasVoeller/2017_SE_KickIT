@@ -41,6 +41,7 @@ AR            = ar cqs
 RANLIB        = 
 SED           = sed
 STRIP         = strip
+
 	# Pylon
 		PYLON_ROOT ?= /opt/pylon5
 		CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
@@ -69,7 +70,8 @@ SOURCES       = ../KickIT@Eclipse.cpp \
 		../RowControl/Control/RowControllerOffense.cpp \
 		../RowControl/Control/TableControllerImpl.cpp \
 		../VirtualKicker/TableControllerMock.cpp \
-		../VirtualKicker/VirtualKickerWindow.cpp 
+		../VirtualKicker/VirtualKickerWindow.cpp \
+		../Util/ConfigReader.cpp 
 OBJECTS       = KickIT@Eclipse.o \
 		BallTrackerImpl.o \
 		Camera.o \
@@ -81,7 +83,8 @@ OBJECTS       = KickIT@Eclipse.o \
 		RowControllerOffense.o \
 		TableControllerImpl.o \
 		TableControllerMock.o \
-		VirtualKickerWindow.o
+		VirtualKickerWindow.o \
+		ConfigReader.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -162,7 +165,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../VirtualKicker/TableControllerMock.hpp \
 		../VirtualKicker/VirtualKicker.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp \
-		../DataType/RowEnum.hpp ../KickIT@Eclipse.cpp \
+		../DataType/RowEnum.hpp \
+		../Util/ConfigReader.hpp ../KickIT@Eclipse.cpp \
 		../BallTracking/BallTrackerImpl.cpp \
 		../BallTracking/Camera/Camera.cpp \
 		../RowControl/Communication/MotorComPS01Impl.cpp \
@@ -173,7 +177,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../RowControl/Control/RowControllerOffense.cpp \
 		../RowControl/Control/TableControllerImpl.cpp \
 		../VirtualKicker/TableControllerMock.cpp \
-		../VirtualKicker/VirtualKickerWindow.cpp
+		../VirtualKicker/VirtualKickerWindow.cpp \
+		../Util/ConfigReader.cpp
 QMAKE_TARGET  = KickIT@Eclipse
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = KickIT@Eclipse
@@ -341,8 +346,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp ../Util/ConfigReader.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp ../Util/ConfigReader.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -500,6 +505,9 @@ VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../VirtualKicker/VirtualKickerWindow.cpp
+
+ConfigReader.o: ../Util/ConfigReader.cpp ../Util/ConfigReader.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ConfigReader.o ../Util/ConfigReader.cpp
 
 ####### Install
 

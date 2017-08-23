@@ -1,0 +1,19 @@
+# configuration for all motors
+# values have to be blank-space separated from the name
+# supported types are "int" and "string"
+
+########################################################
+
+
+int redLow 0
+int redHigh 255
+int greenLow 127
+int greenHigh 255
+int blueLow 114
+int blueHigh 255
+int width 592
+int height 352
+int packetSize 1500
+int exposureTime 4000
+int offsetX 16
+int offsetY 16

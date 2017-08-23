@@ -5,69 +5,85 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "../Util/ConfigReader.hpp"
 
 
 class MotorConfig {
+protected:
+	ConfigReader cr;
 
-	MotorConfig(){
+public:
+	std::string port;
+	int keeperAccelerationTranslational;
+	int keeperDecelerationTranslational;
+	int keeperSpeedTranslational;
+	int keeperSleepAfterReset;
+	int keeperSleepAfterHoming;
+	int keeperBoundaryInwards;
+	int keeperBoundaryOutwards;
+
+	int defenseAccelerationTranslational;
+	int defenseAccelerationRotary;
+	int defenseDecelerationTranslational;
+	int defenseDecelerationRotary;
+	int defenseSpeedTranslational;
+	int defenseSpeedRotary;
+	int defenseSleepAfterReset;
+	int defenseSleepAfterHoming;
+	int defenseBoundaryInwards;
+	int defenseBoundaryOutwards;
+
+	MotorConfig():cr("configuration/MotorConfig.txt"){
 		loadConfig();
 	}
 
 	void loadConfig(){
-		std::ifstream configFile ("MotorConfig.txt");
-		std::string line;
-		int valueID = 1;
 
-		if (configFile.is_open()) {
-			while (getline(configFile, line)) {
-				int value = getNumber(line);
+		std::string port = cr.getStringValue("port");
 
-				switch(valueID) {
-				case 1: break;
-				case 2: break;
-				case 3: break;
-				case 4: break;
-				}
-				valueID++;
-			}
-			configFile.close();
-		}else {
-			std::cout << "ERROR: Unable to open motor config file" << std::endl;
-		}
+		keeperAccelerationTranslational = cr.getIntValue("keeperAccelerationTranslational");
+		keeperDecelerationTranslational = cr.getIntValue("keeperDecelerationTranslational");
+		keeperSpeedTranslational = cr.getIntValue("keeperSpeedTranslational");
+		keeperSleepAfterReset = cr.getIntValue("keeperSleepAfterReset");
+		keeperSleepAfterHoming = cr.getIntValue("keeperSleepAfterHoming");
+		keeperBoundaryInwards = cr.getIntValue("keeperBoundaryInwards");
+		keeperBoundaryOutwards = cr.getIntValue("keeperBoundaryOutwards");
+
+		defenseAccelerationTranslational = cr.getIntValue("defenseAccelerationTranslational");
+		defenseAccelerationRotary = cr.getIntValue("defenseAccelerationRotary");
+		defenseDecelerationTranslational = cr.getIntValue("defenseDecelerationTranslational");
+		defenseDecelerationRotary = cr.getIntValue("defenseDecelerationRotary");
+		defenseSpeedTranslational = cr.getIntValue("defenseSpeedTranslational");
+		defenseSpeedRotary = cr.getIntValue("defenseSpeedRotary");
+		defenseSleepAfterReset = cr.getIntValue("defenseSleepAfterReset");
+		defenseSleepAfterHoming = cr.getIntValue("defenseSleepAfterHoming");
+		defenseBoundaryInwards = cr.getIntValue("defenseBoundaryInwards");
+		defenseBoundaryOutwards = cr.getIntValue("defenseBoundaryOutwards");
+
 	}
 
 	void saveConfig() {
-		std::ofstream outfile("MotorConfig.txt");
+		cr.getStringValue("port");
 
-		outfile <<"" <<  "\n"
-				<< std::endl;
+		cr.setIntValue("keeperAccelerationTranslational",keeperAccelerationTranslational);
+		cr.setIntValue("keeperDecelerationTranslational",keeperDecelerationTranslational);
+		cr.setIntValue("keeperSpeedTranslational",keeperSpeedTranslational);
+		cr.setIntValue("keeperSleepAfterReset",keeperSleepAfterReset);
+		cr.setIntValue("keeperSleepAfterHoming",keeperSleepAfterHoming);
 
-		outfile.close();
-	}
+		cr.setIntValue("defenseAccelerationTranslational",defenseAccelerationTranslational);
+		cr.setIntValue("defenseAccelerationRotary",defenseAccelerationRotary);
+		cr.setIntValue("defenseDecelerationTranslational",defenseDecelerationTranslational);
+		cr.setIntValue("defenseDecelerationRotary",defenseDecelerationRotary);
+		cr.setIntValue("defenseSpeedTranslational",defenseSpeedTranslational);
+		cr.setIntValue("defenseSpeedRotary",defenseSpeedRotary);
+		cr.setIntValue("defenseSleepAfterReset",defenseSleepAfterReset);
+		cr.setIntValue("defenseSleepAfterHoming",defenseSleepAfterHoming);
 
-	void printConfig() {
-		std::cout << "MOTOR CONFIGURATION\n" << "...:"
-				<< std::endl;
-	}
-
-private:
-	void createEmptyFile() {
-		std::ofstream outfile("MotorConfig.txt");
-
-		outfile << "...0\n"
-				<< std::endl;
-		outfile.close();
-	}
-
-	int getNumber(std::string s) {
-		std::istringstream iss(s);
-		std::string temp;
-		int number;
-		iss >> temp >> number;
-		return number;
+		cr.writeOut();
 	}
 
 };
 
 
-#endif /* DATATYPE_MOTORCONFIG_HPP_ */
+#endif

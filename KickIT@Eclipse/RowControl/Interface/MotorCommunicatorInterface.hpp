@@ -2,6 +2,7 @@
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
 #include "../../DataType/RowEnum.hpp"
+#include "../../DataType/MotorConfig.hpp"
 #include <sys/socket.h>
 #include <linux/can.h>
 #include <sys/ioctl.h>
@@ -19,9 +20,10 @@ public:
 	virtual void linearMovement(int position) = 0;
 	virtual void rotate(int amount){};
 	virtual ~MotorCommunicatorInterface() {}
-	//static bool homingNecessary;
+
 
 protected:
+	MotorConfig mc;
 	Row row;
 	char* port;
 	int socketId;

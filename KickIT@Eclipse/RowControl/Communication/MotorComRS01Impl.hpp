@@ -17,7 +17,6 @@ public:
 
 protected:
 	void driverInit();
-
 };
 
 #endif //MOTORCOM_IMPL_PS01_HPP

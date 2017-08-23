@@ -4,8 +4,11 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "../Util/ConfigReader.hpp"
 
 class CameraConfig {
+protected:
+	ConfigReader cr;
 public:
 	int redLow;
 	int redHigh;
@@ -20,60 +23,41 @@ public:
 	int offsetx;
 	int offsety;
 
-	CameraConfig(){
+	CameraConfig():cr("configuration/CameraConfig.txt"){
 		loadConfig();
 	}
 
 	void loadConfig() {
-		std::ifstream configFile("CameraConfig.txt");
-		std::string line;
-		int valueID = 1;
 
-		if (configFile.is_open()) {
-			while (getline(configFile, line)) {
-				int value = getNumber(line);
+		redLow = cr.getIntValue("redLow");
+		redHigh = cr.getIntValue("redHigh");
+		greenLow = cr.getIntValue("greenLow");
+		greenHigh = cr.getIntValue("greenHigh");
+		blueLow = cr.getIntValue("blueLow");
+		blueHigh = cr.getIntValue("blueHigh");
+		width = cr.getIntValue("width");
+		height = cr.getIntValue("height");
+		packetsize = cr.getIntValue("packetsize");
+		exposureTime = cr.getIntValue("exposureTime");
+		offsetx = cr.getIntValue("offsetx");
+		offsety = cr.getIntValue("offsety");
 
-				switch(valueID){
-				    case 1: redLow = value; break;
-				    case 2: redHigh = value; break;
-				    case 3: greenLow = value; break;
-				    case 4: greenHigh = value; break;
-				    case 5: blueLow = value; break;
-				    case 6: blueHigh = value; break;
-				    case 7: width = value; break;
-				    case 8: height = value; break;
-				    case 9: packetsize = value; break;
-				    case 10: exposureTime = value; break;
-				    case 11: offsetx = value; break;
-				    case 12: offsety = value; break;
-				}
-				valueID++;
-			}
-
-			configFile.close();
-		} else {
-			std::cout << "ERROR: Unable to open camera config file" << std::endl;
-		}
 	}
 
 	void saveConfig() {
-		std::ofstream outfile("CameraConfig.txt");
-
-		outfile << "RedLow: " << redLow << "\n"
-				<< "RedHigh: " << redHigh << "\n"
-				<< "GreenLow: " << greenLow << "\n"
-				<< "GreenHigh: " << greenHigh << "\n"
-				<< "BlueLow: " << blueLow << "\n"
-				<< "BlueHigh: " << blueHigh << "\n"
-				<< "Width: " << width << "\n"
-				<< "Height: " << height << "\n"
-				<< "Packetsize: " << packetsize << "\n"
-				<< "ExposureTime: " << exposureTime <<"\n"
-				<< "OffsetX: " << offsetx << "\n"
-				<< "OffsetY: " << offsety
-				<< std::endl;
-
-		outfile.close();
+		cr.setIntValue("redLow",redLow);
+		cr.setIntValue("redHigh",redHigh);
+		cr.setIntValue("greenLow",greenLow);
+		cr.setIntValue("greenHigh",greenHigh);
+		cr.setIntValue("blueLow",blueLow);
+		cr.setIntValue("blueHigh",blueHigh);
+		cr.setIntValue("width",width);
+		cr.setIntValue("height",height);
+		cr.setIntValue("packetsize",packetsize);
+		cr.setIntValue("exposureTime",exposureTime);
+		cr.setIntValue("offsetx",offsetx);
+		cr.setIntValue("offsety",offsety);
+		cr.writeOut();
 	}
 
 	void printConfig() {
@@ -86,35 +70,6 @@ public:
 				<< packetsize << "\n"
 				<< "ExposureTime: "  << exposureTime << "\n"
 				<< "OffsetX: " << "\n" << "OffsetY: " << std::endl;
-	}
-
-private:
-	void createEmptyFile() {
-		std::ofstream outfile("CameraConfig.txt");
-
-		outfile << "RedLow: 0\n"
-				"RedHigh: 0\n"
-				"GreenLow: 0\n"
-				"GreenHigh: 0\n"
-				"BlueLow: 0\n"
-				"BlueHigh: 0\n"
-				"Width: 0\n"
-				"Height: 0\n"
-				"Packetsize: 0\n"
-				"ExposureTime: 0\n"
-				"OffsetX: 0\n"
-				"OffsetY: 0\n"
-				<< std::endl;
-
-		outfile.close();
-	}
-
-	int getNumber(std::string s) {
-		std::istringstream iss(s);
-		std::string temp;
-		int number;
-		iss >> temp >> number;
-		return number;
 	}
 };
 

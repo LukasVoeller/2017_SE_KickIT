@@ -18,7 +18,7 @@ void MotorComPS01Impl::driverInit() {
 	sleep(1);
 	cout << "(1/6) Reset PS01:" << endl;
 	frameInit(0x601, 0x8, 0x23, 0x00, 0x20, 0xB, 0x00, 0x00, 0x00, 0x00);
-	sleep(20);
+	sleep(this->mc.keeperSleepAfterReset);
 
 	cout << "(2/6) Operational PS01:" << endl;
 	frameInit(0x00, 0x2, 0x01, 0x00, this->switchedNibbleT(), 0x00, 0x00, 0x00, 0x00, 0x00);
@@ -37,7 +37,7 @@ void MotorComPS01Impl::driverInit() {
 	cout << "(5/6) Homing PS01:" << endl;
 	frameInit(0x201, 0x8, 0x3F, 0x08, this->switchedNibbleT(), 0x00, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	sleep(25);
+	sleep(this->mc.keeperSleepAfterHoming);
 
 	cout << "(6/6) Homed PS01:" << endl;
 	frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x00, 0x00, 0x00, 0x00, 0x00);
@@ -45,8 +45,8 @@ void MotorComPS01Impl::driverInit() {
 }
 
 void MotorComPS01Impl::linearMovement(int position){
-	if(position > 65) position = 65;			//Check if position is within range
-	if(position < -60) position = -60;			//Check if position is within range
+	if(position > mc.keeperBoundaryInwards) position = mc.keeperBoundaryInwards;			//Check if position is within range
+	if(position < mc.keeperBoundaryOutwards) position = mc.keeperBoundaryOutwards;			//Check if position is within range
 
 	//cout << "PS is moving to: " << position << endl;
 
@@ -55,15 +55,19 @@ void MotorComPS01Impl::linearMovement(int position){
 	pos1 = (position & 255);
 	pos2 = (position >> 8);
 
-	frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x08);
-	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
-	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+	int acceleration = this->mc.keeperAccelerationTranslational;
+	int aLow = acceleration & 255;
+	int aHigh = acceleration >> 8;
 
-	/*Backup
-	frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, 0xBB, 0x08);
-	frameInit(0x301, 0x8, 0x2C, 0x01, 0x2C, 0x01, 0x00, 0x00, 0x00, 0x00);
+	int deceleration = this->mc.keeperDecelerationTranslational;
+	int dLow = deceleration & 255;
+	int dHigh = deceleration >> 8;
+
+	int maxSpeed = this->mc.keeperSpeedTranslational;
+	int sLow = maxSpeed & 255;
+	int sHigh = maxSpeed >> 8;
+
+	frameInit(0x201, 0x8, 0x3F, 0x00, this->switchedNibbleT(), 0x09, pos1, pos2, sLow, sHigh);
+	frameInit(0x301, 0x8, aLow, aHigh, dLow, dHigh, 0x00, 0x00, 0x00, 0x00);
 	frameInit(0x80, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-	sleep(0.3);
-	cout << "pos1/pos2: " << pos1 << " " << pos2 << endl;
-	*/
 }

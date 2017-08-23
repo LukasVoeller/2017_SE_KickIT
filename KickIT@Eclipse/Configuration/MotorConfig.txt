@@ -12,8 +12,6 @@ int keeperDecelerationTranslational 65535
 int keeperSpeedTranslational 65535
 int keeperSleepAfterReset 20
 int keeperSleepAfterHoming 25
-int keeperBoundaryInwards 65
-int keeperBoundaryOutwards -60
 
 int defenseAccelerationTranslational 44
 int defenseAccelerationRotary 300
@@ -23,5 +21,3 @@ int defenseSpeedTranslational 2235
 int defenseSpeedRotary 65535
 int defenseSleepAfterReset 20
 int defenseSleepAfterHoming 25
-int defenseBoundaryInwards 280
-int defenseBoundaryOutwards 20

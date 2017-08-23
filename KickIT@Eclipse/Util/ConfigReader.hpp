@@ -1,5 +1,5 @@
-#ifndef CONFIG_HPP_INCLUDE_GUARD
-#define CONFIG_HPP_INCLUDE_GUARD
+#ifndef CONFIGREADER_HPP_INCLUDE_GUARD
+#define CONFIGREADER_HPP_INCLUDE_GUARD
 
 #include <string>
 #include <exception>
@@ -40,11 +40,11 @@ class ConfigFileChangedException: public std::exception {
     }
 };
 
-class Config {
+class ConfigReader {
 
 public:
 
-    Config(const char* filename);
+	ConfigReader(const char* filename);
 
     std::string getStringValue(const char* name);
     int getIntValue(const char* name);

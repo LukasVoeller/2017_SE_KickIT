@@ -1,0 +1,29 @@
+# all information about table-dimensions
+# values have to be blank-space separated from the name
+# supported types are "int" and "string"
+
+########################################################
+
+
+int tableWidth 1115								#width of playing field goal to goal	
+int tableHeight 680								#height of playing field
+int isKeeperActive 1							#which lines do you want to be controlled by KickIT?
+int isDefenseActive 1							#
+int isMidfieldActive 0							#
+int isOffenseActive 0							#
+int playerGapDefense 230						#distance between the kickers along a specific row
+int playerGapMidfield 0							#
+int playerGapOffense 0							#
+int distGoalToKeeper 35							#these are important for calculating the intersection
+int distGoalToDefense 185						#of the ball-line with a particular row
+int distGoalToMidfield 0						#
+int distGoalToOffense 0							#
+int offsetTopSideKeeper 327						#the distance between the topmost kicker-figure and the edge of the playing-field
+int offsetBottomSideKeeper 0					#the distance between the lowermost kicker-figure and the edge of the playing-field (on the motor side)
+int offsetTopSideDefense 73						#
+int offsetBottomSideDefense 315					#
+int offsetTopSideMidfield 0						#
+int offsetBottomSideMidfield 0					#
+int offsetTopSideOffense 0						#
+int offsetBottomSideOffense 0					#
+int shotTriggerRange 20							#
