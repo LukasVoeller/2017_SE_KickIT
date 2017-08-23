@@ -24,7 +24,7 @@ int ConfigReader::readFile() {
     if (configFile.is_open()) {
 
         while (getline(configFile, line)) {
-
+        	//std::cout << line << std::endl;
             std::string type;
             std::string name;
             std::istringstream iss(line);
@@ -60,6 +60,7 @@ int ConfigReader::getIntValue(const char *name) {
     if(this->values.find(name) != this->values.end()) {
         return this->values[name];
     } else {
+    	std::cout << name << std::endl;
         throw new ParameterNotFoundException();
     }
 }

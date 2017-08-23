@@ -7,9 +7,9 @@
 
 string port can0
 
-int keeperAccelerationTranslational 65535 	    #value range is 0 to 65535
-int keeperDecelerationTranslational 65535
-int keeperSpeedTranslational 65535
+int keeperAccelerationTranslational 50 	    	#value range is 0 to 65535
+int keeperDecelerationTranslational 50
+int keeperSpeedTranslational 50
 int keeperSleepAfterReset 20
 int keeperSleepAfterHoming 25
 int keeperBoundaryInwards 65

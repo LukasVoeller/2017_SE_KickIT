@@ -45,17 +45,9 @@ void RowControllerDefense::kickThread(){
 }
 
 void RowControllerDefense::moveTo(float y){
-
-
-
-
 	if(y<=this->tc.tableHeight/2){
-
 		mcomm->linearMovement( (int)(y-tc.offsetTopSideDefense) );
-
 	} else if(y>this->tc.tableHeight/2){
 		mcomm->linearMovement( (int)(y-tc.offsetTopSideDefense - tc.playerGapDefense) );
 	}
-
-
 }

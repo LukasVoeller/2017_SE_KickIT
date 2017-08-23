@@ -1,4 +1,4 @@
-# configuration for all motors
+# configuration for the camera
 # values have to be blank-space separated from the name
 # supported types are "int" and "string"
 
@@ -13,7 +13,7 @@ int blueLow 114
 int blueHigh 255
 int width 592
 int height 352
-int packetSize 1500
+int packetsize 1500
 int exposureTime 4000
-int offsetX 16
-int offsetY 16
+int offsetx 16
+int offsety 16

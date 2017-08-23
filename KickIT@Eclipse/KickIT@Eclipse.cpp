@@ -31,7 +31,7 @@
 #include "RowControl/Interface/MotorCommunicatorInterface.hpp"
 #include "DataType/MotorConfig.hpp"
 
-#define MODE 1
+#define MODE 4
 
 int main(int argc, char** argv) {
 
@@ -40,9 +40,6 @@ int main(int argc, char** argv) {
 
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
 #if MODE == 1
-
-	MotorConfig m;
-	std::cout << m.keeperBoundaryOutwards << std::endl;
 
 	//QApplication a(argc, argv);
 	//tableController = VirtualKicker::getMockTableController();
@@ -77,9 +74,9 @@ int main(int argc, char** argv) {
 #if MODE == 4
 
 	TableControllerInterface* tci = new TableControllerImpl();
-	BallTrackerInterface* bti = new BallTrackerImpl(tci);
+	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
 
-	//tci->motorByHand();
+	tci->motorByHand();
 
 #endif
 }

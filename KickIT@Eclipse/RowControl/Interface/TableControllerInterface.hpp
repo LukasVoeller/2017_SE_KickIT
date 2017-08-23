@@ -49,10 +49,7 @@ public:
 					if (tc.isDefenseActive) {
 
 						if(position == 1){
-
 							defenseControl->kick(0);
-
-
 						}else{
 							defenseControl->moveTo(position);
 						}

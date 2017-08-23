@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <thread>
+#include <iostream>
 
 using namespace std;
 
@@ -52,6 +53,8 @@ void MotorComRS01Impl::linearMovement(int position){
 
 	if(position > mc.defenseBoundaryInwards) position = mc.defenseBoundaryInwards;			//Check if position is within range
 	if(position < mc.defenseBoundaryOutwards) position = mc.defenseBoundaryOutwards;			//Check if position is within range
+
+	std::cout << "m: " << position << std::endl;
 
 	int pos1, pos2;
 	position *= 10;
