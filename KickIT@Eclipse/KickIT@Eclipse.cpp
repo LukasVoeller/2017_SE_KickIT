@@ -30,6 +30,8 @@
 #include "VirtualKicker/VirtualKicker.hpp"
 #include "RowControl/Interface/MotorCommunicatorInterface.hpp"
 #include "DataType/MotorConfig.hpp"
+#include "Util/Modules.hpp"
+#include "Util/Test.hpp"
 
 #define MODE 4
 
@@ -73,10 +75,22 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	TableControllerInterface* tci = new TableControllerImpl();
+	ConfigReader cr("configuration/Algorithm.txt");
+	std::string algorithmTest = cr.getStringValue("test");
+
+	Modules  m;
+	m.registerFunction("machWas", &machWas);
+	m.registerFunction("machWasAnderes", &machWasAnderes);
+	std::vector<void*> params;
+
+	std::string bla("bla bla bla");
+	params.push_back(&bla);
+	m.execute(algorithmTest, &params);
+
+	//TableControllerInterface* tci = new TableControllerImpl();
 	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
 
-	tci->motorByHand();
+	//tci->motorByHand();
 
 #endif
 }

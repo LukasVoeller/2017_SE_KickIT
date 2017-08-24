@@ -15,7 +15,7 @@ ConfigReader::ConfigReader(const char* filename) {
     this->readFile();
 }
 
-int ConfigReader::readFile() {
+void ConfigReader::readFile() {
 
     //std::string filename(c);
     std::ifstream configFile(this->filename);
@@ -38,12 +38,12 @@ int ConfigReader::readFile() {
                 iss >> name >> valueString;
                 this->strings[name] = valueString;
             } else if(!line.find("#") == 0 && line.length() > 0) {
-                throw new UnknownParameterTypeException();
+                throw new UnknownParameterTypeException(type.c_str());
             }
         }
 
     } else {
-        throw new CannotOpenConfigFileException();
+        throw new CannotOpenConfigFileException(filename);
     }
 
 }
@@ -52,7 +52,7 @@ std::string ConfigReader::getStringValue(const char *name) {
     if(this->strings.find(name) != this->strings.end()) {
         return this->strings[name];
     } else {
-        throw new ParameterNotFoundException();
+        throw new ParameterNotFoundException(name);
     }
 }
 
@@ -61,7 +61,7 @@ int ConfigReader::getIntValue(const char *name) {
         return this->values[name];
     } else {
     	std::cout << name << std::endl;
-        throw new ParameterNotFoundException();
+        throw new ParameterNotFoundException(name);
     }
 }
 
@@ -98,7 +98,7 @@ void ConfigReader::writeOut() {
                     iss >> type >> name >> value >> comment;
                     if (this->values.find(name) == this->values.end() && this->strings.find(name) == this->strings.end()) {
                         std::cout << name << std::endl;
-                        throw new ConfigFileChangedException();
+                        throw new ConfigFileChangedException(filename);
                     } else if (this->values.find(name) != this->values.end()) {
                         std::string numberString = std::to_string(this->values[name]);
                         if (value != numberString) {
@@ -114,7 +114,7 @@ void ConfigReader::writeOut() {
             }
 
         } else {
-            throw new CannotOpenConfigFileException();
+            throw new CannotOpenConfigFileException(filename);
         }
         configFile.close();
         std::ofstream cfWrite(this->filename);

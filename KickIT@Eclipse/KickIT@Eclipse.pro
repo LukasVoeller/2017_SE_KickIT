@@ -36,7 +36,9 @@ HEADERS += BallTracking/BallTrackerImpl.hpp \
            VirtualKicker/VirtualKicker.hpp \
            VirtualKicker/VirtualKickerWindow.hpp \
            DataType/RowEnum.hpp \
-           Util/ConfigReader.hpp
+           Util/ConfigReader.hpp \
+           Util/Test.hpp \
+           Util/Modules.hpp
 SOURCES += KickIT@Eclipse.cpp \
            BallTracking/BallTrackerImpl.cpp \
            BallTracking/Camera/Camera.cpp \

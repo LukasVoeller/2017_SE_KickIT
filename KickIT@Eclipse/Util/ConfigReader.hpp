@@ -5,39 +5,41 @@
 #include <exception>
 #include <map>
 
-class FileNotFoundException: public std::exception {
-    virtual const char* what() const throw()
-    {
-        return "configuration-file not found!";
-    }
-};
-
 class ParameterNotFoundException: public std::exception {
-    virtual const char* what() const throw()
-    {
-        return "configuration-value not found!";
-    }
+public:
+	ParameterNotFoundException(const char* name):p(name){
+		std::cout << p << " not found in config-file!" << std::endl;
+	}
+protected:
+    std::string p;
 };
 
 class UnknownParameterTypeException: public std::exception {
-    virtual const char* what() const throw()
-    {
-        return "configuration-file contains an unknown type!";
-    }
+public:
+	UnknownParameterTypeException(const char* type):t(type){
+		std::cout << t << " is an unknown type!" << std::endl;
+	}
+protected:
+    std::string t;
 };
 
 class CannotOpenConfigFileException: public std::exception {
-    virtual const char* what() const throw()
-    {
-        return "cannot open configuration-file!";
-    }
+
+public:
+	CannotOpenConfigFileException(const char* filename):fn(filename){
+		std::cout << fn << " not found!" << std::endl;
+	}
+protected:
+    std::string fn;
 };
 
 class ConfigFileChangedException: public std::exception {
-    virtual const char* what() const throw()
-    {
-        return "seems like the configuration-file has changed while KickIT was running!";
-    }
+public:
+	ConfigFileChangedException(const char* filename):fn(filename){
+		std::cout << fn << " seems to have changed while KickIT was running!" << std::endl;
+	}
+protected:
+    std::string fn;
 };
 
 class ConfigReader {
@@ -61,7 +63,7 @@ protected:
     std::map<std::string, int> values;
     std::map<std::string, std::string> strings;
 
-    int readFile();
+    void readFile();
 
 };
 
