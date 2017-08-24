@@ -1,1 +1,10 @@
-string test machWasAnderes
+# here you can choose which algorithms you want to use for particular purposes
+# values have to be blank-space separated from the name
+
+########################################################
+
+
+
+
+string calculateRowPositions calculateRowPositionsSimple 			#functions to choose from are defined in Calculator.hpp
+string machWas machWas

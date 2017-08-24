@@ -32,18 +32,20 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	ballStatus.update(v.x, v.y);		//Ballposition form now on in milimeters
 
 	//Check if ball is in the right position for some shots
-	this->calculator.calcIfKick(&ballStatus);
-	if(tc.isDefenseActive && this->calculator.kick[0]) defenseControl->kick(3);
+	std::vector<void*> calcIfKickParams;
+	calcIfKickParams.push_back(&ballStatus);
+	m.execute("calcIfKick", &calcIfKickParams);
+	//if(tc.isDefenseActive && this->calculator.kick[0]) defenseControl->kick(3);
 	//if(isMidfieldActive && calc->kick[1]) midfieldControl->kick(0);
 	//if(isOffenseActive && calc->kick[2]) offenseControl->kick(0);
 
 	//Coordinate players
-	this->calculator.calcPositionsSimple(&ballStatus);
-	if (tc.isKeeperActive) {
-		keeperControl->moveTo(calculator.positions[0]);
+	//this->calculator.calcPositionsSimple(&ballStatus);
+	//if (tc.isKeeperActive) {
+		//keeperControl->moveTo(calculator.positions[0]);
 		//std::cout << " keeper to : " << calc->positions[0] << std::endl;
-	}
-	if (tc.isDefenseActive) defenseControl->moveTo(calculator.positions[1]);
+	//}
+	//if (tc.isDefenseActive) defenseControl->moveTo(calculator.positions[1]);
 	//if (tc.isMidfieldActive) midfieldControl->moveTo(calculator.positions[2]);
 	//if (tc.isOffenseActive) offenseControl->moveTo(calculator.positions[3]);
 	//std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;

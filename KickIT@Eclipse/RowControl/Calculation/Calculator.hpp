@@ -4,37 +4,18 @@
 #include "../../DataType/Vec2.hpp"
 #include "../../DataType/TableConfig.hpp"
 
-class Calculator {
+#include <vector>
 
-public:
-	TableConfig tc;
-	Vec2* rowDirectionalVector;
-	Vec2* keeperPosition;
-	float* positions;
-	bool* up;
-	bool* kick;
+namespace Calculator {
+	static TableConfig tc;
+	static Vec2 rowDirectionalVector(0, 1);
+	static Vec2 keeperPosition(tc.distGoalToKeeper, 0);
+	static float* positions= new float[tc.isKeeperActive ? 1 : 0 + tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
+	static bool* up = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
+	static bool* kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 
-	Calculator() {
-		this->rowDirectionalVector = new Vec2(0, 1);
-		this->keeperPosition = new Vec2(tc.distGoalToKeeper, 0);
-
-		positions = new float[tc.isKeeperActive ? 1 : 0 + tc.isDefenseActive ? 1 :
-								0 + tc.isMidfieldActive ? 1 :
-								0 + tc.isOffenseActive ? 1 : 0]();
-		up = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 :
-						0 + tc.isOffenseActive ? 1 : 0]();
-		kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 :
-						0 + tc.isOffenseActive ? 1 : 0]();
-
-	}
-
-	~Calculator() {
-		delete (up);
-		delete (positions);
-		delete (kick);
-	}
-
-	void calcPositionsSimple(BallStatus* bs) {
+	static void calcPositionsSimple(std::vector<void*>* params) {
+		BallStatus* bs = ((BallStatus*)params->at(0));
 		if (tc.isKeeperActive) {
 			//std::cout << "positional-X: " << bs->position.x << std::endl;
 			//std::cout << "positional-Y: " << bs->position.y << std::endl;
@@ -77,7 +58,8 @@ public:
 
 	}
 
-	void calcIfKick(BallStatus* bs) {
+	static void calcIfKick(std::vector<void*>* params) {
+		BallStatus* bs = ((BallStatus*)params->at(0));
 		//std::cout << abs(positions[1] + tc.offsetTopSideDefense - bs->position.y) << std::endl;
 		//std::cout << abs(bs->position.x - tc.distGoalToDefense) << std::endl;
 		//std::cout << abs(positions[1] + tc.offsetTopSideDefense + tc.playerGapDefense - bs->position.y) << std::endl;
@@ -103,13 +85,13 @@ public:
 
 	}
 
-	void calcIfUp(BallStatus* bs, float yOffset = 0) {
+	static void calcIfUp(BallStatus* bs, float yOffset = 0) {
 		if (bs->position.x < 155)
 			up[0] = true;
 
 	}
 
-	void calcPositionsVectorial(BallStatus* b, float yOffset = 0,
+	static void calcPositionsVectorial(BallStatus* b, float yOffset = 0,
 			Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
 			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =
 					0) {

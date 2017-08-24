@@ -8,6 +8,7 @@
 #include "../Calculation/Calculator.hpp"
 #include "../DataType/BallStatus.hpp"
 #include "../DataType/Vec2.hpp"
+#include "../../Util/Modules.hpp"
 #include <iostream>
 
 class TableControllerInterface {
@@ -74,8 +75,8 @@ public:
 protected:
 	CameraConfig cc;
 	TableConfig tc;
-	Calculator calculator;
 	BallStatus ballStatus;
+	Modules m;
 
 	BallStatus currentBallStaus;
 	RowControllerInterface* keeperControl;

@@ -32,10 +32,16 @@
 #include "DataType/MotorConfig.hpp"
 #include "Util/Modules.hpp"
 #include "Util/Test.hpp"
+#include "RowControl/Calculation/Calculator.hpp"
 
 #define MODE 4
 
 int main(int argc, char** argv) {
+
+	Modules  m;
+	m.registerFunction("calcIfKick", &(Calculator::calcIfKick));
+	//m.registerFunction("machWas", &machWas);
+
 
 	TableControllerInterface* tableController;
 	//BallTrackerInterface* ballTracker;
@@ -75,17 +81,14 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	ConfigReader cr("configuration/Algorithm.txt");
-	std::string algorithmTest = cr.getStringValue("test");
+	//std::string algorithmTest = cr.getStringValue("test");
 
-	Modules  m;
-	m.registerFunction("machWas", &machWas);
-	m.registerFunction("machWasAnderes", &machWasAnderes);
-	std::vector<void*> params;
 
-	std::string bla("bla bla bla");
-	params.push_back(&bla);
-	m.execute(algorithmTest, &params);
+	//std::vector<void*> params;
+
+	//std::string bla("bla bla bla");
+	//params.push_back(&bla);
+	//m.execute("machWas", &params);
 
 	//TableControllerInterface* tci = new TableControllerImpl();
 	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
