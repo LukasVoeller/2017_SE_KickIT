@@ -42,16 +42,16 @@ RANLIB        =
 SED           = sed
 STRIP         = strip
 
-	# Pylon
-		PYLON_ROOT ?= /opt/pylon5
-		CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
-		LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
+    # Pylon
+        PYLON_ROOT ?= /opt/pylon5
+        CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
+        LIBS          += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
 
-	# Opencv
-		CXXFLAGS      += $(shell pkg-config --cflags opencv)
-		INCLUDEPATH   += /usr/local/include/opencv
-		LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
-		LIBS          += $(shell pkg-config --libs opencv)
+    # Opencv
+        CXXFLAGS      += $(shell pkg-config --cflags opencv)
+        INCLUDEPATH   += /usr/local/include/opencv
+        LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+        LIBS          += $(shell pkg-config --libs opencv)
 
 ####### Output directory
 
@@ -167,7 +167,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../VirtualKicker/VirtualKickerWindow.hpp \
 		../DataType/RowEnum.hpp \
 		../Util/ConfigReader.hpp \
-		../Util/Test.hpp \
 		../Util/Modules.hpp ../KickIT@Eclipse.cpp \
 		../BallTracking/BallTrackerImpl.cpp \
 		../BallTracking/Camera/Camera.cpp \
@@ -348,7 +347,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp ../Util/ConfigReader.hpp ../Util/Test.hpp ../Util/Modules.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp ../Util/ConfigReader.hpp ../Util/Modules.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp ../Util/ConfigReader.cpp $(DISTDIR)/
 
 
@@ -400,15 +399,14 @@ KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../DataType/TableConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
+		../Util/Modules.hpp \
 		../VirtualKicker/TableControllerMock.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp \
 		../BallTracking/BallTrackerInterface.hpp \
 		../BallTracking/Camera/Camera.hpp \
 		../BallTracking/Camera/CameraInterface.hpp \
 		../VirtualKicker/VirtualKicker.hpp \
-		../BallTracking/BallTrackerImpl.hpp \
-		../Util/Modules.hpp \
-		../Util/Test.hpp
+		../BallTracking/BallTrackerImpl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o KickIT@Eclipse.o ../KickIT@Eclipse.cpp
 
 BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrackerInterface.hpp \
@@ -423,6 +421,7 @@ BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrack
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
+		../Util/Modules.hpp \
 		../BallTracking/Camera/Camera.hpp \
 		../BallTracking/Camera/CameraInterface.hpp \
 		../BallTracking/BallTrackerImpl.hpp
@@ -501,6 +500,7 @@ TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../DataType
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
+		../Util/Modules.hpp \
 		../RowControl/Control/RowControllerKeeper.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o ../RowControl/Control/TableControllerImpl.cpp
 
@@ -516,6 +516,7 @@ TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
 		../RowControl/Calculation/Calculator.hpp \
+		../Util/Modules.hpp \
 		../VirtualKicker/VirtualKickerWindow.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerMock.o ../VirtualKicker/TableControllerMock.cpp
 
@@ -530,7 +531,8 @@ VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker
 		../DataType/CameraConfig.hpp \
 		../DataType/BallStatus.hpp \
 		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp
+		../RowControl/Calculation/Calculator.hpp \
+		../Util/Modules.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../VirtualKicker/VirtualKickerWindow.cpp
 
 ConfigReader.o: ../Util/ConfigReader.cpp ../Util/ConfigReader.hpp

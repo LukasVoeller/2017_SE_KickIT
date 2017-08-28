@@ -29,33 +29,30 @@ TableControllerImpl::TableControllerImpl() {
 
 void TableControllerImpl::setBallPos(float x, float y) {
 	Vec2 v = this->pixelToMM(x, y);
-	ballStatus.update(v.x, v.y);		//Ballposition form now on in milimeters
+	ballStatus.update(v.x, v.y);		//Ballposition from now on in milimeters
 
 	//Check if ball is in the right position for some shots
-	std::vector<void*> calcIfKickParams;
-	calcIfKickParams.push_back(&ballStatus);
-	m.execute("calcIfKick", &calcIfKickParams);
-	//if(tc.isDefenseActive && this->calculator.kick[0]) defenseControl->kick(3);
-	//if(isMidfieldActive && calc->kick[1]) midfieldControl->kick(0);
-	//if(isOffenseActive && calc->kick[2]) offenseControl->kick(0);
+	std::vector<void*> calcParams;
+	calcParams.push_back(&ballStatus);
+
+	m.execute("calcIfKick", &calcParams);
+	if(tc.isDefenseActive && Calculator::kick[0]) defenseControl->kick(3);
+	if(tc.isMidfieldActive && Calculator::kick[1]) midfieldControl->kick(3);
+	if(tc.isOffenseActive && Calculator::kick[2]) offenseControl->kick(3);
 
 	//Coordinate players
-	//this->calculator.calcPositionsSimple(&ballStatus);
-	//if (tc.isKeeperActive) {
-		//keeperControl->moveTo(calculator.positions[0]);
-		//std::cout << " keeper to : " << calc->positions[0] << std::endl;
-	//}
-	//if (tc.isDefenseActive) defenseControl->moveTo(calculator.positions[1]);
-	//if (tc.isMidfieldActive) midfieldControl->moveTo(calculator.positions[2]);
-	//if (tc.isOffenseActive) offenseControl->moveTo(calculator.positions[3]);
-	//std::cout << "keeper " << positions[0] << " defense " << positions[1] << std::endl;
+	m.execute("calcPositions", &calcParams);
+	if (tc.isKeeperActive) keeperControl->moveTo(Calculator::positions[0]);
+	if (tc.isDefenseActive) defenseControl->moveTo(Calculator::positions[1]);
+	if (tc.isMidfieldActive) midfieldControl->moveTo(Calculator::positions[2]);
+	if (tc.isOffenseActive) offenseControl->moveTo(Calculator::positions[3]);
 
-	//else defenseControl->down();
+
 }
 
 Vec2 TableControllerImpl::pixelToMM(float xPixel, float yPixel) {
-	/*std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
 
+	/*std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
 	std::cout << "tw: " << tc.tableWidth << std::endl;
 	std::cout << "th: " << tc.tableHeight << std::endl;
 	std::cout << "pw: " << cc.width << std::endl;
@@ -64,7 +61,6 @@ Vec2 TableControllerImpl::pixelToMM(float xPixel, float yPixel) {
 
 	Vec2 result;
 
-	//Geht fit Daniel?
 	result.x = xPixel * ((float) this->tc.tableWidth / (float) this->cc.width);
 	result.y = yPixel * ((float) this->tc.tableHeight / (float) this->cc.height);
 

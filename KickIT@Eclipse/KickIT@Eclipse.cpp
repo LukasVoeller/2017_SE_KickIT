@@ -31,7 +31,6 @@
 #include "RowControl/Interface/MotorCommunicatorInterface.hpp"
 #include "DataType/MotorConfig.hpp"
 #include "Util/Modules.hpp"
-#include "Util/Test.hpp"
 #include "RowControl/Calculation/Calculator.hpp"
 
 #define MODE 4
@@ -39,19 +38,18 @@
 int main(int argc, char** argv) {
 
 	Modules  m;
-	m.registerFunction("calcIfKick", &(Calculator::calcIfKick));
-	//m.registerFunction("machWas", &machWas);
+	m.registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
+	m.registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 
 
 	TableControllerInterface* tableController;
-	//BallTrackerInterface* ballTracker;
 
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
 #if MODE == 1
 
-	//QApplication a(argc, argv);
-	//tableController = VirtualKicker::getMockTableController();
-	//return a.exec();
+	QApplication a(argc, argv);
+	tableController = VirtualKicker::getMockTableController();
+	return a.exec();
 
 #endif
 
@@ -64,13 +62,8 @@ int main(int argc, char** argv) {
 
 #endif
 
-//Balltracking testing mode - The whole table is simulated with the GUI
+//Balltracking testing mode - The table is simulated with the GUI
 #if MODE == 3
-
-	//QApplication a(argc, argv);
-	//VirtualKicker::getMockTableControllerWithBalltracker();
-	//return a.exec();
-	//BallTrackerImpl* bti = new BallTrackerImpl();
 
 	QApplication a(argc, argv);
 	VirtualKicker::getMockTableControllerWithBalltracker();
@@ -81,19 +74,10 @@ int main(int argc, char** argv) {
 //Final mode - Ready to play!
 #if MODE == 4
 
-	//std::string algorithmTest = cr.getStringValue("test");
-
-
-	//std::vector<void*> params;
-
-	//std::string bla("bla bla bla");
-	//params.push_back(&bla);
-	//m.execute("machWas", &params);
-
-	//TableControllerInterface* tci = new TableControllerImpl();
+	TableControllerInterface* tci = new TableControllerImpl();
 	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
 
-	//tci->motorByHand();
+	tci->motorByHand();
 
 #endif
 }

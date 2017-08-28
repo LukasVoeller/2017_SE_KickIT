@@ -11,9 +11,9 @@ int greenLow 127
 int greenHigh 255
 int blueLow 114
 int blueHigh 255
-int width 592
-int height 352
+int width 592						# number has to be divisible by 2
+int height 352						# number has to be divisible by 2
 int packetsize 1500
 int exposureTime 4000
-int offsetx 16
-int offsety 16
+int offsetx 16						# number has to be a result of 2^x
+int offsety 16						# number has to be a result of 2^x
