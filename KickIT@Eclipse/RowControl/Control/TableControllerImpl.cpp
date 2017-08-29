@@ -35,13 +35,13 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	std::vector<void*> calcParams;
 	calcParams.push_back(&ballStatus);
 
-	m.execute("calcIfKick", &calcParams);
+	Modules::instance()->execute("calcIfKick", &calcParams);
 	if(tc.isDefenseActive && Calculator::kick[0]) defenseControl->kick(3);
 	if(tc.isMidfieldActive && Calculator::kick[1]) midfieldControl->kick(3);
 	if(tc.isOffenseActive && Calculator::kick[2]) offenseControl->kick(3);
 
 	//Coordinate players
-	m.execute("calcPositions", &calcParams);
+	Modules::instance()->execute("calcPositions", &calcParams);
 	if (tc.isKeeperActive) keeperControl->moveTo(Calculator::positions[0]);
 	if (tc.isDefenseActive) defenseControl->moveTo(Calculator::positions[1]);
 	if (tc.isMidfieldActive) midfieldControl->moveTo(Calculator::positions[2]);

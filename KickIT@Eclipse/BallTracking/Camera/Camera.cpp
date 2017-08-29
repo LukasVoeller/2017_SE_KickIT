@@ -173,6 +173,7 @@ CameraConfig* Camera::threshold() {
 		cv::Mat* cv_img = this->getImage();
 		cv::Mat imgHSV;
 		cv::Mat imgThresholded;
+		imshow("Original", *cv_img);		//show the original image
 
 		try{
 			cv::inRange(*cv_img, cv::Scalar(result->blueLow, result->greenLow, result->redLow), cv::Scalar(result->blueHigh, result->greenHigh, result->redHigh), imgThresholded);
@@ -186,7 +187,7 @@ CameraConfig* Camera::threshold() {
 
 		//Draw contours
 		imshow("Thresholded Image", imgThresholded);//show the thresholded image
-		imshow("Original", *cv_img);		//show the original image
+
 		if(!movedOriginal) {
 			cv::moveWindow("Original", 100 , 100);
 			movedOriginal = true;

@@ -39,28 +39,23 @@ void BallTrackerImpl::startTracking() {
 	//Datei für Mittelpunkt-Koordinate des Balles
 	double lastx = 0;
 	double lasty = 0;
-
+	//sdfs
 	//Eigenschaften für Bildanalyse
 	Mat imgThresholded;
 	vector<Vec3f> circles;
 	int nz;
 	while (1) {
 		Mat* cv_img = camera->getImage();
+		//Mat* cv_img = new Mat();
+		//flip(*camera_img, *cv_img, 0);
 		Point Ballcenter(0, 0);
 		Mat imgHSV;
 		//cvtColor(cv_img, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
 
-		//TODO Replace ThresholdRGB with CameraConfig
-		inRange(*cv_img,
-				Scalar(threshold->blueLow, threshold->greenLow,
-						threshold->redLow),
-				Scalar(threshold->blueHigh, threshold->greenHigh,
-						threshold->redHigh), imgThresholded);
-
-		erode(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
-		dilate(imgThresholded, imgThresholded,
-				getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+		inRange(*cv_img, Scalar(threshold->blueLow, threshold->greenLow, threshold->redLow),
+				Scalar(threshold->blueHigh, threshold->greenHigh, threshold->redHigh), imgThresholded);
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
 
 		vector<Point> nonzero;
 		//Mat nonzero;
@@ -97,12 +92,14 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		//imshow("dif",dif);
-		//if(showImage) imshow("circles", *cv_img);
+		if(showImage) imshow("circles", *cv_img);
 
-		//if (cv::waitKey(30) == 27 && showImage) {
-			//cv::destroyWindow("circles");
-			//showImage = false;
-		//}
+		if (cv::waitKey(30) == 27 && showImage) {
+			cv::destroyWindow("circles");
+			showImage = false;
+		}
+		delete cv_img;
+		//delete camera_img;
 	}
 }
 

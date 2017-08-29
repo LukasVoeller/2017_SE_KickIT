@@ -42,16 +42,16 @@ RANLIB        =
 SED           = sed
 STRIP         = strip
 
-    # Pylon
-        PYLON_ROOT ?= /opt/pylon5
-        CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
-        LIBS          += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
+	# Pylon
+		PYLON_ROOT ?= /opt/pylon5
+		CXXFLAGS      += $(shell $(PYLON_ROOT)/bin/pylon-config --cflags) -DUSE_GIGE
+		LIBS	      += $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath) $(shell $(PYLON_ROOT)/bin/pylon-config --libs)
 
-    # Opencv
-        CXXFLAGS      += $(shell pkg-config --cflags opencv)
-        INCLUDEPATH   += /usr/local/include/opencv
-        LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
-        LIBS          += $(shell pkg-config --libs opencv)
+	# Opencv
+		CXXFLAGS      += $(shell pkg-config --cflags opencv)
+		INCLUDEPATH   += /usr/local/include/opencv
+		LIBS          += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+		LIBS          += $(shell pkg-config --libs opencv)
 
 ####### Output directory
 

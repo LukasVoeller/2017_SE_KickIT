@@ -48,9 +48,6 @@ void MotorComPS01Impl::linearMovement(int position){
 	if(position > mc.keeperBoundaryInwards) position = mc.keeperBoundaryInwards;			//Check if position is within range
 	if(position < mc.keeperBoundaryOutwards) position = mc.keeperBoundaryOutwards;			//Check if position is within range
 
-	cout << "PS is moving to: " << position << endl;
-	cout << "bo: " << mc.keeperBoundaryOutwards << endl;
-
 	int pos1, pos2;
 	position *= 10;
 	pos1 = (position & 255);

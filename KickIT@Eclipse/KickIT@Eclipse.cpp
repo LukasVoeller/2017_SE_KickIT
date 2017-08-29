@@ -34,13 +34,12 @@
 #include "RowControl/Calculation/Calculator.hpp"
 
 #define MODE 4
-
+Modules* Modules::_instance = 0;
 int main(int argc, char** argv) {
 
-	Modules  m;
-	m.registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
-	m.registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
-
+	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
+	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
+	//Modules::execute("calcIfKick", NULL);
 
 	TableControllerInterface* tableController;
 
@@ -75,9 +74,9 @@ int main(int argc, char** argv) {
 #if MODE == 4
 
 	TableControllerInterface* tci = new TableControllerImpl();
-	//BallTrackerInterface* bti = new BallTrackerImpl(tci);
+	BallTrackerInterface* bti = new BallTrackerImpl(tci);
 
-	tci->motorByHand();
+	//tci->motorByHand();
 
 #endif
 }

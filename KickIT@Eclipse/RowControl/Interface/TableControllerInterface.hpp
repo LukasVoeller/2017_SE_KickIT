@@ -76,7 +76,6 @@ protected:
 	CameraConfig cc;
 	TableConfig tc;
 	BallStatus ballStatus;
-	Modules m;
 
 	BallStatus currentBallStaus;
 	RowControllerInterface* keeperControl;
