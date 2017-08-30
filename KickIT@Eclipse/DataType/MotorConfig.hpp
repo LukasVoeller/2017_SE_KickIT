@@ -13,6 +13,7 @@ protected:
 	ConfigReader cr;
 
 public:
+	int homingRequired;
 	std::string port;
 	int keeperAccelerationTranslational;
 	int keeperDecelerationTranslational;
@@ -39,6 +40,7 @@ public:
 
 	void loadConfig(){
 
+		homingRequired = cr.getIntValue("homingRequired");
 		std::string port = cr.getStringValue("port");
 
 		keeperAccelerationTranslational = cr.getIntValue("keeperAccelerationTranslational");
@@ -63,7 +65,8 @@ public:
 	}
 
 	void saveConfig() {
-		cr.getStringValue("port");
+		cr.setIntValue("homingRequired", homingRequired);
+		cr.setStringValue("port", port.c_str());
 
 		cr.setIntValue("keeperAccelerationTranslational",keeperAccelerationTranslational);
 		cr.setIntValue("keeperDecelerationTranslational",keeperDecelerationTranslational);

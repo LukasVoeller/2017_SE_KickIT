@@ -34,8 +34,6 @@ void TableControllerMock::setBallPos(float x, float y) {
 	}
 
 	delete positions;*/
-
-	window->drawBall(x,y);
 }
 
 void TableControllerMock::setKickerWindow(VirtualKickerWindow* p) {

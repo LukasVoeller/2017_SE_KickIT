@@ -11,8 +11,10 @@ MotorComRS01Impl::MotorComRS01Impl(Row r) {
 	this->socketId = 0;
 	this->port = "can0";
 	this->row = r;
-	thread c(&MotorComRS01Impl::driverInit, this);
-	c.detach();
+	if(mc.homingRequired){
+		thread c(&MotorComRS01Impl::driverInit, this);
+		c.detach();
+	}
 }
 
 void MotorComRS01Impl::driverInit(){
@@ -60,6 +62,7 @@ void MotorComRS01Impl::linearMovement(int position){
 	pos2 = (position >> 8);
 
 	int acceleration = this->mc.defenseAccelerationTranslational;
+	//std::cout << this->mc.defenseAccelerationTranslational << std::endl;
 	int aLow = acceleration & 255;
 	int aHigh = acceleration >> 8;
 
@@ -67,7 +70,7 @@ void MotorComRS01Impl::linearMovement(int position){
 	int dLow = deceleration & 255;
 	int dHigh = deceleration >> 8;
 
-	int maxSpeed = this->mc.keeperSpeedTranslational;
+	int maxSpeed = this->mc.defenseSpeedTranslational;
 	int sLow = maxSpeed & 255;
 	int sHigh = maxSpeed >> 8;
 

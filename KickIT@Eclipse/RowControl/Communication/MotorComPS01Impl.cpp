@@ -10,8 +10,10 @@ MotorComPS01Impl::MotorComPS01Impl(Row r) {
 	this->socketId = 0;
 	this->port = "can0";
 	this->row = r;
-	thread c(&MotorComPS01Impl::driverInit, this);
-	c.detach();
+	if(mc.homingRequired){
+		thread c(&MotorComPS01Impl::driverInit, this);
+		c.detach();
+	}
 }
 
 void MotorComPS01Impl::driverInit() {

@@ -47,36 +47,26 @@ int main(int argc, char** argv) {
 #if MODE == 1
 
 	QApplication a(argc, argv);
-	tableController = VirtualKicker::getMockTableController();
+	tableController = VirtualKicker::getVirtualKickerTable();
 	return a.exec();
 
 #endif
 
 //Motor testing mode - The ball position is simulated with the GUI
 #if MODE == 2
-
-	QApplication a(argc, argv);
-	tableController = VirtualKicker::getTableController();
-	return a.exec();
-
 #endif
 
 //Balltracking testing mode - The table is simulated with the GUI
 #if MODE == 3
-
-	QApplication a(argc, argv);
-	VirtualKicker::getMockTableControllerWithBalltracker();
-	return a.exec();
-
 #endif
 
 //Final mode - Ready to play!
 #if MODE == 4
 
-	TableControllerInterface* tci = new TableControllerImpl();
+	QApplication a(argc, argv);
+	TableControllerInterface* tci = new TableControllerImpl(VirtualKicker::getDisplay());
 	BallTrackerInterface* bti = new BallTrackerImpl(tci);
-
 	//tci->motorByHand();
-
+	return a.exec();
 #endif
 }

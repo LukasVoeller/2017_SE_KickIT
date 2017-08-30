@@ -1,8 +1,17 @@
 #include "VirtualKickerWindow.hpp"
 #include "../DataType/Vec2.hpp"
+#include "../DataType/TableConfig.hpp"
 
 VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 	setMouseTracking(true);
+
+	SCALE = 1;
+	TABLE_MARGIN = 60;
+	TABLE_HEIGHT = tconf.tableHeight * SCALE;
+	TABLE_WIDTH = tconf.tableWidth * SCALE;
+	GOAL_SIZE = 100;
+	GOAL_TO_KEEPER = tconf.distGoalToKeeper * SCALE;
+	GOAL_TO_DEFENSE = tconf.distGoalToDefense * SCALE;
 
 	ball = new QPoint();
 	topLeft = new QPoint(TABLE_MARGIN, TABLE_MARGIN);
@@ -19,10 +28,12 @@ VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 			defenseBar->y1() + defenseBar->dy() / 3);
 }
 
-void VirtualKickerWindow::drawBall(float x, float y){
-	this->ball->setX(x+115);
-	this->ball->setY(y+115);
-	repaint();
+void VirtualKickerWindow::newBallStatus(BallStatus bs){
+	std::cout << keeperBar->dx() << std::endl;
+	this->ball->setX(bs.movement.x / this->SCALE);
+	std::cout << "fsdfsd" << std::endl;
+	this->ball->setY(bs.movement.y / this->SCALE);
+	std::cout << "fsdfsd" << std::endl;
 }
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
@@ -69,29 +80,7 @@ void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
 	mouseTrail.clear();
 }
 
-void VirtualKickerWindow::setKeeper(float pos) {
-	keeper->setY(pos);
-	repaint();
-}
-
-void VirtualKickerWindow::setDefense(float pos) {
-	defense[0]->setY(pos);
-	defense[1]->setY(pos + defenseBar->dy() / 3);
-	repaint();
-}
 
 void VirtualKickerWindow::setTableController(TableControllerInterface* t) {
 	tc = t;
-}
-
-Vec2* VirtualKickerWindow::getKeeperPositionalVector() {
-	return new Vec2(keeperBar->x1(), 0);
-}
-
-Vec2* VirtualKickerWindow::getDefensePositionalVector() {
-	return new Vec2(defenseBar->x1(), 0);
-}
-
-float VirtualKickerWindow::getDDist() {
-	return defenseBar->dy() / 3;
 }

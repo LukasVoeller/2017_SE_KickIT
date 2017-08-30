@@ -4,23 +4,24 @@
 
 ########################################################
 
+int homingRequired 0
 
 string port can0
 
-int keeperAccelerationTranslational 50 	    	#value range is 0 to 65535
-int keeperDecelerationTranslational 50
-int keeperSpeedTranslational 50
+int keeperAccelerationTranslational 300 	    			#value range is 0 to 65535
+int keeperDecelerationTranslational 300
+int keeperSpeedTranslational 2235
 int keeperSleepAfterReset 20
 int keeperSleepAfterHoming 25
 int keeperBoundaryInwards 65
 int keeperBoundaryOutwards -60
 
-int defenseAccelerationTranslational 44
-int defenseAccelerationRotary 300
-int defenseDecelerationTranslational 44
-int defenseDecelerationRotary 300
-int defenseSpeedTranslational 2235
-int defenseSpeedRotary 65535
+int defenseAccelerationTranslational 100
+int defenseAccelerationRotary 100
+int defenseDecelerationTranslational 100
+int defenseDecelerationRotary 100
+int defenseSpeedTranslational 300
+int defenseSpeedRotary 200
 int defenseSleepAfterReset 20
 int defenseSleepAfterHoming 25
 int defenseBoundaryInwards 280

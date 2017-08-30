@@ -177,8 +177,8 @@ CameraConfig* Camera::threshold() {
 
 		try{
 			cv::inRange(*cv_img, cv::Scalar(result->blueLow, result->greenLow, result->redLow), cv::Scalar(result->blueHigh, result->greenHigh, result->redHigh), imgThresholded);
-			cv::erode(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)));
-			cv::dilate(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(10, 10)));
+			cv::erode(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(15, 15)));
+			cv::dilate(imgThresholded, imgThresholded, cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(15, 15)));
 
 		} catch( cv::Exception& e ) {
 			const char* err_msg = e.what();

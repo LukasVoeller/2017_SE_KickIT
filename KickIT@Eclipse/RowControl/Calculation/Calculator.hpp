@@ -10,14 +10,13 @@ namespace Calculator {
 	static TableConfig tc;
 	static Vec2 rowDirectionalVector(0, 1);
 	static Vec2 keeperPosition(tc.distGoalToKeeper, 0);
-	static float* positions = new float[tc.isKeeperActive ? 1 : 0 + tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
-	static bool* up = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
-	static bool* kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 
 	static void calcPositionsSimple(std::vector<void*>* params) {
 
 		BallStatus* bs = ((BallStatus*)params->at(0));
-		std::cout << "bs: " << bs->position.y << std::endl;
+		float* positions = ((float*)params->at(1));
+
+		//std::cout << "bs: " << bs->position.y << std::endl;
 		if (tc.isKeeperActive) {
 			if ( bs->movement.x < 0 ) {
 				float m = bs->movement.y / bs->movement.x;
@@ -25,10 +24,10 @@ namespace Calculator {
 				float pos = ((bs->position.x - tc.distGoalToKeeper) * m) + bs->position.y;
 				positions[0] = pos;
 			}else if ( bs->movement.x > 0) {
-				std::cout << "positions[0] " << 340 << std::endl;
+				//std::cout << "positions[0] " << 340 << std::endl;
 				positions[0] = 340;
 			}else if (bs->movement.x == 0){
-				std::cout << "positions[0] " << bs->position.y << std::endl;
+				//std::cout << "positions[0] " << bs->position.y << std::endl;
 				positions[0] = bs->position.y;
 			}
 		}
@@ -52,6 +51,7 @@ namespace Calculator {
 
 	static void calcIfKickSimple(std::vector<void*>* params) {
 		BallStatus* bs = ((BallStatus*)params->at(0));
+		bool* kick = ((bool*)params->at(3));
 		if(bs->position.x < 557 && bs->position.x > 180 && bs->movement.x < 0){
 			kick[0] = true;
 		} else {
@@ -60,7 +60,9 @@ namespace Calculator {
 
 	}
 
-	static void calcIfUp(BallStatus* bs, float yOffset = 0) {
+	static void calcIfUp(std::vector<void*>* params) {
+		BallStatus* bs = ((BallStatus*)params->at(0));
+		bool* up = ((bool*)params->at(2));
 		if (bs->position.x < 155)
 			up[0] = true;
 

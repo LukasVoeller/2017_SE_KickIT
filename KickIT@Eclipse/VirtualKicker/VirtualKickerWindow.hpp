@@ -2,6 +2,8 @@
 #define VIRTUALKICKERWINDOW_HPP
 
 #include "../RowControl/Interface/TableControllerInterface.hpp"
+#include "../DataType/BallStatus.hpp"
+#include "../DataType/TableConfig.hpp"
 #include <QWidget>
 #include <cstdlib>
 #include <vector>
@@ -12,33 +14,26 @@ class VirtualKickerWindow: public QWidget {
 
 public:
 	VirtualKickerWindow();
-
 	void paintEvent(QPaintEvent *event);
 	void mouseMoveEvent(QMouseEvent* e);
 	void mouseReleaseEvent(QMouseEvent* e);
-
-	void setKeeper(float pos);
-	void setDefense(float pos);
 	void setTableController(TableControllerInterface* t);
+	void newBallStatus(BallStatus bs);
 
-	Vec2* getKeeperPositionalVector();
-	Vec2* getDefensePositionalVector();
-	float getDDist();
-	void drawBall(float x, float y);
-
-	static const int WINDOW_SIZE_X = 1024;
-	static const int WINDOW_SIZE_Y = 768;
+	int WINDOW_SIZE_X = 1024;
+	int WINDOW_SIZE_Y = 768;
 
 	//All dimension values in centimeter
-	static constexpr double SCALE = 7;
-	static constexpr double TABLE_MARGIN = 60;
-	static constexpr double TABLE_HEIGHT = 68 * SCALE;
-	static constexpr double TABLE_WIDTH = 111.5 * SCALE;
-	static constexpr double GOAL_SIZE = 21 * SCALE;
-	static constexpr double GOAL_TO_KEEPER = 3.5 * SCALE;
-	static constexpr double GOAL_TO_DEFENSE = 18.5 * SCALE;
+	double SCALE;
+	double TABLE_MARGIN;
+	double TABLE_HEIGHT;
+	double TABLE_WIDTH;
+	double GOAL_SIZE;
+	double GOAL_TO_KEEPER;
+	double GOAL_TO_DEFENSE;
 
-private:
+protected:
+	TableConfig tconf;
 	TableControllerInterface* tc;
 
 	QPoint lastAdded;

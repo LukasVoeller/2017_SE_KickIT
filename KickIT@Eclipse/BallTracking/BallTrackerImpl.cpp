@@ -46,8 +46,6 @@ void BallTrackerImpl::startTracking() {
 	int nz;
 	while (1) {
 		Mat* cv_img = camera->getImage();
-		//Mat* cv_img = new Mat();
-		//flip(*camera_img, *cv_img, 0);
 		Point Ballcenter(0, 0);
 		Mat imgHSV;
 		//cvtColor(cv_img, imgHSV, COLOR_BGR2HSV); //Convert the captured frame from BGR to HSV
@@ -92,14 +90,13 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		//imshow("dif",dif);
-		if(showImage) imshow("circles", *cv_img);
+		//if(showImage) imshow("circles", *cv_img);
 
-		if (cv::waitKey(30) == 27 && showImage) {
-			cv::destroyWindow("circles");
-			showImage = false;
-		}
+		//if (cv::waitKey(30) == 27 && showImage) {
+			//cv::destroyWindow("circles");
+			//showImage = false;
+		//}
 		delete cv_img;
-		//delete camera_img;
 	}
 }
 
