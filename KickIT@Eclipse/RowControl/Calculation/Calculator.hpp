@@ -15,7 +15,9 @@ namespace Calculator {
 	static bool* kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 
 	static void calcPositionsSimple(std::vector<void*>* params) {
+
 		BallStatus* bs = ((BallStatus*)params->at(0));
+		std::cout << "bs: " << bs->position.y << std::endl;
 		if (tc.isKeeperActive) {
 			if ( bs->movement.x < 0 ) {
 				float m = bs->movement.y / bs->movement.x;
@@ -23,8 +25,10 @@ namespace Calculator {
 				float pos = ((bs->position.x - tc.distGoalToKeeper) * m) + bs->position.y;
 				positions[0] = pos;
 			}else if ( bs->movement.x > 0) {
+				std::cout << "positions[0] " << 340 << std::endl;
 				positions[0] = 340;
 			}else if (bs->movement.x == 0){
+				std::cout << "positions[0] " << bs->position.y << std::endl;
 				positions[0] = bs->position.y;
 			}
 		}

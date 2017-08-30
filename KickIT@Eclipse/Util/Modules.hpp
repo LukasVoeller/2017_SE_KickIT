@@ -61,7 +61,6 @@ public:
 		if (functions.insert(std::pair<std::string, fp>(name_string, function)).second == false) {
 			throw new FunctionAllreadyRegistered(name);
 		}
-		std::cout << functions.size() << std::endl;
 	}
 
 	void execute(const char* algo, std::vector<void*>* params) {
@@ -69,7 +68,6 @@ public:
 		std::string functionNameFromConfigFile = cr.getStringValue(algo);
 		//look up if that function has been registered
 		std::map<std::string, fp>::iterator it = functions.find(functionNameFromConfigFile);
-		std::cout << functions.size() << std::endl;
 		if (it == functions.end()) {
 			throw new FunctionNotFoundException(functionNameFromConfigFile.c_str());
 		}

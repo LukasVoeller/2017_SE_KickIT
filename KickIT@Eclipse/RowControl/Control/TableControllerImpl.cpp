@@ -28,7 +28,10 @@ TableControllerImpl::TableControllerImpl() {
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
+
+	std::cout << "x: " << x << " y: " << y << std::endl;
 	Vec2 v = this->pixelToMM(x, y);
+	std::cout << "after ptm " << "x: " << v.x << " y: " << v.y << std::endl;
 	ballStatus.update(v.x, v.y);		//Ballposition from now on in milimeters
 
 	//Check if ball is in the right position for some shots
@@ -42,10 +45,14 @@ void TableControllerImpl::setBallPos(float x, float y) {
 
 	//Coordinate players
 	Modules::instance()->execute("calcPositions", &calcParams);
+	std::cout << "calculated: " << Calculator::positions[0] << std::endl;
 	if (tc.isKeeperActive) keeperControl->moveTo(Calculator::positions[0]);
 	if (tc.isDefenseActive) defenseControl->moveTo(Calculator::positions[1]);
 	if (tc.isMidfieldActive) midfieldControl->moveTo(Calculator::positions[2]);
 	if (tc.isOffenseActive) offenseControl->moveTo(Calculator::positions[3]);
+
+
+
 
 
 }

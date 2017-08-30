@@ -54,8 +54,8 @@ void BallTrackerImpl::startTracking() {
 
 		inRange(*cv_img, Scalar(threshold->blueLow, threshold->greenLow, threshold->redLow),
 				Scalar(threshold->blueHigh, threshold->greenHigh, threshold->redHigh), imgThresholded);
-		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
-		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(10, 10)));
+		erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+		dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
 
 		vector<Point> nonzero;
 		//Mat nonzero;
