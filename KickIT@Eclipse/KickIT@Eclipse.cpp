@@ -20,18 +20,18 @@
  ********************************************************************************/
 
 //#include <BallTracking/BallTrackerInterface.hpp>
-#include <DataType/TableConfig.hpp>
-#include <RowControl/Control/TableControllerImpl.hpp>
+#include "2_Control/TableControl/TableControllerMock.hpp"
+#include "3_VirtualKicker/VirtualKicker.hpp"
+#include "4_Utilities/Calculator.hpp"
+#include "4_Utilities/Modules.hpp"
+#include "5_DataType/MotorConfig.hpp"
+#include "5_DataType/TableConfig.hpp"
+#include "2_Control/TableControl/TableControllerImpl.hpp"
 #include <cstdlib>
 #include <QApplication>
-#include <VirtualKicker/TableControllerMock.hpp>
-#include "../BallTracking/BallTrackerInterface.hpp"
-#include "RowControl/Interface/TableControllerInterface.hpp"
-#include "VirtualKicker/VirtualKicker.hpp"
-#include "RowControl/Interface/MotorCommunicatorInterface.hpp"
-#include "DataType/MotorConfig.hpp"
-#include "Util/Modules.hpp"
-#include "RowControl/Calculation/Calculator.hpp"
+#include "1_BallTracking/BallTracker/_BallTrackerInterface.hpp"
+#include "2_Control/TableControl/_TableControllerInterface.hpp"
+#include "2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp"
 
 #define MODE 4
 Modules* Modules::_instance = 0;

@@ -12,42 +12,42 @@ CONFIG += warn_off
 CONFIG += C++11
 
 # Input
-HEADERS += BallTracking/BallTrackerImpl.hpp \
-           BallTracking/BallTrackerInterface.hpp \
-           BallTracking/Camera/Camera.hpp \
-           BallTracking/Camera/CameraInterface.hpp \
-           DataType/Vec2.hpp \
-           DataType/BallStatus.hpp \
-           DataType/TableConfig.hpp \
-           DataType/CameraConfig.hpp \
-           DataType/MotorConfig.hpp \
-           RowControl/Communication/MotorComPS01Impl.hpp \
-	   	   RowControl/Communication/MotorComRS01Impl.hpp \
-           RowControl/Interface/MotorCommunicatorInterface.hpp \
-           RowControl/Control/RowControllerDefense.hpp \
-           RowControl/Interface/RowControllerInterface.hpp \
-           RowControl/Control/RowControllerKeeper.hpp \
-           RowControl/Control/RowControllerMidfield.hpp \
-           RowControl/Control/RowControllerOffense.hpp \
-           RowControl/Control/TableControllerImpl.hpp \
-           RowControl/Interface/TableControllerInterface.hpp \
-           RowControl/Calculation/Calculator.hpp \
-           VirtualKicker/TableControllerMock.hpp \
-           VirtualKicker/VirtualKicker.hpp \
-           VirtualKicker/VirtualKickerWindow.hpp \
-           DataType/RowEnum.hpp \
-           Util/ConfigReader.hpp \
-           Util/Modules.hpp
+HEADERS += 1_BallTracking/BallTracker/_BallTrackerInterface.hpp \
+	   1_BallTracking/BallTracker/BallTrackerImpl.hpp \
+	   1_BallTracking/Camera/_CameraInterface.hpp \
+           1_BallTracking/Camera/Camera.hpp \
+       	   2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp \
+           2_Control/MotorCommunication/MotorComPS01Impl.hpp \
+	   2_Control/MotorCommunication/MotorComRS01Impl.hpp \
+           2_Control/RowControl/_RowControllerInterface.hpp \
+           2_Control/RowControl/RowControllerDefense.hpp \
+           2_Control/RowControl/RowControllerKeeper.hpp \
+           2_Control/RowControl/RowControllerMidfield.hpp \
+           2_Control/RowControl/RowControllerOffense.hpp \
+           2_Control/TableControl/_TableControllerInterface.hpp \
+           2_Control/TableControl/TableControllerImpl.hpp \
+           2_Control/TableControl/TableControllerMock.hpp \
+           3_VirtualKicker/VirtualKicker.hpp \
+           3_VirtualKicker/VirtualKickerWindow.hpp \
+           4_Utilities/Calculator.hpp \
+           4_Utilities/ConfigReader.hpp \
+           4_Utilities/Modules.hpp \
+           5_DataType/BallStatus.hpp \
+           5_DataType/CameraConfig.hpp \
+           5_DataType/MotorConfig.hpp \
+           5_DataType/RowEnum.hpp \
+           5_DataType/TableConfig.hpp \
+           5_DataType/Vec2.hpp
 SOURCES += KickIT@Eclipse.cpp \
-           BallTracking/BallTrackerImpl.cpp \
-           BallTracking/Camera/Camera.cpp \
-	   	   RowControl/Communication/MotorComPS01Impl.cpp \
-	   	   RowControl/Communication/MotorComRS01Impl.cpp \
-           RowControl/Control/RowControllerDefense.cpp \
-           RowControl/Control/RowControllerKeeper.cpp \
-           RowControl/Control/RowControllerMidfield.cpp \
-           RowControl/Control/RowControllerOffense.cpp \
-           RowControl/Control/TableControllerImpl.cpp \
-           VirtualKicker/TableControllerMock.cpp \
-           VirtualKicker/VirtualKickerWindow.cpp \
-           Util/ConfigReader.cpp
+           1_BallTracking/BallTracker/BallTrackerImpl.cpp \
+           1_BallTracking/Camera/Camera.cpp \
+	   2_Control/MotorCommunication/MotorComPS01Impl.cpp \
+	   2_Control/MotorCommunication/MotorComRS01Impl.cpp \
+           2_Control/RowControl/RowControllerDefense.cpp \
+           2_Control/RowControl/RowControllerKeeper.cpp \
+           2_Control/RowControl/RowControllerMidfield.cpp \
+           2_Control/RowControl/RowControllerOffense.cpp \
+           2_Control/TableControl/TableControllerImpl.cpp \
+           2_Control/TableControl/TableControllerMock.cpp \
+           3_VirtualKicker/VirtualKickerWindow.cpp \
+           4_Utilities/ConfigReader.cpp

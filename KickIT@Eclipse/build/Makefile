@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = KickIT@Eclipse1.0.0
-DISTDIR = /home/student/SWE_2017_KickIT/KickIT@Eclipse/build/.tmp/KickIT@Eclipse1.0.0
+DISTDIR = /home/student/Desktop/SWE_2017_KickIT/KickIT@Eclipse/build/.tmp/KickIT@Eclipse1.0.0
 LINK          = g++
 LFLAGS        = -m64
 LIBS          = $(SUBLIBS) -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lpthread -lGL 
@@ -60,18 +60,18 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../KickIT@Eclipse.cpp \
-		../BallTracking/BallTrackerImpl.cpp \
-		../BallTracking/Camera/Camera.cpp \
-		../RowControl/Communication/MotorComPS01Impl.cpp \
-		../RowControl/Communication/MotorComRS01Impl.cpp \
-		../RowControl/Control/RowControllerDefense.cpp \
-		../RowControl/Control/RowControllerKeeper.cpp \
-		../RowControl/Control/RowControllerMidfield.cpp \
-		../RowControl/Control/RowControllerOffense.cpp \
-		../RowControl/Control/TableControllerImpl.cpp \
-		../VirtualKicker/TableControllerMock.cpp \
-		../VirtualKicker/VirtualKickerWindow.cpp \
-		../Util/ConfigReader.cpp 
+		../1_BallTracking/BallTracker/BallTrackerImpl.cpp \
+		../1_BallTracking/Camera/Camera.cpp \
+		../2_Control/MotorCommunication/MotorComPS01Impl.cpp \
+		../2_Control/MotorCommunication/MotorComRS01Impl.cpp \
+		../2_Control/RowControl/RowControllerDefense.cpp \
+		../2_Control/RowControl/RowControllerKeeper.cpp \
+		../2_Control/RowControl/RowControllerMidfield.cpp \
+		../2_Control/RowControl/RowControllerOffense.cpp \
+		../2_Control/TableControl/TableControllerImpl.cpp \
+		../2_Control/TableControl/TableControllerMock.cpp \
+		../3_VirtualKicker/VirtualKickerWindow.cpp \
+		../4_Utilities/ConfigReader.cpp 
 OBJECTS       = KickIT@Eclipse.o \
 		BallTrackerImpl.o \
 		Camera.o \
@@ -142,44 +142,44 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../../KickIT@Eclipse.pro ../BallTracking/BallTrackerImpl.hpp \
-		../BallTracking/BallTrackerInterface.hpp \
-		../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp \
-		../DataType/Vec2.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/TableConfig.hpp \
-		../DataType/CameraConfig.hpp \
-		../DataType/MotorConfig.hpp \
-		../RowControl/Communication/MotorComPS01Impl.hpp \
-		../RowControl/Communication/MotorComRS01Impl.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../RowControl/Control/RowControllerDefense.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Control/RowControllerKeeper.hpp \
-		../RowControl/Control/RowControllerMidfield.hpp \
-		../RowControl/Control/RowControllerOffense.hpp \
-		../RowControl/Control/TableControllerImpl.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../VirtualKicker/TableControllerMock.hpp \
-		../VirtualKicker/VirtualKicker.hpp \
-		../VirtualKicker/VirtualKickerWindow.hpp \
-		../DataType/RowEnum.hpp \
-		../Util/ConfigReader.hpp \
-		../Util/Modules.hpp ../KickIT@Eclipse.cpp \
-		../BallTracking/BallTrackerImpl.cpp \
-		../BallTracking/Camera/Camera.cpp \
-		../RowControl/Communication/MotorComPS01Impl.cpp \
-		../RowControl/Communication/MotorComRS01Impl.cpp \
-		../RowControl/Control/RowControllerDefense.cpp \
-		../RowControl/Control/RowControllerKeeper.cpp \
-		../RowControl/Control/RowControllerMidfield.cpp \
-		../RowControl/Control/RowControllerOffense.cpp \
-		../RowControl/Control/TableControllerImpl.cpp \
-		../VirtualKicker/TableControllerMock.cpp \
-		../VirtualKicker/VirtualKickerWindow.cpp \
-		../Util/ConfigReader.cpp
+		../../KickIT@Eclipse.pro ../1_BallTracking/BallTracker/_BallTrackerInterface.hpp \
+		../1_BallTracking/BallTracker/BallTrackerImpl.hpp \
+		../1_BallTracking/Camera/_CameraInterface.hpp \
+		../1_BallTracking/Camera/Camera.hpp \
+		../2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp \
+		../2_Control/MotorCommunication/MotorComPS01Impl.hpp \
+		../2_Control/MotorCommunication/MotorComRS01Impl.hpp \
+		../2_Control/RowControl/_RowControllerInterface.hpp \
+		../2_Control/RowControl/RowControllerDefense.hpp \
+		../2_Control/RowControl/RowControllerKeeper.hpp \
+		../2_Control/RowControl/RowControllerMidfield.hpp \
+		../2_Control/RowControl/RowControllerOffense.hpp \
+		../2_Control/TableControl/_TableControllerInterface.hpp \
+		../2_Control/TableControl/TableControllerImpl.hpp \
+		../2_Control/TableControl/TableControllerMock.hpp \
+		../3_VirtualKicker/VirtualKicker.hpp \
+		../3_VirtualKicker/VirtualKickerWindow.hpp \
+		../4_Utilities/Calculator.hpp \
+		../4_Utilities/ConfigReader.hpp \
+		../4_Utilities/Modules.hpp \
+		../5_DataType/BallStatus.hpp \
+		../5_DataType/CameraConfig.hpp \
+		../5_DataType/MotorConfig.hpp \
+		../5_DataType/RowEnum.hpp \
+		../5_DataType/TableConfig.hpp \
+		../5_DataType/Vec2.hpp ../KickIT@Eclipse.cpp \
+		../1_BallTracking/BallTracker/BallTrackerImpl.cpp \
+		../1_BallTracking/Camera/Camera.cpp \
+		../2_Control/MotorCommunication/MotorComPS01Impl.cpp \
+		../2_Control/MotorCommunication/MotorComRS01Impl.cpp \
+		../2_Control/RowControl/RowControllerDefense.cpp \
+		../2_Control/RowControl/RowControllerKeeper.cpp \
+		../2_Control/RowControl/RowControllerMidfield.cpp \
+		../2_Control/RowControl/RowControllerOffense.cpp \
+		../2_Control/TableControl/TableControllerImpl.cpp \
+		../2_Control/TableControl/TableControllerMock.cpp \
+		../3_VirtualKicker/VirtualKickerWindow.cpp \
+		../4_Utilities/ConfigReader.cpp
 QMAKE_TARGET  = KickIT@Eclipse
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = KickIT@Eclipse
@@ -347,8 +347,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../BallTracking/BallTrackerImpl.hpp ../BallTracking/BallTrackerInterface.hpp ../BallTracking/Camera/Camera.hpp ../BallTracking/Camera/CameraInterface.hpp ../DataType/Vec2.hpp ../DataType/BallStatus.hpp ../DataType/TableConfig.hpp ../DataType/CameraConfig.hpp ../DataType/MotorConfig.hpp ../RowControl/Communication/MotorComPS01Impl.hpp ../RowControl/Communication/MotorComRS01Impl.hpp ../RowControl/Interface/MotorCommunicatorInterface.hpp ../RowControl/Control/RowControllerDefense.hpp ../RowControl/Interface/RowControllerInterface.hpp ../RowControl/Control/RowControllerKeeper.hpp ../RowControl/Control/RowControllerMidfield.hpp ../RowControl/Control/RowControllerOffense.hpp ../RowControl/Control/TableControllerImpl.hpp ../RowControl/Interface/TableControllerInterface.hpp ../RowControl/Calculation/Calculator.hpp ../VirtualKicker/TableControllerMock.hpp ../VirtualKicker/VirtualKicker.hpp ../VirtualKicker/VirtualKickerWindow.hpp ../DataType/RowEnum.hpp ../Util/ConfigReader.hpp ../Util/Modules.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../BallTracking/BallTrackerImpl.cpp ../BallTracking/Camera/Camera.cpp ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/TableControllerImpl.cpp ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/VirtualKickerWindow.cpp ../Util/ConfigReader.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../1_BallTracking/BallTracker/_BallTrackerInterface.hpp ../1_BallTracking/BallTracker/BallTrackerImpl.hpp ../1_BallTracking/Camera/_CameraInterface.hpp ../1_BallTracking/Camera/Camera.hpp ../2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp ../2_Control/MotorCommunication/MotorComPS01Impl.hpp ../2_Control/MotorCommunication/MotorComRS01Impl.hpp ../2_Control/RowControl/_RowControllerInterface.hpp ../2_Control/RowControl/RowControllerDefense.hpp ../2_Control/RowControl/RowControllerKeeper.hpp ../2_Control/RowControl/RowControllerMidfield.hpp ../2_Control/RowControl/RowControllerOffense.hpp ../2_Control/TableControl/_TableControllerInterface.hpp ../2_Control/TableControl/TableControllerImpl.hpp ../2_Control/TableControl/TableControllerMock.hpp ../3_VirtualKicker/VirtualKicker.hpp ../3_VirtualKicker/VirtualKickerWindow.hpp ../4_Utilities/Calculator.hpp ../4_Utilities/ConfigReader.hpp ../4_Utilities/Modules.hpp ../5_DataType/BallStatus.hpp ../5_DataType/CameraConfig.hpp ../5_DataType/MotorConfig.hpp ../5_DataType/RowEnum.hpp ../5_DataType/TableConfig.hpp ../5_DataType/Vec2.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../KickIT@Eclipse.cpp ../1_BallTracking/BallTracker/BallTrackerImpl.cpp ../1_BallTracking/Camera/Camera.cpp ../2_Control/MotorCommunication/MotorComPS01Impl.cpp ../2_Control/MotorCommunication/MotorComRS01Impl.cpp ../2_Control/RowControl/RowControllerDefense.cpp ../2_Control/RowControl/RowControllerKeeper.cpp ../2_Control/RowControl/RowControllerMidfield.cpp ../2_Control/RowControl/RowControllerOffense.cpp ../2_Control/TableControl/TableControllerImpl.cpp ../2_Control/TableControl/TableControllerMock.cpp ../3_VirtualKicker/VirtualKickerWindow.cpp ../4_Utilities/ConfigReader.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -387,156 +387,103 @@ compiler_clean:
 
 ####### Compile
 
-KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../DataType/TableConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../RowControl/Control/TableControllerImpl.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../DataType/CameraConfig.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../Util/Modules.hpp \
-		../VirtualKicker/TableControllerMock.hpp \
-		../VirtualKicker/VirtualKickerWindow.hpp \
-		../BallTracking/BallTrackerInterface.hpp \
-		../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp \
-		../VirtualKicker/VirtualKicker.hpp \
-		../BallTracking/BallTrackerImpl.hpp
+KickIT@Eclipse.o: ../KickIT@Eclipse.cpp ../2_Control/TableControl/TableControllerMock.hpp \
+		../3_VirtualKicker/VirtualKickerWindow.hpp \
+		../2_Control/TableControl/_TableControllerInterface.hpp \
+		../2_Control/RowControl/_RowControllerInterface.hpp \
+		../5_DataType/TableConfig.hpp \
+		../4_Utilities/ConfigReader.hpp \
+		../2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp \
+		../5_DataType/MotorConfig.hpp \
+		../5_DataType/RowEnum.hpp \
+		../4_Utilities/Calculator.hpp \
+		../5_DataType/Vec2.hpp \
+		../4_Utilities/Modules.hpp \
+		../5_DataType/BallStatus.hpp \
+		../5_DataType/CameraConfig.hpp \
+		../3_VirtualKicker/VirtualKicker.hpp \
+		../1_BallTracking/BallTracker/_BallTrackerInterface.hpp \
+		../1_BallTracking/Camera/Camera.hpp \
+		../1_BallTracking/Camera/_CameraInterface.hpp \
+		../1_BallTracking/BallTracker/BallTrackerImpl.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o KickIT@Eclipse.o ../KickIT@Eclipse.cpp
 
-BallTrackerImpl.o: ../BallTracking/BallTrackerImpl.cpp ../BallTracking/BallTrackerInterface.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp \
-		../DataType/CameraConfig.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../Util/Modules.hpp \
-		../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp \
-		../BallTracking/BallTrackerImpl.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o ../BallTracking/BallTrackerImpl.cpp
+BallTrackerImpl.o: ../1_BallTracking/BallTracker/BallTrackerImpl.cpp ../1_BallTracking/BallTracker/BallTrackerImpl.hpp \
+		../1_BallTracking/Camera/Camera.hpp \
+		../1_BallTracking/Camera/_CameraInterface.hpp \
+		../5_DataType/CameraConfig.hpp \
+		../2_Control/TableControl/_TableControllerInterface.hpp \
+		../2_Control/RowControl/_RowControllerInterface.hpp \
+		../5_DataType/TableConfig.hpp \
+		../4_Utilities/ConfigReader.hpp \
+		../2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp \
+		../5_DataType/MotorConfig.hpp \
+		../5_DataType/RowEnum.hpp \
+		../4_Utilities/Calculator.hpp \
+		../5_DataType/Vec2.hpp \
+		../4_Utilities/Modules.hpp \
+		../5_DataType/BallStatus.hpp \
+		../1_BallTracking/BallTracker/_BallTrackerInterface.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o BallTrackerImpl.o ../1_BallTracking/BallTracker/BallTrackerImpl.cpp
 
-Camera.o: ../BallTracking/Camera/Camera.cpp ../BallTracking/Camera/Camera.hpp \
-		../BallTracking/Camera/CameraInterface.hpp \
-		../DataType/CameraConfig.hpp \
-		../Util/ConfigReader.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Camera.o ../BallTracking/Camera/Camera.cpp
+Camera.o: ../1_BallTracking/Camera/Camera.cpp ../1_BallTracking/Camera/Camera.hpp \
+		../1_BallTracking/Camera/_CameraInterface.hpp \
+		../5_DataType/CameraConfig.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Camera.o ../1_BallTracking/Camera/Camera.cpp
 
-MotorComPS01Impl.o: ../RowControl/Communication/MotorComPS01Impl.cpp ../RowControl/Communication/MotorComPS01Impl.hpp \
-		../DataType/RowEnum.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorComPS01Impl.o ../RowControl/Communication/MotorComPS01Impl.cpp
+MotorComPS01Impl.o: ../2_Control/MotorCommunication/MotorComPS01Impl.cpp ../2_Control/MotorCommunication/MotorComPS01Impl.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorComPS01Impl.o ../2_Control/MotorCommunication/MotorComPS01Impl.cpp
 
-MotorComRS01Impl.o: ../RowControl/Communication/MotorComRS01Impl.cpp ../RowControl/Communication/MotorComRS01Impl.hpp \
-		../DataType/RowEnum.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorComRS01Impl.o ../RowControl/Communication/MotorComRS01Impl.cpp
+MotorComRS01Impl.o: ../2_Control/MotorCommunication/MotorComRS01Impl.cpp ../2_Control/MotorCommunication/MotorComRS01Impl.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MotorComRS01Impl.o ../2_Control/MotorCommunication/MotorComRS01Impl.cpp
 
-RowControllerDefense.o: ../RowControl/Control/RowControllerDefense.cpp ../RowControl/Control/RowControllerDefense.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp \
-		../RowControl/Communication/MotorComRS01Impl.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerDefense.o ../RowControl/Control/RowControllerDefense.cpp
+RowControllerDefense.o: ../2_Control/RowControl/RowControllerDefense.cpp ../2_Control/RowControl/RowControllerDefense.hpp \
+		../2_Control/MotorCommunication/MotorComRS01Impl.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerDefense.o ../2_Control/RowControl/RowControllerDefense.cpp
 
-RowControllerKeeper.o: ../RowControl/Control/RowControllerKeeper.cpp ../RowControl/Control/RowControllerKeeper.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp \
-		../RowControl/Communication/MotorComPS01Impl.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerKeeper.o ../RowControl/Control/RowControllerKeeper.cpp
+RowControllerKeeper.o: ../2_Control/RowControl/RowControllerKeeper.cpp ../2_Control/RowControl/RowControllerKeeper.hpp \
+		../2_Control/MotorCommunication/MotorComPS01Impl.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerKeeper.o ../2_Control/RowControl/RowControllerKeeper.cpp
 
-RowControllerMidfield.o: ../RowControl/Control/RowControllerMidfield.cpp ../RowControl/Control/RowControllerMidfield.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerMidfield.o ../RowControl/Control/RowControllerMidfield.cpp
+RowControllerMidfield.o: ../2_Control/RowControl/RowControllerMidfield.cpp ../2_Control/RowControl/RowControllerMidfield.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerMidfield.o ../2_Control/RowControl/RowControllerMidfield.cpp
 
-RowControllerOffense.o: ../RowControl/Control/RowControllerOffense.cpp ../RowControl/Control/RowControllerOffense.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerOffense.o ../RowControl/Control/RowControllerOffense.cpp
+RowControllerOffense.o: ../2_Control/RowControl/RowControllerOffense.cpp ../2_Control/RowControl/RowControllerOffense.hpp \
+		../5_DataType/RowEnum.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RowControllerOffense.o ../2_Control/RowControl/RowControllerOffense.cpp
 
-TableControllerImpl.o: ../RowControl/Control/TableControllerImpl.cpp ../DataType/CameraConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../RowControl/Control/RowControllerMidfield.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../DataType/TableConfig.hpp \
-		../RowControl/Control/RowControllerDefense.hpp \
-		../RowControl/Control/RowControllerOffense.hpp \
-		../RowControl/Control/TableControllerImpl.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../Util/Modules.hpp \
-		../RowControl/Control/RowControllerKeeper.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o ../RowControl/Control/TableControllerImpl.cpp
+TableControllerImpl.o: ../2_Control/TableControl/TableControllerImpl.cpp ../2_Control/RowControl/RowControllerDefense.hpp \
+		../2_Control/RowControl/RowControllerKeeper.hpp \
+		../2_Control/RowControl/RowControllerMidfield.hpp \
+		../2_Control/RowControl/RowControllerOffense.hpp \
+		../5_DataType/CameraConfig.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerImpl.o ../2_Control/TableControl/TableControllerImpl.cpp
 
-TableControllerMock.o: ../VirtualKicker/TableControllerMock.cpp ../VirtualKicker/TableControllerMock.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp \
-		../DataType/CameraConfig.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../Util/Modules.hpp \
-		../VirtualKicker/VirtualKickerWindow.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerMock.o ../VirtualKicker/TableControllerMock.cpp
+TableControllerMock.o: ../2_Control/TableControl/TableControllerMock.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TableControllerMock.o ../2_Control/TableControl/TableControllerMock.cpp
 
-VirtualKickerWindow.o: ../VirtualKicker/VirtualKickerWindow.cpp ../VirtualKicker/VirtualKickerWindow.hpp \
-		../RowControl/Interface/TableControllerInterface.hpp \
-		../RowControl/Interface/RowControllerInterface.hpp \
-		../RowControl/Interface/MotorCommunicatorInterface.hpp \
-		../DataType/RowEnum.hpp \
-		../DataType/MotorConfig.hpp \
-		../Util/ConfigReader.hpp \
-		../DataType/TableConfig.hpp \
-		../DataType/CameraConfig.hpp \
-		../DataType/BallStatus.hpp \
-		../DataType/Vec2.hpp \
-		../RowControl/Calculation/Calculator.hpp \
-		../Util/Modules.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../VirtualKicker/VirtualKickerWindow.cpp
+VirtualKickerWindow.o: ../3_VirtualKicker/VirtualKickerWindow.cpp ../3_VirtualKicker/VirtualKickerWindow.hpp \
+		../2_Control/TableControl/_TableControllerInterface.hpp \
+		../2_Control/RowControl/_RowControllerInterface.hpp \
+		../5_DataType/TableConfig.hpp \
+		../4_Utilities/ConfigReader.hpp \
+		../2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp \
+		../5_DataType/MotorConfig.hpp \
+		../5_DataType/RowEnum.hpp \
+		../4_Utilities/Calculator.hpp \
+		../5_DataType/Vec2.hpp \
+		../4_Utilities/Modules.hpp \
+		../5_DataType/BallStatus.hpp \
+		../5_DataType/CameraConfig.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o VirtualKickerWindow.o ../3_VirtualKicker/VirtualKickerWindow.cpp
 
-ConfigReader.o: ../Util/ConfigReader.cpp ../Util/ConfigReader.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ConfigReader.o ../Util/ConfigReader.cpp
+ConfigReader.o: ../4_Utilities/ConfigReader.cpp ../4_Utilities/ConfigReader.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ConfigReader.o ../4_Utilities/ConfigReader.cpp
 
 ####### Install
 
