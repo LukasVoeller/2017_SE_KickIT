@@ -35,13 +35,23 @@
 
 #define MODE 4
 Modules* Modules::_instance = 0;
+TableControllerInterface* tci;
+BallTrackerImpl* bti;
+
+class FunctorFor_GetBallPosition
+{
+    public:
+	FunctorFor_GetBallPosition () {}
+        void operator() () {
+        	std::cout << "sijdfhskjdfgh" << std::endl;
+        	bti->getBallPosition();
+        }
+};
+
 int main(int argc, char** argv) {
 
 	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
-	//Modules::execute("calcIfKick", NULL);
-
-	TableControllerInterface* tableController;
 
 //Virtual mode - Ball tracking and table control is simulated by the virtual kicker
 #if MODE == 1
@@ -62,11 +72,14 @@ int main(int argc, char** argv) {
 
 //Final mode - Ready to play!
 #if MODE == 4
-
 	QApplication a(argc, argv);
-	TableControllerInterface* tci = new TableControllerImpl(VirtualKicker::getDisplay());
-	BallTrackerInterface* bti = new BallTrackerImpl(tci);
-	//tci->motorByHand();
+	tci = new TableControllerImpl(VirtualKicker::getDisplay());
+	bti = new BallTrackerImpl(tci);
+	FunctorFor_GetBallPosition m;
+	while(1){
+		QTimer::singleShot(0, m);
+	}
+
 	return a.exec();
 #endif
 }

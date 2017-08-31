@@ -8,16 +8,16 @@
 
 class BallTrackerImpl: public BallTrackerInterface {
 public:
-	BallTrackerImpl();
 	BallTrackerImpl(TableControllerInterface* tci);
 	~BallTrackerImpl();	//Virtual?
 	BallStatus* getBallStatus();
-
-	//void setTableController(TableControllerInterface* t);
+	void startTracking();
+	void getBallPosition();
 
 protected:
-	void startTracking();
 	bool showImage = true;
+	double lastx = 0;
+	double lasty = 0;
 };
 
 #endif //BALLTRACKERIMPL_HPP

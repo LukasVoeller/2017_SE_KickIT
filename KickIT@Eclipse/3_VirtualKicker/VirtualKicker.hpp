@@ -33,6 +33,7 @@ public:
 		//vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
 		vkw->setFixedSize(1200, 800);
 		vkw->show();
+		return vkw;
 	}
 
 

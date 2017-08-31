@@ -46,7 +46,7 @@ protected:
 	ConfigReader cr;
 	static Modules* _instance;
 
-	Modules():cr("configuration/Algorithm.txt") {}
+	Modules():cr("6_Configuration/Algorithm.txt") {}
 	Modules(const Modules&);
 	~Modules() {}
 

@@ -25,7 +25,7 @@ public:
 	int offsetx;
 	int offsety;
 
-	CameraConfig():cr("configuration/CameraConfig.txt"){
+	CameraConfig():cr("6_Configuration/CameraConfig.txt"){
 		loadConfig();
 	}
 

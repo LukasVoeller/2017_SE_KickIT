@@ -13,35 +13,63 @@ using namespace GenApi;
 
 int exitCode = 0;
 
-BallTrackerImpl::BallTrackerImpl() {
-	camera = new Camera();
-	startTracking();
-}
 
 BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->tableController = tci;
-	camera = new Camera();
+	this->camera = new Camera();
+	this->threshold = camera->threshold();
 	startTracking();
 
 }
-
-//void BallTrackerImpl::setTableController(TableControllerInterface* t) {
-
-//}
 
 BallTrackerImpl::~BallTrackerImpl() {
 
 }
 
-//Datei für Mittelpunkt-Koordinate des Balles
-void BallTrackerImpl::startTracking() {
-	CameraConfig* threshold = camera->threshold();
+void BallTrackerImpl::getBallPosition(){
+	Mat imgThresholded;
+	vector<Vec3f> circles;
+	int nz;
+	Mat* cv_img = camera->getImage();
+	Point Ballcenter(0, 0);
+	Mat imgHSV;
+	inRange(*cv_img, Scalar(threshold->blueLow, threshold->greenLow, threshold->redLow),
+			Scalar(threshold->blueHigh, threshold->greenHigh, threshold->redHigh), imgThresholded);
+	erode(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+	dilate(imgThresholded, imgThresholded, getStructuringElement(MORPH_ELLIPSE, Size(15, 15)));
+	vector<Point> nonzero;
+	nz = countNonZero(imgThresholded);
+	if (nz > 0 && nz < 500) {
+		//std::cout << nz << std::endl;
+		findNonZero(imgThresholded, nonzero);
+		Ballcenter = (nonzero.front() + nonzero.back());
+		Ballcenter.x = Ballcenter.x / 2;
+		Ballcenter.y = Ballcenter.y / 2;
+		if (abs(Ballcenter.y - lasty) < 2) {
+			Ballcenter.y = lasty;
+		}
+		if (abs(Ballcenter.x - lastx) < 2) {
+			Ballcenter.x = lastx;
+		}
+		//Draw the circle center
+		circle(*cv_img, Ballcenter, 3, Scalar(0, 255, 0), -1, 8, 0);
+		//Draw the circle outline
+		circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 
-	//Datei für Mittelpunkt-Koordinate des Balles
-	double lastx = 0;
-	double lasty = 0;
-	//sdfs
-	//Eigenschaften für Bildanalyse
+		if(abs(lastx-Ballcenter.x) > 16 || abs(lasty-Ballcenter.y) > 16){ // only send new position if it is different
+			lasty = Ballcenter.y;
+			lastx = Ballcenter.x;
+			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
+			std::cout << "new" << std::endl;
+		}
+	}
+	delete cv_img;
+
+}
+
+void BallTrackerImpl::startTracking() {
+
+
 	Mat imgThresholded;
 	vector<Vec3f> circles;
 	int nz;
@@ -91,16 +119,14 @@ void BallTrackerImpl::startTracking() {
 		}
 
 		//imshow("dif",dif);
-		//if(showImage) imshow("circles", *cv_img);
+		if(showImage) imshow("circles", *cv_img);
 
-		//if (cv::waitKey(30) == 27 && showImage) {
-			//cv::destroyWindow("circles");
+		if (cv::waitKey(30) == 27 && showImage) {
+			cv::destroyWindow("circles");
 			//showImage = false;
-		//}
-		delete cv_img;
+			delete cv_img;
+			return;
+		}
+		//delete cv_img;
 	}
 }
-
-//BallStatus* BallTrackerImpl::getBallStatus() {
-//	return new BallStatus();
-//}

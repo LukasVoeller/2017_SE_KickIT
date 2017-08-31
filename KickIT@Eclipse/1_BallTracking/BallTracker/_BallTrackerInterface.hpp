@@ -1,7 +1,7 @@
 #ifndef BALLTRACKERINTERFACE_HPP_
 #define BALLTRACKERINTERFACE_HPP_
 
-#include "../Camera/Camera.hpp"
+#include "../Camera/_CameraInterface.hpp"
 #include "../../5_DataType/BallStatus.hpp"
 #include "../../2_Control/TableControl/_TableControllerInterface.hpp"
 
@@ -11,11 +11,12 @@ public:
 		this->tableController = t;
 	}
 	virtual ~BallTrackerInterface(){}
-
-protected:
-	Camera* camera;
+	virtual void getBallPosition() = 0;
 	virtual void startTracking() = 0;
 
+protected:
+	CameraConfig* threshold;
+	CameraInterface* camera;
 	TableControllerInterface* tableController;
 };
 

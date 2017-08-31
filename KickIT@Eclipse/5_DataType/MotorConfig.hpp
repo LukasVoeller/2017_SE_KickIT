@@ -34,7 +34,7 @@ public:
 	int defenseBoundaryInwards;
 	int defenseBoundaryOutwards;
 
-	MotorConfig():cr("configuration/MotorConfig.txt"){
+	MotorConfig():cr("6_Configuration/MotorConfig.txt"){
 		loadConfig();
 	}
 
