@@ -16,7 +16,6 @@ protected:
 	void calibrate();
 	void getCameraSettings();
 	void setCameraSettings();
-	void cameraSettings();
 
 	CInstantCamera* camera;
 };

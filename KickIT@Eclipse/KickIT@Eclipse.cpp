@@ -1,9 +1,27 @@
-/********************************************************************************
+/*******************************************************************************************************
+ *
+ * KKKKKKKKK    KKKKKKK  iiii                      kkkkkkkk           IIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTT
+ * K:::::::K    K:::::K i::::i                     k::::::k           I::::::::IT:::::::::::::::::::::T
+ * K:::::::K    K:::::K  iiii                      k::::::k           I::::::::IT:::::::::::::::::::::T
+ * K:::::::K   K::::::K                            k::::::k           II::::::IIT:::::TT:::::::TT:::::T
+ * KK::::::K  K:::::KKKiiiiiii     cccccccccccccccc k:::::k    kkkkkkk  I::::I  TTTTTT  T:::::T  TTTTTT
+ *   K:::::K K:::::K   i:::::i   cc:::::::::::::::c k:::::k   k:::::k   I::::I          T:::::T
+ *   K::::::K:::::K     i::::i  c:::::::::::::::::c k:::::k  k:::::k    I::::I          T:::::T
+ *   K:::::::::::K      i::::i c:::::::cccccc:::::c k:::::k k:::::k     I::::I          T:::::T
+ *   K:::::::::::K      i::::i c::::::c     ccccccc k::::::k:::::k      I::::I          T:::::T
+ *   K::::::K:::::K     i::::i c:::::c              k:::::::::::k       I::::I          T:::::T
+ *   K:::::K K:::::K    i::::i c:::::c              k:::::::::::k       I::::I          T:::::T
+ * KK::::::K  K:::::KKK i::::i c::::::c     ccccccc k::::::k:::::k      I::::I          T:::::T
+ * K:::::::K   K::::::Ki::::::ic:::::::cccccc:::::ck::::::k k:::::k   II::::::II      TT:::::::TT
+ * K:::::::K    K:::::Ki::::::i c:::::::::::::::::ck::::::k  k:::::k  I::::::::I      T:::::::::T
+ * K:::::::K    K:::::Ki::::::i  cc:::::::::::::::ck::::::k   k:::::k I::::::::I      T:::::::::T
+ * KKKKKKKKK    KKKKKKKiiiiiiii    cccccccccccccccckkkkkkkk    kkkkkkkIIIIIIIIII      TTTTTTTTTTT ©2017
+ *
  * Software Engineering Projekt
  * Hochschule Osnabrueck, Sommersemester 2017
  *
  * Programmname      : KickIT
- * Version			 : 0.7.0-0001
+ * Version			 : 0.7.4-0001
  *
  * Authoren          : Lukas Voeller, Philip Baumgartner, Viktor Koschmann
  *
@@ -15,31 +33,27 @@
  * 					   OpenCV (v2)    - Ballerkennung
  *                     Pylon (v5.0.1) - Kamerabilddarstellung
  *
- * TODO              :
- *
- ********************************************************************************/
+ *******************************************************************************************************/
 
-//#include <BallTracking/BallTrackerInterface.hpp>
+#include "1_BallTracking/BallTracker/_BallTrackerInterface.hpp"
+#include "2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp"
+#include "2_Control/TableControl/_TableControllerInterface.hpp"
 #include "2_Control/TableControl/TableControllerMock.hpp"
+#include "2_Control/TableControl/TableControllerImpl.hpp"
 #include "3_VirtualKicker/VirtualKicker.hpp"
 #include "4_Utilities/Calculator.hpp"
 #include "4_Utilities/Modules.hpp"
 #include "5_DataType/MotorConfig.hpp"
 #include "5_DataType/TableConfig.hpp"
-#include "2_Control/TableControl/TableControllerImpl.hpp"
-#include <cstdlib>
 #include <QApplication>
-#include "1_BallTracking/BallTracker/_BallTrackerInterface.hpp"
-#include "2_Control/TableControl/_TableControllerInterface.hpp"
-#include "2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp"
+#include <cstdlib>
 
 #define MODE 4
 Modules* Modules::_instance = 0;
 TableControllerInterface* tci;
 BallTrackerImpl* bti;
 
-class FunctorFor_GetBallPosition
-{
+class FunctorFor_GetBallPosition {
     public:
 	FunctorFor_GetBallPosition () {}
         void operator() () {
@@ -53,33 +67,31 @@ int main(int argc, char** argv) {
 	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 
-//Virtual mode - Ball tracking and table control is simulated by the virtual kicker
-#if MODE == 1
+	//Virtual mode - Ball tracking and table control is simulated by the virtual kicker
+	#if MODE == 1
 
-	QApplication a(argc, argv);
-	tableController = VirtualKicker::getVirtualKickerTable();
-	return a.exec();
+		QApplication a(argc, argv);
+		tableController = VirtualKicker::getVirtualKickerTable();
+		return a.exec();
 
-#endif
+	#endif
 
-//Motor testing mode - The ball position is simulated with the GUI
-#if MODE == 2
-#endif
+	//Motor testing mode - The ball position is simulated with the GUI
+	#if MODE == 2
+	#endif
 
-//Balltracking testing mode - The table is simulated with the GUI
-#if MODE == 3
-#endif
+	//Balltracking testing mode - The table is simulated with the GUI
+	#if MODE == 3
+	#endif
 
-//Final mode - Ready to play!
-#if MODE == 4
-	QApplication a(argc, argv);
-	tci = new TableControllerImpl(VirtualKicker::getDisplay());
-	bti = new BallTrackerImpl(tci);
-	FunctorFor_GetBallPosition m;
-	while(1){
+	//Final mode - Ready to play!
+	#if MODE == 4
+		QApplication a(argc, argv);
+		tci = new TableControllerImpl(VirtualKicker::getDisplay());
+		bti = new BallTrackerImpl(tci);
+		FunctorFor_GetBallPosition m;
 		QTimer::singleShot(0, m);
-	}
 
-	return a.exec();
-#endif
+		return a.exec();
+	#endif
 }

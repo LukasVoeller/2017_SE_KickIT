@@ -1,16 +1,16 @@
-#ifndef BALLTRACKERINTERFACE_HPP_
-#define BALLTRACKERINTERFACE_HPP_
+#ifndef BALLTRACKERINTERFACE_HPP
+#define BALLTRACKERINTERFACE_HPP
 
-#include "../Camera/_CameraInterface.hpp"
-#include "../../5_DataType/BallStatus.hpp"
 #include "../../2_Control/TableControl/_TableControllerInterface.hpp"
+#include "../../5_DataType/BallStatus.hpp"
+#include "../Camera/_CameraInterface.hpp"
 
 class BallTrackerInterface {
 public:
-	void setTableController(TableControllerInterface* t){
+	void setTableController(TableControllerInterface* t) {
 		this->tableController = t;
 	}
-	virtual ~BallTrackerInterface(){}
+	virtual ~BallTrackerInterface() {}
 	virtual void getBallPosition() = 0;
 	virtual void startTracking() = 0;
 
@@ -20,4 +20,4 @@ protected:
 	TableControllerInterface* tableController;
 };
 
-#endif //BALLTRACKER_HPP_
+#endif //BALLTRACKER_HPP

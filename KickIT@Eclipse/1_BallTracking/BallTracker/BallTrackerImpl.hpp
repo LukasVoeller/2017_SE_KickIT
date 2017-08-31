@@ -9,7 +9,7 @@
 class BallTrackerImpl: public BallTrackerInterface {
 public:
 	BallTrackerImpl(TableControllerInterface* tci);
-	~BallTrackerImpl();	//Virtual?
+	~BallTrackerImpl();
 	BallStatus* getBallStatus();
 	void startTracking();
 	void getBallPosition();
