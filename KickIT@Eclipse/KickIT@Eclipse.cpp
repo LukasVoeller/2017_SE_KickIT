@@ -50,17 +50,7 @@
 
 #define MODE 4
 Modules* Modules::_instance = 0;
-TableControllerInterface* tci;
-BallTrackerImpl* bti;
 
-class FunctorFor_GetBallPosition {
-    public:
-	FunctorFor_GetBallPosition () {}
-        void operator() () {
-        	std::cout << "sijdfhskjdfgh" << std::endl;
-        	bti->getBallPosition();
-        }
-};
 
 int main(int argc, char** argv) {
 
@@ -87,11 +77,15 @@ int main(int argc, char** argv) {
 	//Final mode - Ready to play!
 	#if MODE == 4
 		QApplication a(argc, argv);
-		tci = new TableControllerImpl(VirtualKicker::getDisplay());
-		bti = new BallTrackerImpl(tci);
-		FunctorFor_GetBallPosition m;
-		QTimer::singleShot(0, m);
+
+		VirtualKickerWindow* vkw = VirtualKicker::getDisplay();
+
+		TableControllerImpl* tci = new TableControllerImpl(vkw);
+		BallTrackerImpl* bti = new BallTrackerImpl(tci);
+
+		QObject::connect(tci, SIGNAL(newBallStatus(BallStatus bs)), vkw, SLOT(newBallStatus(BallStatus bs)));
 
 		return a.exec();
+
 	#endif
 }

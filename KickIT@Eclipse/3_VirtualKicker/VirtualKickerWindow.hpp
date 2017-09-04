@@ -13,13 +13,14 @@
 
 class VirtualKickerWindow: public QWidget {
 
+
 public:
 	VirtualKickerWindow();
 	void paintEvent(QPaintEvent *event);
 	void mouseMoveEvent(QMouseEvent* e);
 	void mouseReleaseEvent(QMouseEvent* e);
 	void setTableController(TableControllerInterface* t);
-	void newBallStatus(BallStatus bs);
+
 
 	int WINDOW_SIZE_X = 1024;
 	int WINDOW_SIZE_Y = 768;
@@ -32,6 +33,9 @@ public:
 	double GOAL_SIZE;
 	double GOAL_TO_KEEPER;
 	double GOAL_TO_DEFENSE;
+
+public slots:
+	void newBallStatus(BallStatus bs);
 
 protected:
 	TableConfig tconf;

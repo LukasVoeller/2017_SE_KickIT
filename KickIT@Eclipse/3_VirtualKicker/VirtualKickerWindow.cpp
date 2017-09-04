@@ -30,11 +30,9 @@ VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 }
 
 void VirtualKickerWindow::newBallStatus(BallStatus bs){
-	std::cout << keeperBar->dx() << std::endl;
-	this->ball->setX(bs.movement.x / this->SCALE);
-	std::cout << "fsdfsd" << std::endl;
-	this->ball->setY(bs.movement.y / this->SCALE);
-	std::cout << "fsdfsd" << std::endl;
+	this->ball->setX(bs.position.x / this->SCALE);
+	this->ball->setY(bs.position.y / this->SCALE);
+	repaint();
 }
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {

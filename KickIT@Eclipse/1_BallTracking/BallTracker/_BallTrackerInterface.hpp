@@ -4,6 +4,7 @@
 #include "../../2_Control/TableControl/_TableControllerInterface.hpp"
 #include "../../5_DataType/BallStatus.hpp"
 #include "../Camera/_CameraInterface.hpp"
+#include "../../5_DataType/Vec2.hpp"
 
 class BallTrackerInterface {
 public:
@@ -11,7 +12,7 @@ public:
 		this->tableController = t;
 	}
 	virtual ~BallTrackerInterface() {}
-	virtual void getBallPosition() = 0;
+	virtual Vec2 getBallPosition() = 0;
 	virtual void startTracking() = 0;
 
 protected:

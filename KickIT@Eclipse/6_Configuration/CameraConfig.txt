@@ -7,9 +7,9 @@
 
 int redLow 0
 int redHigh 255
-int greenLow 141
+int greenLow 160
 int greenHigh 255
-int blueLow 97
+int blueLow 104
 int blueHigh 255
 int width 656						# number has to be divisible by 2
 int height 402						# number has to be divisible by 2

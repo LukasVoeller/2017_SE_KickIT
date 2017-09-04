@@ -5,6 +5,7 @@
 #include "../1_BallTracking/BallTracker/_BallTrackerInterface.hpp"
 #include "../1_BallTracking/BallTracker/BallTrackerImpl.hpp"
 #include "../2_Control/TableControl/_TableControllerInterface.hpp"
+#include <QThread>
 
 using namespace std;
 
@@ -29,9 +30,12 @@ public:
 	}
 
 	static VirtualKickerWindow* getDisplay(){
+		QThread* th = new QThread();
 		VirtualKickerWindow* vkw = new VirtualKickerWindow();
-		//vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
+		vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
 		vkw->setFixedSize(1200, 800);
+		//vkw->moveToThread(th);
+		//th->start();
 		vkw->show();
 		return vkw;
 	}

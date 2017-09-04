@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <math.h>
+#include <QThread>
 
 using namespace cv;
 using namespace std;
@@ -15,14 +16,20 @@ BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->tableController = tci;
 	this->camera = new Camera();
 	this->threshold = camera->threshold();
+	//startTracking();
+
+	QThread* th = new QThread();
+	this->moveToThread(th);
+	th->start();
 	startTracking();
+
 }
 
 BallTrackerImpl::~BallTrackerImpl() {
 
 }
 
-void BallTrackerImpl::getBallPosition() {
+Vec2 BallTrackerImpl::getBallPosition() {
 	Mat* cv_img = camera->getImage();
 	Mat imgThresholded;
 	Mat imgHSV;
@@ -65,7 +72,7 @@ void BallTrackerImpl::getBallPosition() {
 			lasty = Ballcenter.y;
 			lastx = Ballcenter.x;
 			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
-			std::cout << "new" << std::endl;
+			//std::cout << "new" << std::endl;
 		}
 	}
 

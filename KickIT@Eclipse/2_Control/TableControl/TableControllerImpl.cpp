@@ -40,7 +40,8 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	//std::cout << "after ptm " << "x: " << v.x << " y: " << v.y << std::endl;
 	ballStatus.update(v.x, v.y);		//Ballposition from now on in milimeters
 
-	this->vkw->newBallStatus(ballStatus);
+	//emit(newBallStatus(ballStatus));
+	vkw->newBallStatus(ballStatus);
 
 	//Check if ball is in the right position for some shots
 	std::vector<void*> calcParams;

@@ -3,16 +3,20 @@
 
 #include "../../1_BallTracking/Camera/Camera.hpp"
 #include "../../2_Control/TableControl/_TableControllerInterface.hpp"
-#include "../../5_DataType/BallStatus.hpp"
-#include "_BallTrackerInterface.hpp"
 
-class BallTrackerImpl: public BallTrackerInterface {
+#include "_BallTrackerInterface.hpp"
+#include <QObject>
+
+class BallTrackerImpl: public QObject, public BallTrackerInterface  {
+	Q_OBJECT
+
 public:
 	BallTrackerImpl(TableControllerInterface* tci);
 	~BallTrackerImpl();
-	BallStatus* getBallStatus();
+	Vec2 getBallPosition();
 	void startTracking();
-	void getBallPosition();
+
+
 
 protected:
 	bool showImage = true;
