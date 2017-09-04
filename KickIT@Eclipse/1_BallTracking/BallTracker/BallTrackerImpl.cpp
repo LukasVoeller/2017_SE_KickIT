@@ -18,11 +18,6 @@ BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->threshold = camera->threshold();
 	//startTracking();
 
-	QThread* th = new QThread();
-	this->moveToThread(th);
-	th->start();
-	startTracking();
-
 }
 
 BallTrackerImpl::~BallTrackerImpl() {
@@ -130,13 +125,13 @@ void BallTrackerImpl::startTracking() {
 			}
 		}
 
-		if (showImage) {
-			imshow("circles", *cv_img);
-		}
-		if (cv::waitKey(30) == 27 && showImage) {
-			cv::destroyWindow("circles");
-			delete cv_img;
-			return;
-		}
+		//if (showImage) {
+			//imshow("circles", *cv_img);
+		//}
+		//if (cv::waitKey(30) == 27 && showImage) {
+			//cv::destroyWindow("circles");
+			//delete cv_img;
+			//return;
+		//}
 	}
 }

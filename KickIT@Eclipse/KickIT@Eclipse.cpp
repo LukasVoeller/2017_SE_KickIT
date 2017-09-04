@@ -77,14 +77,14 @@ int main(int argc, char** argv) {
 	//Final mode - Ready to play!
 	#if MODE == 4
 		QApplication a(argc, argv);
-
 		VirtualKickerWindow* vkw = VirtualKicker::getDisplay();
-
 		TableControllerImpl* tci = new TableControllerImpl(vkw);
 		BallTrackerImpl* bti = new BallTrackerImpl(tci);
-
-		QObject::connect(tci, SIGNAL(newBallStatus(BallStatus bs)), vkw, SLOT(newBallStatus(BallStatus bs)));
-
+		QThread* th = new QThread();
+		bti->moveToThread(th);
+		th->start();
+		QObject::connect(th, SIGNAL (started()), bti, SLOT (trackingSlot()));
+		//QObject::connect(tci, SIGNAL(newBallStatus(BallStatus bs)), vkw, SLOT(newBallStatus(BallStatus bs)));
 		return a.exec();
 
 	#endif

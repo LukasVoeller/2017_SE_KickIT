@@ -30,10 +30,15 @@ VirtualKickerWindow::VirtualKickerWindow() : tc(NULL) {
 }
 
 void VirtualKickerWindow::newBallStatus(BallStatus bs){
-	this->ball->setX(bs.position.x / this->SCALE);
-	this->ball->setY(bs.position.y / this->SCALE);
+	this->ball->setX(bs.position.x / this->SCALE + TABLE_MARGIN);
+	this->ball->setY(bs.position.y / this->SCALE + TABLE_MARGIN);
 	repaint();
 }
+
+/*void VirtualKickerWindow::setKeeper(float pos){
+
+	repaint();
+}*/
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	QPainter painter(this);

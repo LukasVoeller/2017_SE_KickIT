@@ -36,6 +36,10 @@ public:
 
 public slots:
 	void newBallStatus(BallStatus bs);
+	/*void setKeeper(float pos);
+	void setDefense(float pos);
+	void setMidfield(float pos);
+	void setSetOffense(float pos);*/
 
 protected:
 	TableConfig tconf;

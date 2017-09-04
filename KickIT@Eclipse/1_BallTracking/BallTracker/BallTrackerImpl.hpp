@@ -16,6 +16,10 @@ public:
 	Vec2 getBallPosition();
 	void startTracking();
 
+public slots:
+	void trackingSlot(){
+		this->startTracking();
+	}
 
 
 protected:
