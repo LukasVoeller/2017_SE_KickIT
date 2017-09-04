@@ -111,6 +111,12 @@ public:
 	bool equals(const Vec2 v){
 		return this->x == v.x && this->y == v.y;
 	}
+
+	void setLength(float millimetersPerSecond){
+		float factor = millimetersPerSecond/this->length();
+		this->x *= factor;
+		this->y *= factor;
+	}
 };
 
 #endif /* VEC2_HPP_ */

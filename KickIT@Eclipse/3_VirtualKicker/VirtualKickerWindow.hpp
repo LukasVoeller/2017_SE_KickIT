@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <vector>
 #include <QtGui>
+#include <QLabel>
 #include <Qt>
 
 #include "../5_DataType/BallStatus.hpp"
@@ -15,7 +16,7 @@ class VirtualKickerWindow: public QWidget {
 
 
 public:
-	VirtualKickerWindow();
+	VirtualKickerWindow(bool showLines, bool drawBallPositionWithMouse);
 	void paintEvent(QPaintEvent *event);
 	void mouseMoveEvent(QMouseEvent* e);
 	void mouseReleaseEvent(QMouseEvent* e);
@@ -33,13 +34,10 @@ public:
 	double GOAL_SIZE;
 	double GOAL_TO_KEEPER;
 	double GOAL_TO_DEFENSE;
+	double BALLDIAMETER;
 
 public slots:
 	void newBallStatus(BallStatus bs);
-	/*void setKeeper(float pos);
-	void setDefense(float pos);
-	void setMidfield(float pos);
-	void setSetOffense(float pos);*/
 
 protected:
 	TableConfig tconf;
@@ -54,8 +52,16 @@ protected:
 	QLine* defenseBar;
 	QPoint* defense[2];
 
+	QLine* ballMovementVector;
+
 	std::vector<QPoint*> mouseTrail;
 	QPoint* ball;
+
+	QLabel* speedDisplay;
+
+
+	bool showRows;
+	bool drawBallPositionWithMouse;
 };
 
 #endif //VIRTUALKICKERWINDOW_HPP

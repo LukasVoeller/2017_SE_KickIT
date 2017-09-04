@@ -110,7 +110,7 @@ protected:
 		int retval = write(socketId, frame, sizeof(struct can_frame));
 
 		if (retval != sizeof(struct can_frame)) {
-			std::cout << "write failed port!" << std::endl;
+			//std::cout << "write failed port!" << std::endl;
 			return -1;
 		}
 

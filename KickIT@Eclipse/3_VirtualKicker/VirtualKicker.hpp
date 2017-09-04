@@ -17,7 +17,7 @@ public:
 
 	static TableControllerInterface* getVirtualKickerTable() {
 
-		VirtualKickerWindow* vkw = new VirtualKickerWindow();
+		VirtualKickerWindow* vkw = new VirtualKickerWindow(true, true);
 		TableControllerMock* tcm = new TableControllerMock();
 
 		tcm->setKickerWindow(vkw);
@@ -31,7 +31,7 @@ public:
 
 	static VirtualKickerWindow* getDisplay(){
 		QThread* th = new QThread();
-		VirtualKickerWindow* vkw = new VirtualKickerWindow();
+		VirtualKickerWindow* vkw = new VirtualKickerWindow(false, false);
 		vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
 		vkw->setFixedSize(1200, 800);
 		//vkw->moveToThread(th);
