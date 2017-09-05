@@ -12,8 +12,8 @@ using namespace std;
 class VirtualKicker {
 
 public:
-	static const int WINDOW_SIZE_X = 1024;
-	static const int WINDOW_SIZE_Y = 768;
+	static const int WINDOW_SIZE_X = 1200;
+	static const int WINDOW_SIZE_Y = 800;
 
 	static TableControllerInterface* getVirtualKickerTable() {
 
@@ -30,12 +30,15 @@ public:
 	}
 
 	static VirtualKickerWindow* getDisplay(){
-		QThread* th = new QThread();
+		QLabel* sd = new QLabel();
+		sd->setMargin(20);
+		QFont f( "Arial", 30, QFont::Bold);
+		sd->setFont(f);
+		sd->setFixedSize(500, 100);
 		VirtualKickerWindow* vkw = new VirtualKickerWindow(false, false);
+		vkw->speedDisplay = sd;
 		vkw->setFixedSize(WINDOW_SIZE_X, WINDOW_SIZE_Y);
-		vkw->setFixedSize(1200, 800);
-		//vkw->moveToThread(th);
-		//th->start();
+		vkw->move(200, 200);
 		vkw->show();
 		return vkw;
 	}

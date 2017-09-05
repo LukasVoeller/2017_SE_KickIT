@@ -20,6 +20,7 @@ public:
 	void paintEvent(QPaintEvent *event);
 	void mouseMoveEvent(QMouseEvent* e);
 	void mouseReleaseEvent(QMouseEvent* e);
+	void keyPressEvent(QKeyEvent * event);
 	void setTableController(TableControllerInterface* t);
 
 
@@ -35,6 +36,8 @@ public:
 	double GOAL_TO_KEEPER;
 	double GOAL_TO_DEFENSE;
 	double BALLDIAMETER;
+
+	QLabel* speedDisplay;
 
 public slots:
 	void newBallStatus(BallStatus bs);
@@ -57,11 +60,10 @@ protected:
 	std::vector<QPoint*> mouseTrail;
 	QPoint* ball;
 
-	QLabel* speedDisplay;
-
-
 	bool showRows;
 	bool drawBallPositionWithMouse;
+	float vMax;
+	clock_t last_ball_update;
 };
 
 #endif //VIRTUALKICKERWINDOW_HPP

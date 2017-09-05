@@ -54,7 +54,7 @@ namespace Calculator {
 	static void calcIfKickSimple(std::vector<void*>* params) {
 		BallStatus* bs = ((BallStatus*)params->at(0));
 		bool* kick = ((bool*)params->at(3));
-		if(bs->position.x < 557 && bs->position.x > 180 && bs->movement.x < 0){
+		if(bs->position.x < 350 && bs->position.x > 180 && bs->movement.x < 0){
 			kick[0] = true;
 		} else {
 			kick[0] = false;

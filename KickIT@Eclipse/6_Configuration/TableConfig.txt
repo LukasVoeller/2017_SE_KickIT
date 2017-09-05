@@ -20,7 +20,7 @@ int distGoalToMidfield 0						#
 int distGoalToOffense 0							#
 int offsetTopSideKeeper 327						#the distance between the topmost kicker-figure and the edge of the playing-field
 int offsetBottomSideKeeper 0					#the distance between the lowermost kicker-figure and the edge of the playing-field (on the motor side)
-int offsetTopSideDefense 73						#
+int offsetTopSideDefense 50						#
 int offsetBottomSideDefense 315					#
 int offsetTopSideMidfield 0						#
 int offsetBottomSideMidfield 0					#
