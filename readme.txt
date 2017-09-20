@@ -109,3 +109,13 @@ STRIP         = strip
 	Danach:
 		Strg+O
 		Strg+X
+		
+9. DOXYGEN IN ECLIPSE INSTALLIEREN
+	Download "A binary distribution for Linux x86-64"
+	unter: http://www.stack.nl/%7Edimitri/doxygen/download.html
+
+	In Konsole ausführen:
+	tar -xzvf doxygen-1.8.8.linux.bin.tar.gz
+	In den erzeugten Ordner navigieren
+	./configure
+	make install
