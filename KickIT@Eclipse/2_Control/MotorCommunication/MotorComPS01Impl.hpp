@@ -1,3 +1,7 @@
+/**
+ * @file MotorComPS01Impl.hpp
+ * @brief
+ */
 #ifndef MOTORCOM_IMPL_PS01_HPP
 #define MOTORCOM_IMPL_PS01_HPP
 
@@ -12,13 +16,26 @@
 #include "../../5_DataType/RowEnum.hpp"
 #include "_MotorCommunicatorInterface.hpp"
 
+/**MotorComPS01Impl class
+ *
+ */
 class MotorComPS01Impl: public MotorCommunicatorInterface {
 
 public:
+	/**MotorComPS01Impl constructor
+	 * @param Row r
+	 */
 	MotorComPS01Impl(Row r);
+
+	/**linearMovement function
+	 * @param int position
+	 */
 	void linearMovement(int position);
 
 protected:
+	/**driverInit function
+	 *
+	 */
 	void driverInit();
 };
 

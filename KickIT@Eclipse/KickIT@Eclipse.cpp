@@ -51,9 +51,7 @@
 #define MODE 4
 Modules* Modules::_instance = 0;
 
-
 int main(int argc, char** argv) {
-
 	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 

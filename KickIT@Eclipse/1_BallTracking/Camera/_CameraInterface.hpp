@@ -1,3 +1,7 @@
+/**
+ * @file CameraInterface.hpp
+ * @brief
+ */
 #ifndef CameraInterface_HPP
 #define CameraInterface_HPP
 
@@ -11,15 +15,41 @@
 
 using namespace Pylon;
 
+/**CameraInterface class
+ *
+ */
 class CameraInterface {
 public:
+	/**CameraInterface destructor
+	 *
+	 */
 	virtual ~CameraInterface() {}
+
+	/**Mat* getImage function
+	 *
+	 */
 	virtual cv::Mat* getImage() = 0;
+
+	/**threshold
+	 *
+	 */
 	virtual CameraConfig* threshold() = 0;
 
 protected:
+	/**calibrate function
+	 * wird nicht verwendet
+	 *
+	 */
 	virtual void calibrate() = 0;
+
+	/**getCameraSettings
+	 *
+	 */
 	virtual void getCameraSettings() = 0;
+
+	/**setCameraSettings
+	 *
+	 */
 	virtual void setCameraSettings() = 0;
 };
 

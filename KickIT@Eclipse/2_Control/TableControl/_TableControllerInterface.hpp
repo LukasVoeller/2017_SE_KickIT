@@ -1,3 +1,7 @@
+/**
+ * @file TableControllerInterface.hpp
+ * @brief
+ */
 #ifndef INTERFACETABLECONTROLLER_HPP
 #define INTERFACETABLECONTROLLER_HPP
 
@@ -12,10 +16,21 @@
 #include "../../5_DataType/CameraConfig.hpp"
 #include "../../5_DataType/TableConfig.hpp"
 
+/**TableControllerInterface class
+ *
+ */
 class TableControllerInterface {
 
 public:
+	/**setBallPos function
+	 * @param float x, float y
+	 *
+	 */
 	virtual void setBallPos(float x, float y) = 0;
+
+	/**TableControllerInterface destructor
+	 *
+	 */
 	virtual ~TableControllerInterface() {
 		delete this->keeperControl;
 		delete this->defenseControl;
@@ -23,6 +38,9 @@ public:
 		delete this->offenseControl;
 	}
 
+	/**motorByHand function
+	 *
+	 */
 	void motorByHand() {
 		std::cout << "MOTOR BY HAND" << std::endl;
 
@@ -84,6 +102,13 @@ protected:
 	RowControllerInterface* midfieldControl;
 	RowControllerInterface* offenseControl;
 
+	/**PixelToMM function
+	 * @param float xPixel, float yPixel
+	 * @return result
+	 *
+	 * the function gets pixes as a parameter and converts it into milimeters
+	 *
+	 */
 	virtual Vec2 pixelToMM(float xPixel, float yPixel) = 0;
 
 	/*Backup

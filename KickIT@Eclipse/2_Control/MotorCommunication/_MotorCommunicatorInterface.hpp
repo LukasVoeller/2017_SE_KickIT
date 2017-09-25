@@ -1,3 +1,7 @@
+/**
+ * @file MotorCommunicatorInterface.hpp
+ * @brief
+ */
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
 
@@ -15,11 +19,23 @@
 #include "../../5_DataType/MotorConfig.hpp"
 #include "../../5_DataType/RowEnum.hpp"
 
+/**MotorCommunicatorInterface class
+ *
+ */
 class MotorCommunicatorInterface {
 
 public:
+	/**linearMovement finction
+	 * @param int position
+	 */
 	virtual void linearMovement(int position) = 0;
+	/**rotate function
+	 * @param int amount
+	 */
 	virtual void rotate(int amount){};
+	/**MotorCommunicatorInterface destructor
+	 *
+	 */
 	virtual ~MotorCommunicatorInterface() {}
 
 
@@ -31,18 +47,31 @@ protected:
 	char nibbleTranslational = 1;
 	char nibbleRotary = 1;
 
+	/**driverInit function
+	 *
+	 */
 	virtual void driverInit() = 0;
 
+	/**switchedNibbleT function
+	 *
+	 */
 	int switchedNibbleT() {
 		nibbleTranslational = !nibbleTranslational;
 		return nibbleTranslational;
 	}
 
+
+	/**switchedNibbleR function
+	 *@return nibbleRotary
+	 */
 	int switchedNibbleR() {
 		nibbleRotary = !nibbleRotary;
 		return nibbleRotary;
 	}
 
+	/**openPort function
+	 * @return 0 or return -1
+	 */
 	int openPort() {
 		struct ifreq ifr;
 		struct sockaddr_can addr;
@@ -72,6 +101,9 @@ protected:
 		return 0;
 	}
 
+	/**frameInit function
+	 * @param
+	 */
 	void frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2,
 			int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) {
 		openPort();
@@ -106,6 +138,10 @@ protected:
 		*/
 	}
 
+	/**sendPort function
+	 * @param struct can_frame *frame
+	 * @return 0 or return -1
+	 */
 	int sendPort(struct can_frame *frame) {
 		int retval = write(socketId, frame, sizeof(struct can_frame));
 
@@ -117,6 +153,9 @@ protected:
 		return 0;
 	}
 
+	/**closePort funktion
+	 *
+	 */
 	void closePort() {
 		close(this->socketId);
 	}
