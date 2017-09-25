@@ -40,7 +40,7 @@ public:
 
 protected:
 	void calibrate();
-	/**gerCameraSettings
+	/**getCameraSettings
 	 * function gives the adjusted values of the camera
 	 */
 	void getCameraSettings();
