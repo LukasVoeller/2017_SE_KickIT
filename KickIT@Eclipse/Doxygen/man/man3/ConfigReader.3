@@ -1,0 +1,87 @@
+.TH "ConfigReader" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ConfigReader\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConfigReader\fP (const char *\fBfilename\fP)"
+.br
+.ti -1c
+.RI "std::string \fBgetStringValue\fP (const char *name)"
+.br
+.ti -1c
+.RI "int \fBgetIntValue\fP (const char *name)"
+.br
+.ti -1c
+.RI "void \fBsetStringValue\fP (const char *name, const char *value)"
+.br
+.ti -1c
+.RI "void \fBsetIntValue\fP (const char *name, const int value)"
+.br
+.ti -1c
+.RI "void \fBwriteOut\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadFile\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBfilename\fP"
+.br
+.ti -1c
+.RI "bool \fBvalueChanged\fP = false"
+.br
+.ti -1c
+.RI "std::map< std::string, int > \fBvalues\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::string > \fBstrings\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConfigReader::ConfigReader (const char * filename)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int ConfigReader::getIntValue (const char * name)"
+
+.SS "std::string ConfigReader::getStringValue (const char * name)"
+
+.SS "void ConfigReader::readFile ()\fC [protected]\fP"
+
+.SS "void ConfigReader::setIntValue (const char * name, const int value)"
+
+.SS "void ConfigReader::setStringValue (const char * name, const char * value)"
+
+.SS "void ConfigReader::writeOut ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* ConfigReader::filename\fC [protected]\fP"
+
+.SS "std::map<std::string, std::string> ConfigReader::strings\fC [protected]\fP"
+
+.SS "bool ConfigReader::valueChanged = false\fC [protected]\fP"
+
+.SS "std::map<std::string, int> ConfigReader::values\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

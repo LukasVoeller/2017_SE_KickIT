@@ -1,0 +1,69 @@
+.TH "BallTrackerInterface" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BallTrackerInterface \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <_BallTrackerInterface\&.hpp>\fP
+.PP
+Inherited by \fBBallTrackerImpl\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetTableController\fP (\fBTableControllerInterface\fP *t)"
+.br
+.ti -1c
+.RI "virtual \fB~BallTrackerInterface\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBVec2\fP \fBgetBallPosition\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBstartTracking\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraConfig\fP * \fBthreshold\fP"
+.br
+.ti -1c
+.RI "\fBCameraInterface\fP * \fBcamera\fP"
+.br
+.ti -1c
+.RI "\fBTableControllerInterface\fP * \fBtableController\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual BallTrackerInterface::~BallTrackerInterface ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBVec2\fP BallTrackerInterface::getBallPosition ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBBallTrackerImpl\fP\&.
+.SS "void BallTrackerInterface::setTableController (\fBTableControllerInterface\fP * t)\fC [inline]\fP"
+
+.SS "virtual void BallTrackerInterface::startTracking ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBBallTrackerImpl\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCameraInterface\fP* BallTrackerInterface::camera\fC [protected]\fP"
+
+.SS "\fBTableControllerInterface\fP* BallTrackerInterface::tableController\fC [protected]\fP"
+
+.SS "\fBCameraConfig\fP* BallTrackerInterface::threshold\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

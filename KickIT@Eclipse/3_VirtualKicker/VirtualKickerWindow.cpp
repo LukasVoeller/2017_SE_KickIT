@@ -12,7 +12,7 @@ VirtualKickerWindow::VirtualKickerWindow(bool showRows, bool drawBallPositionWit
 	TABLE_MARGIN = 60;
 	TABLE_HEIGHT = tconf.tableHeight * SCALE;
 	TABLE_WIDTH = tconf.tableWidth * SCALE;
-	GOAL_SIZE = 300;
+	GOAL_SIZE = 150;
 	GOAL_TO_KEEPER = tconf.distGoalToKeeper * SCALE;
 	GOAL_TO_DEFENSE = tconf.distGoalToDefense * SCALE;
 	ball = new QPoint();
@@ -52,7 +52,7 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	QPen myPen(Qt::black, 2, Qt::SolidLine);
 	painter.setPen(myPen);
 	//Goal
-	painter.drawRect(topLeft->x() - 30, topLeft->y() + this->TABLE_HEIGHT / 2 - this->GOAL_SIZE / 2, 30, this->GOAL_SIZE / 2);
+	painter.drawRect(topLeft->x() - 30, topLeft->y() + this->TABLE_HEIGHT / 2 - this->GOAL_SIZE / 2, 30, this->GOAL_SIZE);
 	//Table
 	painter.drawRect(topLeft->x(), topLeft->y(), this->TABLE_WIDTH, this->TABLE_HEIGHT);
 

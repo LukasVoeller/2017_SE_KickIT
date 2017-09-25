@@ -32,7 +32,7 @@ void RowControllerDefense::kick(int amount){
 }
 
 void RowControllerDefense::kickThread(){
-	mcomm->rotate(-2);
+	mcomm->rotate(-3);
 	usleep(50000);
 	mcomm->rotate(0);
 	this->isShooting = false;

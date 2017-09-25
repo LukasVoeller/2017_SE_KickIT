@@ -18,10 +18,10 @@ int distGoalToKeeper 35							#these are important for calculating the intersect
 int distGoalToDefense 185						#of the ball-line with a particular row
 int distGoalToMidfield 0						#
 int distGoalToOffense 0							#
-int offsetTopSideKeeper 327						#the distance between the topmost kicker-figure and the edge of the playing-field
+int offsetTopSideKeeper 310						#the distance between the topmost kicker-figure and the edge of the playing-field
 int offsetBottomSideKeeper 0					#the distance between the lowermost kicker-figure and the edge of the playing-field (on the motor side)
-int offsetTopSideDefense 50						#
-int offsetBottomSideDefense 315					#
+int offsetTopSideDefense 70						#
+int offsetBottomSideDefense 335					#
 int offsetTopSideMidfield 0						#
 int offsetBottomSideMidfield 0					#
 int offsetTopSideOffense 0						#

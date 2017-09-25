@@ -1,0 +1,6 @@
+<map id="RowControllerInterface" name="RowControllerInterface">
+<area shape="rect" id="node2" href="$class_row_controller_defense.html" title="RowControllerDefense" alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$class_row_controller_keeper.html" title="RowControllerKeeper" alt="" coords="184,80,331,107"/>
+<area shape="rect" id="node4" href="$class_row_controller_midfield.html" title="RowControllerMidfield" alt="" coords="355,80,506,107"/>
+<area shape="rect" id="node5" href="$class_row_controller_offense.html" title="RowControllerOffense" alt="" coords="530,80,681,107"/>
+</map>

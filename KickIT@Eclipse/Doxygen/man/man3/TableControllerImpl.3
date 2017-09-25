@@ -1,0 +1,64 @@
+.TH "TableControllerImpl" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TableControllerImpl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TableControllerImpl\&.hpp>\fP
+.PP
+Inherits QObject, and \fBTableControllerInterface\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBnewBallStatus\fP (\fBBallStatus\fP bs)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTableControllerImpl\fP (\fBVirtualKickerWindow\fP *\fBvkw\fP)"
+.br
+.ti -1c
+.RI "void \fBsetBallPos\fP (float x, float y)"
+.br
+.ti -1c
+.RI "\fBVec2\fP \fBpixelToMM\fP (float xPixel, float yPixel)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVirtualKickerWindow\fP * \fBvkw\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TableControllerImpl::TableControllerImpl (\fBVirtualKickerWindow\fP * vkw)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void TableControllerImpl::newBallStatus (\fBBallStatus\fP bs)\fC [signal]\fP"
+
+.SS "\fBVec2\fP TableControllerImpl::pixelToMM (float xPixel, float yPixel)\fC [virtual]\fP"
+
+.PP
+Implements \fBTableControllerInterface\fP\&.
+.SS "void TableControllerImpl::setBallPos (float x, float y)\fC [virtual]\fP"
+
+.PP
+Implements \fBTableControllerInterface\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVirtualKickerWindow\fP* TableControllerImpl::vkw\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

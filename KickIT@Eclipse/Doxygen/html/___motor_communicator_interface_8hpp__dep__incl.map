@@ -1,0 +1,27 @@
+<map id="2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp" name="2_Control/MotorCommunication/_MotorCommunicatorInterface.hpp">
+<area shape="rect" id="node2" href="$___row_controller_interface_8hpp.html" title="2_Control/RowControl\l/_RowControllerInterface.hpp" alt="" coords="1224,95,1416,136"/>
+<area shape="rect" id="node8" href="$_kick_i_t_0D_eclipse_8cpp.html" title="KickIT@Eclipse.cpp" alt="" coords="233,541,375,568"/>
+<area shape="rect" id="node23" href="$_motor_com_p_s01_impl_8hpp.html" title="2_Control/MotorCommunication\l/MotorComPS01Impl.hpp" alt="" coords="1978,95,2185,136"/>
+<area shape="rect" id="node25" href="$_motor_com_r_s01_impl_8hpp.html" title="2_Control/MotorCommunication\l/MotorComRS01Impl.hpp" alt="" coords="1497,95,1703,136"/>
+<area shape="rect" id="node3" href="$___table_controller_interface_8hpp.html" title="2_Control/TableControl\l/_TableControllerInterface.hpp" alt="" coords="485,184,683,225"/>
+<area shape="rect" id="node15" href="$_row_controller_defense_8hpp.html" title="2_Control/RowControl\l/RowControllerDefense.hpp" alt="" coords="1379,184,1562,225"/>
+<area shape="rect" id="node17" href="$_row_controller_keeper_8hpp.html" title="2_Control/RowControl\l/RowControllerKeeper.hpp" alt="" coords="1638,184,1813,225"/>
+<area shape="rect" id="node19" href="$_row_controller_midfield_8hpp.html" title="2_Control/RowControl\l/RowControllerMidfield.hpp" alt="" coords="972,184,1151,225"/>
+<area shape="rect" id="node21" href="$_row_controller_offense_8hpp.html" title="2_Control/RowControl\l/RowControllerOffense.hpp" alt="" coords="1175,184,1355,225"/>
+<area shape="rect" id="node4" href="$___ball_tracker_interface_8hpp.html" title="1_BallTracking/BallTracker\l/_BallTrackerInterface.hpp" alt="" coords="647,273,825,315"/>
+<area shape="rect" id="node5" href="$_ball_tracker_impl_8hpp.html" title="1_BallTracking/BallTracker\l/BallTrackerImpl.hpp" alt="" coords="647,363,825,404"/>
+<area shape="rect" id="node7" href="$_virtual_kicker_8hpp.html" title="3_VirtualKicker/VirtualKicker.hpp" alt="" coords="341,459,555,486"/>
+<area shape="rect" id="node10" href="$_virtual_kicker_window_8hpp.html" title="3_VirtualKicker/VirtualKicker\lWindow.hpp" alt="" coords="313,273,501,315"/>
+<area shape="rect" id="node6" href="$_ball_tracker_impl_8cpp.html" title="1_BallTracking/BallTracker\l/BallTrackerImpl.cpp" alt="" coords="805,452,984,493"/>
+<area shape="rect" id="node9" href="$moc___ball_tracker_impl_8cpp.html" title="build/moc_BallTrackerImpl.cpp" alt="" coords="579,459,781,486"/>
+<area shape="rect" id="node11" href="$_table_controller_impl_8hpp.html" title="2_Control/TableControl\l/TableControllerImpl.hpp" alt="" coords="306,363,470,404"/>
+<area shape="rect" id="node14" href="$_virtual_kicker_window_8cpp.html" title="3_VirtualKicker/VirtualKicker\lWindow.cpp" alt="" coords="94,363,282,404"/>
+<area shape="rect" id="node12" href="$_table_controller_impl_8cpp.html" title="2_Control/TableControl\l/TableControllerImpl.cpp" alt="" coords="1133,452,1297,493"/>
+<area shape="rect" id="node13" href="$moc___table_controller_impl_8cpp.html" title="build/moc_TableController\lImpl.cpp" alt="" coords="93,452,267,493"/>
+<area shape="rect" id="node16" href="$_row_controller_defense_8cpp.html" title="2_Control/RowControl\l/RowControllerDefense.cpp" alt="" coords="1509,273,1691,315"/>
+<area shape="rect" id="node18" href="$_row_controller_keeper_8cpp.html" title="2_Control/RowControl\l/RowControllerKeeper.cpp" alt="" coords="1881,273,2055,315"/>
+<area shape="rect" id="node20" href="$_row_controller_midfield_8cpp.html" title="2_Control/RowControl\l/RowControllerMidfield.cpp" alt="" coords="999,273,1177,315"/>
+<area shape="rect" id="node22" href="$_row_controller_offense_8cpp.html" title="2_Control/RowControl\l/RowControllerOffense.cpp" alt="" coords="1253,273,1433,315"/>
+<area shape="rect" id="node24" href="$_motor_com_p_s01_impl_8cpp.html" title="2_Control/MotorCommunication\l/MotorComPS01Impl.cpp" alt="" coords="2119,184,2326,225"/>
+<area shape="rect" id="node26" href="$_motor_com_r_s01_impl_8cpp.html" title="2_Control/MotorCommunication\l/MotorComRS01Impl.cpp" alt="" coords="1837,184,2043,225"/>
+</map>

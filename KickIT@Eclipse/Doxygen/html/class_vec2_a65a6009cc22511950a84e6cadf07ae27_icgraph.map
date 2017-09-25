@@ -1,0 +1,8 @@
+<map id="Vec2::lengthSquared" name="Vec2::lengthSquared">
+<area shape="rect" id="node2" href="$class_vec2.html#a83adaf3f787cfb5de4576073898b93db" title="Vec2::length" alt="" coords="196,89,291,115"/>
+<area shape="rect" id="node3" href="$class_virtual_kicker_window.html#a33c23d35502f7c82ab6f75f61280a876" title="VirtualKickerWindow\l::newBallStatus" alt="" coords="504,5,647,47"/>
+<area shape="rect" id="node5" href="$class_ball_status.html#a248375c08a18fd1d6975dd8e8bbf6923" title="BallStatus::update" alt="" coords="511,71,640,98"/>
+<area shape="rect" id="node6" href="$class_vec2.html#a3bd229e267428daddca2645a7679bb8e" title="Vec2::normalize" alt="" coords="339,114,455,141"/>
+<area shape="rect" id="node7" href="$class_vec2.html#a2ed56672ba73c4eef930c71526517cfe" title="Vec2::setLength" alt="" coords="339,165,456,191"/>
+<area shape="rect" id="node4" href="$class_table_controller_impl.html#aee69b16268f5a6e2578a58dde481dddf" title="TableControllerImpl\l::setBallPos" alt="" coords="695,35,829,76"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="MotorCommunicatorInterface::rotate" name="MotorCommunicatorInterface::rotate">
+<area shape="rect" id="node2" href="$class_row_controller_defense.html#a59de61112af1c45d6757a879c2e10ff1" title="RowControllerDefense::up" alt="" coords="244,5,420,32"/>
+<area shape="rect" id="node3" href="$class_row_controller_defense.html#a50317aa64bcf854972f23eb22099921d" title="RowControllerDefense\l::down" alt="" coords="255,57,409,98"/>
+<area shape="rect" id="node4" href="$class_row_controller_defense.html#af693bde22048072fc7e26f9aa177740c" title="RowControllerDefense\l::kickThread" alt="" coords="255,122,409,163"/>
+<area shape="rect" id="node5" href="$class_row_controller_defense.html#a176213f0f92581a752a9f6221f160582" title="RowControllerDefense\l::kick" alt="" coords="468,122,623,163"/>
+</map>

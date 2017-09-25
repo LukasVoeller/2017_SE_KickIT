@@ -1,0 +1,12 @@
+<map id="BallTrackerInterface" name="BallTrackerInterface">
+<area shape="rect" id="node2" href="$class_camera_config.html" title="CameraConfig" alt="" coords="5,288,112,315"/>
+<area shape="rect" id="node4" href="$class_table_controller_interface.html" title="TableControllerInterface" alt="" coords="141,421,302,448"/>
+<area shape="rect" id="node3" href="$class_config_reader.html" title="ConfigReader" alt="" coords="91,5,194,32"/>
+<area shape="rect" id="node5" href="$class_table_config.html" title="TableConfig" alt="" coords="97,184,189,211"/>
+<area shape="rect" id="node10" href="$class_motor_config.html" title="MotorConfig" alt="" coords="203,95,296,121"/>
+<area shape="rect" id="node8" href="$class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="201,288,357,315"/>
+<area shape="rect" id="node6" href="$class_ball_status.html" title="BallStatus" alt="" coords="399,288,481,315"/>
+<area shape="rect" id="node7" href="$class_vec2.html" title="Vec2" alt="" coords="427,184,479,211"/>
+<area shape="rect" id="node9" href="$class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="213,184,403,211"/>
+<area shape="rect" id="node11" href="$class_camera_interface.html" title="CameraInterface" alt="" coords="326,421,445,448"/>
+</map>

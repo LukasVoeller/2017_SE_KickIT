@@ -1,0 +1,85 @@
+.TH "Modules" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Modules \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Modules\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBregisterFunction\fP (const char *name, \fBfp\fP function)"
+.br
+.ti -1c
+.RI "void \fBexecute\fP (const char *algo, std::vector< void * > *params)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBModules\fP * \fBinstance\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModules\fP ()"
+.br
+.ti -1c
+.RI "\fBModules\fP (const \fBModules\fP &)"
+.br
+.ti -1c
+.RI "\fB~Modules\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, \fBfp\fP > \fBfunctions\fP"
+.br
+.ti -1c
+.RI "\fBConfigReader\fP \fBcr\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBModules\fP * \fB_instance\fP = 0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Modules::Modules ()\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "Modules::Modules (const \fBModules\fP &)\fC [protected]\fP"
+
+.SS "Modules::~Modules ()\fC [inline]\fP, \fC [protected]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Modules::execute (const char * algo, std::vector< void * > * params)\fC [inline]\fP"
+
+.SS "static \fBModules\fP* Modules::instance ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "void Modules::registerFunction (const char * name, \fBfp\fP function)\fC [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBModules\fP * Modules::_instance = 0\fC [static]\fP, \fC [protected]\fP"
+
+.SS "\fBConfigReader\fP Modules::cr\fC [protected]\fP"
+
+.SS "std::map<std::string, \fBfp\fP> Modules::functions\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

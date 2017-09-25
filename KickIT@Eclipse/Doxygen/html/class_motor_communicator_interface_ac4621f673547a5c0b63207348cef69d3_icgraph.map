@@ -1,0 +1,4 @@
+<map id="MotorCommunicatorInterface::linearMovement" name="MotorCommunicatorInterface::linearMovement">
+<area shape="rect" id="node2" href="$class_row_controller_defense.html#a4633acf0b0bfb904b8eba74cf05b24fa" title="RowControllerDefense\l::moveTo" alt="" coords="244,5,399,47"/>
+<area shape="rect" id="node3" href="$class_row_controller_keeper.html#adeddc7c24785ee86461635c13fab70c0" title="RowControllerKeeper\l::moveTo" alt="" coords="248,71,395,112"/>
+</map>

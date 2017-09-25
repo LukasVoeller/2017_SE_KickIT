@@ -1,0 +1,76 @@
+.TH "RowControllerInterface" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RowControllerInterface \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <_RowControllerInterface\&.hpp>\fP
+.PP
+Inherited by \fBRowControllerDefense\fP, \fBRowControllerKeeper\fP, \fBRowControllerMidfield\fP, and \fBRowControllerOffense\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBmoveTo\fP (float y)=0"
+.br
+.ti -1c
+.RI "virtual void \fBup\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdown\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBkick\fP (int strength)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMotorCommunicatorInterface\fP * \fBmcomm\fP"
+.br
+.ti -1c
+.RI "bool \fBisUp\fP = false"
+.br
+.ti -1c
+.RI "bool \fBisShooting\fP = false"
+.br
+.ti -1c
+.RI "\fBTableConfig\fP \fBtc\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void RowControllerInterface::down ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRowControllerDefense\fP\&.
+.SS "virtual void RowControllerInterface::kick (int strength)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRowControllerDefense\fP\&.
+.SS "virtual void RowControllerInterface::moveTo (float y)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRowControllerDefense\fP, \fBRowControllerKeeper\fP, \fBRowControllerMidfield\fP, and \fBRowControllerOffense\fP\&.
+.SS "virtual void RowControllerInterface::up ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRowControllerDefense\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool RowControllerInterface::isShooting = false\fC [protected]\fP"
+
+.SS "bool RowControllerInterface::isUp = false\fC [protected]\fP"
+
+.SS "\fBMotorCommunicatorInterface\fP* RowControllerInterface::mcomm\fC [protected]\fP"
+
+.SS "\fBTableConfig\fP RowControllerInterface::tc\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

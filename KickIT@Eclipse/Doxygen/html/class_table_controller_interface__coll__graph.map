@@ -1,0 +1,10 @@
+<map id="TableControllerInterface" name="TableControllerInterface">
+<area shape="rect" id="node2" href="$class_camera_config.html" title="CameraConfig" alt="" coords="5,145,112,172"/>
+<area shape="rect" id="node3" href="$class_config_reader.html" title="ConfigReader" alt="" coords="86,5,189,32"/>
+<area shape="rect" id="node4" href="$class_table_config.html" title="TableConfig" alt="" coords="91,196,183,223"/>
+<area shape="rect" id="node9" href="$class_motor_config.html" title="MotorConfig" alt="" coords="197,95,291,121"/>
+<area shape="rect" id="node7" href="$class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="178,300,334,327"/>
+<area shape="rect" id="node5" href="$class_ball_status.html" title="BallStatus" alt="" coords="383,300,465,327"/>
+<area shape="rect" id="node6" href="$class_vec2.html" title="Vec2" alt="" coords="422,196,474,223"/>
+<area shape="rect" id="node8" href="$class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="207,196,398,223"/>
+</map>

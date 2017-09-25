@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="5,31,196,57"/>
+<area shape="rect" id="node2" href="$class_motor_com_p_s01_impl.html" title="MotorComPS01Impl" alt="" coords="245,5,385,32"/>
+<area shape="rect" id="node3" href="$class_motor_com_r_s01_impl.html" title="MotorComRS01Impl" alt="" coords="244,56,385,83"/>
+</map>

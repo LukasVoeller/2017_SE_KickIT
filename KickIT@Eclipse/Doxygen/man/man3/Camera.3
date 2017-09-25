@@ -1,0 +1,113 @@
+.TH "Camera" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Camera \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Camera\&.hpp>\fP
+.PP
+Inherits \fBCameraInterface\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCamera\fP ()"
+.br
+.RI "\fIKonstruktor \fBCamera\fP\&. \fP"
+.ti -1c
+.RI "virtual \fB~Camera\fP ()"
+.br
+.RI "\fIDestruktor \fBCamera\fP\&. \fP"
+.ti -1c
+.RI "cv::Mat * \fBgetImage\fP ()"
+.br
+.RI "\fIFunktion holt ein Bild von der \fBCamera\fP\&. \fP"
+.ti -1c
+.RI "\fBCameraConfig\fP * \fBthreshold\fP ()"
+.br
+.RI "\fIFunktion threshold\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalibrate\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetCameraSettings\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCameraSettings\fP ()"
+.br
+.RI "\fIFunction for initial configuration of the camera\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "CInstantCamera * \fBcamera\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Camera::Camera ()"
+
+.PP
+Konstruktor \fBCamera\fP\&. 
+.SS "Camera::~Camera ()\fC [virtual]\fP"
+
+.PP
+Destruktor \fBCamera\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Camera::calibrate ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBCameraInterface\fP\&.
+.SS "void Camera::getCameraSettings ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBCameraInterface\fP\&.
+.SS "cv::Mat * Camera::getImage ()\fC [virtual]\fP"
+
+.PP
+Funktion holt ein Bild von der \fBCamera\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Ein Bild wird zurückgegeben 
+.RE
+.PP
+
+.PP
+Implements \fBCameraInterface\fP\&.
+.SS "void Camera::setCameraSettings ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Function for initial configuration of the camera\&. The settings are fetched from the CameraConfig\&.txt and passed to the PylonViewerApi 
+.PP
+Implements \fBCameraInterface\fP\&.
+.SS "\fBCameraConfig\fP * Camera::threshold ()\fC [virtual]\fP"
+
+.PP
+Funktion threshold\&. This function sets the threshold values ​​for the ball detection\&. These values ​​are then stored in the CameraConfig\&.txt 
+.PP
+\fBReturns:\fP
+.RS 4
+The result of the adjustment is returned with the variable result 
+.RE
+.PP
+
+.PP
+Implements \fBCameraInterface\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "CInstantCamera* Camera::camera\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

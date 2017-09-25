@@ -1,0 +1,6 @@
+<map id="RowControllerInterface" name="RowControllerInterface">
+<area shape="rect" id="node2" href="$class_table_config.html" title="TableConfig" alt="" coords="41,145,133,172"/>
+<area shape="rect" id="node3" href="$class_config_reader.html" title="ConfigReader" alt="" coords="76,5,179,32"/>
+<area shape="rect" id="node5" href="$class_motor_config.html" title="MotorConfig" alt="" coords="134,95,227,121"/>
+<area shape="rect" id="node4" href="$class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="103,196,293,223"/>
+</map>

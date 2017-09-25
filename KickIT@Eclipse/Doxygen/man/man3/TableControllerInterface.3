@@ -1,0 +1,98 @@
+.TH "TableControllerInterface" 3 "Mon Sep 25 2017" "KickIT@Eclipse" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TableControllerInterface \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <_TableControllerInterface\&.hpp>\fP
+.PP
+Inherited by \fBTableControllerImpl\fP, and \fBTableControllerMock\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetBallPos\fP (float x, float y)=0"
+.br
+.ti -1c
+.RI "virtual \fB~TableControllerInterface\fP ()"
+.br
+.ti -1c
+.RI "void \fBmotorByHand\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBVec2\fP \fBpixelToMM\fP (float xPixel, float yPixel)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraConfig\fP \fBcc\fP"
+.br
+.ti -1c
+.RI "\fBTableConfig\fP \fBtc\fP"
+.br
+.ti -1c
+.RI "\fBBallStatus\fP \fBballStatus\fP"
+.br
+.ti -1c
+.RI "\fBBallStatus\fP \fBcurrentBallStaus\fP"
+.br
+.ti -1c
+.RI "\fBRowControllerInterface\fP * \fBkeeperControl\fP"
+.br
+.ti -1c
+.RI "\fBRowControllerInterface\fP * \fBdefenseControl\fP"
+.br
+.ti -1c
+.RI "\fBRowControllerInterface\fP * \fBmidfieldControl\fP"
+.br
+.ti -1c
+.RI "\fBRowControllerInterface\fP * \fBoffenseControl\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual TableControllerInterface::~TableControllerInterface ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void TableControllerInterface::motorByHand ()\fC [inline]\fP"
+
+.SS "virtual \fBVec2\fP TableControllerInterface::pixelToMM (float xPixel, float yPixel)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBTableControllerMock\fP, and \fBTableControllerImpl\fP\&.
+.SS "virtual void TableControllerInterface::setBallPos (float x, float y)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBTableControllerMock\fP, and \fBTableControllerImpl\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBallStatus\fP TableControllerInterface::ballStatus\fC [protected]\fP"
+
+.SS "\fBCameraConfig\fP TableControllerInterface::cc\fC [protected]\fP"
+
+.SS "\fBBallStatus\fP TableControllerInterface::currentBallStaus\fC [protected]\fP"
+
+.SS "\fBRowControllerInterface\fP* TableControllerInterface::defenseControl\fC [protected]\fP"
+
+.SS "\fBRowControllerInterface\fP* TableControllerInterface::keeperControl\fC [protected]\fP"
+
+.SS "\fBRowControllerInterface\fP* TableControllerInterface::midfieldControl\fC [protected]\fP"
+
+.SS "\fBRowControllerInterface\fP* TableControllerInterface::offenseControl\fC [protected]\fP"
+
+.SS "\fBTableConfig\fP TableControllerInterface::tc\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for KickIT@Eclipse from the source code\&.

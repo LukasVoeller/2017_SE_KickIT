@@ -4,7 +4,7 @@
 
 ########################################################
 
-int homingRequired 0
+int homingRequired 1
 
 string port can0
 
@@ -14,14 +14,14 @@ int keeperSpeedTranslational 2235
 int keeperSleepAfterReset 20
 int keeperSleepAfterHoming 25
 int keeperBoundaryInwards 65
-int keeperBoundaryOutwards -60
+int keeperBoundaryOutwards -65
 
-int defenseAccelerationTranslational 300
-int defenseAccelerationRotary 100
+int defenseAccelerationTranslational 200
+int defenseAccelerationRotary 200
 int defenseDecelerationTranslational 200
-int defenseDecelerationRotary 100
-int defenseSpeedTranslational 500
-int defenseSpeedRotary 200
+int defenseDecelerationRotary 200
+int defenseSpeedTranslational 1000
+int defenseSpeedRotary 400
 int defenseSleepAfterReset 20
 int defenseSleepAfterHoming 25
 int defenseBoundaryInwards 280
