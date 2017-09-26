@@ -2,8 +2,8 @@
  * @file ConfigReader
  * @brief
  */
-#include "../4_Utilities/ConfigReader.hpp"
 
+#include "../4_Utilities/ConfigReader.hpp"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -23,15 +23,11 @@ ConfigReader::ConfigReader(const char* filename) {
  *
  */
 void ConfigReader::readFile() {
-
-    //std::string filename(c);
     std::ifstream configFile(this->filename);
     std::string line;
 
     if (configFile.is_open()) {
-
         while (getline(configFile, line)) {
-        	//std::cout << line << std::endl;
             std::string type;
             std::string name;
             std::istringstream iss(line);
@@ -48,11 +44,9 @@ void ConfigReader::readFile() {
                 throw new UnknownParameterTypeException(type.c_str());
             }
         }
-
     } else {
         throw new CannotOpenConfigFileException(filename);
     }
-
 }
 
 /**getStringValue function
@@ -100,14 +94,12 @@ void ConfigReader::setIntValue(const char *name, const int value) {
  */
 void ConfigReader::writeOut() {
     if(this->valueChanged){
-
         std::ifstream configFile(this->filename);
         std::string line;
         std::vector<std::string> namesToWrite;
         std::vector<std::string> wholeFile;
 
         if (configFile.is_open()) {
-
             while (getline(configFile, line)) {
                 wholeFile.push_back(line);
                 if(!line.find("#") == 0 && line.length() > 0) {
@@ -115,7 +107,6 @@ void ConfigReader::writeOut() {
                     std::string name;
                     std::string value;
                     std::string comment;
-
                     std::istringstream iss(line);
                     iss >> type >> name >> value >> comment;
                     if (this->values.find(name) == this->values.end() && this->strings.find(name) == this->strings.end()) {
@@ -131,13 +122,12 @@ void ConfigReader::writeOut() {
                             namesToWrite.push_back(name);
                         }
                     }
-
                 }
             }
-
         } else {
             throw new CannotOpenConfigFileException(filename);
         }
+
         configFile.close();
         std::ofstream cfWrite(this->filename);
 
@@ -163,6 +153,5 @@ void ConfigReader::writeOut() {
         }
 
         cfWrite.close();
-
     }
 }

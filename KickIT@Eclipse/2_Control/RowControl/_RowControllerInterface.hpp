@@ -6,7 +6,6 @@
 #define INTERFACEROWCONTROLLER_HPP
 
 #include <cstdlib>
-
 #include "../../5_DataType/TableConfig.hpp"
 #include "../MotorCommunication/_MotorCommunicatorInterface.hpp"
 
@@ -14,7 +13,6 @@
  *
  */
 class RowControllerInterface {
-
 public:
 	/**moveTo
 	 * @param float y
@@ -36,15 +34,16 @@ public:
 	 */
 	virtual void kick(int strength) {}
 
+	/**destructor
+	 *
+	 */
 	virtual ~RowControllerInterface() {}
 
 protected:
 	MotorCommunicatorInterface* mcomm;
-
+	TableConfig tc;
 	bool isUp = false;
 	bool isShooting = false;
-
-	TableConfig tc;
 };
 
 #endif //INTERFACEROWCONTROLLER_HPP

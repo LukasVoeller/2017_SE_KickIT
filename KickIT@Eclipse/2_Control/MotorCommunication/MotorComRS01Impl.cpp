@@ -3,7 +3,6 @@
  * @brief
  */
 #include "../../2_Control/MotorCommunication/MotorComRS01Impl.hpp"
-
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>
@@ -59,9 +58,8 @@ void MotorComRS01Impl::driverInit(){
 }
 
 void MotorComRS01Impl::linearMovement(int position){
-
-	if(position > mc.defenseBoundaryInwards) position = mc.defenseBoundaryInwards;			//Check if position is within range
-	if(position < mc.defenseBoundaryOutwards) position = mc.defenseBoundaryOutwards;			//Check if position is within range
+	if(position > mc.defenseBoundaryInwards) position = mc.defenseBoundaryInwards;		//Check if position is within range
+	if(position < mc.defenseBoundaryOutwards) position = mc.defenseBoundaryOutwards;	//Check if position is within range
 
 	int pos1, pos2;
 	position *= 10;
@@ -69,7 +67,6 @@ void MotorComRS01Impl::linearMovement(int position){
 	pos2 = (position >> 8);
 
 	int acceleration = this->mc.defenseAccelerationTranslational;
-	//std::cout << this->mc.defenseAccelerationTranslational << std::endl;
 	int aLow = acceleration & 255;
 	int aHigh = acceleration >> 8;
 
@@ -84,8 +81,6 @@ void MotorComRS01Impl::linearMovement(int position){
 	frameInit(0x202, 0x8, 0x3F, 0x0, this->switchedNibbleT(), 0x09, pos1, pos2, sLow, sHigh);
 	frameInit(0x302, 0x8, aLow, aHigh, dLow, dHigh, 0x0, 0x0, 0x0, 0x0);
 	frameInit(0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);
-
-
 }
 
 void MotorComRS01Impl::rotate(int amount) {

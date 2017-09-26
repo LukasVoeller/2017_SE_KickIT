@@ -6,7 +6,6 @@
 #define BALLTRACKING_CAMERA_HPP_
 
 #include <opencv2/core/core.hpp>
-
 #include "_CameraInterface.hpp"
 
 /**CammeraInterface class
@@ -39,11 +38,16 @@ public:
 	CameraConfig* threshold();
 
 protected:
+	/**calibrate
+	 *
+	 */
 	void calibrate();
+
 	/**getCameraSettings
 	 * function gives the adjusted values of the camera
 	 */
 	void getCameraSettings();
+
 	/**setCameraSettings
 	 * Function for initial configuration of the camera
 	 * The settings are fetched from the CameraConfig.txt and passed to the PylonViewerApi

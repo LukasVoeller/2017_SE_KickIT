@@ -3,6 +3,5 @@
 
 ########################################################
 
-
-string calcPositions calcPositionsSimple 				#functions to choose from are defined in Calculator.hpp
+string calcPositions calcPositionsSimple 			#functions to choose from are defined in Calculator.hpp
 string calcIfKick calcIfKickSimple					#functions to choose from are defined in Calculator.hpp

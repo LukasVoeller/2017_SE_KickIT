@@ -4,7 +4,6 @@
 
 ########################################################
 
-
 int tableWidth 1115								#width of playing field goal to goal	
 int tableHeight 680								#height of playing field
 int isKeeperActive 1							#which lines do you want to be controlled by KickIT?

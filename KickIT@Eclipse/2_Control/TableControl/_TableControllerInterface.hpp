@@ -6,8 +6,6 @@
 #define INTERFACETABLECONTROLLER_HPP
 
 #include "../RowControl/_RowControllerInterface.hpp"
-#include <iostream>
-
 #include "../../4_Utilities/Calculator.hpp"
 #include "../../4_Utilities/Modules.hpp"
 #include "../../5_DataType/BallStatus.hpp"
@@ -15,12 +13,12 @@
 #include "../../5_DataType/BallStatus.hpp"
 #include "../../5_DataType/CameraConfig.hpp"
 #include "../../5_DataType/TableConfig.hpp"
+#include <iostream>
 
 /**TableControllerInterface class
  *
  */
 class TableControllerInterface {
-
 public:
 	/**setBallPos function
 	 * @param float x, float y

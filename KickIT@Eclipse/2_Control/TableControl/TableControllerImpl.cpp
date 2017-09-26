@@ -2,19 +2,17 @@
  * @file TableControllerImpl.cpp
  * @brief
  */
+
 #include "TableControllerImpl.hpp"
-
-#include <iostream>
-
 #include "../../4_Utilities/Calculator.hpp"
 #include "../../2_Control/RowControl/RowControllerDefense.hpp"
 #include "../../2_Control/RowControl/RowControllerKeeper.hpp"
 #include "../../2_Control/RowControl/RowControllerMidfield.hpp"
 #include "../../2_Control/RowControl/RowControllerOffense.hpp"
 #include "../../5_DataType/CameraConfig.hpp"
+#include <iostream>
 
 TableControllerImpl::TableControllerImpl(VirtualKickerWindow* v):vkw(v) {
-
 	if (tc.isKeeperActive) {
 		//initiate connection to the keeper-driver
 		keeperControl = new RowControllerKeeper();
@@ -34,17 +32,13 @@ TableControllerImpl::TableControllerImpl(VirtualKickerWindow* v):vkw(v) {
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
-
 	float* positions = new float[tc.isKeeperActive ? 1 : 0 + tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 	bool* up = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 	bool* kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
 
-	//std::cout << "x: " << x << " y: " << y << std::endl;
 	Vec2 v = this->pixelToMM(x, y);
-	//std::cout << "after ptm " << "x: " << v.x << " y: " << v.y << std::endl;
 	ballStatus.update(v.x, v.y);		//Ballposition from now on in milimeters
 
-	//emit(newBallStatus(ballStatus));
 	vkw->newBallStatus(ballStatus);
 
 	//Check if ball is in the right position for some shots
@@ -61,7 +55,6 @@ void TableControllerImpl::setBallPos(float x, float y) {
 
 	//Coordinate players
 	Modules::instance()->execute("calcPositions", &calcParams);
-	//std::cout << "calculated: " << positions[0] << std::endl;
 	if (tc.isKeeperActive) keeperControl->moveTo(positions[0]);
 	if (tc.isDefenseActive) defenseControl->moveTo(positions[1]);
 	if (tc.isMidfieldActive) midfieldControl->moveTo(positions[2]);
@@ -70,27 +63,13 @@ void TableControllerImpl::setBallPos(float x, float y) {
 	delete(up);
 	delete(positions);
 	delete(kick);
-
-
-
 }
 
 Vec2 TableControllerImpl::pixelToMM(float xPixel, float yPixel) {
-
-	/*std::cout << "in pixels: " << " x: " << xPixel << " y: " << yPixel << std::endl;
-	std::cout << "tw: " << tc.tableWidth << std::endl;
-	std::cout << "th: " << tc.tableHeight << std::endl;
-	std::cout << "pw: " << cc.width << std::endl;
-	std::cout << "ph: " << cc.height << std::endl;*/
-
-
 	Vec2 result;
 
 	result.x = xPixel * ((float) this->tc.tableWidth / (float) this->cc.width);
 	result.y = yPixel * ((float) this->tc.tableHeight / (float) this->cc.height);
 
-	//std::cout << "on table: " << " x: " << result.x << " y: " << result.y << std::endl;
-
 	return result;
 }
-

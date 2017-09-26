@@ -6,12 +6,11 @@
 #ifndef MODULES_HPP
 #define MODULES_HPP
 
+#include "../4_Utilities/ConfigReader.hpp"
 #include <vector>
 #include <map>
 #include <string>
 #include <exception>
-
-#include "../4_Utilities/ConfigReader.hpp"
 
 typedef void (*fp)(std::vector<void*>*);
 
@@ -27,8 +26,10 @@ public:
 			n(name) {
 		std::cout << n << " function not registered!" << std::endl;
 	}
+
 protected:
 	std::string n;
+
 };
 
 /**FunctionAllreadyRegistered class
@@ -43,11 +44,11 @@ public:
 			n(name) {
 		std::cout << n << " function allready registered!" << std::endl;
 	}
+
 protected:
 	std::string n;
+
 };
-
-
 
 /**Modules class
  *
@@ -74,11 +75,9 @@ protected:
 	~Modules() {}
 
 public:
-
 	/**instance function
 	 * @return _instance;
 	 */
-
 	static Modules* instance() {
 		if (!_instance) _instance = new Modules();
 		return _instance;
@@ -111,5 +110,3 @@ public:
 };
 
 #endif //MODULES_HPP
-
-

@@ -54,8 +54,8 @@ void MotorComPS01Impl::driverInit() {
 }
 
 void MotorComPS01Impl::linearMovement(int position){
-	if(position > mc.keeperBoundaryInwards) position = mc.keeperBoundaryInwards;			//Check if position is within range
-	if(position < mc.keeperBoundaryOutwards) position = mc.keeperBoundaryOutwards;			//Check if position is within range
+	if(position > mc.keeperBoundaryInwards) position = mc.keeperBoundaryInwards;	//Check if position is within range
+	if(position < mc.keeperBoundaryOutwards) position = mc.keeperBoundaryOutwards;	//Check if position is within range
 
 	int pLow, pHigh;
 	position *= 10;

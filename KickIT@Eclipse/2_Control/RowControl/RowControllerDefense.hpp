@@ -11,7 +11,6 @@
  *
  */
 class RowControllerDefense: public RowControllerInterface {
-
 public:
 	/**RowControllerDefense constructor
 	 *
@@ -23,6 +22,7 @@ public:
 	 *
 	 */
 	void kick(int strength); //Parameter Deklaration != Parameter Implementation
+
 	/**up function
 	 *
 	 */
@@ -46,4 +46,4 @@ protected:
 	void kickThread();
 };
 
-#endif /* ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_ */
+#endif //ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_

@@ -2,6 +2,7 @@
  * @file TableControllerImpl.hpp
  * @brief
  */
+
 #ifndef TABLECONTROLLERIMPL_HPP
 #define TABLECONTROLLERIMPL_HPP
 
@@ -14,7 +15,6 @@
  */
 class TableControllerImpl : public QObject,  public TableControllerInterface {
 	Q_OBJECT
-
 public:
 	/**TableControllerImpl constructor
 	 * @param VirtualKickerWindow* vkw
@@ -35,6 +35,7 @@ public:
 	 * the function gets pixes as a parameter and converts it into milimeters
 	 */
 	Vec2 pixelToMM(float xPixel, float yPixel);
+
 protected:
 	VirtualKickerWindow* vkw;
 

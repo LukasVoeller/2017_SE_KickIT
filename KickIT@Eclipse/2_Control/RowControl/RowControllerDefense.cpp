@@ -3,10 +3,8 @@
  * @brief
  */
 #include "../../2_Control/RowControl/RowControllerDefense.hpp"
-
 #include <thread>
 #include <unistd.h>
-
 #include "../../2_Control/MotorCommunication/MotorComRS01Impl.hpp"
 
 RowControllerDefense::RowControllerDefense() {

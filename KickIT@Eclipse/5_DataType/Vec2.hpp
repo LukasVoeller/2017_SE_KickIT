@@ -2,6 +2,7 @@
  * @file Vec2.hpp
  * @brief
  */
+
 #ifndef VEC2_HPP_
 #define VEC2_HPP_
 
@@ -57,7 +58,6 @@ public:
 	void update(Vec2* newp) {
 		this->x = newp->x;
 		this->y = newp->y;
-		//delete newp;
 	}
 
 	/**dot function
@@ -67,7 +67,6 @@ public:
 	 * @return this->x * v.x + this->y * v.y
 	 */
 	float dot(const Vec2& v) const {
-		//skalarprodukt = laenge1 * laenge2 * cos(winkel dazwischen)
 		return this->x * v.x + this->y * v.y;
 	}
 
@@ -157,7 +156,6 @@ public:
 			this->x = this->x * factor;
 			this->y = this->y * factor;
 		}
-		//else std::cout << "nullVec2" << std::endl;
 		return *this;
 	}
 
@@ -191,4 +189,4 @@ public:
 	}
 };
 
-#endif /* VEC2_HPP_ */
+#endif //VEC2_HPP_

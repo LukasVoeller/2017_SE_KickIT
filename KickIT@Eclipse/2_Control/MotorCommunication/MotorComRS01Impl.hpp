@@ -8,15 +8,13 @@
 #include <net/if.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <sys/types.h> 	//For sockets
-
+#include <sys/types.h>
 #include "_MotorCommunicatorInterface.hpp"
 
 /**MotorComRS01Impl class
  *
  */
 class MotorComRS01Impl: public MotorCommunicatorInterface {
-
 public:
 	/**MotorComRS01Impl constructor
 	 * @param Row r

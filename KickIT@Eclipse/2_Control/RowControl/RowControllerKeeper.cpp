@@ -3,7 +3,6 @@
  * @brief
  */
 #include "../../2_Control/RowControl/RowControllerKeeper.hpp"
-
 #include "../../2_Control/MotorCommunication/MotorComPS01Impl.hpp"
 #include "../MotorCommunication/MotorComPS01Impl.hpp"
 

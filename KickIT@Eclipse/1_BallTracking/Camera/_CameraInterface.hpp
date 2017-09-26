@@ -8,7 +8,6 @@
 #include "../../5_DataType/CameraConfig.hpp"
 #include <opencv2/core/core.hpp>
 #include <pylon/PylonIncludes.h>
-
 #ifdef PYLON_WIN_BUILD
 #include <pylon/PylonGUI.h>
 #endif
