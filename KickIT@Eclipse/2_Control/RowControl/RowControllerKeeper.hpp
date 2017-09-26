@@ -7,12 +7,10 @@
 
 #include "_RowControllerInterface.hpp"
 
-
 /**RowControllerKeeper class
  *
  */
 class RowControllerKeeper: public RowControllerInterface {
-
 public:
 	/**RowControllerKeeper constructor
 	 *
@@ -24,7 +22,6 @@ public:
 	 */
 	void run();
 	void moveTo(float y);
-
 };
 
-#endif /* ROWCONTROL_ROWCONTROLLERKEEPER_HPP_ */
+#endif //ROWCONTROL_ROWCONTROLLERKEEPER_HPP_

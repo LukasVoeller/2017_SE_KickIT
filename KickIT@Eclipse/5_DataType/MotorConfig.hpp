@@ -2,15 +2,14 @@
  * @file MotorConfig.hpp
  * @brief
  */
+
 #ifndef MOTORCONFIG_HPP
 #define MOTORCONFIG_HPP
 
-
+#include "../4_Utilities/ConfigReader.hpp"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "../4_Utilities/ConfigReader.hpp"
-
 
 /**MotorConfig class
  *
@@ -29,7 +28,6 @@ public:
 	int keeperSleepAfterHoming;
 	int keeperBoundaryInwards;
 	int keeperBoundaryOutwards;
-
 	int defenseAccelerationTranslational;
 	int defenseAccelerationRotary;
 	int defenseDecelerationTranslational;
@@ -52,10 +50,8 @@ public:
 	 *
 	 */
 	void loadConfig(){
-
 		homingRequired = cr.getIntValue("homingRequired");
 		std::string port = cr.getStringValue("port");
-
 		keeperAccelerationTranslational = cr.getIntValue("keeperAccelerationTranslational");
 		keeperDecelerationTranslational = cr.getIntValue("keeperDecelerationTranslational");
 		keeperSpeedTranslational = cr.getIntValue("keeperSpeedTranslational");
@@ -63,7 +59,6 @@ public:
 		keeperSleepAfterHoming = cr.getIntValue("keeperSleepAfterHoming");
 		keeperBoundaryInwards = cr.getIntValue("keeperBoundaryInwards");
 		keeperBoundaryOutwards = cr.getIntValue("keeperBoundaryOutwards");
-
 		defenseAccelerationTranslational = cr.getIntValue("defenseAccelerationTranslational");
 		defenseAccelerationRotary = cr.getIntValue("defenseAccelerationRotary");
 		defenseDecelerationTranslational = cr.getIntValue("defenseDecelerationTranslational");
@@ -74,7 +69,6 @@ public:
 		defenseSleepAfterHoming = cr.getIntValue("defenseSleepAfterHoming");
 		defenseBoundaryInwards = cr.getIntValue("defenseBoundaryInwards");
 		defenseBoundaryOutwards = cr.getIntValue("defenseBoundaryOutwards");
-
 	}
 
 	/**saveConfig function
@@ -83,13 +77,11 @@ public:
 	void saveConfig() {
 		cr.setIntValue("homingRequired", homingRequired);
 		cr.setStringValue("port", port.c_str());
-
 		cr.setIntValue("keeperAccelerationTranslational",keeperAccelerationTranslational);
 		cr.setIntValue("keeperDecelerationTranslational",keeperDecelerationTranslational);
 		cr.setIntValue("keeperSpeedTranslational",keeperSpeedTranslational);
 		cr.setIntValue("keeperSleepAfterReset",keeperSleepAfterReset);
 		cr.setIntValue("keeperSleepAfterHoming",keeperSleepAfterHoming);
-
 		cr.setIntValue("defenseAccelerationTranslational",defenseAccelerationTranslational);
 		cr.setIntValue("defenseAccelerationRotary",defenseAccelerationRotary);
 		cr.setIntValue("defenseDecelerationTranslational",defenseDecelerationTranslational);
@@ -98,11 +90,9 @@ public:
 		cr.setIntValue("defenseSpeedRotary",defenseSpeedRotary);
 		cr.setIntValue("defenseSleepAfterReset",defenseSleepAfterReset);
 		cr.setIntValue("defenseSleepAfterHoming",defenseSleepAfterHoming);
-
 		cr.writeOut();
 	}
 
 };
-
 
 #endif //MOTORCONFIG_HPP

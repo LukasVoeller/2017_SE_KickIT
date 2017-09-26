@@ -11,13 +11,11 @@
  *
  */
 class RowControllerDefense: public RowControllerInterface {
-
 public:
 	/**RowControllerDefense constructor
 	 *
 	 */
 	RowControllerDefense();
-
 	void kick(int strength);
 	virtual void up();
 	virtual void down();
@@ -30,4 +28,4 @@ protected:
 	void kickThread();
 };
 
-#endif /* ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_ */
+#endif //ROWCONTROL_ROWCONTROLLERDEFENSE_HPP_

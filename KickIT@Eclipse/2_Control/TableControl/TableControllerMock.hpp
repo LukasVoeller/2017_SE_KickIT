@@ -2,6 +2,7 @@
  * @file TableControllerMock.hpp
  * @brief
  */
+
 #ifndef TABLECONTROLLERMOCK_HPP
 #define TABLECONTROLLERMOCK_HPP
 
@@ -13,7 +14,6 @@
  *
  */
 class TableControllerMock: public TableControllerInterface {
-
 public:
 	/**TableControllerMock constructor
 	 *

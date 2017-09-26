@@ -2,14 +2,14 @@
  * @file CameraConfig.hpp
  * @brief Classe
  */
+
 #ifndef CAMERACONFIG_HPP
 #define CAMERACONFIG_HPP
 
+#include "../4_Utilities/ConfigReader.hpp"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
-#include "../4_Utilities/ConfigReader.hpp"
 
 /**CameraConfig class
  *
@@ -17,6 +17,7 @@
 class CameraConfig {
 protected:
 	ConfigReader cr;
+
 public:
 	int redLow;
 	int redHigh;
@@ -42,7 +43,6 @@ public:
 	 *
 	 */
 	void loadConfig() {
-
 		redLow = cr.getIntValue("redLow");
 		redHigh = cr.getIntValue("redHigh");
 		greenLow = cr.getIntValue("greenLow");
@@ -55,7 +55,6 @@ public:
 		exposureTime = cr.getIntValue("exposureTime");
 		offsetx = cr.getIntValue("offsetx");
 		offsety = cr.getIntValue("offsety");
-
 	}
 
 	/**sevaConfig function
@@ -91,7 +90,7 @@ public:
 				<< "ExposureTime: "  << exposureTime << "\n"
 				<< "OffsetX: " << "\n" << "OffsetY: " << std::endl;
 	}
-};
 
+};
 
 #endif //CAMERACONFIG_HPP

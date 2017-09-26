@@ -2,6 +2,7 @@
  * @file TableControllerImpl.hpp
  * @brief
  */
+
 #ifndef TABLECONTROLLERIMPL_HPP
 #define TABLECONTROLLERIMPL_HPP
 
@@ -14,7 +15,6 @@
  */
 class TableControllerImpl : public QObject,  public TableControllerInterface {
 	Q_OBJECT
-
 public:
 	/**TableControllerImpl constructor
 	 *
@@ -25,6 +25,7 @@ public:
 
 	void setBallPos(float x, float y);
 	Vec2 pixelToMM(float xPixel, float yPixel);
+
 protected:
 	VirtualKickerWindow* vkw;
 

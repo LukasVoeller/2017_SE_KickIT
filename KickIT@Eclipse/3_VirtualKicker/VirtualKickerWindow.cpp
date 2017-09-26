@@ -2,8 +2,8 @@
  * @file VirtualKickerWindow.cpp
  * @brief
  */
-#include "../3_VirtualKicker/VirtualKickerWindow.hpp"
 
+#include "../3_VirtualKicker/VirtualKickerWindow.hpp"
 #include "../5_DataType/TableConfig.hpp"
 #include "../5_DataType/Vec2.hpp"
 
@@ -47,8 +47,8 @@ void VirtualKickerWindow::newBallStatus(BallStatus bs){
 		text+=" km/h";
 		if(speedDisplay!=NULL)speedDisplay->setText(text.c_str());
 	}
-	repaint();
 
+	repaint();
 }
 
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
@@ -76,6 +76,7 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 		}
 
 	}
+
 	painter.setPen(QPen(Qt::darkCyan, 10, Qt::DashDotLine, Qt::RoundCap));
 	painter.drawLine(*ballMovementVector);
 	painter.setPen(QPen(Qt::red, BALLDIAMETER, Qt::DashDotLine, Qt::RoundCap));

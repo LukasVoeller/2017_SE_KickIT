@@ -2,6 +2,7 @@
  * @file VirtualKicker.hpp
  * @brief
  */
+
 #ifndef VIRTUALKICKER_HPP
 #define VIRTUALKICKER_HPP
 
@@ -17,7 +18,6 @@ using namespace std;
  *
  */
 class VirtualKicker {
-
 public:
 	static const int WINDOW_SIZE_X = 1200;
 	static const int WINDOW_SIZE_Y = 800;
@@ -54,8 +54,6 @@ public:
 		vkw->show();
 		return vkw;
 	}
-
-
 };
 
 #endif //VIRTUALKICKER_HPP

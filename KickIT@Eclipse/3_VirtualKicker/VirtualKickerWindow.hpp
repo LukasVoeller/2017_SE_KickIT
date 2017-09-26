@@ -2,10 +2,13 @@
  * @file VirtualKickerWindow.hpp
  * @brief
  */
+
 #ifndef VIRTUALKICKERWINDOW_HPP
 #define VIRTUALKICKERWINDOW_HPP
 
 #include "../2_Control/TableControl/_TableControllerInterface.hpp"
+#include "../5_DataType/BallStatus.hpp"
+#include "../5_DataType/TableConfig.hpp"
 #include <QWidget>
 #include <cstdlib>
 #include <vector>
@@ -13,15 +16,10 @@
 #include <QLabel>
 #include <Qt>
 
-#include "../5_DataType/BallStatus.hpp"
-#include "../5_DataType/TableConfig.hpp"
-
 /**VirtualKickerWindow class
  *
  */
 class VirtualKickerWindow: public QWidget {
-
-
 public:
 	/**VirtualKickerWindow constructor
 	 *
@@ -59,7 +57,6 @@ public:
 	 * @param (TableControllerInterface* t)
 	 */
 	void setTableController(TableControllerInterface* t);
-
 
 	int WINDOW_SIZE_X = 1024;
 	int WINDOW_SIZE_Y = 768;

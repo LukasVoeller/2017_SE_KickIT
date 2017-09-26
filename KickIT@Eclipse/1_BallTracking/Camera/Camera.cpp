@@ -11,7 +11,6 @@ Pylon::PylonAutoInitTerm autoInitTerm;
 
 using namespace std;
 
-
 Camera::Camera() {
 	camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
 	camera->Open();
@@ -19,11 +18,9 @@ Camera::Camera() {
 	camera->StartGrabbing();
 }
 
-
 Camera::~Camera() {
 
 }
-
 
 cv::Mat* Camera::getImage() {
 	CPylonImage image;
@@ -55,7 +52,6 @@ cv::Mat* Camera::getImage() {
 
 	return cv_img;
 }
-
 
 void Camera::calibrate() {
 	PylonAutoInitTerm autoInitTerm;
@@ -89,7 +85,6 @@ void Camera::calibrate() {
 		}
 	}
 }
-
 
 void Camera::setCameraSettings() {
 	cout << "Using device: " << camera->GetDeviceInfo().GetModelName() << endl;
@@ -175,7 +170,7 @@ CameraConfig* Camera::threshold() {
 		}
 
 		//Draw contours
-		imshow("Thresholded Image", imgThresholded);//show the thresholded image
+		imshow("Thresholded Image", imgThresholded);
 
 		if (!movedOriginal) {
 			cv::moveWindow("Original", 100, 100);

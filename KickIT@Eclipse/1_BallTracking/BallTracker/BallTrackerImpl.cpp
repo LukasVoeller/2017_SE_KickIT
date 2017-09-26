@@ -14,23 +14,13 @@ using namespace std;
 using namespace Pylon;
 using namespace GenApi;
 
-int exitCode = 0;
-
-
 BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->tableController = tci;
 	this->camera = new Camera();
 	this->threshold = camera->threshold();
-	//startTracking();
-
 }
 
-BallTrackerImpl::~BallTrackerImpl() {
-
-}
-
-
-Vec2 BallTrackerImpl::getBallPosition() {
+void BallTrackerImpl::getBallPosition() {
 	Mat* cv_img = camera->getImage();
 	Mat imgThresholded;
 	Mat imgHSV;
@@ -69,17 +59,15 @@ Vec2 BallTrackerImpl::getBallPosition() {
 		//Draw the circle outline
 		circle(*cv_img, Ballcenter, 10, Scalar(0, 0, 255), 3, 8, 0);
 
-		if (abs(lastx - Ballcenter.x) > 16 || abs(lasty - Ballcenter.y) > 16) { // only send new position if it is different
+		if (abs(lastx - Ballcenter.x) > 16 || abs(lasty - Ballcenter.y) > 16) { //Only send new position if it is different
 			lasty = Ballcenter.y;
 			lastx = Ballcenter.x;
 			tableController->setBallPos(Ballcenter.x, Ballcenter.y);
-			//std::cout << "new" << std::endl;
 		}
 	}
 
 	delete cv_img;
 }
-
 
 void BallTrackerImpl::startTracking() {
 	Mat imgThresholded;
@@ -131,14 +119,5 @@ void BallTrackerImpl::startTracking() {
 				tableController->setBallPos(Ballcenter.x, Ballcenter.y);
 			}
 		}
-
-		//if (showImage) {
-			//imshow("circles", *cv_img);
-		//}
-		//if (cv::waitKey(30) == 27 && showImage) {
-			//cv::destroyWindow("circles");
-			//delete cv_img;
-			//return;
-		//}
 	}
 }

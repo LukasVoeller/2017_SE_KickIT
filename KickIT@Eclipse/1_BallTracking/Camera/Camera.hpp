@@ -6,7 +6,6 @@
 #define BALLTRACKING_CAMERA_HPP_
 
 #include <opencv2/core/core.hpp>
-
 #include "_CameraInterface.hpp"
 
 /**CammeraInterface class
@@ -30,9 +29,7 @@ public:
 
 protected:
 	void calibrate();
-
 	void getCameraSettings();
-
 	void setCameraSettings();
 
 	CInstantCamera* camera;

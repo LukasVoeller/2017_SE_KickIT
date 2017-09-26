@@ -2,14 +2,14 @@
  * @file TableConfig
  * @brief
  */
+
 #ifndef TABLECONFIG_HPP
 #define TABLECONFIG_HPP
 
+#include "../4_Utilities/ConfigReader.hpp"
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
-#include "../4_Utilities/ConfigReader.hpp"
 
 /**TableConfig class
  *
@@ -55,7 +55,6 @@ public:
 	 *
 	 */
 	void loadConfig() {
-
 		tableWidth = cr.getIntValue("tableWidth");
 		tableHeight = cr.getIntValue("tableHeight");
 		isKeeperActive = cr.getIntValue("isKeeperActive");
@@ -78,7 +77,6 @@ public:
 		offsetTopSideOffense = cr.getIntValue("offsetTopSideOffense");
 		offsetBottomSideOffense = cr.getIntValue("offsetBottomSideOffense");
 		shotTriggerRange = cr.getIntValue("shotTriggerRange");
-
 	}
 
 	/**saveConfig function
@@ -116,6 +114,7 @@ public:
 	void printConfig() {
 
 	}
+
 };
 
 #endif //TABLECONFIG_HPP

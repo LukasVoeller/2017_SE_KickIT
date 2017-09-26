@@ -11,7 +11,6 @@
  *
  */
 class RowControllerOffense: public RowControllerInterface {
-
 public:
 	/**RowControllerOffense constructor
 	 *
@@ -20,4 +19,4 @@ public:
 	void moveTo(float y){}
 };
 
-#endif /* ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_ */
+#endif //ROWCONTROL_ROWCONTROLLEROFFENSE_HPP_

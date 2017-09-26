@@ -12,14 +12,12 @@
 #include <fcntl.h>
 #include <sys/types.h> 	//For sockets
 #include <sys/socket.h> //For sockets
-
 #include "_MotorCommunicatorInterface.hpp"
 
 /**MotorComPS01Impl class
  *
  */
 class MotorComPS01Impl: public MotorCommunicatorInterface {
-
 public:
 	/**MotorComPS01Impl constructor
 	 * @param Row r

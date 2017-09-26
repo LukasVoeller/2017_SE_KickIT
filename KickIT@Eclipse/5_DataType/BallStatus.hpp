@@ -2,6 +2,7 @@
  * @file BallStatus.hpp
  * @brief
  */
+
 #ifndef BALLSTATUS_HPP_
 #define BALLSTATUS_HPP_
 
@@ -13,7 +14,6 @@
  */
 class BallStatus {
 public:
-
 	Vec2 movement;
 	Vec2 position;
 	clock_t last_update;
@@ -64,11 +64,7 @@ public:
 		 */
 		Vec2 newPos(x,y);
 
-		//std::cout << "new pos x: " << x << " new y: " << y << std::endl;
-		//std::cout << "elapsed: " << elapsed_secs << std::endl;
 		this->movement = this->position.toTarget(newPos);
-		//std::cout << "length: " << this->movement.length() << std::endl;
-
 		this->movement.setLength(this->movement.length()/elapsed_secs);
 		this->position.update(x,y);
 	}

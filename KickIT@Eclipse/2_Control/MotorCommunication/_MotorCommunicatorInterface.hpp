@@ -15,20 +15,19 @@
 #include <fcntl.h>
 #include <cstring>
 #include <bitset>
-
 #include "../../5_DataType/MotorConfig.hpp"
 
 /**MotorCommunicatorInterface class
  *
  */
 class MotorCommunicatorInterface {
-
 public:
 	/**linearMovement finction
 	 *
 	 * @param int position
 	 */
 	virtual void linearMovement(int position) = 0;
+
 	/**rotate function
 	 *
 	 * @param int amount
@@ -39,7 +38,6 @@ public:
 	 *
 	 */
 	virtual ~MotorCommunicatorInterface() {}
-
 
 protected:
 	MotorConfig mc;
@@ -60,7 +58,6 @@ protected:
 		nibbleTranslational = !nibbleTranslational;
 		return nibbleTranslational;
 	}
-
 
 	/**switchedNibbleR function
 	 *
@@ -167,7 +164,5 @@ protected:
 		close(this->socketId);
 	}
 };
-
-
 
 #endif //INTERFACEMOTORCOMMUNICATOR_HPP

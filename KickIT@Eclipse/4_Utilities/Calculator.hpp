@@ -2,13 +2,13 @@
  * @file Calculator.hpp
  * @brief
  */
+
 #ifndef CALCULATOR_HPP
 #define CALCULATOR_HPP
 
 #include "../5_DataType/Vec2.hpp"
 #include "../5_DataType/TableConfig.hpp"
 #include "../5_DataType/BallStatus.hpp"
-
 #include <vector>
 
 /**Calculator function
@@ -27,7 +27,6 @@ namespace Calculator {
 		BallStatus* bs = ((BallStatus*)params->at(0));
 		float* positions = ((float*)params->at(1));
 
-		//std::cout << "bs: " << bs->position.y << std::endl;
 		if (tc.isKeeperActive) {
 			if ( bs->movement.x < 0 ) {
 				float m = bs->movement.y / bs->movement.x;
@@ -35,18 +34,14 @@ namespace Calculator {
 				float pos = ((bs->position.x - tc.distGoalToKeeper) * m) + bs->position.y;
 				positions[0] = pos;
 			}else if ( bs->movement.x > 0) {
-				//std::cout << "positions[0] " << 340 << std::endl;
 				positions[0] = 340;
 			}else if (bs->movement.x == 0){
-				//std::cout << "positions[0] " << bs->position.y << std::endl;
 				positions[0] = bs->position.y;
 			}
 		}
 
 		if (tc.isDefenseActive) {
-
 			if ( bs->movement.x < 0 ) {
-
 				float m = bs->movement.y / bs->movement.x;
 				m*=(-1);
 				float pos = ((bs->position.x - tc.distGoalToDefense) * m) + bs->position.y;
@@ -55,9 +50,7 @@ namespace Calculator {
 			if ( bs->movement.x > 0) {
 				positions[1] = 200;
 			}
-
 		}
-
 	}
 
 	/**calcIfKickSimple function
@@ -72,7 +65,6 @@ namespace Calculator {
 		} else {
 			kick[0] = false;
 		}
-
 	}
 
 	/**calcIfUp function
@@ -84,7 +76,6 @@ namespace Calculator {
 		bool* up = ((bool*)params->at(2));
 		if (bs->position.x < 155)
 			up[0] = true;
-
 	}
 };
 

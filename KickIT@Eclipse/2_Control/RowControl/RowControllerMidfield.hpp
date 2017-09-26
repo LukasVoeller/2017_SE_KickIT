@@ -11,7 +11,6 @@
  *
  */
 class RowControllerMidfield: public RowControllerInterface {
-
 public:
 	/**RowControllerMidfield constructor
 	 *
@@ -20,4 +19,4 @@ public:
 	void moveTo(float y){}
 };
 
-#endif /* ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_ */
+#endif //ROWCONTROL_ROWCONTROLLERMIDFIELD_HPP_

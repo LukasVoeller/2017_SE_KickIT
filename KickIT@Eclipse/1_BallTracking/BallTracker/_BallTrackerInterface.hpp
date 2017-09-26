@@ -22,6 +22,7 @@ public:
 	void setTableController(TableControllerInterface* t) {
 		this->tableController = t;
 	}
+
 	/**BallTrackerInterface destructor
 	 *
 	 */
@@ -30,7 +31,7 @@ public:
 	/**getBallPosition function
 	 *
 	 */
-	virtual Vec2 getBallPosition() = 0;
+	virtual void getBallPosition() = 0;
 
 	/**startTracking function
 	 *
