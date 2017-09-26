@@ -1,3 +1,4 @@
+//@file
 #ifndef VEC2_HPP_
 #define VEC2_HPP_
 

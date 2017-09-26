@@ -1,3 +1,7 @@
+/**
+ * @file BallTrackerImpl.cpp
+ * @brief
+ */
 #include "../../1_BallTracking/BallTracker/BallTrackerImpl.hpp"
 #include "_BallTrackerInterface.hpp"
 #include <opencv2/opencv.hpp>
@@ -12,6 +16,7 @@ using namespace GenApi;
 
 int exitCode = 0;
 
+
 BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->tableController = tci;
 	this->camera = new Camera();
@@ -23,6 +28,7 @@ BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 BallTrackerImpl::~BallTrackerImpl() {
 
 }
+
 
 Vec2 BallTrackerImpl::getBallPosition() {
 	Mat* cv_img = camera->getImage();
@@ -73,6 +79,7 @@ Vec2 BallTrackerImpl::getBallPosition() {
 
 	delete cv_img;
 }
+
 
 void BallTrackerImpl::startTracking() {
 	Mat imgThresholded;

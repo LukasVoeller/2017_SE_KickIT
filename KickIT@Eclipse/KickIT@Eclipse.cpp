@@ -55,7 +55,6 @@ bool keeperHomed = false;
 bool defenseHomed = false;
 
 int main(int argc, char** argv) {
-
 	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 

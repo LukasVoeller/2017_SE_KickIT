@@ -1,3 +1,7 @@
+/**
+ * @file MotorComPS01Impl.cpp
+ * @brief
+ */
 #include "../../2_Control/MotorCommunication/MotorComPS01Impl.hpp"
 
 #include <iostream>
@@ -54,10 +58,10 @@ void MotorComPS01Impl::linearMovement(int position){
 	if(position > mc.keeperBoundaryInwards) position = mc.keeperBoundaryInwards;			//Check if position is within range
 	if(position < mc.keeperBoundaryOutwards) position = mc.keeperBoundaryOutwards;			//Check if position is within range
 
-	int pos1, pos2;
+	int pLow, pHigh;
 	position *= 10;
-	pos1 = (position & 255);
-	pos2 = (position >> 8);
+	pLow = (position & 255);
+	pHigh = (position >> 8);
 
 	int acceleration = this->mc.keeperAccelerationTranslational;
 	int aLow = acceleration & 255;
@@ -71,7 +75,7 @@ void MotorComPS01Impl::linearMovement(int position){
 	int sLow = maxSpeed & 255;
 	int sHigh = maxSpeed >> 8;
 
-	frameInit(0x201, 0x8, 0x3F, 0x0, this->switchedNibbleT(), 0x09, pos1, pos2, sLow, sHigh);
+	frameInit(0x201, 0x8, 0x3F, 0x0, this->switchedNibbleT(), 0x09, pLow, pHigh, sLow, sHigh);
 	frameInit(0x301, 0x8, aLow, aHigh, dLow, dHigh, 0x0, 0x0, 0x0, 0x0);
 	frameInit(0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);
 }

@@ -1,3 +1,7 @@
+/**
+ * @file MotorComRS01Impl.cpp
+ * @brief
+ */
 #include "../../2_Control/MotorCommunication/MotorComRS01Impl.hpp"
 
 #include <iostream>
@@ -86,10 +90,10 @@ void MotorComRS01Impl::linearMovement(int position){
 }
 
 void MotorComRS01Impl::rotate(int amount) {
-	int posLow,posHigh;
+	int pLow,pHigh;
 	amount *= 10;
-	posLow = (amount & 255);
-	posHigh = (amount >> 8);
+	pLow = (amount & 255);
+	pHigh = (amount >> 8);
 
 	int acceleration = this->mc.defenseAccelerationRotary;
 	int aLow = acceleration & 255;
@@ -103,7 +107,7 @@ void MotorComRS01Impl::rotate(int amount) {
 	int sLow = maxSpeed & 255;
 	int sHigh = maxSpeed >> 8;
 
-	frameInit(0x203, 0x8, 0x3F, 0x0, this->switchedNibbleR(), 0x09, posLow, posHigh, 0xFF, 0xFF);
+	frameInit(0x203, 0x8, 0x3F, 0x0, this->switchedNibbleR(), 0x09, pLow, pHigh, 0xFF, 0xFF);
 	frameInit(0x303, 0x8, aLow, aHigh, dLow, dHigh, 0x0, 0x0, 0x0, 0x0);
 	frameInit(0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0);
 }

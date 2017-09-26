@@ -1,3 +1,7 @@
+/**
+ * @file Camera.cpp
+ * @brief
+ */
 #include "../../1_BallTracking/Camera/Camera.hpp"
 #include "../../5_DataType/CameraConfig.hpp"
 #include "opencv2/imgproc.hpp"
@@ -7,9 +11,6 @@ Pylon::PylonAutoInitTerm autoInitTerm;
 
 using namespace std;
 
-/**
- * @brief Konstruktor Camera
- */
 
 Camera::Camera() {
 	camera = new CInstantCamera(CTlFactory::GetInstance().CreateFirstDevice());
@@ -18,17 +19,12 @@ Camera::Camera() {
 	camera->StartGrabbing();
 }
 
-/**
- * @brief Destruktor Camera
- */
+
 Camera::~Camera() {
 
 }
 
-/**
- * @brief Funktion holt ein Bild von der Camera
- * @return Ein Bild wird zurückgegeben
- */
+
 cv::Mat* Camera::getImage() {
 	CPylonImage image;
 	CImageFormatConverter fc;
@@ -94,11 +90,7 @@ void Camera::calibrate() {
 	}
 }
 
-/**
- * @brief Function for initial configuration of the camera
- *
- * The settings are fetched from the CameraConfig.txt and passed to the PylonViewerApi
- */
+
 void Camera::setCameraSettings() {
 	cout << "Using device: " << camera->GetDeviceInfo().GetModelName() << endl;
 	PylonAutoInitTerm autoInitTerm;
@@ -139,13 +131,7 @@ void Camera::getCameraSettings() {
 	cout << "Packetsize: " << packetsize->GetValue() << endl;
 	cout << "Belichtungszeit: " << exposuretime->GetValue() << endl << endl;
 }
-/**
- * @brief Funktion threshold
- *
- * This function sets the threshold values ​​for the ball detection.
- * These values ​​are then stored in the CameraConfig.txt
- * @return The result of the adjustment is returned with the variable result
- */
+
 CameraConfig* Camera::threshold() {
 	CameraConfig* result = new CameraConfig();
 	CGrabResultPtr ptrGrabResult;

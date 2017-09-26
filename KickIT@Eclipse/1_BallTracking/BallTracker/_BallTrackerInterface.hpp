@@ -1,3 +1,7 @@
+/**
+ * @file BallTrackerInterface.hpp
+ * @brief
+ */
 #ifndef BALLTRACKERINTERFACE_HPP
 #define BALLTRACKERINTERFACE_HPP
 
@@ -6,6 +10,9 @@
 #include "../Camera/_CameraInterface.hpp"
 #include "../../5_DataType/Vec2.hpp"
 
+/**BallTrackerInterface class
+ *
+ */
 class BallTrackerInterface {
 public:
 	void setTableController(TableControllerInterface* t) {
