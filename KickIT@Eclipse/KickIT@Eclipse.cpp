@@ -48,9 +48,11 @@
 #include <QApplication>
 #include <cstdlib>
 
-#define MODE 4
+#define MODE 2
 Modules* Modules::_instance = 0;
 
+bool keeperHomed = false;
+bool defenseHomed = false;
 
 int main(int argc, char** argv) {
 
@@ -61,25 +63,24 @@ int main(int argc, char** argv) {
 	#if MODE == 1
 
 		QApplication a(argc, argv);
-		tableController = VirtualKicker::getVirtualKickerTable();
+		TableControllerInterface* tableController = VirtualKicker::getVirtualKickerTable();
 		return a.exec();
 
 	#endif
 
-	//Motor testing mode - The ball position is simulated with the GUI
-	#if MODE == 2
-	#endif
-
-	//Balltracking testing mode - The table is simulated with the GUI
-	#if MODE == 3
-	#endif
-
 	//Final mode - Ready to play!
-	#if MODE == 4
+	#if MODE == 2
 		QApplication a(argc, argv);
 		VirtualKickerWindow* vkw = VirtualKicker::getDisplay();
 		TableControllerImpl* tci = new TableControllerImpl(vkw);
 		BallTrackerImpl* bti = new BallTrackerImpl(tci);
+		MotorConfig mc;
+
+		if(!defenseHomed || !keeperHomed) cout << "waiting for motors" << endl;
+		while(!defenseHomed || !keeperHomed){
+			sleep(1);
+		}
+
 		QThread* th = new QThread();
 		bti->moveToThread(th);
 		th->start();

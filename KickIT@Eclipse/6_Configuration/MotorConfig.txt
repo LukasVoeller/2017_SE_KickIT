@@ -17,9 +17,9 @@ int keeperBoundaryInwards 65
 int keeperBoundaryOutwards -65
 
 int defenseAccelerationTranslational 200
-int defenseAccelerationRotary 200
+int defenseAccelerationRotary 300
 int defenseDecelerationTranslational 200
-int defenseDecelerationRotary 200
+int defenseDecelerationRotary 300
 int defenseSpeedTranslational 1000
 int defenseSpeedRotary 400
 int defenseSleepAfterReset 20
