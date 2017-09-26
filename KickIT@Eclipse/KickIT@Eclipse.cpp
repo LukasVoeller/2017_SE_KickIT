@@ -55,6 +55,10 @@
 #define MODE 2
 Modules* Modules::_instance = 0;
 
+bool keeperHomed = false;
+bool defenseHomed = false;
+
+
 /**main function
  * @param (int argc, char** argv)
  *
@@ -84,6 +88,15 @@ int main(int argc, char** argv) {
 		VirtualKickerWindow* vkw = VirtualKicker::getDisplay();
 		TableControllerImpl* tci = new TableControllerImpl(vkw);
 		BallTrackerImpl* bti = new BallTrackerImpl(tci);
+
+		MotorConfig mc;
+
+		if(!defenseHomed || !keeperHomed) cout << "waiting for motors" << endl;
+		while(!defenseHomed || !keeperHomed){
+			sleep(1);
+		}
+
+
 		QThread* th = new QThread();
 		bti->moveToThread(th);
 		th->start();
