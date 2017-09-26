@@ -1,5 +1,5 @@
 /**
- * file BallTrackerImpl.hpp
+ * @file BallTrackerImpl.hpp
  * @brief
  */
 #ifndef BALLTRACKERIMPL_HPP
@@ -19,7 +19,9 @@ class BallTrackerImpl: public QObject, public BallTrackerInterface  {
 
 public:
 	/**BallTrackerImpl constructor
+	 *
 	 * @param TableControllerInterface* tci
+	 *
 	 * If the BallTracker has detected a new ball position, the TableController must be notified
 	 */
 	BallTrackerImpl(TableControllerInterface* tci);
@@ -29,14 +31,8 @@ public:
 	 */
 	~BallTrackerImpl();
 
-	/**getBallPosition function
-	 *
-	 */
 	Vec2 getBallPosition();
 
-	/**startTracking function
-	 *
-	 */
 	void startTracking();
 
 public slots:

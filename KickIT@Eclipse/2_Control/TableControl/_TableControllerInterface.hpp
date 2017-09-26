@@ -23,6 +23,7 @@ class TableControllerInterface {
 
 public:
 	/**setBallPos function
+	 *
 	 * @param float x, float y
 	 *
 	 */
@@ -103,7 +104,9 @@ protected:
 	RowControllerInterface* offenseControl;
 
 	/**PixelToMM function
+	 *
 	 * @param float xPixel, float yPixel
+	 *
 	 * @return result
 	 *
 	 * the function gets pixes as a parameter and converts it into milimeters

@@ -10,6 +10,7 @@ var searchData=
   ['defensecontrol',['defenseControl',['../class_table_controller_interface.html#ae0a4e4b7b5994a63f21747c60e84ec9e',1,'TableControllerInterface']]],
   ['defensedecelerationrotary',['defenseDecelerationRotary',['../class_motor_config.html#a90e7d6b520e9f07addf6d190c3302a1e',1,'MotorConfig']]],
   ['defensedecelerationtranslational',['defenseDecelerationTranslational',['../class_motor_config.html#a592d9fc3b1b695652f5c429b74b43b4d',1,'MotorConfig']]],
+  ['defensehomed',['defenseHomed',['../_motor_com_r_s01_impl_8cpp.html#a60ccba57898d6d6fc24347c2af8ee67e',1,'defenseHomed():&#160;KickIT@Eclipse.cpp'],['../_kick_i_t_0D_eclipse_8cpp.html#a60ccba57898d6d6fc24347c2af8ee67e',1,'defenseHomed():&#160;KickIT@Eclipse.cpp']]],
   ['defensesleepafterhoming',['defenseSleepAfterHoming',['../class_motor_config.html#a3d21777d7d29dad713a0fbf225a6e29c',1,'MotorConfig']]],
   ['defensesleepafterreset',['defenseSleepAfterReset',['../class_motor_config.html#a9d559c7bf6caa1b2fdc9453d36f29c59',1,'MotorConfig']]],
   ['defensespeedrotary',['defenseSpeedRotary',['../class_motor_config.html#a23fe81b56ecce25f87aaaa8208569add',1,'MotorConfig']]],

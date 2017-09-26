@@ -1,10 +1,10 @@
 <map id="TableControllerInterface" name="TableControllerInterface">
-<area shape="rect" id="node2" href="$class_camera_config.html" title="CameraConfig" alt="" coords="5,145,112,172"/>
-<area shape="rect" id="node3" href="$class_config_reader.html" title="ConfigReader" alt="" coords="86,5,189,32"/>
-<area shape="rect" id="node4" href="$class_table_config.html" title="TableConfig" alt="" coords="91,196,183,223"/>
-<area shape="rect" id="node9" href="$class_motor_config.html" title="MotorConfig" alt="" coords="197,95,291,121"/>
-<area shape="rect" id="node7" href="$class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="178,300,334,327"/>
-<area shape="rect" id="node5" href="$class_ball_status.html" title="BallStatus" alt="" coords="383,300,465,327"/>
-<area shape="rect" id="node6" href="$class_vec2.html" title="Vec2" alt="" coords="422,196,474,223"/>
-<area shape="rect" id="node8" href="$class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="207,196,398,223"/>
+<area shape="rect" id="node2" href="$class_camera_config.html" title="{CameraConfig\n|+ redLow\l+ redHigh\l+ greenLow\l+ greenHigh\l+ blueLow\l+ blueHigh\l+ width\l+ height\l+ packetsize\l+ exposureTime\l+ offsetx\l+ offsety\l|+ CameraConfig()\l+ loadConfig()\l+ saveConfig()\l+ printConfig()\l}" alt="" coords="5,555,132,837"/>
+<area shape="rect" id="node3" href="$class_config_reader.html" title="{ConfigReader\n|# filename\l# valueChanged\l# values\l# strings\l|+ ConfigReader()\l+ getStringValue()\l+ getIntValue()\l+ setStringValue()\l+ setIntValue()\l+ writeOut()\l# readFile()\l}" alt="" coords="101,5,228,215"/>
+<area shape="rect" id="node4" href="$class_table_config.html" title="{TableConfig\n|+ tableHeight\l+ tableWidth\l+ isKeeperActive\l+ isDefenseActive\l+ isMidfieldActive\l+ isOffenseActive\l+ playerGapDefense\l+ playerGapMidfield\l+ playerGapOffense\l+ distGoalToKeeper\land 12 more...\l|+ TableConfig()\l+ loadConfig()\l+ saveConfig()\l+ printConfig()\l}" alt="" coords="93,861,236,1129"/>
+<area shape="rect" id="node9" href="$class_motor_config.html" title="{MotorConfig\n|+ homingRequired\l+ port\l+ keeperAccelerationTranslational\l+ keeperDecelerationTranslational\l+ keeperSpeedTranslational\l+ keeperSleepAfterReset\l+ keeperSleepAfterHoming\l+ keeperBoundaryInwards\l+ keeperBoundaryOutwards\l+ defenseAccelerationTranslational\land 9 more...\l|+ MotorConfig()\l+ loadConfig()\l+ saveConfig()\l}" alt="" coords="222,277,449,531"/>
+<area shape="rect" id="node7" href="$class_row_controller_interface.html" title="{RowControllerInterface\n|# isUp\l# isShooting\l|+ moveTo()\l+ up()\l+ down()\l+ kick()\l+ ~RowControllerInterface()\l}" alt="" coords="211,1207,395,1357"/>
+<area shape="rect" id="node5" href="$class_ball_status.html" title="{BallStatus\n|+ last_update\l|+ BallStatus()\l+ BallStatus()\l+ operator=()\l+ update()\l}" alt="" coords="463,1221,565,1343"/>
+<area shape="rect" id="node6" href="$class_vec2.html" title="{Vec2\n|+ x\l+ y\l|+ Vec2()\l+ Vec2()\l+ update()\l+ toTarget()\l+ update()\l+ dot()\l+ cross()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\land 8 more...\l}" alt="" coords="504,876,609,1115"/>
+<area shape="rect" id="node8" href="$class_motor_communicator_interface.html" title="{MotorCommunicatorInterface\n|# port\l# socketId\l# nibbleTranslational\l# nibbleRotary\l|+ linearMovement()\l+ rotate()\l+ ~MotorCommunicatorInterface()\l# driverInit()\l# switchedNibbleT()\l# switchedNibbleR()\l# openPort()\l# frameInit()\l# sendPort()\l# closePort()\l}" alt="" coords="261,869,479,1122"/>
 </map>

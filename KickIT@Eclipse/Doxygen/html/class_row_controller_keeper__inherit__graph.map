@@ -1,3 +1,3 @@
 <map id="RowControllerKeeper" name="RowControllerKeeper">
-<area shape="rect" id="node2" href="$class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$class_row_controller_interface.html" title="{RowControllerInterface\n|# mcomm\l# isUp\l# isShooting\l# tc\l|+ moveTo()\l+ up()\l+ down()\l+ kick()\l+ ~RowControllerInterface()\l}" alt="" coords="5,5,189,185"/>
 </map>

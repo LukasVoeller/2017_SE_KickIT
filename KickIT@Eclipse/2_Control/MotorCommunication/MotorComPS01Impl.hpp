@@ -26,15 +26,9 @@ public:
 	 */
 	MotorComPS01Impl();
 
-	/**linearMovement function
-	 * @param int position
-	 */
 	void linearMovement(int position);
 
 protected:
-	/**driverInit function
-	 *
-	 */
 	void driverInit();
 };
 

@@ -1,4 +1,4 @@
 <map id="MotorCommunicatorInterface" name="MotorCommunicatorInterface">
-<area shape="rect" id="node2" href="$class_motor_com_p_s01_impl.html" title="MotorComPS01Impl" alt="" coords="5,80,145,107"/>
-<area shape="rect" id="node3" href="$class_motor_com_r_s01_impl.html" title="MotorComRS01Impl" alt="" coords="170,80,311,107"/>
+<area shape="rect" id="node2" href="$class_motor_com_p_s01_impl.html" title="{MotorComPS01Impl\n||+ MotorComPS01Impl()\l+ linearMovement()\l# driverInit()\l}" alt="" coords="5,329,165,435"/>
+<area shape="rect" id="node3" href="$class_motor_com_r_s01_impl.html" title="{MotorComRS01Impl\n||+ MotorComRS01Impl()\l+ linearMovement()\l+ rotate()\l# driverInit()\l}" alt="" coords="190,321,351,443"/>
 </map>

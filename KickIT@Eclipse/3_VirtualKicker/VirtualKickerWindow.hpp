@@ -24,32 +24,38 @@ class VirtualKickerWindow: public QWidget {
 
 public:
 	/**VirtualKickerWindow constructor
+	 *
 	 * @param (bool showLines, bool drawBallPositionWithMouse)
 	 */
 	VirtualKickerWindow(bool showLines, bool drawBallPositionWithMouse);
 
 	/**paintEvent function
+	 *
 	 * @param (QPaintEvent *event)
 	 *
 	 */
 	void paintEvent(QPaintEvent *event);
 
 	/**mouseMoveEvent
+	 *
 	 * @param (QMouseEvent* e)
 	 */
 	void mouseMoveEvent(QMouseEvent* e);
 
 	/**mouseReleaseEvent function
+	 *
 	 * @param (QMouseEvent* e)
 	 */
 	void mouseReleaseEvent(QMouseEvent* e);
 
 	/**keyPressEvent function
+	 *
 	 * @param (QKeyEvent * event)
 	 */
 	void keyPressEvent(QKeyEvent * event);
 
 	/**setTableController function
+	 *
 	 * @param (TableControllerInterface* t)
 	 */
 	void setTableController(TableControllerInterface* t);
@@ -72,6 +78,7 @@ public:
 
 public slots:
 	/**newBallStatus function
+	 *
 	 * @param (BallStatus bs)
 	 */
 	void newBallStatus(BallStatus bs);

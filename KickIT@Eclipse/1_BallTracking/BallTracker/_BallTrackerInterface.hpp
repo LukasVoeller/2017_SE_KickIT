@@ -16,6 +16,7 @@
 class BallTrackerInterface {
 public:
 	/**setTableController function
+	 *
 	 * @param (TableControllerInterface* t)
 	 */
 	void setTableController(TableControllerInterface* t) {
@@ -26,7 +27,7 @@ public:
 	 */
 	virtual ~BallTrackerInterface() {}
 
-	/**getBallPosition
+	/**getBallPosition function
 	 *
 	 */
 	virtual Vec2 getBallPosition() = 0;

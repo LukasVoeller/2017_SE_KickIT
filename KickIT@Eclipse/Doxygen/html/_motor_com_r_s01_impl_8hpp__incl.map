@@ -1,6 +1,5 @@
 <map id="2_Control/MotorCommunication/MotorComRS01Impl.hpp" name="2_Control/MotorCommunication/MotorComRS01Impl.hpp">
-<area shape="rect" id="node6" href="$_row_enum_8hpp.html" title="../../5_DataType/RowEnum.hpp" alt="" coords="383,169,589,196"/>
-<area shape="rect" id="node7" href="$___motor_communicator_interface_8hpp.html" title="_MotorCommunicatorInterface.hpp" alt="" coords="516,95,739,121"/>
-<area shape="rect" id="node14" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="665,169,883,196"/>
-<area shape="rect" id="node17" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="900,244,1101,271"/>
+<area shape="rect" id="node6" href="$___motor_communicator_interface_8hpp.html" title="_MotorCommunicatorInterface.hpp" alt="" coords="355,95,577,121"/>
+<area shape="rect" id="node13" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="885,169,1103,196"/>
+<area shape="rect" id="node16" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="667,244,868,271"/>
 </map>

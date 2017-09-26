@@ -17,11 +17,6 @@ public:
 	 *
 	 */
 	RowControllerOffense();
-
-	/**moveTo function
-	 * @param float y
-	 *
-	 */
 	void moveTo(float y){}
 };
 

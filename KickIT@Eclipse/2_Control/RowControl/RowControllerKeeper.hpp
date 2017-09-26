@@ -23,10 +23,6 @@ public:
 	 *
 	 */
 	void run();
-
-	/**moveTo function
-	 *
-	 */
 	void moveTo(float y);
 
 };

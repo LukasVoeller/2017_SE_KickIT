@@ -18,25 +18,9 @@ public:
 	 */
 	RowControllerDefense();
 
-	/**kick function
-	 * @param int strength
-	 *
-	 */
-	void kick(int strength); //Parameter Deklaration != Parameter Implementation
-	/**up function
-	 *
-	 */
+	void kick(int strength);
 	virtual void up();
-
-	/**down function
-	 *
-	 */
 	virtual void down();
-
-	/**moveTo function
-	 * @param float y
-	 *
-	 */
 	void moveTo(float y);
 
 protected:

@@ -93,6 +93,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_vec2_8hpp_source.html">Vec2.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Vec2:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_vec2__coll__graph.png" border="0" usemap="#_vec2_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adfaf0492c67e51fc89e3f7f484519de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f062667506f94bc207bdf492ca5b89c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vec2.html">Vec2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec2.html#a7f062667506f94bc207bdf492ca5b89c">operator+=</a> (const <a class="el" href="class_vec2.html">Vec2</a> &amp;v)</td></tr>
 <tr class="separator:a7f062667506f94bc207bdf492ca5b89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b7293b6a348ee4d33b8fa396db9adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec2.html#a41b7293b6a348ee4d33b8fa396db9adb">operator*</a> (float c) const </td></tr>
+<tr class="memitem:a41b7293b6a348ee4d33b8fa396db9adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec2.html#a41b7293b6a348ee4d33b8fa396db9adb">operator*</a> (float <a class="el" href="jquery_8js.html#abce695e0af988ece0826d9ad59b8160d">c</a>) const </td></tr>
 <tr class="separator:a41b7293b6a348ee4d33b8fa396db9adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39640496ed941cf3d7e8cc7ee96eea36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec2.html#a39640496ed941cf3d7e8cc7ee96eea36">operator-</a> () const </td></tr>
 <tr class="separator:a39640496ed941cf3d7e8cc7ee96eea36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,7 +145,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a30543787e62f6d915543cf1dfb04c094"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vec2.html#a30543787e62f6d915543cf1dfb04c094">y</a></td></tr>
 <tr class="separator:a30543787e62f6d915543cf1dfb04c094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_vec2.html">Vec2</a> class </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a76080feed7005893ecc634f903cfbae0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -161,6 +168,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_vec2.html">Vec2</a> function </p>
 
 </div>
 </div>
@@ -195,6 +203,12 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_vec2.html">Vec2</a> function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(float</td><td>_x, float _y) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -220,6 +234,13 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>cross function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this-&gt;x * v.y - v.x * this-&gt;y </dd></dl>
 
 </div>
 </div>
@@ -244,6 +265,13 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>dot function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; v) scalarproduct = laenge1 * laenge2 * cos (angle between)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this-&gt;x * v.x + this-&gt;y * v.y </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -278,6 +306,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>equals function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a> v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this-&gt;x == v.x &amp;&amp; this-&gt;y == v.y </dd></dl>
 
 </div>
 </div>
@@ -301,6 +336,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>length function </p><dl class="section return"><dt>Returns</dt><dd>sqrtf(this-&gt;<a class="el" href="class_vec2.html#a65a6009cc22511950a84e6cadf07ae27">lengthSquared()</a>) </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -348,6 +384,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>lengthSquared function </p><dl class="section return"><dt>Returns</dt><dd>lengthSquared </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -386,6 +423,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>normalize function </p><dl class="section return"><dt>Returns</dt><dd>*this </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -421,6 +459,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>operator* function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(float</td><td>c) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
 </div>
 </div>
@@ -445,6 +490,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>operator+ function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
 </div>
 </div>
@@ -469,6 +521,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>operator+= function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*this </dd></dl>
 
 </div>
 </div>
@@ -493,6 +552,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>operator- function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
 </div>
 </div>
@@ -516,6 +582,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>operator- function </p><dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
 </div>
 </div>
@@ -540,6 +607,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>reflection function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; normal) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -574,6 +648,12 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>setLength function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(float</td><td>millimetersPerSecond) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -620,6 +700,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>toTarget function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td><a class="el" href="class_vec2.html">Vec2</a>&amp; destination) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>res </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -665,6 +752,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>update function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(float</td><td>newx, float newy) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -700,6 +793,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>update function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(Vec2*</td><td>newp) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

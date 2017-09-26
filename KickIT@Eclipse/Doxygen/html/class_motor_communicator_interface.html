@@ -99,19 +99,19 @@ Inheritance diagram for MotorCommunicatorInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_motor_communicator_interface__inherit__graph.png" border="0" usemap="#_motor_communicator_interface_inherit__map" alt="Inheritance graph"/></div>
 <map name="_motor_communicator_interface_inherit__map" id="_motor_communicator_interface_inherit__map">
-<area shape="rect" id="node2" href="class_motor_com_p_s01_impl.html" title="MotorComPS01Impl" alt="" coords="5,80,145,107"/>
-<area shape="rect" id="node3" href="class_motor_com_r_s01_impl.html" title="MotorComRS01Impl" alt="" coords="170,80,311,107"/>
+<area shape="rect" id="node2" href="class_motor_com_p_s01_impl.html" title="{MotorComPS01Impl\n||+ MotorComPS01Impl()\l+ linearMovement()\l# driverInit()\l}" alt="" coords="5,329,165,435"/>
+<area shape="rect" id="node3" href="class_motor_com_r_s01_impl.html" title="{MotorComRS01Impl\n||+ MotorComRS01Impl()\l+ linearMovement()\l+ rotate()\l# driverInit()\l}" alt="" coords="190,321,351,443"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for MotorCommunicatorInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_motor_communicator_interface__coll__graph.png" border="0" usemap="#_motor_communicator_interface_coll__map" alt="Collaboration graph"/></div>
 <map name="_motor_communicator_interface_coll__map" id="_motor_communicator_interface_coll__map">
-<area shape="rect" id="node2" href="class_motor_config.html" title="MotorConfig" alt="" coords="54,95,147,121"/>
-<area shape="rect" id="node3" href="class_config_reader.html" title="ConfigReader" alt="" coords="49,5,152,32"/>
+<area shape="rect" id="node2" href="class_motor_config.html" title="{MotorConfig\n|+ homingRequired\l+ port\l+ keeperAccelerationTranslational\l+ keeperDecelerationTranslational\l+ keeperSpeedTranslational\l+ keeperSleepAfterReset\l+ keeperSleepAfterHoming\l+ keeperBoundaryInwards\l+ keeperBoundaryOutwards\l+ defenseAccelerationTranslational\land 9 more...\l|+ MotorConfig()\l+ loadConfig()\l+ saveConfig()\l}" alt="" coords="5,277,232,531"/>
+<area shape="rect" id="node3" href="class_config_reader.html" title="{ConfigReader\n|# filename\l# valueChanged\l# values\l# strings\l|+ ConfigReader()\l+ getStringValue()\l+ getIntValue()\l+ setStringValue()\l+ setIntValue()\l+ writeOut()\l# readFile()\l}" alt="" coords="55,5,182,215"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -143,8 +143,6 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aae1e504fe7cce7e933b77d8e31a96878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motor_config.html">MotorConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#aae1e504fe7cce7e933b77d8e31a96878">mc</a></td></tr>
 <tr class="separator:aae1e504fe7cce7e933b77d8e31a96878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48fa4d31501da2473b9e99a4c3690ddf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_row_enum_8hpp.html#a7d78e0d3295e0903473cddc03fecb442">Row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a48fa4d31501da2473b9e99a4c3690ddf">row</a></td></tr>
-<tr class="separator:a48fa4d31501da2473b9e99a4c3690ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adde2a840f8e9cd2e43b34af2bf8c3719"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#adde2a840f8e9cd2e43b34af2bf8c3719">port</a></td></tr>
 <tr class="separator:adde2a840f8e9cd2e43b34af2bf8c3719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d2f463fa6182b86bee4852dcee3d3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#ad4d2f463fa6182b86bee4852dcee3d3a">socketId</a></td></tr>
@@ -154,7 +152,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af57ae9b19b30f4e7fc07545629117ad9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#af57ae9b19b30f4e7fc07545629117ad9">nibbleRotary</a> = 1</td></tr>
 <tr class="separator:af57ae9b19b30f4e7fc07545629117ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_motor_communicator_interface.html">MotorCommunicatorInterface</a> class </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a12d122da47f6ba863e7a8f7c838155b8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -175,6 +175,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_motor_communicator_interface.html">MotorCommunicatorInterface</a> destructor </p>
 
 </div>
 </div>
@@ -199,6 +200,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>closePort funktion </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -232,8 +234,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>driverInit function </p>
 
-<p>Implemented in <a class="el" href="class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0">MotorComPS01Impl</a>, and <a class="el" href="class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f">MotorComRS01Impl</a>.</p>
+<p>Implemented in <a class="el" href="class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f">MotorComRS01Impl</a>, and <a class="el" href="class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0">MotorComPS01Impl</a>.</p>
 
 </div>
 </div>
@@ -316,6 +319,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>frameInit function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -352,6 +361,12 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>linearMovement finction </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>position </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_motor_com_p_s01_impl.html#ae47ca67174e3240e18e129b5193a1ddc">MotorComPS01Impl</a>, and <a class="el" href="class_motor_com_r_s01_impl.html#a329b9e6783f49d16ad6a57a34b1d29a3">MotorComRS01Impl</a>.</p>
 
@@ -388,6 +403,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>openPort function </p><dl class="section return"><dt>Returns</dt><dd>0 or return -1 </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -422,6 +438,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>rotate function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>amount </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented in <a class="el" href="class_motor_com_r_s01_impl.html#aacd356794c8c05da436e52293b41476d">MotorComRS01Impl</a>.</p>
 
@@ -461,6 +483,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>sendPort function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">struct</td><td>can_frame *frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 or return -1 </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -494,6 +523,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>switchedNibbleR function </p><dl class="section return"><dt>Returns</dt><dd>nibbleRotary </dd></dl>
 
 </div>
 </div>
@@ -517,6 +547,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>switchedNibbleT function </p>
 
 </div>
 </div>
@@ -590,26 +621,6 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">char* MotorCommunicatorInterface::port</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a48fa4d31501da2473b9e99a4c3690ddf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_row_enum_8hpp.html#a7d78e0d3295e0903473cddc03fecb442">Row</a> MotorCommunicatorInterface::row</td>
         </tr>
       </table>
   </td>

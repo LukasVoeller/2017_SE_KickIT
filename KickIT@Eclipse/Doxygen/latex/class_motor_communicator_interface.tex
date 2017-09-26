@@ -1,0 +1,281 @@
+\hypertarget{class_motor_communicator_interface}{}\section{Motor\+Communicator\+Interface Class Reference}
+\label{class_motor_communicator_interface}\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+
+
+{\ttfamily \#include $<$\+\_\+\+Motor\+Communicator\+Interface.\+hpp$>$}
+
+
+
+Inheritance diagram for Motor\+Communicator\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_motor_communicator_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Motor\+Communicator\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_motor_communicator_interface__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3}{linear\+Movement} (int position)=0
+\item 
+virtual void \hyperlink{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41}{rotate} (int amount)
+\item 
+virtual \hyperlink{class_motor_communicator_interface_a12d122da47f6ba863e7a8f7c838155b8}{$\sim$\+Motor\+Communicator\+Interface} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}{driver\+Init} ()=0
+\item 
+int \hyperlink{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}{switched\+NibbleT} ()
+\item 
+int \hyperlink{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}{switched\+NibbleR} ()
+\item 
+int \hyperlink{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}{open\+Port} ()
+\item 
+void \hyperlink{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b}{frame\+Init} (int ID, int D\+LC, int Data\+\_\+0, int Data\+\_\+1, int Data\+\_\+2, int Data\+\_\+3, int Data\+\_\+4, int Data\+\_\+5, int Data\+\_\+6, int Data\+\_\+7)
+\item 
+int \hyperlink{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12}{send\+Port} (struct can\+\_\+frame $\ast$frame)
+\item 
+void \hyperlink{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba}{close\+Port} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_motor_config}{Motor\+Config} \hyperlink{class_motor_communicator_interface_aae1e504fe7cce7e933b77d8e31a96878}{mc}
+\item 
+char $\ast$ \hyperlink{class_motor_communicator_interface_adde2a840f8e9cd2e43b34af2bf8c3719}{port}
+\item 
+int \hyperlink{class_motor_communicator_interface_ad4d2f463fa6182b86bee4852dcee3d3a}{socket\+Id}
+\item 
+char \hyperlink{class_motor_communicator_interface_ae3010f217b379f0f62ebd5fee8387f21}{nibble\+Translational} = 1
+\item 
+char \hyperlink{class_motor_communicator_interface_af57ae9b19b30f4e7fc07545629117ad9}{nibble\+Rotary} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_motor_communicator_interface}{Motor\+Communicator\+Interface} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!````~Motor\+Communicator\+Interface@{$\sim$\+Motor\+Communicator\+Interface}}
+\index{````~Motor\+Communicator\+Interface@{$\sim$\+Motor\+Communicator\+Interface}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{$\sim$\+Motor\+Communicator\+Interface()}{~MotorCommunicatorInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Motor\+Communicator\+Interface\+::$\sim$\+Motor\+Communicator\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_motor_communicator_interface_a12d122da47f6ba863e7a8f7c838155b8}{}\label{class_motor_communicator_interface_a12d122da47f6ba863e7a8f7c838155b8}
+\hyperlink{class_motor_communicator_interface}{Motor\+Communicator\+Interface} destructor 
+
+\subsection{Member Function Documentation}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!close\+Port@{close\+Port}}
+\index{close\+Port@{close\+Port}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{close\+Port()}{closePort()}}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\+Communicator\+Interface\+::close\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba}{}\label{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba}
+close\+Port funktion 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!driver\+Init@{driver\+Init}}
+\index{driver\+Init@{driver\+Init}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{driver\+Init()=0}{driverInit()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Motor\+Communicator\+Interface\+::driver\+Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}{}\label{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}
+driver\+Init function 
+
+Implemented in \hyperlink{class_motor_com_r_s01_impl_a958cf9b3e05aba957af3e6df80e4ec2f}{Motor\+Com\+R\+S01\+Impl}, and \hyperlink{class_motor_com_p_s01_impl_a323cd48a50c38949c3349924262395c0}{Motor\+Com\+P\+S01\+Impl}.
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!frame\+Init@{frame\+Init}}
+\index{frame\+Init@{frame\+Init}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{frame\+Init(int I\+D, int D\+L\+C, int Data\+\_\+0, int Data\+\_\+1, int Data\+\_\+2, int Data\+\_\+3, int Data\+\_\+4, int Data\+\_\+5, int Data\+\_\+6, int Data\+\_\+7)}{frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7)}}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\+Communicator\+Interface\+::frame\+Init (
+\begin{DoxyParamCaption}
+\item[{int}]{ID, }
+\item[{int}]{D\+LC, }
+\item[{int}]{Data\+\_\+0, }
+\item[{int}]{Data\+\_\+1, }
+\item[{int}]{Data\+\_\+2, }
+\item[{int}]{Data\+\_\+3, }
+\item[{int}]{Data\+\_\+4, }
+\item[{int}]{Data\+\_\+5, }
+\item[{int}]{Data\+\_\+6, }
+\item[{int}]{Data\+\_\+7}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b}{}\label{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b}
+frame\+Init function 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!linear\+Movement@{linear\+Movement}}
+\index{linear\+Movement@{linear\+Movement}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{linear\+Movement(int position)=0}{linearMovement(int position)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Motor\+Communicator\+Interface\+::linear\+Movement (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3}{}\label{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3}
+linear\+Movement finction 
+\begin{DoxyParams}{Parameters}
+{\em int} & position \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_motor_com_p_s01_impl_ae47ca67174e3240e18e129b5193a1ddc}{Motor\+Com\+P\+S01\+Impl}, and \hyperlink{class_motor_com_r_s01_impl_a329b9e6783f49d16ad6a57a34b1d29a3}{Motor\+Com\+R\+S01\+Impl}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!open\+Port@{open\+Port}}
+\index{open\+Port@{open\+Port}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{open\+Port()}{openPort()}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::open\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}{}\label{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}
+open\+Port function \begin{DoxyReturn}{Returns}
+0 or return -\/1 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!rotate@{rotate}}
+\index{rotate@{rotate}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{rotate(int amount)}{rotate(int amount)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Motor\+Communicator\+Interface\+::rotate (
+\begin{DoxyParamCaption}
+\item[{int}]{amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41}{}\label{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41}
+rotate function 
+\begin{DoxyParams}{Parameters}
+{\em int} & amount \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_motor_com_r_s01_impl_aacd356794c8c05da436e52293b41476d}{Motor\+Com\+R\+S01\+Impl}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!send\+Port@{send\+Port}}
+\index{send\+Port@{send\+Port}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{send\+Port(struct can\+\_\+frame $\ast$frame)}{sendPort(struct can_frame *frame)}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::send\+Port (
+\begin{DoxyParamCaption}
+\item[{struct can\+\_\+frame $\ast$}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12}{}\label{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12}
+send\+Port function 
+\begin{DoxyParams}{Parameters}
+{\em struct} & can\+\_\+frame $\ast$frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or return -\/1 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!switched\+NibbleR@{switched\+NibbleR}}
+\index{switched\+NibbleR@{switched\+NibbleR}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{switched\+Nibble\+R()}{switchedNibbleR()}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::switched\+NibbleR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}{}\label{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}
+switched\+NibbleR function \begin{DoxyReturn}{Returns}
+nibble\+Rotary 
+\end{DoxyReturn}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!switched\+NibbleT@{switched\+NibbleT}}
+\index{switched\+NibbleT@{switched\+NibbleT}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{switched\+Nibble\+T()}{switchedNibbleT()}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::switched\+NibbleT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}{}\label{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}
+switched\+NibbleT function 
+
+\subsection{Member Data Documentation}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!mc@{mc}}
+\index{mc@{mc}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{mc}{mc}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\+Config} Motor\+Communicator\+Interface\+::mc\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_aae1e504fe7cce7e933b77d8e31a96878}{}\label{class_motor_communicator_interface_aae1e504fe7cce7e933b77d8e31a96878}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!nibble\+Rotary@{nibble\+Rotary}}
+\index{nibble\+Rotary@{nibble\+Rotary}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{nibble\+Rotary}{nibbleRotary}}]{\setlength{\rightskip}{0pt plus 5cm}char Motor\+Communicator\+Interface\+::nibble\+Rotary = 1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_af57ae9b19b30f4e7fc07545629117ad9}{}\label{class_motor_communicator_interface_af57ae9b19b30f4e7fc07545629117ad9}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!nibble\+Translational@{nibble\+Translational}}
+\index{nibble\+Translational@{nibble\+Translational}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{nibble\+Translational}{nibbleTranslational}}]{\setlength{\rightskip}{0pt plus 5cm}char Motor\+Communicator\+Interface\+::nibble\+Translational = 1\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_ae3010f217b379f0f62ebd5fee8387f21}{}\label{class_motor_communicator_interface_ae3010f217b379f0f62ebd5fee8387f21}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!port@{port}}
+\index{port@{port}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{port}{port}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Motor\+Communicator\+Interface\+::port\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_adde2a840f8e9cd2e43b34af2bf8c3719}{}\label{class_motor_communicator_interface_adde2a840f8e9cd2e43b34af2bf8c3719}
+\index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!socket\+Id@{socket\+Id}}
+\index{socket\+Id@{socket\+Id}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
+\subsubsection[{\texorpdfstring{socket\+Id}{socketId}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::socket\+Id\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_ad4d2f463fa6182b86bee4852dcee3d3a}{}\label{class_motor_communicator_interface_ad4d2f463fa6182b86bee4852dcee3d3a}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+2\+\_\+\+Control/\+Motor\+Communication/\hyperlink{___motor_communicator_interface_8hpp}{\+\_\+\+Motor\+Communicator\+Interface.\+hpp}\end{DoxyCompactItemize}

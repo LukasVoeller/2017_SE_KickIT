@@ -1,0 +1,149 @@
+\hypertarget{class_table_controller_impl}{}\section{Table\+Controller\+Impl Class Reference}
+\label{class_table_controller_impl}\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+
+
+{\ttfamily \#include $<$Table\+Controller\+Impl.\+hpp$>$}
+
+
+
+Inheritance diagram for Table\+Controller\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_table_controller_impl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Table\+Controller\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_table_controller_impl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}{new\+Ball\+Status} (\hyperlink{class_ball_status}{Ball\+Status} \hyperlink{jquery_8js_ae77642f8ef73fb9c20c2a737d956acda}{bs})
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_table_controller_impl_a758311eb8fa51fdc1188aa5eaea4225a}{Table\+Controller\+Impl} (\hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} $\ast$\hyperlink{class_table_controller_impl_af7dbc908fb9205938c254f748649d555}{vkw})
+\item 
+void \hyperlink{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}{set\+Ball\+Pos} (float x, float y)
+\item 
+\hyperlink{class_vec2}{Vec2} \hyperlink{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}{pixel\+To\+MM} (float x\+Pixel, float y\+Pixel)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} $\ast$ \hyperlink{class_table_controller_impl_af7dbc908fb9205938c254f748649d555}{vkw}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_table_controller_impl}{Table\+Controller\+Impl} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\subsubsection[{\texorpdfstring{Table\+Controller\+Impl(\+Virtual\+Kicker\+Window $\ast$vkw)}{TableControllerImpl(VirtualKickerWindow *vkw)}}]{\setlength{\rightskip}{0pt plus 5cm}Table\+Controller\+Impl\+::\+Table\+Controller\+Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Virtual\+Kicker\+Window} $\ast$}]{vkw}
+\end{DoxyParamCaption}
+)}\hypertarget{class_table_controller_impl_a758311eb8fa51fdc1188aa5eaea4225a}{}\label{class_table_controller_impl_a758311eb8fa51fdc1188aa5eaea4225a}
+\hyperlink{class_table_controller_impl}{Table\+Controller\+Impl} constructor 
+\begin{DoxyParams}{Parameters}
+{\em Virtual\+Kicker\+Window$\ast$} & vkw \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!new\+Ball\+Status@{new\+Ball\+Status}}
+\index{new\+Ball\+Status@{new\+Ball\+Status}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\subsubsection[{\texorpdfstring{new\+Ball\+Status}{newBallStatus}}]{\setlength{\rightskip}{0pt plus 5cm}void Table\+Controller\+Impl\+::new\+Ball\+Status (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball\+Status}}]{bs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}{}\label{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}
+new\+Ball\+Status function 
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_ball_status}{Ball\+Status}} & bs \\
+\hline
+\end{DoxyParams}
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!pixel\+To\+MM@{pixel\+To\+MM}}
+\index{pixel\+To\+MM@{pixel\+To\+MM}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\subsubsection[{\texorpdfstring{pixel\+To\+M\+M(float x\+Pixel, float y\+Pixel)}{pixelToMM(float xPixel, float yPixel)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec2} Table\+Controller\+Impl\+::pixel\+To\+MM (
+\begin{DoxyParamCaption}
+\item[{float}]{x\+Pixel, }
+\item[{float}]{y\+Pixel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}{}\label{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}
+poxel\+To\+MM function 
+\begin{DoxyParams}{Parameters}
+{\em float} & x\+Pixel, float y\+Pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result
+\end{DoxyReturn}
+the function gets pixes as a parameter and converts it into milimeters 
+
+Implements \hyperlink{class_table_controller_interface_a26c1aa23fd09f8d16e4c6437ca8e8b4d}{Table\+Controller\+Interface}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!set\+Ball\+Pos@{set\+Ball\+Pos}}
+\index{set\+Ball\+Pos@{set\+Ball\+Pos}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\subsubsection[{\texorpdfstring{set\+Ball\+Pos(float x, float y)}{setBallPos(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Table\+Controller\+Impl\+::set\+Ball\+Pos (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}{}\label{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}
+set\+Ball\+Pos funktion 
+\begin{DoxyParams}{Parameters}
+{\em float} & x, float y \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_table_controller_interface_ac699a40e0bec06283eb955829982cf07}{Table\+Controller\+Interface}.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Table\+Controller\+Impl@{Table\+Controller\+Impl}!vkw@{vkw}}
+\index{vkw@{vkw}!Table\+Controller\+Impl@{Table\+Controller\+Impl}}
+\subsubsection[{\texorpdfstring{vkw}{vkw}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Virtual\+Kicker\+Window}$\ast$ Table\+Controller\+Impl\+::vkw\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_table_controller_impl_af7dbc908fb9205938c254f748649d555}{}\label{class_table_controller_impl_af7dbc908fb9205938c254f748649d555}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8hpp}{Table\+Controller\+Impl.\+hpp}\item 
+2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8cpp}{Table\+Controller\+Impl.\+cpp}\item 
+build/\hyperlink{moc___table_controller_impl_8cpp}{moc\+\_\+\+Table\+Controller\+Impl.\+cpp}\end{DoxyCompactItemize}

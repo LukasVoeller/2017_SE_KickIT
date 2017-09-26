@@ -1,0 +1,152 @@
+\hypertarget{class_virtual_kicker}{}\section{Virtual\+Kicker Class Reference}
+\label{class_virtual_kicker}\index{Virtual\+Kicker@{Virtual\+Kicker}}
+
+
+{\ttfamily \#include $<$Virtual\+Kicker.\+hpp$>$}
+
+
+
+Collaboration diagram for Virtual\+Kicker\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_virtual_kicker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_table_controller_interface}{Table\+Controller\+Interface} $\ast$ \hyperlink{class_virtual_kicker_ad59e6a68db914c8580f44e00d5015d76}{get\+Virtual\+Kicker\+Table} ()
+\item 
+static \hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} $\ast$ \hyperlink{class_virtual_kicker_a564d975ad0b9eeabc5c9ce4cbf381061}{get\+Display} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_virtual_kicker_ab00ead9976b5ea4269238403772a0205}{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X} = 1200
+\item 
+static const int \hyperlink{class_virtual_kicker_a3fb0d845e01a7424ac7a37f4299875ad}{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y} = 800
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_virtual_kicker}{Virtual\+Kicker} class 
+
+\subsection{Member Function Documentation}
+\index{Virtual\+Kicker@{Virtual\+Kicker}!get\+Display@{get\+Display}}
+\index{get\+Display@{get\+Display}!Virtual\+Kicker@{Virtual\+Kicker}}
+\subsubsection[{\texorpdfstring{get\+Display()}{getDisplay()}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Virtual\+Kicker\+Window}$\ast$ Virtual\+Kicker\+::get\+Display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_virtual_kicker_a564d975ad0b9eeabc5c9ce4cbf381061}{}\label{class_virtual_kicker_a564d975ad0b9eeabc5c9ce4cbf381061}
+get\+Display function \begin{DoxyReturn}{Returns}
+vkw pointer to a \hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} object 
+\end{DoxyReturn}
+Q\+Label sd is a pointer to a Q\+Label object
+
+set\+Margin function 
+\begin{DoxyParams}{Parameters}
+{\em 20} & \\
+\hline
+\end{DoxyParams}
+Q\+Font f is a Q\+Font object @param \char`\"{}\+Arial\char`\"{}, 30, Q\+Font\+::\+Bold
+
+set\+Font function 
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+set\+Fixed\+Size function 
+\begin{DoxyParams}{Parameters}
+{\em 500,100} & \\
+\hline
+\end{DoxyParams}
+\hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} vkw is a pointer to a \hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} object
+
+set\+Fixed\+Size function 
+\begin{DoxyParams}{Parameters}
+{\em W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X,W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y} & \\
+\hline
+\end{DoxyParams}
+move function 
+\begin{DoxyParams}{Parameters}
+{\em 200,200} & \\
+\hline
+\end{DoxyParams}
+show function
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_virtual_kicker_a564d975ad0b9eeabc5c9ce4cbf381061_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Virtual\+Kicker@{Virtual\+Kicker}!get\+Virtual\+Kicker\+Table@{get\+Virtual\+Kicker\+Table}}
+\index{get\+Virtual\+Kicker\+Table@{get\+Virtual\+Kicker\+Table}!Virtual\+Kicker@{Virtual\+Kicker}}
+\subsubsection[{\texorpdfstring{get\+Virtual\+Kicker\+Table()}{getVirtualKickerTable()}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Table\+Controller\+Interface}$\ast$ Virtual\+Kicker\+::get\+Virtual\+Kicker\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_virtual_kicker_ad59e6a68db914c8580f44e00d5015d76}{}\label{class_virtual_kicker_ad59e6a68db914c8580f44e00d5015d76}
+get\+Virtual\+Kicker\+Table function \begin{DoxyReturn}{Returns}
+tcm pointer to a \hyperlink{class_table_controller_mock}{Table\+Controller\+Mock} object 
+\end{DoxyReturn}
+vkw is a pointer to a \hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} object
+
+tcm is a pointer to a \hyperlink{class_table_controller_mock}{Table\+Controller\+Mock} object
+
+set\+Kicker\+Window function 
+\begin{DoxyParams}{Parameters}
+{\em vkw} & \\
+\hline
+\end{DoxyParams}
+set\+Table\+Controller function 
+\begin{DoxyParams}{Parameters}
+{\em tcm} & \\
+\hline
+\end{DoxyParams}
+set\+Fixed\+Size function 
+\begin{DoxyParams}{Parameters}
+{\em W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X,W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y} & \\
+\hline
+\end{DoxyParams}
+show function
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_virtual_kicker_ad59e6a68db914c8580f44e00d5015d76_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_virtual_kicker_ad59e6a68db914c8580f44e00d5015d76_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Virtual\+Kicker@{Virtual\+Kicker}!W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X@{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X@{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X}!Virtual\+Kicker@{Virtual\+Kicker}}
+\subsubsection[{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X}{WINDOW_SIZE_X}}]{\setlength{\rightskip}{0pt plus 5cm}const int Virtual\+Kicker\+::\+W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+X = 1200\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_virtual_kicker_ab00ead9976b5ea4269238403772a0205}{}\label{class_virtual_kicker_ab00ead9976b5ea4269238403772a0205}
+\index{Virtual\+Kicker@{Virtual\+Kicker}!W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y@{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y@{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y}!Virtual\+Kicker@{Virtual\+Kicker}}
+\subsubsection[{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y}{WINDOW_SIZE_Y}}]{\setlength{\rightskip}{0pt plus 5cm}const int Virtual\+Kicker\+::\+W\+I\+N\+D\+O\+W\+\_\+\+S\+I\+Z\+E\+\_\+Y = 800\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_virtual_kicker_a3fb0d845e01a7424ac7a37f4299875ad}{}\label{class_virtual_kicker_a3fb0d845e01a7424ac7a37f4299875ad}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+3\+\_\+\+Virtual\+Kicker/\hyperlink{_virtual_kicker_8hpp}{Virtual\+Kicker.\+hpp}\end{DoxyCompactItemize}

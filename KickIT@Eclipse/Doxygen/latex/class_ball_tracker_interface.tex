@@ -1,0 +1,146 @@
+\hypertarget{class_ball_tracker_interface}{}\section{Ball\+Tracker\+Interface Class Reference}
+\label{class_ball_tracker_interface}\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+
+
+{\ttfamily \#include $<$\+\_\+\+Ball\+Tracker\+Interface.\+hpp$>$}
+
+
+
+Inheritance diagram for Ball\+Tracker\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_ball_tracker_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ball\+Tracker\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ball_tracker_interface__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ball_tracker_interface_a009a2a29aa7993a2405741daf707afbb}{set\+Table\+Controller} (\hyperlink{class_table_controller_interface}{Table\+Controller\+Interface} $\ast$t)
+\item 
+virtual \hyperlink{class_ball_tracker_interface_a85a4559b18c41e1a88da092ab8a7f42d}{$\sim$\+Ball\+Tracker\+Interface} ()
+\item 
+virtual \hyperlink{class_vec2}{Vec2} \hyperlink{class_ball_tracker_interface_a4a15d76099b49ef842a87dbabbac1b07}{get\+Ball\+Position} ()=0
+\item 
+virtual void \hyperlink{class_ball_tracker_interface_af140a5a17f082a74ff06bee64ef055ba}{start\+Tracking} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_config}{Camera\+Config} $\ast$ \hyperlink{class_ball_tracker_interface_ae6c6c4c3d89a8cc65bceec6c56af3b62}{threshold}
+\item 
+\hyperlink{class_camera_interface}{Camera\+Interface} $\ast$ \hyperlink{class_ball_tracker_interface_a48d727df5926f57a6cd5c2b75d039604}{camera}
+\item 
+\hyperlink{class_table_controller_interface}{Table\+Controller\+Interface} $\ast$ \hyperlink{class_ball_tracker_interface_a1716b6f0ad84d9d68da4dec0955450bf}{table\+Controller}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_ball_tracker_interface}{Ball\+Tracker\+Interface} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!````~Ball\+Tracker\+Interface@{$\sim$\+Ball\+Tracker\+Interface}}
+\index{````~Ball\+Tracker\+Interface@{$\sim$\+Ball\+Tracker\+Interface}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ball\+Tracker\+Interface()}{~BallTrackerInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ball\+Tracker\+Interface\+::$\sim$\+Ball\+Tracker\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_ball_tracker_interface_a85a4559b18c41e1a88da092ab8a7f42d}{}\label{class_ball_tracker_interface_a85a4559b18c41e1a88da092ab8a7f42d}
+\hyperlink{class_ball_tracker_interface}{Ball\+Tracker\+Interface} destructor 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ball_tracker_interface_a85a4559b18c41e1a88da092ab8a7f42d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!get\+Ball\+Position@{get\+Ball\+Position}}
+\index{get\+Ball\+Position@{get\+Ball\+Position}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{get\+Ball\+Position()=0}{getBallPosition()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vec2} Ball\+Tracker\+Interface\+::get\+Ball\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ball_tracker_interface_a4a15d76099b49ef842a87dbabbac1b07}{}\label{class_ball_tracker_interface_a4a15d76099b49ef842a87dbabbac1b07}
+get\+Ball\+Position function
+
+testtestsetaelöighaoit8zkthl 
+
+Implemented in \hyperlink{class_ball_tracker_impl_a6edec8b002aa9e81b422cce0165e3b32}{Ball\+Tracker\+Impl}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ball_tracker_interface_a4a15d76099b49ef842a87dbabbac1b07_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!set\+Table\+Controller@{set\+Table\+Controller}}
+\index{set\+Table\+Controller@{set\+Table\+Controller}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{set\+Table\+Controller(\+Table\+Controller\+Interface $\ast$t)}{setTableController(TableControllerInterface *t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ball\+Tracker\+Interface\+::set\+Table\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf Table\+Controller\+Interface} $\ast$}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ball_tracker_interface_a009a2a29aa7993a2405741daf707afbb}{}\label{class_ball_tracker_interface_a009a2a29aa7993a2405741daf707afbb}
+set\+Table\+Controller function 
+\begin{DoxyParams}{Parameters}
+{\em (\+Table\+Controller\+Interface$\ast$} & t) \\
+\hline
+\end{DoxyParams}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!start\+Tracking@{start\+Tracking}}
+\index{start\+Tracking@{start\+Tracking}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{start\+Tracking()=0}{startTracking()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Ball\+Tracker\+Interface\+::start\+Tracking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_ball_tracker_interface_af140a5a17f082a74ff06bee64ef055ba}{}\label{class_ball_tracker_interface_af140a5a17f082a74ff06bee64ef055ba}
+start\+Tracking function 
+
+Implemented in \hyperlink{class_ball_tracker_impl_adafeb5b7297cc09a42fdcd00aa52b367}{Ball\+Tracker\+Impl}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_ball_tracker_interface_af140a5a17f082a74ff06bee64ef055ba_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!camera@{camera}}
+\index{camera@{camera}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{camera}{camera}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera\+Interface}$\ast$ Ball\+Tracker\+Interface\+::camera\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ball_tracker_interface_a48d727df5926f57a6cd5c2b75d039604}{}\label{class_ball_tracker_interface_a48d727df5926f57a6cd5c2b75d039604}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!table\+Controller@{table\+Controller}}
+\index{table\+Controller@{table\+Controller}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{table\+Controller}{tableController}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Controller\+Interface}$\ast$ Ball\+Tracker\+Interface\+::table\+Controller\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ball_tracker_interface_a1716b6f0ad84d9d68da4dec0955450bf}{}\label{class_ball_tracker_interface_a1716b6f0ad84d9d68da4dec0955450bf}
+\index{Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}!threshold@{threshold}}
+\index{threshold@{threshold}!Ball\+Tracker\+Interface@{Ball\+Tracker\+Interface}}
+\subsubsection[{\texorpdfstring{threshold}{threshold}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera\+Config}$\ast$ Ball\+Tracker\+Interface\+::threshold\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_ball_tracker_interface_ae6c6c4c3d89a8cc65bceec6c56af3b62}{}\label{class_ball_tracker_interface_ae6c6c4c3d89a8cc65bceec6c56af3b62}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+1\+\_\+\+Ball\+Tracking/\+Ball\+Tracker/\hyperlink{___ball_tracker_interface_8hpp}{\+\_\+\+Ball\+Tracker\+Interface.\+hpp}\end{DoxyCompactItemize}

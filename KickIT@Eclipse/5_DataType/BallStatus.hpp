@@ -19,6 +19,7 @@ public:
 	clock_t last_update;
 
 	/**BallStatus constructor
+	 *
 	 * @param (float posx, float posy, float movementx, float movementy)
 	 */
 	BallStatus(float posx, float posy, float movementx, float movementy) :
@@ -26,14 +27,16 @@ public:
 
 	}
 
-	/**BallStatus function
+	/**BallStatus constructor
 	 *
 	 */
 	BallStatus() : movement(0.0f, 0.0f), position(0.0f, 0.0f), last_update() {
 	}
 
 	/**operator function
+	 *
 	 * @param (const BallStatus & bs)
+	 *
 	 * @return *this
 	 */
 	BallStatus & operator=(const BallStatus & bs) {
@@ -47,6 +50,7 @@ public:
 	}
 
 	/**update function
+	 *
 	 * @param (float x, float y)
 	 */
 	void update(float x, float y){
@@ -55,6 +59,7 @@ public:
 		last_update = up_to_date;
 
 		/**newPos function
+		 *
 		 * @param (x,y)
 		 */
 		Vec2 newPos(x,y);

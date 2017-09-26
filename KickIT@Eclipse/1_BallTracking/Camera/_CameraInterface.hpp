@@ -25,29 +25,41 @@ public:
 	 */
 	virtual ~CameraInterface() {}
 
-	/**Mat* getImage function
+	/**getImage function
+	 *
+	 *Function retrieves a picture from the camera
+	 *
+	 * @return An image is returned
 	 *
 	 */
 	virtual cv::Mat* getImage() = 0;
 
-	/**threshold
+	/**Funktion threshold
 	 *
+	 * This function sets the threshold values ​​for the ball detection.
+	 * These values ​​are then stored in the CameraConfig.txt
+	 *
+	 * @return The result of the adjustment is returned with the variable result
 	 */
 	virtual CameraConfig* threshold() = 0;
 
 protected:
 	/**calibrate function
-	 * wird nicht verwendet
 	 *
+	 * wird nicht verwendet
 	 */
 	virtual void calibrate() = 0;
 
 	/**getCameraSettings
 	 *
+	 * function gives the adjusted values of the camera
 	 */
 	virtual void getCameraSettings() = 0;
 
 	/**setCameraSettings
+	 *
+	 * Function for initial configuration of the camera
+	 * The settings are fetched from the CameraConfig.txt and passed to the PylonViewerApi
 	 *
 	 */
 	virtual void setCameraSettings() = 0;

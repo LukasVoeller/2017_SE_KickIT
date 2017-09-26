@@ -1,15 +1,14 @@
 <map id="2_Control/TableControl/TableControllerImpl.hpp" name="2_Control/TableControl/TableControllerImpl.hpp">
-<area shape="rect" id="node2" href="$_virtual_kicker_window_8hpp.html" title="../../3_VirtualKicker\l/VirtualKickerWindow.hpp" alt="" coords="2251,95,2423,136"/>
-<area shape="rect" id="node3" href="$___table_controller_interface_8hpp.html" title="../2_Control/TableControl\l/_TableControllerInterface.hpp" alt="" coords="1834,184,2031,225"/>
-<area shape="rect" id="node6" href="$_table_config_8hpp.html" title="../../5_DataType/TableConfig.hpp" alt="" coords="1459,370,1675,397"/>
-<area shape="rect" id="node29" href="$_ball_status_8hpp.html" title="../5_DataType/BallStatus.hpp" alt="" coords="2081,370,2275,397"/>
-<area shape="rect" id="node4" href="$___row_controller_interface_8hpp.html" title="../RowControl/_RowController\lInterface.hpp" alt="" coords="1393,273,1590,315"/>
-<area shape="rect" id="node26" href="$_calculator_8hpp.html" title="../../4_Utilities/Calculator.hpp" alt="" coords="1970,281,2162,307"/>
-<area shape="rect" id="node27" href="$_vec2_8hpp.html" title="../5_DataType/Vec2.hpp" alt="" coords="1920,452,2084,479"/>
-<area shape="rect" id="node32" href="$_modules_8hpp.html" title="../../4_Utilities/Modules.hpp" alt="" coords="2320,452,2503,479"/>
-<area shape="rect" id="node33" href="$_camera_config_8hpp.html" title="../../5_DataType/CameraConfig.hpp" alt="" coords="1563,452,1793,479"/>
-<area shape="rect" id="node14" href="$___motor_communicator_interface_8hpp.html" title="../MotorCommunication\l/_MotorCommunicatorInterface.hpp" alt="" coords="702,363,929,404"/>
-<area shape="rect" id="node10" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="1940,527,2141,553"/>
-<area shape="rect" id="node24" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="1269,452,1487,479"/>
-<area shape="rect" id="node25" href="$_row_enum_8hpp.html" title="../../5_DataType/RowEnum.hpp" alt="" coords="340,452,547,479"/>
+<area shape="rect" id="node2" href="$_virtual_kicker_window_8hpp.html" title="../../3_VirtualKicker\l/VirtualKickerWindow.hpp" alt="" coords="905,95,1077,136"/>
+<area shape="rect" id="node3" href="$___table_controller_interface_8hpp.html" title="../2_Control/TableControl\l/_TableControllerInterface.hpp" alt="" coords="570,184,767,225"/>
+<area shape="rect" id="node6" href="$_table_config_8hpp.html" title="../../5_DataType/TableConfig.hpp" alt="" coords="1851,370,2067,397"/>
+<area shape="rect" id="node28" href="$_ball_status_8hpp.html" title="../5_DataType/BallStatus.hpp" alt="" coords="254,370,449,397"/>
+<area shape="rect" id="node4" href="$___row_controller_interface_8hpp.html" title="../RowControl/_RowController\lInterface.hpp" alt="" coords="842,273,1039,315"/>
+<area shape="rect" id="node25" href="$_calculator_8hpp.html" title="../../4_Utilities/Calculator.hpp" alt="" coords="398,281,590,307"/>
+<area shape="rect" id="node26" href="$_vec2_8hpp.html" title="../5_DataType/Vec2.hpp" alt="" coords="455,452,619,479"/>
+<area shape="rect" id="node31" href="$_modules_8hpp.html" title="../../4_Utilities/Modules.hpp" alt="" coords="5,452,188,479"/>
+<area shape="rect" id="node32" href="$_camera_config_8hpp.html" title="Classe. " alt="" coords="745,452,976,479"/>
+<area shape="rect" id="node14" href="$___motor_communicator_interface_8hpp.html" title="../MotorCommunication\l/_MotorCommunicatorInterface.hpp" alt="" coords="1334,363,1561,404"/>
+<area shape="rect" id="node10" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="367,527,568,553"/>
+<area shape="rect" id="node24" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="1248,452,1465,479"/>
 </map>

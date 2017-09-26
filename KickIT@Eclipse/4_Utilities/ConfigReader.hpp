@@ -16,6 +16,7 @@
 class ParameterNotFoundException: public std::exception {
 public:
 	/**ParameterNotFoundException function
+	 *
 	 * @param (const char* name):p(name)
 	 */
 	ParameterNotFoundException(const char* name):p(name){
@@ -31,6 +32,7 @@ protected:
 class UnknownParameterTypeException: public std::exception {
 public:
 	/**UnknownParameterTypeException function
+	 *
 	 * @param (const char* type):t(type)
 	 */
 	UnknownParameterTypeException(const char* type):t(type){
@@ -47,6 +49,7 @@ class CannotOpenConfigFileException: public std::exception {
 
 public:
 	/**CannotOpenConfigFileException function
+	 *
 	 * @param (const char* filename):fn(filename)
 	 */
 	CannotOpenConfigFileException(const char* filename):fn(filename){
@@ -62,7 +65,8 @@ protected:
 class ConfigFileChangedException: public std::exception {
 public:
 	/**ConfigFileChangedException function
-	 * @param (const char* filename):fn(filename)
+	 *
+	 * @param (const char* filename)
 	 */
 	ConfigFileChangedException(const char* filename):fn(filename){
 		std::cout << fn << " seems to have changed while KickIT was running!" << std::endl;
@@ -79,26 +83,31 @@ class ConfigReader {
 public:
 
 	/**ConfigReader constructor
+	 *
 	 * @param (const char* filename)
 	 */
 	ConfigReader(const char* filename);
 
 	/**getStringValue function
+	 *
 	 * @param (const char* name)
 	 */
     std::string getStringValue(const char* name);
 
     /**getIntValue function
+     *
      * @param (const char* name)
      */
     int getIntValue(const char* name);
 
     /**setStringValue function
+     *
      * @param (const char* name, const char* value)
      */
     void setStringValue(const char* name, const char* value);
 
     /**setIntValue function
+     *
      * @param (const char* name, const int value)
      */
     void setIntValue(const char* name, const int value);

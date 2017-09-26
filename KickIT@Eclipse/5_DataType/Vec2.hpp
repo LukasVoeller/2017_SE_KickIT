@@ -16,7 +16,7 @@ public:
 	float x;
 	float y;
 
-	/**Vec2 function
+	/**Vec2 constructor
 	 *
 	 */
 	Vec2() {
@@ -24,7 +24,8 @@ public:
 		y = 0;
 	}
 
-	/**Vec2 function
+	/**Vec2 constructor
+	 *
 	 * @param (float _x, float _y)
 	 */
 	Vec2(float _x, float _y) {
@@ -33,6 +34,7 @@ public:
 	}
 
 	/**update function
+	 *
 	 * @param (float newx, float newy)
 	 */
 	void update(float newx, float newy) {
@@ -41,7 +43,9 @@ public:
 	}
 
 	/**toTarget function
+	 *
 	 * @param (const Vec2& destination)
+	 *
 	 * @return res
 	 */
 	Vec2 toTarget(const Vec2& destination){
@@ -52,6 +56,7 @@ public:
 	}
 
 	/**update function
+	 *
 	 * @param (Vec2* newp)
 	 */
 	void update(Vec2* newp) {
@@ -61,7 +66,9 @@ public:
 	}
 
 	/**dot function
+	 *
 	 * @param (const Vec2& v)
+	 *
 	 * scalarproduct = laenge1 * laenge2 * cos (angle between)
 	 *
 	 * @return this->x * v.x + this->y * v.y
@@ -72,7 +79,9 @@ public:
 	}
 
 	/**cross function
+	 *
 	 * @param (const Vec2& v)
+	 *
 	 * @return this->x * v.y - v.x * this->y
 	 */
 	float cross(const Vec2& v) const {
@@ -80,7 +89,9 @@ public:
 	}
 
 	/**operator+ function
+	 *
 	 *@param (const Vec2& v)
+	 *@param
 	 *@return result
 	 */
 	Vec2 operator+(const Vec2& v) const {
@@ -91,7 +102,9 @@ public:
 	}
 
 	/**operator- function
+	 *
 	 * @param (const Vec2& v)
+	 *
 	 * @return result
 	 */
 	Vec2 operator-(const Vec2& v) const {
@@ -102,7 +115,9 @@ public:
 	}
 
 	/**operator+= function
+	 *
 	 * @param (const Vec2& v)
+	 *
 	 * @return *this
 	 */
 	Vec2& operator+=(const Vec2& v) {
@@ -112,7 +127,9 @@ public:
 	}
 
 	/**operator* function
+	 *
 	 * @param (float c)
+	 *
 	 * @return result
 	 */
 	Vec2 operator*(float c) const {
@@ -123,6 +140,7 @@ public:
 	}
 
 	/**operator- function
+	 *
 	 * @return result
 	 */
 	Vec2 operator-() const {
@@ -133,6 +151,7 @@ public:
 	}
 
 	/**lengthSquared function
+	 *
 	 * @return lengthSquared
 	 */
 	float lengthSquared() const {
@@ -141,6 +160,7 @@ public:
 	}
 
 	/**length function
+	 *
 	 * @return sqrtf(this->lengthSquared())
 	 */
 	float length() const {
@@ -148,6 +168,7 @@ public:
 	}
 
 	/**normalize function
+	 *
 	 * @return *this
 	 */
 	Vec2& normalize() {
@@ -162,7 +183,9 @@ public:
 	}
 
 	/**reflection function
+	 *
 	 * @param (const Vec2& normal)
+	 *
 	 * @return result
 	 */
 	Vec2 reflection(const Vec2& normal) const {
@@ -174,7 +197,9 @@ public:
 	}
 
 	/**equals function
+	 *
 	 * @param (const Vec2 v)
+	 *
 	 * @return this->x == v.x && this->y == v.y
 	 */
 	bool equals(const Vec2 v){
@@ -182,6 +207,7 @@ public:
 	}
 
 	/**setLength function
+	 *
 	 * @param (float millimetersPerSecond)
 	 */
 	void setLength(float millimetersPerSecond){

@@ -1,4 +1,4 @@
 <map id="TableControllerInterface" name="TableControllerInterface">
-<area shape="rect" id="node2" href="$class_table_controller_impl.html" title="TableControllerImpl" alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$class_table_controller_mock.html" title="TableControllerMock" alt="" coords="164,80,307,107"/>
+<area shape="rect" id="node2" href="$class_table_controller_impl.html" title="{TableControllerImpl\n|# vkw\l|+ TableControllerImpl()\l+ setBallPos()\l+ pixelToMM()\l}" alt="" coords="5,307,160,413"/>
+<area shape="rect" id="node3" href="$class_table_controller_mock.html" title="{TableControllerMock\n|# window\l|+ TableControllerMock()\l+ ~TableControllerMock()\l+ run()\l+ stop()\l+ setBallPos()\l+ setKickerWindow()\l# pixelToMM()\l}" alt="" coords="184,277,355,443"/>
 </map>

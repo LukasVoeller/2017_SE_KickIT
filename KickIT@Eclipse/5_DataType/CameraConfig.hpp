@@ -1,6 +1,6 @@
 /**
  * @file CameraConfig.hpp
- * @brief
+ * @brief Classe
  */
 #ifndef CAMERACONFIG_HPP
 #define CAMERACONFIG_HPP
@@ -31,7 +31,7 @@ public:
 	int offsetx;
 	int offsety;
 
-	/**CameraConfig function
+	/**CameraConfig constructor
 	 *
 	 */
 	CameraConfig():cr("6_Configuration/CameraConfig.txt"){

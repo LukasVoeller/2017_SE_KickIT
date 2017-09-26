@@ -16,7 +16,8 @@
 class RowControllerInterface {
 
 public:
-	/**moveTo
+	/**moveTo function
+	 *
 	 * @param float y
 	 */
 	virtual void moveTo(float y) = 0;
@@ -32,10 +33,14 @@ public:
 	virtual void down() {}
 
 	/**kick function
+	 *
 	 * @param int strength
 	 */
 	virtual void kick(int strength) {}
 
+	/**RowControllerInterface destructor
+	 *
+	 */
 	virtual ~RowControllerInterface() {}
 
 protected:

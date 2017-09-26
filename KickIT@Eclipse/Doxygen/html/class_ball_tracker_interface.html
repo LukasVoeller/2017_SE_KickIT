@@ -98,26 +98,26 @@ Inheritance diagram for BallTrackerInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_tracker_interface__inherit__graph.png" border="0" usemap="#_ball_tracker_interface_inherit__map" alt="Inheritance graph"/></div>
 <map name="_ball_tracker_interface_inherit__map" id="_ball_tracker_interface_inherit__map">
-<area shape="rect" id="node2" href="class_ball_tracker_impl.html" title="BallTrackerImpl" alt="" coords="18,80,131,107"/>
+<area shape="rect" id="node2" href="class_ball_tracker_impl.html" title="{BallTrackerImpl\n|# showImage\l# lastx\l# lasty\l|+ BallTrackerImpl()\l+ ~BallTrackerImpl()\l+ getBallPosition()\l+ startTracking()\l+ trackingSlot()\l}" alt="" coords="18,204,159,369"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for BallTrackerInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_tracker_interface__coll__graph.png" border="0" usemap="#_ball_tracker_interface_coll__map" alt="Collaboration graph"/></div>
 <map name="_ball_tracker_interface_coll__map" id="_ball_tracker_interface_coll__map">
-<area shape="rect" id="node2" href="class_camera_config.html" title="CameraConfig" alt="" coords="5,288,112,315"/>
-<area shape="rect" id="node4" href="class_table_controller_interface.html" title="TableControllerInterface" alt="" coords="141,421,302,448"/>
-<area shape="rect" id="node3" href="class_config_reader.html" title="ConfigReader" alt="" coords="91,5,194,32"/>
-<area shape="rect" id="node5" href="class_table_config.html" title="TableConfig" alt="" coords="97,184,189,211"/>
-<area shape="rect" id="node10" href="class_motor_config.html" title="MotorConfig" alt="" coords="203,95,296,121"/>
-<area shape="rect" id="node8" href="class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="201,288,357,315"/>
-<area shape="rect" id="node6" href="class_ball_status.html" title="BallStatus" alt="" coords="399,288,481,315"/>
-<area shape="rect" id="node7" href="class_vec2.html" title="Vec2" alt="" coords="427,184,479,211"/>
-<area shape="rect" id="node9" href="class_motor_communicator_interface.html" title="MotorCommunicatorInterface" alt="" coords="213,184,403,211"/>
-<area shape="rect" id="node11" href="class_camera_interface.html" title="CameraInterface" alt="" coords="326,421,445,448"/>
+<area shape="rect" id="node2" href="class_camera_config.html" title="{CameraConfig\n|+ redLow\l+ redHigh\l+ greenLow\l+ greenHigh\l+ blueLow\l+ blueHigh\l+ width\l+ height\l+ packetsize\l+ exposureTime\l+ offsetx\l+ offsety\l|+ CameraConfig()\l+ loadConfig()\l+ saveConfig()\l+ printConfig()\l}" alt="" coords="5,939,132,1221"/>
+<area shape="rect" id="node4" href="class_table_controller_interface.html" title="{TableControllerInterface\n||+ setBallPos()\l+ ~TableControllerInterface()\l+ motorByHand()\l# pixelToMM()\l}" alt="" coords="158,1343,347,1464"/>
+<area shape="rect" id="node3" href="class_config_reader.html" title="{ConfigReader\n|# filename\l# valueChanged\l# values\l# strings\l|+ ConfigReader()\l+ getStringValue()\l+ getIntValue()\l+ setStringValue()\l+ setIntValue()\l+ writeOut()\l# readFile()\l}" alt="" coords="115,5,241,215"/>
+<area shape="rect" id="node5" href="class_table_config.html" title="{TableConfig\n|+ tableHeight\l+ tableWidth\l+ isKeeperActive\l+ isDefenseActive\l+ isMidfieldActive\l+ isOffenseActive\l+ playerGapDefense\l+ playerGapMidfield\l+ playerGapOffense\l+ distGoalToKeeper\land 12 more...\l|+ TableConfig()\l+ loadConfig()\l+ saveConfig()\l+ printConfig()\l}" alt="" coords="107,593,249,861"/>
+<area shape="rect" id="node10" href="class_motor_config.html" title="{MotorConfig\n|+ homingRequired\l+ port\l+ keeperAccelerationTranslational\l+ keeperDecelerationTranslational\l+ keeperSpeedTranslational\l+ keeperSleepAfterReset\l+ keeperSleepAfterHoming\l+ keeperBoundaryInwards\l+ keeperBoundaryOutwards\l+ defenseAccelerationTranslational\land 9 more...\l|+ MotorConfig()\l+ loadConfig()\l+ saveConfig()\l}" alt="" coords="235,277,462,531"/>
+<area shape="rect" id="node8" href="class_row_controller_interface.html" title="{RowControllerInterface\n|# isUp\l# isShooting\l|+ moveTo()\l+ up()\l+ down()\l+ kick()\l+ ~RowControllerInterface()\l}" alt="" coords="227,1005,411,1155"/>
+<area shape="rect" id="node6" href="class_ball_status.html" title="{BallStatus\n|+ last_update\l|+ BallStatus()\l+ BallStatus()\l+ operator=()\l+ update()\l}" alt="" coords="488,1019,591,1141"/>
+<area shape="rect" id="node7" href="class_vec2.html" title="{Vec2\n|+ x\l+ y\l|+ Vec2()\l+ Vec2()\l+ update()\l+ toTarget()\l+ update()\l+ dot()\l+ cross()\l+ operator+()\l+ operator&#45;()\l+ operator+=()\land 8 more...\l}" alt="" coords="517,608,623,847"/>
+<area shape="rect" id="node9" href="class_motor_communicator_interface.html" title="{MotorCommunicatorInterface\n|# port\l# socketId\l# nibbleTranslational\l# nibbleRotary\l|+ linearMovement()\l+ rotate()\l+ ~MotorCommunicatorInterface()\l# driverInit()\l# switchedNibbleT()\l# switchedNibbleR()\l# openPort()\l# frameInit()\l# sendPort()\l# closePort()\l}" alt="" coords="274,601,493,854"/>
+<area shape="rect" id="node11" href="class_camera_interface.html" title="{CameraInterface\n||+ ~CameraInterface()\l+ getImage()\l+ threshold()\l# calibrate()\l# getCameraSettings()\l# setCameraSettings()\l}" alt="" coords="372,1328,525,1479"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,7 +139,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a1716b6f0ad84d9d68da4dec0955450bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_table_controller_interface.html">TableControllerInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball_tracker_interface.html#a1716b6f0ad84d9d68da4dec0955450bf">tableController</a></td></tr>
 <tr class="separator:a1716b6f0ad84d9d68da4dec0955450bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_ball_tracker_interface.html">BallTrackerInterface</a> class </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a85a4559b18c41e1a88da092ab8a7f42d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +162,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_ball_tracker_interface.html">BallTrackerInterface</a> destructor </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -195,6 +198,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>getBallPosition function</p>
+<p>testtestsetaelöighaoit8zkthl </p>
 
 <p>Implemented in <a class="el" href="class_ball_tracker_impl.html#a6edec8b002aa9e81b422cce0165e3b32">BallTrackerImpl</a>.</p>
 
@@ -231,6 +236,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>setTableController function </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(TableControllerInterface*</td><td>t) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -254,6 +265,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>startTracking function </p>
 
 <p>Implemented in <a class="el" href="class_ball_tracker_impl.html#adafeb5b7297cc09a42fdcd00aa52b367">BallTrackerImpl</a>.</p>
 

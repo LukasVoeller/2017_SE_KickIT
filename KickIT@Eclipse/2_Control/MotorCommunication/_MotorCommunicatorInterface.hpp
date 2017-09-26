@@ -25,13 +25,16 @@ class MotorCommunicatorInterface {
 
 public:
 	/**linearMovement finction
+	 *
 	 * @param int position
 	 */
 	virtual void linearMovement(int position) = 0;
 	/**rotate function
+	 *
 	 * @param int amount
 	 */
 	virtual void rotate(int amount){};
+
 	/**MotorCommunicatorInterface destructor
 	 *
 	 */
@@ -60,6 +63,7 @@ protected:
 
 
 	/**switchedNibbleR function
+	 *
 	 *@return nibbleRotary
 	 */
 	int switchedNibbleR() {
@@ -68,6 +72,7 @@ protected:
 	}
 
 	/**openPort function
+	 *
 	 * @return 0 or return -1
 	 */
 	int openPort() {
@@ -100,7 +105,9 @@ protected:
 	}
 
 	/**frameInit function
-	 * @param
+	 *
+	 * @param (int ID, int DLC, int Data_0, int Data_1, int Data_2,
+			   int Data_3, int Data_4, int Data_5, int Data_6, int Data_7)
 	 */
 	void frameInit(int ID, int DLC, int Data_0, int Data_1, int Data_2,
 			int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) {
@@ -137,7 +144,9 @@ protected:
 	}
 
 	/**sendPort function
+	 *
 	 * @param struct can_frame *frame
+	 *
 	 * @return 0 or return -1
 	 */
 	int sendPort(struct can_frame *frame) {
@@ -151,7 +160,7 @@ protected:
 		return 0;
 	}
 
-	/**closePort funktion
+	/**closePort function
 	 *
 	 */
 	void closePort() {

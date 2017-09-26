@@ -20,10 +20,10 @@ namespace Calculator {
 	static Vec2 keeperPosition(tc.distGoalToKeeper, 0);
 
 	/**calcPositionsSimple function
+	 *
 	 * @param (vector<void*>* params)
 	 */
 	static void calcPositionsSimple(std::vector<void*>* params) {
-
 		BallStatus* bs = ((BallStatus*)params->at(0));
 		float* positions = ((float*)params->at(1));
 
@@ -60,7 +60,8 @@ namespace Calculator {
 
 	}
 
-	/**calcIfKickSimple
+	/**calcIfKickSimple function
+	 *
 	 * @param (vector<void*>* params)
 	 */
 	static void calcIfKickSimple(std::vector<void*>* params) {
@@ -75,7 +76,8 @@ namespace Calculator {
 	}
 
 	/**calcIfUp function
-	 * (vector<void*>* params)
+	 *
+	 * @param (vector<void*>* params)
 	 */
 	static void calcIfUp(std::vector<void*>* params) {
 		BallStatus* bs = ((BallStatus*)params->at(0));

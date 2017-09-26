@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['p',['p',['../class_parameter_not_found_exception.html#ad7c9297e67fc1021feec3c74a6dcdffa',1,'ParameterNotFoundException']]],
-  ['packetsize',['packetsize',['../class_camera_config.html#ae3d156cca77d2082314995cd4b290f83',1,'CameraConfig']]],
-  ['paintevent',['paintEvent',['../class_virtual_kicker_window.html#a03f518f4d2117a91997020263704037b',1,'VirtualKickerWindow']]],
-  ['parameternotfoundexception',['ParameterNotFoundException',['../class_parameter_not_found_exception.html',1,'ParameterNotFoundException'],['../class_parameter_not_found_exception.html#a3de44f39ea25ba23db25405472273853',1,'ParameterNotFoundException::ParameterNotFoundException()']]],
-  ['pixeltomm',['pixelToMM',['../class_table_controller_interface.html#a26c1aa23fd09f8d16e4c6437ca8e8b4d',1,'TableControllerInterface::pixelToMM()'],['../class_table_controller_impl.html#a8e5631578a95b69889e1acd64fd31abc',1,'TableControllerImpl::pixelToMM()'],['../class_table_controller_mock.html#a9191e66b5b0b26f04fc71408f2516c8c',1,'TableControllerMock::pixelToMM()']]],
-  ['playergapdefense',['playerGapDefense',['../class_table_config.html#aa51ef6539c96a6c68ae15526d3a3c30a',1,'TableConfig']]],
-  ['playergapmidfield',['playerGapMidfield',['../class_table_config.html#afaa310ca3e93f92d50e6500d619d9d73',1,'TableConfig']]],
-  ['playergapoffense',['playerGapOffense',['../class_table_config.html#a8788da31ad50cf733c0d20cb091cf6e9',1,'TableConfig']]],
-  ['port',['port',['../class_motor_communicator_interface.html#adde2a840f8e9cd2e43b34af2bf8c3719',1,'MotorCommunicatorInterface::port()'],['../class_motor_config.html#a8c20151468f9399aaa7311b421ea16da',1,'MotorConfig::port()']]],
-  ['position',['position',['../class_ball_status.html#a7d841e95314cf93e4afbc894288a992b',1,'BallStatus']]],
-  ['printconfig',['printConfig',['../class_camera_config.html#abc2e835a721d9724135dd88c387f2339',1,'CameraConfig::printConfig()'],['../class_table_config.html#a7f0be8bf53f6fc2bff25d713511056bd',1,'TableConfig::printConfig()']]]
+  ['offensecontrol',['offenseControl',['../class_table_controller_interface.html#ab49517ee302de99b1376a5b3781cb7f9',1,'TableControllerInterface']]],
+  ['offsetbottomsidedefense',['offsetBottomSideDefense',['../class_table_config.html#ae4c94bc14d57d8aaa50554847de34de4',1,'TableConfig']]],
+  ['offsetbottomsidekeeper',['offsetBottomSideKeeper',['../class_table_config.html#afc31cef408c8b9368bd274561508018c',1,'TableConfig']]],
+  ['offsetbottomsidemidfield',['offsetBottomSideMidfield',['../class_table_config.html#ad0ec31b5bb43679e7830897674850b29',1,'TableConfig']]],
+  ['offsetbottomsideoffense',['offsetBottomSideOffense',['../class_table_config.html#af5437e546e4a89221b4198b69d918784',1,'TableConfig']]],
+  ['offsettopsidedefense',['offsetTopSideDefense',['../class_table_config.html#a7835330915d7a8a355d97d88a7e2721f',1,'TableConfig']]],
+  ['offsettopsidekeeper',['offsetTopSideKeeper',['../class_table_config.html#ae8fdd03d92b244f773ca94f398a9af97',1,'TableConfig']]],
+  ['offsettopsidemidfield',['offsetTopSideMidfield',['../class_table_config.html#aef8ad66b5c97ceb1f9906c2fcab97592',1,'TableConfig']]],
+  ['offsettopsideoffense',['offsetTopSideOffense',['../class_table_config.html#a42ff6846e2964c9e4167cda82312017e',1,'TableConfig']]],
+  ['offsetx',['offsetx',['../class_camera_config.html#a3a61d11401b9b2d6854f9610cdccb51f',1,'CameraConfig']]],
+  ['offsety',['offsety',['../class_camera_config.html#a6f92a428316eec08a24a25bfdd555d37',1,'CameraConfig']]],
+  ['openport',['openPort',['../class_motor_communicator_interface.html#a9b611145c47f1d8842eb9411d9e0e95a',1,'MotorCommunicatorInterface']]],
+  ['operator_2a',['operator*',['../class_vec2.html#a41b7293b6a348ee4d33b8fa396db9adb',1,'Vec2']]],
+  ['operator_2b',['operator+',['../class_vec2.html#a55982187727e6fef357273be8e269526',1,'Vec2']]],
+  ['operator_2b_3d',['operator+=',['../class_vec2.html#a7f062667506f94bc207bdf492ca5b89c',1,'Vec2']]],
+  ['operator_2d',['operator-',['../class_vec2.html#adfaf0492c67e51fc89e3f7f484519de7',1,'Vec2::operator-(const Vec2 &amp;v) const '],['../class_vec2.html#a39640496ed941cf3d7e8cc7ee96eea36',1,'Vec2::operator-() const ']]],
+  ['operator_3d',['operator=',['../class_ball_status.html#a02508ed35c2fe08e41f99b3c1e36bffe',1,'BallStatus']]]
 ];

@@ -64,6 +64,7 @@ protected:
 	Modules():cr("6_Configuration/Algorithm.txt") {}
 
 	/**Modules function
+	 *
 	 * @param (const Modules&)
 	 */
 	Modules(const Modules&);
@@ -76,6 +77,7 @@ protected:
 public:
 
 	/**instance function
+	 *
 	 * @return _instance;
 	 */
 
@@ -85,6 +87,7 @@ public:
 	}
 
 	/**registerFunction funktion
+	 *
 	 * @param (const char* name, fp function)
 	 */
 	void registerFunction(const char* name, fp function) {
@@ -95,7 +98,11 @@ public:
 	}
 
 	/**execute funktion
-	 * @param (const char* algo, std::vector<void*>* params)
+	 *
+	 * @param (const char* algo, vector<void*>* params)
+	 *
+	 * find out which function is referenced by config-file
+	 * look up if that function has been registered
 	 */
 	void execute(const char* algo, std::vector<void*>* params) {
 		//find out which function is referenced by config-file

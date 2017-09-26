@@ -60,6 +60,7 @@ bool defenseHomed = false;
 
 
 /**main function
+ *
  * @param (int argc, char** argv)
  *
  */
@@ -68,7 +69,9 @@ int main(int argc, char** argv) {
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 
 	/**MODE == 1
+	 *
 	 * Virtual mode - Ball tracking and table control is simulated by the virtual kicker
+	 *
 	 * @return a.exec()
 	 */
 	#if MODE == 1
@@ -80,7 +83,9 @@ int main(int argc, char** argv) {
 	#endif
 
 	/**MODE == 2
+	 *
 	 * Final mode - Ready to play!
+	 *
 	 * @return a.exec()
 	 */
 	#if MODE == 2

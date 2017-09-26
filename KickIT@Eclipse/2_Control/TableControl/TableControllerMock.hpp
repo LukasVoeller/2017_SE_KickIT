@@ -34,26 +34,16 @@ public:
 	 *
 	 */
 	void stop();
-
-	/**setBallPos function
-	 * @param float x, float y
-	 *
-	 */
 	void setBallPos(float x, float y);
 
 	/**setKickerWindow function
+	 *
 	 * @param VirtualKickerWindow* p
 	 *
 	 */
 	void setKickerWindow(VirtualKickerWindow* p);
 
 protected:
-	/**poxelToMM function
-	 * @param float xPixel, float yPixel
-	 * @return result
-	 *
-	 * the function gets pixes as a parameter and converts it into milimeters
-	 */
 	virtual Vec2 pixelToMM(float xPixel, float yPixel){}
 	VirtualKickerWindow* window;
 };

@@ -44,7 +44,7 @@ public:
 	float offsetBottomSideOffense;
 	float shotTriggerRange;
 
-	/**TableConfig function
+	/**TableConfig constructor
 	 *
 	 */
 	TableConfig():cr("6_Configuration/TableConfig.txt"){

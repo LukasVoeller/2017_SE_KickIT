@@ -1,5 +1,5 @@
-\hypertarget{_kick_i_t_0D_eclipse_8cpp}{}\section{/home/student/\+S\+W\+E\+\_\+2017\+\_\+\+Kick\+I\+T/\+Kick\+IT@Eclipse/\+Kick\+IT@Eclipse.\+cpp-\/\+Dateireferenz}
-\label{_kick_i_t_0D_eclipse_8cpp}\index{/home/student/\+S\+W\+E\+\_\+2017\+\_\+\+Kick\+I\+T/\+Kick\+I\+T@\+Eclipse/\+Kick\+I\+T@\+Eclipse.\+cpp@{/home/student/\+S\+W\+E\+\_\+2017\+\_\+\+Kick\+I\+T/\+Kick\+IT"@Eclipse/\+Kick\+IT"@Eclipse.\+cpp}}
+\hypertarget{_kick_i_t_0D_eclipse_8cpp}{}\section{Kick\+IT@Eclipse.\+cpp File Reference}
+\label{_kick_i_t_0D_eclipse_8cpp}\index{Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}}
 {\ttfamily \#include \char`\"{}1\+\_\+\+Ball\+Tracking/\+Ball\+Tracker/\+\_\+\+Ball\+Tracker\+Interface.\+hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}2\+\_\+\+Control/\+Motor\+Communication/\+\_\+\+Motor\+Communicator\+Interface.\+hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}2\+\_\+\+Control/\+Table\+Control/\+\_\+\+Table\+Controller\+Interface.\+hpp\char`\"{}}\\*
@@ -11,25 +11,40 @@
 {\ttfamily \#include \char`\"{}5\+\_\+\+Data\+Type/\+Motor\+Config.\+hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}5\+\_\+\+Data\+Type/\+Table\+Config.\+hpp\char`\"{}}\\*
 {\ttfamily \#include $<$Q\+Application$>$}\\*
-\subsection*{Makrodefinitionen}
+{\ttfamily \#include $<$cstdlib$>$}\\*
+Include dependency graph for Kick\+IT@Eclipse.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_kick_i_t_0D_eclipse_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+DE}~4
+\#define \hyperlink{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+DE}~2
 \end{DoxyCompactItemize}
-\subsection*{Funktionen}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{_kick_i_t_0D_eclipse_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_kick_i_t_0D_eclipse_8cpp_a2631bcaeeb75612258197df843d77f19}{keeper\+Homed} = false
+\item 
+bool \hyperlink{_kick_i_t_0D_eclipse_8cpp_a60ccba57898d6d6fc24347c2af8ee67e}{defense\+Homed} = false
+\end{DoxyCompactItemize}
 
 
-\subsection{Makro-\/\+Dokumentation}
+\subsection{Macro Definition Documentation}
 \index{Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}!M\+O\+DE@{M\+O\+DE}}
 \index{M\+O\+DE@{M\+O\+DE}!Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}}
-\subsubsection[{\texorpdfstring{M\+O\+DE}{MODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+O\+DE~4}\hypertarget{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}{}\label{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}
+\subsubsection[{\texorpdfstring{M\+O\+DE}{MODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+O\+DE~2}\hypertarget{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}{}\label{_kick_i_t_0D_eclipse_8cpp_ab8c52c1b4c021ed3e6b6b677bd2ac019}
 
 
-\subsection{Dokumentation der Funktionen}
+\subsection{Function Documentation}
 \index{Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}!main@{main}}
 \index{main@{main}!Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}}
 \subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
@@ -38,3 +53,34 @@ int \hyperlink{_kick_i_t_0D_eclipse_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}\hypertarget{_kick_i_t_0D_eclipse_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{_kick_i_t_0D_eclipse_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+main function 
+\begin{DoxyParams}{Parameters}
+{\em (int} & argc, char$\ast$$\ast$ argv) \\
+\hline
+\end{DoxyParams}
+M\+O\+DE == 1 Virtual mode -\/ Ball tracking and table control is simulated by the virtual kicker \begin{DoxyReturn}{Returns}
+a.\+exec()
+\end{DoxyReturn}
+M\+O\+DE == 2 Final mode -\/ Ready to play! \begin{DoxyReturn}{Returns}
+a.\+exec()
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_kick_i_t_0D_eclipse_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}!defense\+Homed@{defense\+Homed}}
+\index{defense\+Homed@{defense\+Homed}!Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}}
+\subsubsection[{\texorpdfstring{defense\+Homed}{defenseHomed}}]{\setlength{\rightskip}{0pt plus 5cm}bool defense\+Homed = false}\hypertarget{_kick_i_t_0D_eclipse_8cpp_a60ccba57898d6d6fc24347c2af8ee67e}{}\label{_kick_i_t_0D_eclipse_8cpp_a60ccba57898d6d6fc24347c2af8ee67e}
+\index{Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}!keeper\+Homed@{keeper\+Homed}}
+\index{keeper\+Homed@{keeper\+Homed}!Kick\+I\+T@\+Eclipse.\+cpp@{Kick\+IT"@Eclipse.\+cpp}}
+\subsubsection[{\texorpdfstring{keeper\+Homed}{keeperHomed}}]{\setlength{\rightskip}{0pt plus 5cm}bool keeper\+Homed = false}\hypertarget{_kick_i_t_0D_eclipse_8cpp_a2631bcaeeb75612258197df843d77f19}{}\label{_kick_i_t_0D_eclipse_8cpp_a2631bcaeeb75612258197df843d77f19}

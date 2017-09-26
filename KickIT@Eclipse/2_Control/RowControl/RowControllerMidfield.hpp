@@ -17,11 +17,6 @@ public:
 	 *
 	 */
 	RowControllerMidfield();
-
-	/**moveTo function
-	 * @param float y
-	 *
-	 */
 	void moveTo(float y){}
 };
 

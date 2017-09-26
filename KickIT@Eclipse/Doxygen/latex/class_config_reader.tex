@@ -1,0 +1,249 @@
+\hypertarget{class_config_reader}{}\section{Config\+Reader Class Reference}
+\label{class_config_reader}\index{Config\+Reader@{Config\+Reader}}
+
+
+{\ttfamily \#include $<$Config\+Reader.\+hpp$>$}
+
+
+
+Collaboration diagram for Config\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_config_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a}{Config\+Reader} (const char $\ast$\hyperlink{class_config_reader_a82435410daeab9beb0dc90500976acfc}{filename})
+\item 
+std\+::string \hyperlink{class_config_reader_a94455bd2a38611704e4b4523b5be538c}{get\+String\+Value} (const char $\ast$name)
+\item 
+int \hyperlink{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80}{get\+Int\+Value} (const char $\ast$name)
+\item 
+void \hyperlink{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304}{set\+String\+Value} (const char $\ast$name, const char $\ast$value)
+\item 
+void \hyperlink{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a}{set\+Int\+Value} (const char $\ast$name, const int value)
+\item 
+void \hyperlink{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e}{write\+Out} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_config_reader_a9a984c109425eecf599f606f10a2948c}{read\+File} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{class_config_reader_a82435410daeab9beb0dc90500976acfc}{filename}
+\item 
+bool \hyperlink{class_config_reader_aa384495927b6c1677d39e34eac3e577c}{value\+Changed} = false
+\item 
+std\+::map$<$ std\+::string, int $>$ \hyperlink{class_config_reader_ad7bd3a0ec9513b9f385a658752c87b37}{values}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_config_reader_ac03a3baf208f4dd2c2e5a8c9494b431b}{strings}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_config_reader}{Config\+Reader} class 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Config\+Reader@{Config\+Reader}!Config\+Reader@{Config\+Reader}}
+\index{Config\+Reader@{Config\+Reader}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{Config\+Reader(const char $\ast$filename)}{ConfigReader(const char *filename)}}]{\setlength{\rightskip}{0pt plus 5cm}Config\+Reader\+::\+Config\+Reader (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a}{}\label{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a}
+\hyperlink{class_config_reader}{Config\+Reader} constructor 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char$\ast$ filename) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Config\+Reader@{Config\+Reader}!get\+Int\+Value@{get\+Int\+Value}}
+\index{get\+Int\+Value@{get\+Int\+Value}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{get\+Int\+Value(const char $\ast$name)}{getIntValue(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Config\+Reader\+::get\+Int\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80}{}\label{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80}
+get\+Int\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char$\ast$ name)\\
+\hline
+\end{DoxyParams}
+get\+Int\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char $\ast$name) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Config\+Reader@{Config\+Reader}!get\+String\+Value@{get\+String\+Value}}
+\index{get\+String\+Value@{get\+String\+Value}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{get\+String\+Value(const char $\ast$name)}{getStringValue(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Config\+Reader\+::get\+String\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a94455bd2a38611704e4b4523b5be538c}{}\label{class_config_reader_a94455bd2a38611704e4b4523b5be538c}
+get\+String\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char$\ast$ name)\\
+\hline
+\end{DoxyParams}
+get\+String\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char $\ast$name) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a94455bd2a38611704e4b4523b5be538c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Config\+Reader@{Config\+Reader}!read\+File@{read\+File}}
+\index{read\+File@{read\+File}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{read\+File()}{readFile()}}]{\setlength{\rightskip}{0pt plus 5cm}void Config\+Reader\+::read\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_config_reader_a9a984c109425eecf599f606f10a2948c}{}\label{class_config_reader_a9a984c109425eecf599f606f10a2948c}
+read\+File function 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a9a984c109425eecf599f606f10a2948c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Config\+Reader@{Config\+Reader}!set\+Int\+Value@{set\+Int\+Value}}
+\index{set\+Int\+Value@{set\+Int\+Value}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{set\+Int\+Value(const char $\ast$name, const int value)}{setIntValue(const char *name, const int value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Config\+Reader\+::set\+Int\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const int}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a}{}\label{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a}
+set\+Int\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char$\ast$ name, const int value)\\
+\hline
+\end{DoxyParams}
+set\+Int\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char $\ast$name, const int value) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Config\+Reader@{Config\+Reader}!set\+String\+Value@{set\+String\+Value}}
+\index{set\+String\+Value@{set\+String\+Value}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{set\+String\+Value(const char $\ast$name, const char $\ast$value)}{setStringValue(const char *name, const char *value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Config\+Reader\+::set\+String\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304}{}\label{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304}
+set\+String\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char$\ast$ name, const char$\ast$ value)\\
+\hline
+\end{DoxyParams}
+set\+String\+Value function 
+\begin{DoxyParams}{Parameters}
+{\em (const} & char $\ast$name, const char $\ast$value) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Config\+Reader@{Config\+Reader}!write\+Out@{write\+Out}}
+\index{write\+Out@{write\+Out}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{write\+Out()}{writeOut()}}]{\setlength{\rightskip}{0pt plus 5cm}void Config\+Reader\+::write\+Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e}{}\label{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e}
+write\+Out function 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Config\+Reader@{Config\+Reader}!filename@{filename}}
+\index{filename@{filename}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{filename}{filename}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Config\+Reader\+::filename\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_config_reader_a82435410daeab9beb0dc90500976acfc}{}\label{class_config_reader_a82435410daeab9beb0dc90500976acfc}
+\index{Config\+Reader@{Config\+Reader}!strings@{strings}}
+\index{strings@{strings}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{strings}{strings}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, std\+::string$>$ Config\+Reader\+::strings\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_config_reader_ac03a3baf208f4dd2c2e5a8c9494b431b}{}\label{class_config_reader_ac03a3baf208f4dd2c2e5a8c9494b431b}
+\index{Config\+Reader@{Config\+Reader}!value\+Changed@{value\+Changed}}
+\index{value\+Changed@{value\+Changed}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{value\+Changed}{valueChanged}}]{\setlength{\rightskip}{0pt plus 5cm}bool Config\+Reader\+::value\+Changed = false\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_config_reader_aa384495927b6c1677d39e34eac3e577c}{}\label{class_config_reader_aa384495927b6c1677d39e34eac3e577c}
+\index{Config\+Reader@{Config\+Reader}!values@{values}}
+\index{values@{values}!Config\+Reader@{Config\+Reader}}
+\subsubsection[{\texorpdfstring{values}{values}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, int$>$ Config\+Reader\+::values\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_config_reader_ad7bd3a0ec9513b9f385a658752c87b37}{}\label{class_config_reader_ad7bd3a0ec9513b9f385a658752c87b37}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+4\+\_\+\+Utilities/\hyperlink{_config_reader_8hpp}{Config\+Reader.\+hpp}\item 
+4\+\_\+\+Utilities/\hyperlink{_config_reader_8cpp}{Config\+Reader.\+cpp}\end{DoxyCompactItemize}

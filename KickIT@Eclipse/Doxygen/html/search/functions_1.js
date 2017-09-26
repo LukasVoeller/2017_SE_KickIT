@@ -7,5 +7,7 @@ var searchData=
   ['closeport',['closePort',['../class_motor_communicator_interface.html#aa761210caa851871c73732955e1eadba',1,'MotorCommunicatorInterface']]],
   ['configfilechangedexception',['ConfigFileChangedException',['../class_config_file_changed_exception.html#aee3967e1803eecc26850b4829a5f644b',1,'ConfigFileChangedException']]],
   ['configreader',['ConfigReader',['../class_config_reader.html#a4c1909efc98e8d6308c7871554f68a1a',1,'ConfigReader']]],
+  ['converttoid',['convertToId',['../search_8js.html#a196a29bd5a5ee7cd5b485e0753a49e57',1,'search.js']]],
+  ['createresults',['createResults',['../search_8js.html#a6b2c651120de3ed1dcf0d85341d51895',1,'search.js']]],
   ['cross',['cross',['../class_vec2.html#a1aedad72c952aaef4a56844719ee2449',1,'Vec2']]]
 ];

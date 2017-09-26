@@ -19,18 +19,12 @@ class MotorComRS01Impl: public MotorCommunicatorInterface {
 
 public:
 	/**MotorComRS01Impl constructor
+	 *
 	 * @param Row r
 	 */
 	MotorComRS01Impl();
 
-	/**linearMovement
-	 * @param int position
-	 */
 	void linearMovement(int position);
-
-	/**rotate function
-	 * @param int amount
-	 */
 	void rotate(int amount);
 
 protected:
