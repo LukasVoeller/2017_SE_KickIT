@@ -10,7 +10,6 @@
 #include <fcntl.h>
 #include <sys/types.h> 	//For sockets
 
-#include "../../5_DataType/RowEnum.hpp"
 #include "_MotorCommunicatorInterface.hpp"
 
 /**MotorComRS01Impl class
@@ -22,7 +21,7 @@ public:
 	/**MotorComRS01Impl constructor
 	 * @param Row r
 	 */
-	MotorComRS01Impl(Row r);
+	MotorComRS01Impl();
 
 	/**linearMovement
 	 * @param int position

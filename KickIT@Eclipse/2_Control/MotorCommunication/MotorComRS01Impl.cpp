@@ -13,10 +13,9 @@
 using namespace std;
 extern bool defenseHomed;
 
-MotorComRS01Impl::MotorComRS01Impl(Row r) {
+MotorComRS01Impl::MotorComRS01Impl() {
 	this->socketId = 0;
 	this->port = "can0";
-	this->row = r;
 	if(mc.homingRequired){
 		thread c(&MotorComRS01Impl::driverInit, this);
 		c.detach();

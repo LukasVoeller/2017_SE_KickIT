@@ -17,7 +17,6 @@
 #include <bitset>
 
 #include "../../5_DataType/MotorConfig.hpp"
-#include "../../5_DataType/RowEnum.hpp"
 
 /**MotorCommunicatorInterface class
  *
@@ -41,7 +40,6 @@ public:
 
 protected:
 	MotorConfig mc;
-	Row row;
 	char* port;
 	int socketId;
 	char nibbleTranslational = 1;

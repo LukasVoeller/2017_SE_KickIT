@@ -12,10 +12,9 @@
 using namespace std;
 extern bool keeperHomed;
 
-MotorComPS01Impl::MotorComPS01Impl(Row r) {
+MotorComPS01Impl::MotorComPS01Impl() {
 	this->socketId = 0;
 	this->port = "can0";
-	this->row = r;
 	if(mc.homingRequired){
 		thread c(&MotorComPS01Impl::driverInit, this);
 		c.detach();

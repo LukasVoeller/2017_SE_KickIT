@@ -13,7 +13,6 @@
 #include <sys/types.h> 	//For sockets
 #include <sys/socket.h> //For sockets
 
-#include "../../5_DataType/RowEnum.hpp"
 #include "_MotorCommunicatorInterface.hpp"
 
 /**MotorComPS01Impl class
@@ -25,7 +24,7 @@ public:
 	/**MotorComPS01Impl constructor
 	 * @param Row r
 	 */
-	MotorComPS01Impl(Row r);
+	MotorComPS01Impl();
 
 	/**linearMovement function
 	 * @param int position

@@ -35,7 +35,6 @@ HEADERS += 1_BallTracking/BallTracker/_BallTrackerInterface.hpp \
            5_DataType/BallStatus.hpp \
            5_DataType/CameraConfig.hpp \
            5_DataType/MotorConfig.hpp \
-           5_DataType/RowEnum.hpp \
            5_DataType/TableConfig.hpp \
            5_DataType/Vec2.hpp
 SOURCES += KickIT@Eclipse.cpp \
