@@ -1,8 +1,15 @@
+/**
+ * @file VirtualKickerWindow.cpp
+ * @brief
+ */
 #include "../3_VirtualKicker/VirtualKickerWindow.hpp"
 
 #include "../5_DataType/TableConfig.hpp"
 #include "../5_DataType/Vec2.hpp"
 
+/**VirtualKickerWindow constructor
+ *
+ */
 VirtualKickerWindow::VirtualKickerWindow(bool showRows, bool drawBallPositionWithMouse) : tc(NULL), speedDisplay(NULL) {
 	setMouseTracking(true);
 	this->showRows = showRows;
@@ -27,6 +34,10 @@ VirtualKickerWindow::VirtualKickerWindow(bool showRows, bool drawBallPositionWit
 	last_ball_update = 0;
 }
 
+/**newBallStatus function
+ * @param bs vom Typ BallStatus
+ *
+ */
 void VirtualKickerWindow::newBallStatus(BallStatus bs){
 	int ball_x = bs.position.x / this->SCALE + TABLE_MARGIN;
 	int ball_y = bs.position.y / this->SCALE + TABLE_MARGIN;
@@ -46,6 +57,10 @@ void VirtualKickerWindow::newBallStatus(BallStatus bs){
 
 }
 
+/**paintEvent function
+ * @param (QPaintEvent *event)
+ *
+ */
 void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	QPainter painter(this);
 
@@ -77,6 +92,9 @@ void VirtualKickerWindow::paintEvent(QPaintEvent *event) {
 	painter.drawPoint(*ball);
 }
 
+/**mouseMoveEvent function
+ * @param (QMouseEvent* e)
+ */
 void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e) {
 	if(this->drawBallPositionWithMouse){
 		if ((abs(e->pos().x() - lastAdded.x()) + abs(e->pos().y() - lastAdded.y()))
@@ -90,16 +108,24 @@ void VirtualKickerWindow::mouseMoveEvent(QMouseEvent* e) {
 	}
 }
 
+/**mouseReleaseEvent function
+ * @param (QMouseEvent* e)
+ */
 void VirtualKickerWindow::mouseReleaseEvent(QMouseEvent* e) {
 	mouseTrail.clear();
 }
 
-
+/**setTableController function
+ * @param (TableControllerInterface* t)
+ */
 void VirtualKickerWindow::setTableController(TableControllerInterface* t) {
 	tc = t;
 }
 
-void VirtualKickerWindow::keyPressEvent(QKeyEvent * event){
+/**keyPressEvent function
+ * @param (QKeyEvent * event)
+ */
+void VirtualKickerWindow::keyPressEvent(QKeyEvent* event){
 	if( event->key() == Qt::Key_S ){
 		if(speedDisplay!=NULL) speedDisplay->show();
 	}

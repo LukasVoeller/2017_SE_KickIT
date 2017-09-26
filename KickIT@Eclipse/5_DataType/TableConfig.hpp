@@ -1,3 +1,7 @@
+/**
+ * @file TableConfig
+ * @brief
+ */
 #ifndef TABLECONFIG_HPP
 #define TABLECONFIG_HPP
 
@@ -7,6 +11,9 @@
 
 #include "../4_Utilities/ConfigReader.hpp"
 
+/**TableConfig class
+ *
+ */
 class TableConfig {
 protected:
 	ConfigReader cr;
@@ -37,10 +44,16 @@ public:
 	float offsetBottomSideOffense;
 	float shotTriggerRange;
 
+	/**TableConfig function
+	 *
+	 */
 	TableConfig():cr("6_Configuration/TableConfig.txt"){
 		loadConfig();
 	}
 
+	/**loadConfig function
+	 *
+	 */
 	void loadConfig() {
 
 		tableWidth = cr.getIntValue("tableWidth");
@@ -68,6 +81,9 @@ public:
 
 	}
 
+	/**saveConfig function
+	 *
+	 */
 	void saveConfig() {
 		cr.setIntValue("tableWidth",tableWidth);
 		cr.setIntValue("tableHeight",tableHeight);
@@ -94,6 +110,9 @@ public:
 		cr.writeOut();
 	}
 
+	/**printConfig function
+	 *
+	 */
 	void printConfig() {
 
 	}

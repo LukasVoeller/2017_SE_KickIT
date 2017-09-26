@@ -1,4 +1,7 @@
-
+/**
+ * @file CameraConfig.hpp
+ * @brief
+ */
 #ifndef CAMERACONFIG_HPP
 #define CAMERACONFIG_HPP
 
@@ -8,6 +11,9 @@
 
 #include "../4_Utilities/ConfigReader.hpp"
 
+/**CameraConfig class
+ *
+ */
 class CameraConfig {
 protected:
 	ConfigReader cr;
@@ -25,10 +31,16 @@ public:
 	int offsetx;
 	int offsety;
 
+	/**CameraConfig function
+	 *
+	 */
 	CameraConfig():cr("6_Configuration/CameraConfig.txt"){
 		loadConfig();
 	}
 
+	/**loadConfig function
+	 *
+	 */
 	void loadConfig() {
 
 		redLow = cr.getIntValue("redLow");
@@ -46,6 +58,9 @@ public:
 
 	}
 
+	/**sevaConfig function
+	 *
+	 */
 	void saveConfig() {
 		cr.setIntValue("redLow",redLow);
 		cr.setIntValue("redHigh",redHigh);
@@ -62,6 +77,9 @@ public:
 		cr.writeOut();
 	}
 
+	/**printConfig function
+	 *
+	 */
 	void printConfig() {
 		std::cout << "CAMERA CONFIGURATION\n" << "RedLow: "
 				<< redLow << "\n" << "RedHigh: " << redHigh << "\n"

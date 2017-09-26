@@ -1,4 +1,7 @@
-
+/**
+ * @file Calculator.hpp
+ * @brief
+ */
 #ifndef CALCULATOR_HPP
 #define CALCULATOR_HPP
 
@@ -8,11 +11,17 @@
 
 #include <vector>
 
+/**Calculator function
+ *
+ */
 namespace Calculator {
 	static TableConfig tc;
 	static Vec2 rowDirectionalVector(0, 1);
 	static Vec2 keeperPosition(tc.distGoalToKeeper, 0);
 
+	/**calcPositionsSimple function
+	 * @param (vector<void*>* params)
+	 */
 	static void calcPositionsSimple(std::vector<void*>* params) {
 
 		BallStatus* bs = ((BallStatus*)params->at(0));
@@ -51,6 +60,9 @@ namespace Calculator {
 
 	}
 
+	/**calcIfKickSimple
+	 * @param (vector<void*>* params)
+	 */
 	static void calcIfKickSimple(std::vector<void*>* params) {
 		BallStatus* bs = ((BallStatus*)params->at(0));
 		bool* kick = ((bool*)params->at(3));
@@ -62,6 +74,9 @@ namespace Calculator {
 
 	}
 
+	/**calcIfUp function
+	 * (vector<void*>* params)
+	 */
 	static void calcIfUp(std::vector<void*>* params) {
 		BallStatus* bs = ((BallStatus*)params->at(0));
 		bool* up = ((bool*)params->at(2));
@@ -70,6 +85,12 @@ namespace Calculator {
 
 	}
 
+	/**calcPositionsVectorial function
+	 * @param (BallStatus* b, float yOffset = 0,
+			   Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
+			   Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =
+					0)
+	 */
 	static void calcPositionsVectorial(BallStatus* b, float yOffset = 0,
 			Vec2* keeperPositionalVector = 0, Vec2* defensePositionalVector = 0,
 			Vec2* midfieldPositionalVector = 0, Vec2* offensePositionalVector =

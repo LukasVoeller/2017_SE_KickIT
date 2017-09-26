@@ -1,7 +1,7 @@
-//
-// Created by stratos on 21.08.17.
-//
-
+/**
+ * @file ConfigReader
+ * @brief
+ */
 #include "../4_Utilities/ConfigReader.hpp"
 
 #include <string>
@@ -11,11 +11,17 @@
 #include <vector>
 #include <algorithm>
 
+/**ConfigReader constructor
+ * @param (const char* filename)
+ */
 ConfigReader::ConfigReader(const char* filename) {
     this->filename = filename;
     this->readFile();
 }
 
+/**readFile function
+ *
+ */
 void ConfigReader::readFile() {
 
     //std::string filename(c);
@@ -49,6 +55,9 @@ void ConfigReader::readFile() {
 
 }
 
+/**getStringValue function
+ * @param (const char *name)
+ */
 std::string ConfigReader::getStringValue(const char *name) {
     if(this->strings.find(name) != this->strings.end()) {
         return this->strings[name];
@@ -57,6 +66,9 @@ std::string ConfigReader::getStringValue(const char *name) {
     }
 }
 
+/**getIntValue function
+ * @param (const char *name)
+ */
 int ConfigReader::getIntValue(const char *name) {
     if(this->values.find(name) != this->values.end()) {
         return this->values[name];
@@ -66,17 +78,26 @@ int ConfigReader::getIntValue(const char *name) {
     }
 }
 
+/**setStringValue function
+ * @param (const char *name, const char *value)
+ */
 void ConfigReader::setStringValue(const char *name, const char *value) {
     std::string n(value);
     this->strings[name] = n;
     this->valueChanged = true;
 }
 
+/**setIntValue function
+ * @param (const char *name, const int value)
+ */
 void ConfigReader::setIntValue(const char *name, const int value) {
     this->values[name] = value;
     this->valueChanged = true;
 }
 
+/**writeOut function
+ *
+ */
 void ConfigReader::writeOut() {
     if(this->valueChanged){
 

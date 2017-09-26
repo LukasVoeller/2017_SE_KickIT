@@ -1,3 +1,7 @@
+/**
+ * @file MotorConfig.hpp
+ * @brief
+ */
 #ifndef MOTORCONFIG_HPP
 #define MOTORCONFIG_HPP
 
@@ -8,6 +12,9 @@
 #include "../4_Utilities/ConfigReader.hpp"
 
 
+/**MotorConfig class
+ *
+ */
 class MotorConfig {
 protected:
 	ConfigReader cr;
@@ -34,10 +41,16 @@ public:
 	int defenseBoundaryInwards;
 	int defenseBoundaryOutwards;
 
+	/**MotorConfig function
+	 *
+	 */
 	MotorConfig():cr("6_Configuration/MotorConfig.txt"){
 		loadConfig();
 	}
 
+	/**loadConfig function
+	 *
+	 */
 	void loadConfig(){
 
 		homingRequired = cr.getIntValue("homingRequired");
@@ -64,6 +77,9 @@ public:
 
 	}
 
+	/**saveConfig function
+	 *
+	 */
 	void saveConfig() {
 		cr.setIntValue("homingRequired", homingRequired);
 		cr.setStringValue("port", port.c_str());
