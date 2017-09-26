@@ -15,11 +15,25 @@
  */
 class BallTrackerInterface {
 public:
+	/**setTableController function
+	 * @param (TableControllerInterface* t)
+	 */
 	void setTableController(TableControllerInterface* t) {
 		this->tableController = t;
 	}
+	/**BallTrackerInterface destructor
+	 *
+	 */
 	virtual ~BallTrackerInterface() {}
+
+	/**getBallPosition
+	 *
+	 */
 	virtual Vec2 getBallPosition() = 0;
+
+	/**startTracking function
+	 *
+	 */
 	virtual void startTracking() = 0;
 
 protected:
