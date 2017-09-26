@@ -8,10 +8,9 @@
 #include <unistd.h>
 
 #include "../../2_Control/MotorCommunication/MotorComRS01Impl.hpp"
-#include "../../5_DataType/RowEnum.hpp"
 
 RowControllerDefense::RowControllerDefense() {
-	mcomm = new MotorComRS01Impl(DEFENSE);
+	mcomm = new MotorComRS01Impl();
 }
 
 void RowControllerDefense::up(){

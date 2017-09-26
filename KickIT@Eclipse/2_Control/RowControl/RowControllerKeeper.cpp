@@ -6,10 +6,9 @@
 
 #include "../../2_Control/MotorCommunication/MotorComPS01Impl.hpp"
 #include "../MotorCommunication/MotorComPS01Impl.hpp"
-#include "../../5_DataType/RowEnum.hpp"
 
 RowControllerKeeper::RowControllerKeeper() {
-	mcomm = new MotorComPS01Impl(KEEPER);
+	mcomm = new MotorComPS01Impl();
 }
 
 void RowControllerKeeper::moveTo(float y){

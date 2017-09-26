@@ -1,3 +1,7 @@
+/**
+ * @file KickIT@Eclipse.cpp
+ * @brief
+ */
 /*******************************************************************************************************
  *
  * KKKKKKKKK    KKKKKKK  iiii                      kkkkkkkk           IIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTT
@@ -48,14 +52,21 @@
 #include <QApplication>
 #include <cstdlib>
 
-#define MODE 4
+#define MODE 2
 Modules* Modules::_instance = 0;
 
+/**main function
+ * @param (int argc, char** argv)
+ *
+ */
 int main(int argc, char** argv) {
 	Modules::instance()->registerFunction("calcIfKickSimple", &(Calculator::calcIfKickSimple));
 	Modules::instance()->registerFunction("calcPositionsSimple", &(Calculator::calcPositionsSimple));
 
-	//Virtual mode - Ball tracking and table control is simulated by the virtual kicker
+	/**MODE == 1
+	 * Virtual mode - Ball tracking and table control is simulated by the virtual kicker
+	 * @return a.exec()
+	 */
 	#if MODE == 1
 
 		QApplication a(argc, argv);
@@ -64,16 +75,11 @@ int main(int argc, char** argv) {
 
 	#endif
 
-	//Motor testing mode - The ball position is simulated with the GUI
+	/**MODE == 2
+	 * Final mode - Ready to play!
+	 * @return a.exec()
+	 */
 	#if MODE == 2
-	#endif
-
-	//Balltracking testing mode - The table is simulated with the GUI
-	#if MODE == 3
-	#endif
-
-	//Final mode - Ready to play!
-	#if MODE == 4
 		QApplication a(argc, argv);
 		VirtualKickerWindow* vkw = VirtualKicker::getDisplay();
 		TableControllerImpl* tci = new TableControllerImpl(vkw);

@@ -36,6 +36,8 @@ public:
 	 */
 	virtual void kick(int strength) {}
 
+	virtual ~RowControllerInterface() {}
+
 protected:
 	MotorCommunicatorInterface* mcomm;
 
