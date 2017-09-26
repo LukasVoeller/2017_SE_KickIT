@@ -24,11 +24,6 @@ public:
 	 */
 	BallTrackerImpl(TableControllerInterface* tci);
 
-	/**BallTrackerImpl destructor
-	 *
-	 */
-	~BallTrackerImpl();
-
 	/**getBallPosition function
 	 *
 	 */

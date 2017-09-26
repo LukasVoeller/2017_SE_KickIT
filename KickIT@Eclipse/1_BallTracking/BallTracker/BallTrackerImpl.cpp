@@ -14,19 +14,11 @@ using namespace std;
 using namespace Pylon;
 using namespace GenApi;
 
-int exitCode = 0;
-
 
 BallTrackerImpl::BallTrackerImpl(TableControllerInterface* tci) {
 	this->tableController = tci;
 	this->camera = new Camera();
 	this->threshold = camera->threshold();
-	//startTracking();
-
-}
-
-BallTrackerImpl::~BallTrackerImpl() {
-
 }
 
 
