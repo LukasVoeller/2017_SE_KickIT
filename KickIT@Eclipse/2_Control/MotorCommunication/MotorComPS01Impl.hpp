@@ -1,6 +1,6 @@
 /**
  * @file MotorComPS01Impl.hpp
- * @brief
+ *
  */
 #ifndef MOTORCOM_IMPL_PS01_HPP
 #define MOTORCOM_IMPL_PS01_HPP
@@ -20,7 +20,7 @@
 class MotorComPS01Impl: public MotorCommunicatorInterface {
 public:
 	/**MotorComPS01Impl constructor
-	 * @param Row r
+	 *
 	 */
 	MotorComPS01Impl();
 

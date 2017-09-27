@@ -1,6 +1,6 @@
 /**
  * @file BallTrackerImpl.hpp
- * @brief
+ *
  */
 #ifndef BALLTRACKERIMPL_HPP
 #define BALLTRACKERIMPL_HPP
@@ -20,17 +20,17 @@ public:
 	 *
 	 * @param TableControllerInterface* tci
 	 *
-	 * If the BallTracker has detected a new ball position, the TableController must be notified
+	 * If the BallTracker has detected a new ball position,
+	 * he notifies the TableController which is paased to him through the constructor
 	 */
 	BallTrackerImpl(TableControllerInterface* tci);
 
-
-	void getBallPosition();
 	void startTracking();
 
 public slots:
 	/**trackingSlot function
 	 *
+	 * Necessary to run startTracking() in a QThread
 	 */
 	void trackingSlot(){
 		this->startTracking();

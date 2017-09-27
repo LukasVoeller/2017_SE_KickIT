@@ -4,7 +4,7 @@
 
 ########################################################
 
-int homingRequired 1
+int homingRequired 0
 
 string port can0
 

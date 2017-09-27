@@ -1,6 +1,6 @@
 /**
  * @file MotorCommunicatorInterface.hpp
- * @brief
+ *
  */
 #ifndef INTERFACEMOTORCOMMUNICATOR_HPP
 #define INTERFACEMOTORCOMMUNICATOR_HPP
@@ -22,15 +22,19 @@
  */
 class MotorCommunicatorInterface {
 public:
-	/**linearMovement finction
+	/**linearMovement function
 	 *
 	 * @param int position
+	 *
+	 * Control for translational movement.
 	 */
 	virtual void linearMovement(int position) = 0;
 
 	/**rotate function
 	 *
 	 * @param int amount
+	 *
+	 * Control for rotary movement.
 	 */
 	virtual void rotate(int amount){};
 
@@ -48,29 +52,34 @@ protected:
 
 	/**driverInit function
 	 *
+	 * Initial setup of motor-drivers.
+	 * Needs to be called after the motors were detached from power supply or have entered error-state(red LED)
 	 */
 	virtual void driverInit() = 0;
 
 	/**switchedNibbleT function
 	 *
+	 *@return alternately returns 0 and 1 as a char-byte
 	 */
-	int switchedNibbleT() {
+	char switchedNibbleT() {
 		nibbleTranslational = !nibbleTranslational;
 		return nibbleTranslational;
 	}
 
 	/**switchedNibbleR function
 	 *
-	 *@return nibbleRotary
+	 *@return alternately returns 0 and 1 as a char-byte
 	 */
-	int switchedNibbleR() {
+	char switchedNibbleR() {
 		nibbleRotary = !nibbleRotary;
 		return nibbleRotary;
 	}
 
 	/**openPort function
 	 *
-	 * @return 0 or return -1
+	 * Aquires socket connection to pcan-Adapter.
+	 *
+	 * @return 0 on success or -1 at failure
 	 */
 	int openPort() {
 		struct ifreq ifr;
@@ -144,7 +153,7 @@ protected:
 	 *
 	 * @param struct can_frame *frame
 	 *
-	 * @return 0 or return -1
+	 * @return 0 on success or -1 at failure
 	 */
 	int sendPort(struct can_frame *frame) {
 		int retval = write(socketId, frame, sizeof(struct can_frame));

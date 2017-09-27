@@ -1,6 +1,6 @@
 /**
  * @file Camera.hpp
- * @brief
+ *
  */
 #ifndef BALLTRACKING_CAMERA_HPP_
 #define BALLTRACKING_CAMERA_HPP_

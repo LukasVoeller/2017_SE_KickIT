@@ -18,7 +18,7 @@ MotorComRS01Impl::MotorComRS01Impl() {
 	if(mc.homingRequired){
 		thread c(&MotorComRS01Impl::driverInit, this);
 		c.detach();
-	}
+	} else defenseHomed = true;
 }
 
 void MotorComRS01Impl::driverInit(){

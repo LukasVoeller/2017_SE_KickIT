@@ -1,6 +1,6 @@
 /**
  * @file CameraInterface.hpp
- * @brief
+ *
  */
 #ifndef CameraInterface_HPP
 #define CameraInterface_HPP
@@ -26,7 +26,7 @@ public:
 
 	/**getImage function
 	 *
-	 *Function retrieves a picture from the camera
+	 * Function retrieves a picture from the camera
 	 *
 	 * @return An image is returned
 	 *
@@ -38,26 +38,26 @@ public:
 	 * This function sets the threshold values ​​for the ball detection.
 	 * These values ​​are then stored in the CameraConfig.txt
 	 *
-	 * @return The result of the adjustment is returned with the variable result
+	 * @return The result of the adjustment is returned
 	 */
 	virtual CameraConfig* threshold() = 0;
 
 protected:
 	/**calibrate function
 	 *
-	 * wird nicht verwendet
+	 *
 	 */
 	virtual void calibrate() = 0;
 
 	/**getCameraSettings
 	 *
-	 * function gives the adjusted values of the camera
+	 * function prints out the adjusted values of the camera
 	 */
 	virtual void getCameraSettings() = 0;
 
 	/**setCameraSettings
 	 *
-	 * Function for initial configuration of the camera
+	 * Function for initial configuration of the camera.
 	 * The settings are fetched from the CameraConfig.txt and passed to the PylonViewerApi
 	 *
 	 */

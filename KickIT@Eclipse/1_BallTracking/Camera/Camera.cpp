@@ -1,6 +1,6 @@
 /**
  * @file Camera.cpp
- * @brief
+ *
  */
 #include "../../1_BallTracking/Camera/Camera.hpp"
 #include "../../5_DataType/CameraConfig.hpp"
@@ -54,36 +54,7 @@ cv::Mat* Camera::getImage() {
 }
 
 void Camera::calibrate() {
-	PylonAutoInitTerm autoInitTerm;
-	CGrabResultPtr ptrGrabResult;
-	CImageFormatConverter fc;
-	CPylonImage image;
-	vector<cv::Vec3f> circles;
 
-	fc.OutputPixelFormat = PixelType_RGB8packed;
-
-	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
-	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
-	cv::Mat cv_img(width->GetValue(), height->GetValue(), CV_8UC3);
-
-	for (int i = 0; i < 5; i++) {
-		while (camera->IsGrabbing()) {
-			camera->RetrieveResult(5000, ptrGrabResult,
-					TimeoutHandling_ThrowException);
-
-			if (ptrGrabResult->GrabSucceeded()) {
-				cout << "Grabbing succeeded" << endl;
-
-				fc.Convert(image, ptrGrabResult);
-				cv_img = cv::Mat(ptrGrabResult->GetHeight(),
-						ptrGrabResult->GetWidth(), CV_8UC3,
-						(uint8_t*) image.GetBuffer());
-				imshow("circles", cv_img);
-
-				cv::waitKey(1);
-			}
-		}
-	}
 }
 
 void Camera::setCameraSettings() {
@@ -94,10 +65,8 @@ void Camera::setCameraSettings() {
 
 	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
-	GenApi::CIntegerPtr packetsize(
-			camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
-	GenApi::CFloatPtr exposuretime(
-			camera->GetNodeMap().GetNode("ExposureTimeAbs"));
+	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
+	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
 	GenApi::CIntegerPtr offsetx(camera->GetNodeMap().GetNode("OffsetX"));
 	GenApi::CIntegerPtr offsety(camera->GetNodeMap().GetNode("OffsetY"));
 
@@ -115,10 +84,8 @@ void Camera::getCameraSettings() {
 
 	GenApi::CIntegerPtr width(camera->GetNodeMap().GetNode("Width"));
 	GenApi::CIntegerPtr height(camera->GetNodeMap().GetNode("Height"));
-	GenApi::CIntegerPtr packetsize(
-			camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
-	GenApi::CFloatPtr exposuretime(
-			camera->GetNodeMap().GetNode("ExposureTimeAbs"));
+	GenApi::CIntegerPtr packetsize(camera->GetNodeMap().GetNode("GevSCPSPacketSize"));
+	GenApi::CFloatPtr exposuretime(camera->GetNodeMap().GetNode("ExposureTimeAbs"));
 
 	cout << "Aktuelle Kameraparameter: " << endl;
 	cout << "Höhe: " << width->GetValue() << endl;

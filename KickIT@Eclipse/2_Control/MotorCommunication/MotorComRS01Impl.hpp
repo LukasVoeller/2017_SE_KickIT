@@ -1,6 +1,6 @@
 /**
  * @file MotorComRS01Impl.hpp
- * @brief
+ *
  */
 #ifndef MOTORCOM_IMPL_RS01_HPP
 #define MOTORCOM_IMPL_RS01_HPP
@@ -18,7 +18,6 @@ class MotorComRS01Impl: public MotorCommunicatorInterface {
 public:
 	/**MotorComRS01Impl constructor
 	 *
-	 * @param Row r
 	 */
 	MotorComRS01Impl();
 
@@ -26,9 +25,6 @@ public:
 	void rotate(int amount);
 
 protected:
-	/**driverInit function
-	 *
-	 */
 	void driverInit();
 };
 

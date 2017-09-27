@@ -1,6 +1,6 @@
 /**
  * @file BallTrackerInterface.hpp
- * @brief
+ *
  */
 #ifndef BALLTRACKERINTERFACE_HPP
 #define BALLTRACKERINTERFACE_HPP
@@ -28,13 +28,9 @@ public:
 	 */
 	virtual ~BallTrackerInterface() {}
 
-	/**getBallPosition function
-	 *
-	 */
-	virtual void getBallPosition() = 0;
-
 	/**startTracking function
 	 *
+	 * Balltracking-loop. Continuously detects the position of the ball.
 	 */
 	virtual void startTracking() = 0;
 
