@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['l',['L',['../jquery_8js.html#a38ee4c0b5f4fe2a18d0c783af540d253',1,'jquery.js']]],
   ['last_5fball_5fupdate',['last_ball_update',['../class_virtual_kicker_window.html#a091a27e61740b506b134c8dccb25955c',1,'VirtualKickerWindow']]],
   ['last_5fupdate',['last_update',['../class_ball_status.html#a8a53c0c35e7179f0af564142f9cccf1c',1,'BallStatus']]],
   ['lastadded',['lastAdded',['../class_virtual_kicker_window.html#a8fcd704eb048c7085425c490c9791eab',1,'VirtualKickerWindow']]],

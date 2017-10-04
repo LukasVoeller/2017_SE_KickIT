@@ -51,7 +51,7 @@ protected:
 
 	/**getCameraSettings
 	 *
-	 * function prints out the adjusted values of the camera
+	 * Function prints out the adjusted values of the camera
 	 */
 	virtual void getCameraSettings() = 0;
 

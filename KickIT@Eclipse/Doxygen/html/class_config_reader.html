@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: ConfigReader Class Reference</title>
+<title>KickIT: ConfigReader Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -147,7 +147,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_config_reader.html">ConfigReader</a> constructor </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="class_config_reader.html">ConfigReader</a> constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">(const</td><td>char* filename) </td></tr>
   </table>
@@ -180,15 +181,11 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>getIntValue function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>getIntValue function</p>
+<p>Throws <a class="el" href="class_parameter_not_found_exception.html">ParameterNotFoundException</a> if the parameter cannot be found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">(const</td><td>char* name)</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>getIntValue function </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">(const</td><td>char *name) </td></tr>
+    <tr><td class="paramname">(const</td><td>char* name) </td></tr>
   </table>
   </dd>
 </dl>
@@ -223,15 +220,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>getStringValue function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>getStringValue function</p>
+<p>Throws <a class="el" href="class_parameter_not_found_exception.html">ParameterNotFoundException</a> if the parameter cannot be found.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">(const</td><td>char* name)</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>getStringValue function </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">(const</td><td>char *name) </td></tr>
+    <tr><td class="paramname">(const</td><td>char* name) </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,15 +301,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>setIntValue function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>setIntValue function</p>
+<p>Function to update a value. If the value doesn't exist yet, it will be added to the data set.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">(const</td><td>char* name, const int value)</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>setIntValue function </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">(const</td><td>char *name, const int value) </td></tr>
+    <tr><td class="paramname">(const</td><td>char* name, const int value) </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,15 +348,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>setStringValue function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>setStringValue function</p>
+<p>Function to update a value. If the value doesn't exist yet, it will be added to the data set.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">(const</td><td>char* name, const char* value)</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>setStringValue function </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">(const</td><td>char *name, const char *value) </td></tr>
+    <tr><td class="paramname">(const</td><td>char* name, const char* value) </td></tr>
   </table>
   </dd>
 </dl>
@@ -396,7 +381,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>writeOut function </p>
+<p>writeOut function</p>
+<p>Function to rewrite the file in case that any of the values have changed. </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -495,8 +481,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>4_Utilities/<a class="el" href="_config_reader_8hpp_source.html">ConfigReader.hpp</a></li>
-<li>4_Utilities/<a class="el" href="_config_reader_8cpp.html">ConfigReader.cpp</a></li>
+<li>KickIT@Eclipse/4_Utilities/<a class="el" href="_config_reader_8hpp_source.html">ConfigReader.hpp</a></li>
+<li>KickIT@Eclipse/4_Utilities/<a class="el" href="_config_reader_8cpp.html">ConfigReader.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

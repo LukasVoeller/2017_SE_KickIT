@@ -1,5 +1,5 @@
-<map id="2_Control/MotorCommunication/MotorComPS01Impl.hpp" name="2_Control/MotorCommunication/MotorComPS01Impl.hpp">
-<area shape="rect" id="node9" href="$___motor_communicator_interface_8hpp.html" title="_MotorCommunicatorInterface.hpp" alt="" coords="408,95,631,121"/>
-<area shape="rect" id="node13" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="700,169,917,196"/>
-<area shape="rect" id="node16" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="847,244,1048,271"/>
+<map id="KickIT@Eclipse/2_Control/MotorCommunication/MotorComPS01Impl.hpp" name="KickIT@Eclipse/2_Control/MotorCommunication/MotorComPS01Impl.hpp">
+<area shape="rect" id="node9" href="$___motor_communicator_interface_8hpp.html" title="_MotorCommunicatorInterface.hpp" alt="" coords="408,109,631,136"/>
+<area shape="rect" id="node13" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="700,184,917,211"/>
+<area shape="rect" id="node14" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="847,259,1048,285"/>
 </map>

@@ -2,8 +2,7 @@
 <area shape="rect" id="node2" href="$class_modules.html#a89c623a11268379d1f8516434d775460" title="Modules::instance" alt="" coords="126,5,254,32"/>
 <area shape="rect" id="node3" href="$class_modules.html#a01735870f0eb88e2847a822be229f927" title="Modules::registerFunction" alt="" coords="104,56,276,83"/>
 <area shape="rect" id="node4" href="$class_virtual_kicker.html#ad59e6a68db914c8580f44e00d5015d76" title="VirtualKicker::getVirtual\lKickerTable" alt="" coords="111,107,269,149"/>
-<area shape="rect" id="node8" href="$class_virtual_kicker.html#a564d975ad0b9eeabc5c9ce4cbf381061" title="VirtualKicker::getDisplay" alt="" coords="107,173,273,200"/>
+<area shape="rect" id="node7" href="$class_virtual_kicker.html#a564d975ad0b9eeabc5c9ce4cbf381061" title="VirtualKicker::getDisplay" alt="" coords="107,173,273,200"/>
 <area shape="rect" id="node5" href="$class_table_controller_mock.html#a4ca15421d6fe242682de756a01af719c" title="TableControllerMock\l::setKickerWindow" alt="" coords="324,74,467,115"/>
-<area shape="rect" id="node7" href="$class_virtual_kicker_window.html#aebfc1a6d50c09cef79f8baceba9cc210" title="VirtualKickerWindow\l::setTableController" alt="" coords="324,139,467,181"/>
-<area shape="rect" id="node6" href="$jquery_8js.html#a2335e57f79b6acfb6de59c235dc8a83e" title="p" alt="" coords="515,81,553,108"/>
+<area shape="rect" id="node6" href="$class_virtual_kicker_window.html#aebfc1a6d50c09cef79f8baceba9cc210" title="VirtualKickerWindow\l::setTableController" alt="" coords="324,139,467,181"/>
 </map>

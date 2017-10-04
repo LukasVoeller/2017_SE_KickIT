@@ -1,7 +1,6 @@
 var searchData=
 [
   ['scale',['SCALE',['../class_virtual_kicker_window.html#ad0e8e9ac08e95b33fc356c02ac61c448',1,'VirtualKickerWindow']]],
-  ['searchdata',['searchData',['../all__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;all_0.js'],['../all__1_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;all_1.js'],['../all__2_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;all_2.js'],['../defines__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;defines_0.js'],['../files__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;files_0.js'],['../files__1_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;files_1.js'],['../functions__0_8js.html#ad01a7523f103d6242ef9b0451861231e',1,'searchData():&#160;functions_0.js']]],
   ['shottriggerrange',['shotTriggerRange',['../class_table_config.html#abbcfb5107f992ebfc458d4123a2fc490',1,'TableConfig']]],
   ['showimage',['showImage',['../class_ball_tracker_impl.html#ad8ac7539ec3de2bb0657048366677bfa',1,'BallTrackerImpl']]],
   ['showrows',['showRows',['../class_virtual_kicker_window.html#ab8f23c4032548e57724cccc77952d981',1,'VirtualKickerWindow']]],

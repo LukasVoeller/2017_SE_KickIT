@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: MotorComRS01Impl Class Reference</title>
+<title>KickIT: MotorComRS01Impl Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -129,10 +129,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a958cf9b3e05aba957af3e6df80e4ec2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f">driverInit</a> ()</td></tr>
 <tr class="separator:a958cf9b3e05aba957af3e6df80e4ec2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_motor_communicator_interface"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_motor_communicator_interface')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_motor_communicator_interface.html">MotorCommunicatorInterface</a></td></tr>
-<tr class="memitem:ab86c8e346dc6efb006b62d3329559ae6 inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#ab86c8e346dc6efb006b62d3329559ae6">switchedNibbleT</a> ()</td></tr>
-<tr class="separator:ab86c8e346dc6efb006b62d3329559ae6 inherit pro_methods_class_motor_communicator_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe256f56dfb26e7abe1f2eb102e1129c inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#afe256f56dfb26e7abe1f2eb102e1129c">switchedNibbleR</a> ()</td></tr>
-<tr class="separator:afe256f56dfb26e7abe1f2eb102e1129c inherit pro_methods_class_motor_communicator_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785b78dce2453ed4dde8c5d16705cdb0 inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a785b78dce2453ed4dde8c5d16705cdb0">switchedNibbleT</a> ()</td></tr>
+<tr class="separator:a785b78dce2453ed4dde8c5d16705cdb0 inherit pro_methods_class_motor_communicator_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c053b2fdb278bf07a227322e92f0fc inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a52c053b2fdb278bf07a227322e92f0fc">switchedNibbleR</a> ()</td></tr>
+<tr class="separator:a52c053b2fdb278bf07a227322e92f0fc inherit pro_methods_class_motor_communicator_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b611145c47f1d8842eb9411d9e0e95a inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a9b611145c47f1d8842eb9411d9e0e95a">openPort</a> ()</td></tr>
 <tr class="separator:a9b611145c47f1d8842eb9411d9e0e95a inherit pro_methods_class_motor_communicator_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a833096f7dfe3a034f30f53fb6f380f3b inherit pro_methods_class_motor_communicator_interface"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a833096f7dfe3a034f30f53fb6f380f3b">frameInit</a> (int ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7)</td></tr>
@@ -171,12 +171,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_motor_com_r_s01_impl.html">MotorComRS01Impl</a> constructor </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Row</td><td>r </td></tr>
-  </table>
-  </dd>
-</dl>
+<p><a class="el" href="class_motor_com_r_s01_impl.html">MotorComRS01Impl</a> constructor </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -211,7 +206,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>driverInit function </p>
+<p>driverInit function</p>
+<p>Initial setup of motor-drivers. Needs to be called after the motors were detached from power supply or have entered error-state(red LED) </p>
 
 <p>Implements <a class="el" href="class_motor_communicator_interface.html#a8ba57825f67ba4e1230c73fec5882ec5">MotorCommunicatorInterface</a>.</p>
 
@@ -248,12 +244,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>linearMovement </p><dl class="params"><dt>Parameters</dt><dd>
+<p>linearMovement function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>position </td></tr>
+    <tr><td class="paramname">int</td><td>position</td></tr>
   </table>
   </dd>
 </dl>
+<p>Control for translational movement. </p>
 
 <p>Implements <a class="el" href="class_motor_communicator_interface.html#ac4621f673547a5c0b63207348cef69d3">MotorCommunicatorInterface</a>.</p>
 
@@ -280,20 +278,22 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>rotate function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>rotate function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>amount </td></tr>
+    <tr><td class="paramname">int</td><td>amount</td></tr>
   </table>
   </dd>
 </dl>
+<p>Control for rotary movement. </p>
 
 <p>Reimplemented from <a class="el" href="class_motor_communicator_interface.html#a9b80ed5df32b6a079326b71832353c41">MotorCommunicatorInterface</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>2_Control/MotorCommunication/<a class="el" href="_motor_com_r_s01_impl_8hpp_source.html">MotorComRS01Impl.hpp</a></li>
-<li>2_Control/MotorCommunication/<a class="el" href="_motor_com_r_s01_impl_8cpp.html">MotorComRS01Impl.cpp</a></li>
+<li>KickIT@Eclipse/2_Control/MotorCommunication/<a class="el" href="_motor_com_r_s01_impl_8hpp_source.html">MotorComRS01Impl.hpp</a></li>
+<li>KickIT@Eclipse/2_Control/MotorCommunication/<a class="el" href="_motor_com_r_s01_impl_8cpp.html">MotorComRS01Impl.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

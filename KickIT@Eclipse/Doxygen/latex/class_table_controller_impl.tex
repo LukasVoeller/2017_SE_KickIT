@@ -25,7 +25,7 @@ Collaboration diagram for Table\+Controller\+Impl\+:\nopagebreak
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}{new\+Ball\+Status} (\hyperlink{class_ball_status}{Ball\+Status} \hyperlink{jquery_8js_ae77642f8ef73fb9c20c2a737d956acda}{bs})
+void \hyperlink{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}{new\+Ball\+Status} (\hyperlink{class_ball_status}{Ball\+Status} bs)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -55,7 +55,9 @@ void \hyperlink{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}{s
 \item[{{\bf Virtual\+Kicker\+Window} $\ast$}]{vkw}
 \end{DoxyParamCaption}
 )}\hypertarget{class_table_controller_impl_a758311eb8fa51fdc1188aa5eaea4225a}{}\label{class_table_controller_impl_a758311eb8fa51fdc1188aa5eaea4225a}
-\hyperlink{class_table_controller_impl}{Table\+Controller\+Impl} constructor 
+\hyperlink{class_table_controller_impl}{Table\+Controller\+Impl} constructor
+
+
 \begin{DoxyParams}{Parameters}
 {\em Virtual\+Kicker\+Window$\ast$} & vkw \\
 \hline
@@ -70,7 +72,9 @@ void \hyperlink{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}{s
 \item[{{\bf Ball\+Status}}]{bs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}{}\label{class_table_controller_impl_abfd4337861229f9f1b50742e2df19677}
-new\+Ball\+Status function 
+new\+Ball\+Status function
+
+
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{class_ball_status}{Ball\+Status}} & bs \\
 \hline
@@ -83,15 +87,17 @@ new\+Ball\+Status function
 \item[{float}]{y\+Pixel}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}{}\label{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}
-poxel\+To\+MM function 
+Pixel\+To\+MM function
+
+
 \begin{DoxyParams}{Parameters}
-{\em float} & x\+Pixel, float y\+Pixel \\
+{\em float} & x\+Pixel, float y\+Pixel\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 result
 \end{DoxyReturn}
-the function gets pixes as a parameter and converts it into milimeters 
+The function receives coordinates as pixels and converts it to millimeters. 
 
 Implements \hyperlink{class_table_controller_interface_a26c1aa23fd09f8d16e4c6437ca8e8b4d}{Table\+Controller\+Interface}.
 
@@ -114,7 +120,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{float}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}{}\label{class_table_controller_impl_aee69b16268f5a6e2578a58dde481dddf}
-set\+Ball\+Pos funktion 
+set\+Ball\+Pos function
+
+This function should be called everytime a ne ball-\/position was detected by the Ball\+Tracking Unit.
+
+
 \begin{DoxyParams}{Parameters}
 {\em float} & x, float y \\
 \hline
@@ -144,6 +154,6 @@ Here is the call graph for this function\+:\nopagebreak
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8hpp}{Table\+Controller\+Impl.\+hpp}\item 
-2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8cpp}{Table\+Controller\+Impl.\+cpp}\item 
-build/\hyperlink{moc___table_controller_impl_8cpp}{moc\+\_\+\+Table\+Controller\+Impl.\+cpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8hpp}{Table\+Controller\+Impl.\+hpp}\item 
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_impl_8cpp}{Table\+Controller\+Impl.\+cpp}\item 
+Kick\+I\+T@\+Eclipse/build/\hyperlink{moc___table_controller_impl_8cpp}{moc\+\_\+\+Table\+Controller\+Impl.\+cpp}\end{DoxyCompactItemize}

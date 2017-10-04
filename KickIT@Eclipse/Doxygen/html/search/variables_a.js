@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['k',['k',['../jquery_8js.html#ab26645c014aa005ecedef329ecf58c99',1,'jquery.js']]],
   ['keeper',['keeper',['../class_virtual_kicker_window.html#af260664437593d0f4a69f996455c58d3',1,'VirtualKickerWindow']]],
   ['keeperaccelerationtranslational',['keeperAccelerationTranslational',['../class_motor_config.html#a1eb04b17920041b277c713e85d77654a',1,'MotorConfig']]],
   ['keeperbar',['keeperBar',['../class_virtual_kicker_window.html#acf98d58dc8c99023a045276be77efda7',1,'VirtualKickerWindow']]],

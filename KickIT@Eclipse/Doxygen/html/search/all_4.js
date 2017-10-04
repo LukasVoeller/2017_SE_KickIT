@@ -15,7 +15,6 @@ var searchData=
   ['defensesleepafterreset',['defenseSleepAfterReset',['../class_motor_config.html#a9d559c7bf6caa1b2fdc9453d36f29c59',1,'MotorConfig']]],
   ['defensespeedrotary',['defenseSpeedRotary',['../class_motor_config.html#a23fe81b56ecce25f87aaaa8208569add',1,'MotorConfig']]],
   ['defensespeedtranslational',['defenseSpeedTranslational',['../class_motor_config.html#a83d498372b0f3c95ed7324c4046cbd6f',1,'MotorConfig']]],
-  ['defines_5f0_2ejs',['defines_0.js',['../defines__0_8js.html',1,'']]],
   ['distgoaltodefense',['distGoalToDefense',['../class_table_config.html#ad830228b7a0c21ef931fe369505723be',1,'TableConfig']]],
   ['distgoaltokeeper',['distGoalToKeeper',['../class_table_config.html#af9f5e70f0076b58f9af98f1dd1fdfcb7',1,'TableConfig']]],
   ['distgoaltomidfield',['distGoalToMidfield',['../class_table_config.html#a175ef04f0af390a468b4b658df57340c',1,'TableConfig']]],
@@ -23,6 +22,5 @@ var searchData=
   ['dot',['dot',['../class_vec2.html#aafb32f618ad13d0d98e6921f2aef53a3',1,'Vec2']]],
   ['down',['down',['../class_row_controller_interface.html#a3cde9f61b44185d92e80a5baec6a6947',1,'RowControllerInterface::down()'],['../class_row_controller_defense.html#a50317aa64bcf854972f23eb22099921d',1,'RowControllerDefense::down()']]],
   ['drawballpositionwithmouse',['drawBallPositionWithMouse',['../class_virtual_kicker_window.html#a8261365dd31ecf1a929df329a6be3f82',1,'VirtualKickerWindow']]],
-  ['driverinit',['driverInit',['../class_motor_communicator_interface.html#a8ba57825f67ba4e1230c73fec5882ec5',1,'MotorCommunicatorInterface::driverInit()'],['../class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0',1,'MotorComPS01Impl::driverInit()'],['../class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f',1,'MotorComRS01Impl::driverInit()']]],
-  ['dynsections_2ejs',['dynsections.js',['../dynsections_8js.html',1,'']]]
+  ['driverinit',['driverInit',['../class_motor_communicator_interface.html#a8ba57825f67ba4e1230c73fec5882ec5',1,'MotorCommunicatorInterface::driverInit()'],['../class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0',1,'MotorComPS01Impl::driverInit()'],['../class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f',1,'MotorComRS01Impl::driverInit()']]]
 ];

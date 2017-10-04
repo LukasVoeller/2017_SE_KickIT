@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: CameraInterface Class Reference</title>
+<title>KickIT: CameraInterface Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -173,7 +173,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>calibrate function wird nicht verwendet </p>
+<p>calibrate function </p>
 
 <p>Implemented in <a class="el" href="class_camera.html#aff4f0478ef6ed7b35f353a6d055f0481">Camera</a>.</p>
 
@@ -199,7 +199,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>getCameraSettings </p>
+<p>getCameraSettings</p>
+<p>Function prints out the adjusted values of the camera </p>
 
 <p>Implemented in <a class="el" href="class_camera.html#a62e9e0757dc2758b118274cfa5d56ff6">Camera</a>.</p>
 
@@ -225,7 +226,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Mat* getImage function </p>
+<p>getImage function</p>
+<p>Function retrieves a picture from the camera</p>
+<dl class="section return"><dt>Returns</dt><dd>An image is returned </dd></dl>
 
 <p>Implemented in <a class="el" href="class_camera.html#a45c96b9b33d73f3a5af527de0a5b6526">Camera</a>.</p>
 
@@ -251,7 +254,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>setCameraSettings </p>
+<p>setCameraSettings</p>
+<p>Function for initial configuration of the camera. The settings are fetched from the CameraConfig.txt and passed to the PylonViewerApi </p>
 
 <p>Implemented in <a class="el" href="class_camera.html#afc0e7093a6749fa1445545cd59fca7b0">Camera</a>.</p>
 
@@ -277,14 +281,16 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>threshold </p>
+<p>Funktion threshold</p>
+<p>This function sets the threshold values ​​for the ball detection. These values ​​are then stored in the CameraConfig.txt</p>
+<dl class="section return"><dt>Returns</dt><dd>The result of the adjustment is returned </dd></dl>
 
 <p>Implemented in <a class="el" href="class_camera.html#ad4553e7cd83dba29a3d0b1542e28c66e">Camera</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>1_BallTracking/Camera/<a class="el" href="___camera_interface_8hpp_source.html">_CameraInterface.hpp</a></li>
+<li>KickIT@Eclipse/1_BallTracking/Camera/<a class="el" href="___camera_interface_8hpp_source.html">_CameraInterface.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

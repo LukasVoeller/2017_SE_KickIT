@@ -40,11 +40,11 @@ virtual \hyperlink{class_row_controller_interface_a09c32bf8d9d8b51b3c1118280a7b3
 \item 
 \hyperlink{class_motor_communicator_interface}{Motor\+Communicator\+Interface} $\ast$ \hyperlink{class_row_controller_interface_a14b23ce7b593d4be9907f6ffea7f9531}{mcomm}
 \item 
+\hyperlink{class_table_config}{Table\+Config} \hyperlink{class_row_controller_interface_abb1c698ede5467ee0f60acf8b5a38f96}{tc}
+\item 
 bool \hyperlink{class_row_controller_interface_a7d25dba642a119990388be3452963cc5}{is\+Up} = false
 \item 
 bool \hyperlink{class_row_controller_interface_a65fc755412d807cf54d7b0649c0beb42}{is\+Shooting} = false
-\item 
-\hyperlink{class_table_config}{Table\+Config} \hyperlink{class_row_controller_interface_abb1c698ede5467ee0f60acf8b5a38f96}{tc}
 \end{DoxyCompactItemize}
 
 
@@ -59,7 +59,7 @@ bool \hyperlink{class_row_controller_interface_a65fc755412d807cf54d7b0649c0beb42
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_row_controller_interface_a09c32bf8d9d8b51b3c1118280a7b31fe}{}\label{class_row_controller_interface_a09c32bf8d9d8b51b3c1118280a7b31fe}
-
+\hyperlink{class_row_controller_interface}{Row\+Controller\+Interface} destructor 
 
 \subsection{Member Function Documentation}
 \index{Row\+Controller\+Interface@{Row\+Controller\+Interface}!down@{down}}
@@ -69,7 +69,9 @@ bool \hyperlink{class_row_controller_interface_a65fc755412d807cf54d7b0649c0beb42
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_row_controller_interface_a3cde9f61b44185d92e80a5baec6a6947}{}\label{class_row_controller_interface_a3cde9f61b44185d92e80a5baec6a6947}
-down function 
+down function
+
+Function to set the row back to vertical position. 
 
 Reimplemented in \hyperlink{class_row_controller_defense_a50317aa64bcf854972f23eb22099921d}{Row\+Controller\+Defense}.
 
@@ -80,7 +82,9 @@ Reimplemented in \hyperlink{class_row_controller_defense_a50317aa64bcf854972f23e
 \item[{int}]{strength}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_row_controller_interface_a7f0b6dda9e51019347f2fee14387622a}{}\label{class_row_controller_interface_a7f0b6dda9e51019347f2fee14387622a}
-kick function 
+kick function
+
+
 \begin{DoxyParams}{Parameters}
 {\em int} & strength \\
 \hline
@@ -107,14 +111,16 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{float}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_row_controller_interface_a66c9b362e84b2207a18726d8248505eb}{}\label{class_row_controller_interface_a66c9b362e84b2207a18726d8248505eb}
-move\+To 
+move\+To function
+
+
 \begin{DoxyParams}{Parameters}
-{\em float} & y \\
+{\em float} & y as the position on the table at which you need a player. \\
 \hline
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{class_row_controller_defense_a4633acf0b0bfb904b8eba74cf05b24fa}{Row\+Controller\+Defense}, \hyperlink{class_row_controller_keeper_adeddc7c24785ee86461635c13fab70c0}{Row\+Controller\+Keeper}, \hyperlink{class_row_controller_midfield_abb18143035197d88503063f747aa1d2a}{Row\+Controller\+Midfield}, and \hyperlink{class_row_controller_offense_aad9b0e8ef1af0445f6e22fb111db907f}{Row\+Controller\+Offense}.
+Implemented in \hyperlink{class_row_controller_keeper_adeddc7c24785ee86461635c13fab70c0}{Row\+Controller\+Keeper}, \hyperlink{class_row_controller_defense_a4633acf0b0bfb904b8eba74cf05b24fa}{Row\+Controller\+Defense}, \hyperlink{class_row_controller_midfield_abb18143035197d88503063f747aa1d2a}{Row\+Controller\+Midfield}, and \hyperlink{class_row_controller_offense_aad9b0e8ef1af0445f6e22fb111db907f}{Row\+Controller\+Offense}.
 
 
 
@@ -134,7 +140,9 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_row_controller_interface_ab6cc6124c349921882f9ceb6958b8845}{}\label{class_row_controller_interface_ab6cc6124c349921882f9ceb6958b8845}
-up function 
+up function
+
+Function to set the row to horizontal position. 
 
 Reimplemented in \hyperlink{class_row_controller_defense_a59de61112af1c45d6757a879c2e10ff1}{Row\+Controller\+Defense}.
 
@@ -157,4 +165,4 @@ Reimplemented in \hyperlink{class_row_controller_defense_a59de61112af1c45d6757a8
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-2\+\_\+\+Control/\+Row\+Control/\hyperlink{___row_controller_interface_8hpp}{\+\_\+\+Row\+Controller\+Interface.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Row\+Control/\hyperlink{___row_controller_interface_8hpp}{\+\_\+\+Row\+Controller\+Interface.\+hpp}\end{DoxyCompactItemize}

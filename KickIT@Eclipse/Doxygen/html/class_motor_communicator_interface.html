@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: MotorCommunicatorInterface Class Reference</title>
+<title>KickIT: MotorCommunicatorInterface Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -126,10 +126,10 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8ba57825f67ba4e1230c73fec5882ec5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a8ba57825f67ba4e1230c73fec5882ec5">driverInit</a> ()=0</td></tr>
 <tr class="separator:a8ba57825f67ba4e1230c73fec5882ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab86c8e346dc6efb006b62d3329559ae6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#ab86c8e346dc6efb006b62d3329559ae6">switchedNibbleT</a> ()</td></tr>
-<tr class="separator:ab86c8e346dc6efb006b62d3329559ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe256f56dfb26e7abe1f2eb102e1129c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#afe256f56dfb26e7abe1f2eb102e1129c">switchedNibbleR</a> ()</td></tr>
-<tr class="separator:afe256f56dfb26e7abe1f2eb102e1129c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785b78dce2453ed4dde8c5d16705cdb0"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a785b78dce2453ed4dde8c5d16705cdb0">switchedNibbleT</a> ()</td></tr>
+<tr class="separator:a785b78dce2453ed4dde8c5d16705cdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c053b2fdb278bf07a227322e92f0fc"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a52c053b2fdb278bf07a227322e92f0fc">switchedNibbleR</a> ()</td></tr>
+<tr class="separator:a52c053b2fdb278bf07a227322e92f0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b611145c47f1d8842eb9411d9e0e95a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a9b611145c47f1d8842eb9411d9e0e95a">openPort</a> ()</td></tr>
 <tr class="separator:a9b611145c47f1d8842eb9411d9e0e95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a833096f7dfe3a034f30f53fb6f380f3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_communicator_interface.html#a833096f7dfe3a034f30f53fb6f380f3b">frameInit</a> (int ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7)</td></tr>
@@ -200,7 +200,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>closePort funktion </p>
+<p>closePort function </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -234,9 +234,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>driverInit function </p>
+<p>driverInit function</p>
+<p>Initial setup of motor-drivers. Needs to be called after the motors were detached from power supply or have entered error-state(red LED) </p>
 
-<p>Implemented in <a class="el" href="class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f">MotorComRS01Impl</a>, and <a class="el" href="class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0">MotorComPS01Impl</a>.</p>
+<p>Implemented in <a class="el" href="class_motor_com_p_s01_impl.html#a323cd48a50c38949c3349924262395c0">MotorComPS01Impl</a>, and <a class="el" href="class_motor_com_r_s01_impl.html#a958cf9b3e05aba957af3e6df80e4ec2f">MotorComRS01Impl</a>.</p>
 
 </div>
 </div>
@@ -319,9 +320,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>frameInit function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>frameInit function</p>
+<p>Packs the data into a can_frame an sends it to the driver.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">(int</td><td>ID, int DLC, int Data_0, int Data_1, int Data_2, int Data_3, int Data_4, int Data_5, int Data_6, int Data_7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -361,12 +364,14 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>linearMovement finction </p><dl class="params"><dt>Parameters</dt><dd>
+<p>linearMovement function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>position </td></tr>
+    <tr><td class="paramname">int</td><td>position</td></tr>
   </table>
   </dd>
 </dl>
+<p>Control for translational movement. </p>
 
 <p>Implemented in <a class="el" href="class_motor_com_p_s01_impl.html#ae47ca67174e3240e18e129b5193a1ddc">MotorComPS01Impl</a>, and <a class="el" href="class_motor_com_r_s01_impl.html#a329b9e6783f49d16ad6a57a34b1d29a3">MotorComRS01Impl</a>.</p>
 
@@ -403,7 +408,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>openPort function </p><dl class="section return"><dt>Returns</dt><dd>0 or return -1 </dd></dl>
+<p>openPort function</p>
+<p>Aquires socket connection to pcan-Adapter.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success or -1 at failure </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -438,12 +445,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>rotate function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>rotate function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int</td><td>amount </td></tr>
+    <tr><td class="paramname">int</td><td>amount</td></tr>
   </table>
   </dd>
 </dl>
+<p>Control for rotary movement. </p>
 
 <p>Reimplemented in <a class="el" href="class_motor_com_r_s01_impl.html#aacd356794c8c05da436e52293b41476d">MotorComRS01Impl</a>.</p>
 
@@ -483,13 +492,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>sendPort function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>sendPort function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">struct</td><td>can_frame *frame </td></tr>
+    <tr><td class="paramname">struct</td><td>can_frame *frame</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 or return -1 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success or -1 at failure </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -503,7 +513,7 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="afe256f56dfb26e7abe1f2eb102e1129c"></a>
+<a class="anchor" id="a52c053b2fdb278bf07a227322e92f0fc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -511,7 +521,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int MotorCommunicatorInterface::switchedNibbleR </td>
+          <td class="memname">char MotorCommunicatorInterface::switchedNibbleR </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -523,11 +533,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>switchedNibbleR function </p><dl class="section return"><dt>Returns</dt><dd>nibbleRotary </dd></dl>
+<p>switchedNibbleR function</p>
+<dl class="section return"><dt>Returns</dt><dd>alternately returns 0 and 1 as a char-byte </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ab86c8e346dc6efb006b62d3329559ae6"></a>
+<a class="anchor" id="a785b78dce2453ed4dde8c5d16705cdb0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -535,7 +546,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int MotorCommunicatorInterface::switchedNibbleT </td>
+          <td class="memname">char MotorCommunicatorInterface::switchedNibbleT </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -547,7 +558,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>switchedNibbleT function </p>
+<p>switchedNibbleT function</p>
+<dl class="section return"><dt>Returns</dt><dd>alternately returns 0 and 1 as a char-byte </dd></dl>
 
 </div>
 </div>
@@ -653,7 +665,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>2_Control/MotorCommunication/<a class="el" href="___motor_communicator_interface_8hpp_source.html">_MotorCommunicatorInterface.hpp</a></li>
+<li>KickIT@Eclipse/2_Control/MotorCommunication/<a class="el" href="___motor_communicator_interface_8hpp_source.html">_MotorCommunicatorInterface.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

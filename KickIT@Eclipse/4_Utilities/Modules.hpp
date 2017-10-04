@@ -19,7 +19,7 @@ typedef void (*fp)(std::vector<void*>*);
  */
 class FunctionNotFoundException: public std::exception {
 public:
-	/**FunctionNotFoundException function
+	/**FunctionNotFoundException constructor
 	 *
 	 */
 	FunctionNotFoundException(const char* name) :
@@ -32,15 +32,15 @@ protected:
 
 };
 
-/**FunctionAllreadyRegistered class
+/**FunctionAllreadyRegisteredException class
  *
  */
-class FunctionAllreadyRegistered: public std::exception {
+class FunctionAllreadyRegisteredException: public std::exception {
 public:
-	/**FunctionAllreadyRegistered function
+	/**FunctionAllreadyRegisteredException constructor
 	 *
 	 */
-	FunctionAllreadyRegistered(const char* name) :
+	FunctionAllreadyRegisteredException(const char* name) :
 			n(name) {
 		std::cout << n << " function allready registered!" << std::endl;
 	}
@@ -87,21 +87,29 @@ public:
 
 	/**registerFunction funktion
 	 *
+	 * Throws FunctionAllreadyRegisteredException if the function has been
+	 * registered before.
+	 *
 	 * @param (const char* name, fp function)
 	 */
 	void registerFunction(const char* name, fp function) {
 		std::string name_string(name);
 		if (functions.insert(std::pair<std::string, fp>(name_string, function)).second == false) {
-			throw new FunctionAllreadyRegistered(name);
+			throw new FunctionAllreadyRegisteredException(name);
 		}
 	}
 
-	/**execute funktion
+	/**execute function
+	 *
 	 *
 	 * @param (const char* algo, vector<void*>* params)
 	 *
-	 * find out which function is referenced by config-file
-	 * look up if that function has been registered
+	 * Find out which function is referenced by config-file.
+	 * Look up if that function has been registered.
+	 *
+	 * Throws FunctionNotFoundException if the name has not been registered
+	 * or cannot be found in config file.
+	 *
 	 */
 	void execute(const char* algo, std::vector<void*>* params) {
 		//find out which function is referenced by config-file

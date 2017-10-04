@@ -20,7 +20,7 @@ Collaboration diagram for Ball\+Status\+:\nopagebreak
 \item 
 \hyperlink{class_ball_status_aa52a3da020cc2545b3c3fd8bd7944246}{Ball\+Status} ()
 \item 
-\hyperlink{class_ball_status}{Ball\+Status} \& \hyperlink{class_ball_status_a02508ed35c2fe08e41f99b3c1e36bffe}{operator=} (const \hyperlink{class_ball_status}{Ball\+Status} \&\hyperlink{jquery_8js_ae77642f8ef73fb9c20c2a737d956acda}{bs})
+\hyperlink{class_ball_status}{Ball\+Status} \& \hyperlink{class_ball_status_a02508ed35c2fe08e41f99b3c1e36bffe}{operator=} (const \hyperlink{class_ball_status}{Ball\+Status} \&bs)
 \item 
 void \hyperlink{class_ball_status_a248375c08a18fd1d6975dd8e8bbf6923}{update} (float x, float y)
 \end{DoxyCompactItemize}
@@ -49,7 +49,9 @@ clock\+\_\+t \hyperlink{class_ball_status_a8a53c0c35e7179f0af564142f9cccf1c}{las
 \item[{float}]{movementy}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ball_status_aa386a95ecc7b3968acd8f683587aa11c}{}\label{class_ball_status_aa386a95ecc7b3968acd8f683587aa11c}
-\hyperlink{class_ball_status}{Ball\+Status} constructor 
+\hyperlink{class_ball_status}{Ball\+Status} constructor
+
+
 \begin{DoxyParams}{Parameters}
 {\em (float} & posx, float posy, float movementx, float movementy) \\
 \hline
@@ -61,7 +63,7 @@ clock\+\_\+t \hyperlink{class_ball_status_a8a53c0c35e7179f0af564142f9cccf1c}{las
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ball_status_aa52a3da020cc2545b3c3fd8bd7944246}{}\label{class_ball_status_aa52a3da020cc2545b3c3fd8bd7944246}
-\hyperlink{class_ball_status}{Ball\+Status} function 
+\hyperlink{class_ball_status}{Ball\+Status} constructor 
 
 \subsection{Member Function Documentation}
 \index{Ball\+Status@{Ball\+Status}!operator=@{operator=}}
@@ -71,9 +73,11 @@ clock\+\_\+t \hyperlink{class_ball_status_a8a53c0c35e7179f0af564142f9cccf1c}{las
 \item[{const {\bf Ball\+Status} \&}]{bs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ball_status_a02508ed35c2fe08e41f99b3c1e36bffe}{}\label{class_ball_status_a02508ed35c2fe08e41f99b3c1e36bffe}
-operator function 
+operator function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_ball_status}{Ball\+Status} \& bs) \\
+{\em (const} & \hyperlink{class_ball_status}{Ball\+Status} \& bs)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -87,14 +91,13 @@ $\ast$this
 \item[{float}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_ball_status_a248375c08a18fd1d6975dd8e8bbf6923}{}\label{class_ball_status_a248375c08a18fd1d6975dd8e8bbf6923}
-update function 
+update function
+
+Function to update the the ball status. It automatically calculates the resulting velocity.
+
+
 \begin{DoxyParams}{Parameters}
 {\em (float} & x, float y) \\
-\hline
-\end{DoxyParams}
-new\+Pos function 
-\begin{DoxyParams}{Parameters}
-{\em (x,y)} & \\
 \hline
 \end{DoxyParams}
 
@@ -135,4 +138,4 @@ Here is the caller graph for this function\+:\nopagebreak
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-5\+\_\+\+Data\+Type/\hyperlink{_ball_status_8hpp}{Ball\+Status.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/5\+\_\+\+Data\+Type/\hyperlink{_ball_status_8hpp}{Ball\+Status.\+hpp}\end{DoxyCompactItemize}

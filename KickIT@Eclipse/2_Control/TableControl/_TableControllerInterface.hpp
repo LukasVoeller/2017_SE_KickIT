@@ -22,6 +22,8 @@ class TableControllerInterface {
 public:
 	/**setBallPos function
 	 *
+	 * This function should be called everytime a ne ball-position was detected by the BallTracking Unit.
+	 *
 	 * @param float x, float y
 	 *
 	 */
@@ -107,7 +109,7 @@ protected:
 	 *
 	 * @return result
 	 *
-	 * the function gets pixes as a parameter and converts it into milimeters
+	 * The function receives coordinates as pixels and converts it to millimeters.
 	 *
 	 */
 	virtual Vec2 pixelToMM(float xPixel, float yPixel) = 0;

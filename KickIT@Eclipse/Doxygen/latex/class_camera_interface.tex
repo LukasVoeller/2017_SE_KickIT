@@ -63,7 +63,7 @@ virtual void \hyperlink{class_camera_interface_a24463ab994557f188a86e4f2299c7404
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_camera_interface_aba26bdb1e274ed311e2a5492df576f43}{}\label{class_camera_interface_aba26bdb1e274ed311e2a5492df576f43}
-calibrate function wird nicht verwendet 
+calibrate function 
 
 Implemented in \hyperlink{class_camera_aff4f0478ef6ed7b35f353a6d055f0481}{Camera}.
 
@@ -74,7 +74,9 @@ Implemented in \hyperlink{class_camera_aff4f0478ef6ed7b35f353a6d055f0481}{Camera
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_camera_interface_af2abfcc95ea81477abbd0e9c4658b710}{}\label{class_camera_interface_af2abfcc95ea81477abbd0e9c4658b710}
-get\+Camera\+Settings 
+get\+Camera\+Settings
+
+Function prints out the adjusted values of the camera 
 
 Implemented in \hyperlink{class_camera_a62e9e0757dc2758b118274cfa5d56ff6}{Camera}.
 
@@ -85,7 +87,14 @@ Implemented in \hyperlink{class_camera_a62e9e0757dc2758b118274cfa5d56ff6}{Camera
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_camera_interface_a6e2e28f113f9db832f0e26c6c9c2a65e}{}\label{class_camera_interface_a6e2e28f113f9db832f0e26c6c9c2a65e}
-Mat$\ast$ get\+Image function 
+get\+Image function
+
+Function retrieves a picture from the camera
+
+\begin{DoxyReturn}{Returns}
+An image is returned 
+\end{DoxyReturn}
+
 
 Implemented in \hyperlink{class_camera_a45c96b9b33d73f3a5af527de0a5b6526}{Camera}.
 
@@ -96,7 +105,9 @@ Implemented in \hyperlink{class_camera_a45c96b9b33d73f3a5af527de0a5b6526}{Camera
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_camera_interface_a24463ab994557f188a86e4f2299c7404}{}\label{class_camera_interface_a24463ab994557f188a86e4f2299c7404}
-set\+Camera\+Settings 
+set\+Camera\+Settings
+
+Function for initial configuration of the camera. The settings are fetched from the Camera\+Config.\+txt and passed to the Pylon\+Viewer\+Api 
 
 Implemented in \hyperlink{class_camera_afc0e7093a6749fa1445545cd59fca7b0}{Camera}.
 
@@ -107,7 +118,14 @@ Implemented in \hyperlink{class_camera_afc0e7093a6749fa1445545cd59fca7b0}{Camera
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_camera_interface_ae0181e4f80b465dfdf5971175fd0c497}{}\label{class_camera_interface_ae0181e4f80b465dfdf5971175fd0c497}
-threshold 
+Funktion threshold
+
+This function sets the threshold values ​​for the ball detection. These values ​​are then stored in the Camera\+Config.\+txt
+
+\begin{DoxyReturn}{Returns}
+The result of the adjustment is returned 
+\end{DoxyReturn}
+
 
 Implemented in \hyperlink{class_camera_ad4553e7cd83dba29a3d0b1542e28c66e}{Camera}.
 
@@ -115,4 +133,4 @@ Implemented in \hyperlink{class_camera_ad4553e7cd83dba29a3d0b1542e28c66e}{Camera
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-1\+\_\+\+Ball\+Tracking/\+Camera/\hyperlink{___camera_interface_8hpp}{\+\_\+\+Camera\+Interface.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/1\+\_\+\+Ball\+Tracking/\+Camera/\hyperlink{___camera_interface_8hpp}{\+\_\+\+Camera\+Interface.\+hpp}\end{DoxyCompactItemize}

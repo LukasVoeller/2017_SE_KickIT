@@ -36,9 +36,9 @@ virtual \hyperlink{class_motor_communicator_interface_a12d122da47f6ba863e7a8f7c8
 \item 
 virtual void \hyperlink{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}{driver\+Init} ()=0
 \item 
-int \hyperlink{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}{switched\+NibbleT} ()
+char \hyperlink{class_motor_communicator_interface_a785b78dce2453ed4dde8c5d16705cdb0}{switched\+NibbleT} ()
 \item 
-int \hyperlink{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}{switched\+NibbleR} ()
+char \hyperlink{class_motor_communicator_interface_a52c053b2fdb278bf07a227322e92f0fc}{switched\+NibbleR} ()
 \item 
 int \hyperlink{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}{open\+Port} ()
 \item 
@@ -84,7 +84,7 @@ char \hyperlink{class_motor_communicator_interface_af57ae9b19b30f4e7fc0754562911
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba}{}\label{class_motor_communicator_interface_aa761210caa851871c73732955e1eadba}
-close\+Port funktion 
+close\+Port function 
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -102,9 +102,11 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}{}\label{class_motor_communicator_interface_a8ba57825f67ba4e1230c73fec5882ec5}
-driver\+Init function 
+driver\+Init function
 
-Implemented in \hyperlink{class_motor_com_r_s01_impl_a958cf9b3e05aba957af3e6df80e4ec2f}{Motor\+Com\+R\+S01\+Impl}, and \hyperlink{class_motor_com_p_s01_impl_a323cd48a50c38949c3349924262395c0}{Motor\+Com\+P\+S01\+Impl}.
+Initial setup of motor-\/drivers. Needs to be called after the motors were detached from power supply or have entered error-\/state(red L\+ED) 
+
+Implemented in \hyperlink{class_motor_com_p_s01_impl_a323cd48a50c38949c3349924262395c0}{Motor\+Com\+P\+S01\+Impl}, and \hyperlink{class_motor_com_r_s01_impl_a958cf9b3e05aba957af3e6df80e4ec2f}{Motor\+Com\+R\+S01\+Impl}.
 
 \index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!frame\+Init@{frame\+Init}}
 \index{frame\+Init@{frame\+Init}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
@@ -122,9 +124,13 @@ Implemented in \hyperlink{class_motor_com_r_s01_impl_a958cf9b3e05aba957af3e6df80
 \item[{int}]{Data\+\_\+7}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b}{}\label{class_motor_communicator_interface_a833096f7dfe3a034f30f53fb6f380f3b}
-frame\+Init function 
+frame\+Init function
+
+Packs the data into a can\+\_\+frame an sends it to the driver.
+
+
 \begin{DoxyParams}{Parameters}
-{\em } & \\
+{\em (int} & ID, int D\+LC, int Data\+\_\+0, int Data\+\_\+1, int Data\+\_\+2, int Data\+\_\+3, int Data\+\_\+4, int Data\+\_\+5, int Data\+\_\+6, int Data\+\_\+7) \\
 \hline
 \end{DoxyParams}
 
@@ -145,12 +151,14 @@ Here is the call graph for this function\+:\nopagebreak
 \item[{int}]{position}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3}{}\label{class_motor_communicator_interface_ac4621f673547a5c0b63207348cef69d3}
-linear\+Movement finction 
+linear\+Movement function
+
+
 \begin{DoxyParams}{Parameters}
-{\em int} & position \\
+{\em int} & position\\
 \hline
 \end{DoxyParams}
-
+Control for translational movement. 
 
 Implemented in \hyperlink{class_motor_com_p_s01_impl_ae47ca67174e3240e18e129b5193a1ddc}{Motor\+Com\+P\+S01\+Impl}, and \hyperlink{class_motor_com_r_s01_impl_a329b9e6783f49d16ad6a57a34b1d29a3}{Motor\+Com\+R\+S01\+Impl}.
 
@@ -172,8 +180,12 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}{}\label{class_motor_communicator_interface_a9b611145c47f1d8842eb9411d9e0e95a}
-open\+Port function \begin{DoxyReturn}{Returns}
-0 or return -\/1 
+open\+Port function
+
+Aquires socket connection to pcan-\/\+Adapter.
+
+\begin{DoxyReturn}{Returns}
+0 on success or -\/1 at failure 
 \end{DoxyReturn}
 
 
@@ -193,12 +205,14 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{int}]{amount}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41}{}\label{class_motor_communicator_interface_a9b80ed5df32b6a079326b71832353c41}
-rotate function 
+rotate function
+
+
 \begin{DoxyParams}{Parameters}
-{\em int} & amount \\
+{\em int} & amount\\
 \hline
 \end{DoxyParams}
-
+Control for rotary movement. 
 
 Reimplemented in \hyperlink{class_motor_com_r_s01_impl_aacd356794c8c05da436e52293b41476d}{Motor\+Com\+R\+S01\+Impl}.
 
@@ -220,13 +234,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{struct can\+\_\+frame $\ast$}]{frame}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12}{}\label{class_motor_communicator_interface_a62511203d5a487dc7148c8f083d89d12}
-send\+Port function 
+send\+Port function
+
+
 \begin{DoxyParams}{Parameters}
-{\em struct} & can\+\_\+frame $\ast$frame \\
+{\em struct} & can\+\_\+frame $\ast$frame\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-0 or return -\/1 
+0 on success or -\/1 at failure 
 \end{DoxyReturn}
 
 
@@ -241,22 +257,29 @@ Here is the caller graph for this function\+:\nopagebreak
 
 \index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!switched\+NibbleR@{switched\+NibbleR}}
 \index{switched\+NibbleR@{switched\+NibbleR}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
-\subsubsection[{\texorpdfstring{switched\+Nibble\+R()}{switchedNibbleR()}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::switched\+NibbleR (
+\subsubsection[{\texorpdfstring{switched\+Nibble\+R()}{switchedNibbleR()}}]{\setlength{\rightskip}{0pt plus 5cm}char Motor\+Communicator\+Interface\+::switched\+NibbleR (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}{}\label{class_motor_communicator_interface_afe256f56dfb26e7abe1f2eb102e1129c}
-switched\+NibbleR function \begin{DoxyReturn}{Returns}
-nibble\+Rotary 
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a52c053b2fdb278bf07a227322e92f0fc}{}\label{class_motor_communicator_interface_a52c053b2fdb278bf07a227322e92f0fc}
+switched\+NibbleR function
+
+\begin{DoxyReturn}{Returns}
+alternately returns 0 and 1 as a char-\/byte 
 \end{DoxyReturn}
 \index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!switched\+NibbleT@{switched\+NibbleT}}
 \index{switched\+NibbleT@{switched\+NibbleT}!Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}}
-\subsubsection[{\texorpdfstring{switched\+Nibble\+T()}{switchedNibbleT()}}]{\setlength{\rightskip}{0pt plus 5cm}int Motor\+Communicator\+Interface\+::switched\+NibbleT (
+\subsubsection[{\texorpdfstring{switched\+Nibble\+T()}{switchedNibbleT()}}]{\setlength{\rightskip}{0pt plus 5cm}char Motor\+Communicator\+Interface\+::switched\+NibbleT (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}{}\label{class_motor_communicator_interface_ab86c8e346dc6efb006b62d3329559ae6}
-switched\+NibbleT function 
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_motor_communicator_interface_a785b78dce2453ed4dde8c5d16705cdb0}{}\label{class_motor_communicator_interface_a785b78dce2453ed4dde8c5d16705cdb0}
+switched\+NibbleT function
+
+\begin{DoxyReturn}{Returns}
+alternately returns 0 and 1 as a char-\/byte 
+\end{DoxyReturn}
+
 
 \subsection{Member Data Documentation}
 \index{Motor\+Communicator\+Interface@{Motor\+Communicator\+Interface}!mc@{mc}}
@@ -278,4 +301,4 @@ switched\+NibbleT function
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-2\+\_\+\+Control/\+Motor\+Communication/\hyperlink{___motor_communicator_interface_8hpp}{\+\_\+\+Motor\+Communicator\+Interface.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Motor\+Communication/\hyperlink{___motor_communicator_interface_8hpp}{\+\_\+\+Motor\+Communicator\+Interface.\+hpp}\end{DoxyCompactItemize}

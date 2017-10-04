@@ -36,7 +36,7 @@ float \hyperlink{class_vec2_a1aedad72c952aaef4a56844719ee2449}{cross} (const \hy
 \item 
 \hyperlink{class_vec2}{Vec2} \& \hyperlink{class_vec2_a7f062667506f94bc207bdf492ca5b89c}{operator+=} (const \hyperlink{class_vec2}{Vec2} \&v)
 \item 
-\hyperlink{class_vec2}{Vec2} \hyperlink{class_vec2_a41b7293b6a348ee4d33b8fa396db9adb}{operator$\ast$} (float \hyperlink{jquery_8js_abce695e0af988ece0826d9ad59b8160d}{c}) const 
+\hyperlink{class_vec2}{Vec2} \hyperlink{class_vec2_a41b7293b6a348ee4d33b8fa396db9adb}{operator$\ast$} (float c) const 
 \item 
 \hyperlink{class_vec2}{Vec2} \hyperlink{class_vec2_a39640496ed941cf3d7e8cc7ee96eea36}{operator-\/} () const 
 \item 
@@ -72,7 +72,7 @@ float \hyperlink{class_vec2_a30543787e62f6d915543cf1dfb04c094}{y}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a76080feed7005893ecc634f903cfbae0}{}\label{class_vec2_a76080feed7005893ecc634f903cfbae0}
-\hyperlink{class_vec2}{Vec2} function \index{Vec2@{Vec2}!Vec2@{Vec2}}
+\hyperlink{class_vec2}{Vec2} constructor \index{Vec2@{Vec2}!Vec2@{Vec2}}
 \index{Vec2@{Vec2}!Vec2@{Vec2}}
 \subsubsection[{\texorpdfstring{Vec2(float \+\_\+x, float \+\_\+y)}{Vec2(float _x, float _y)}}]{\setlength{\rightskip}{0pt plus 5cm}Vec2\+::\+Vec2 (
 \begin{DoxyParamCaption}
@@ -80,7 +80,9 @@ float \hyperlink{class_vec2_a30543787e62f6d915543cf1dfb04c094}{y}
 \item[{float}]{\+\_\+y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_ab4b119971b830689f9a562d5183dce92}{}\label{class_vec2_ab4b119971b830689f9a562d5183dce92}
-\hyperlink{class_vec2}{Vec2} function 
+\hyperlink{class_vec2}{Vec2} constructor
+
+
 \begin{DoxyParams}{Parameters}
 {\em (float} & \+\_\+x, float \+\_\+y) \\
 \hline
@@ -95,9 +97,11 @@ float \hyperlink{class_vec2_a30543787e62f6d915543cf1dfb04c094}{y}
 \item[{const {\bf Vec2} \&}]{v}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a1aedad72c952aaef4a56844719ee2449}{}\label{class_vec2_a1aedad72c952aaef4a56844719ee2449}
-cross function 
+cross function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& v) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& v)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -110,11 +114,15 @@ this-\/$>$x $\ast$ v.\+y -\/ v.\+x $\ast$ this-\/$>$y
 \item[{const {\bf Vec2} \&}]{v}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_aafb32f618ad13d0d98e6921f2aef53a3}{}\label{class_vec2_aafb32f618ad13d0d98e6921f2aef53a3}
-dot function 
+dot function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& v) scalarproduct = laenge1 $\ast$ laenge2 $\ast$ cos (angle between)\\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& v)\\
 \hline
 \end{DoxyParams}
+scalarproduct = laenge1 $\ast$ laenge2 $\ast$ cos (angle between)
+
 \begin{DoxyReturn}{Returns}
 this-\/$>$x $\ast$ v.\+x + this-\/$>$y $\ast$ v.\+y 
 \end{DoxyReturn}
@@ -136,9 +144,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{const {\bf Vec2}}]{v}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a94ced62f7c39fc9ae2989008146d7a78}{}\label{class_vec2_a94ced62f7c39fc9ae2989008146d7a78}
-equals function 
+equals function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2} v) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2} v)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -151,7 +161,9 @@ this-\/$>$x == v.\+x \&\& this-\/$>$y == v.\+y
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a83adaf3f787cfb5de4576073898b93db}{}\label{class_vec2_a83adaf3f787cfb5de4576073898b93db}
-length function \begin{DoxyReturn}{Returns}
+length function
+
+\begin{DoxyReturn}{Returns}
 sqrtf(this-\/$>$\hyperlink{class_vec2_a65a6009cc22511950a84e6cadf07ae27}{length\+Squared()}) 
 \end{DoxyReturn}
 
@@ -183,7 +195,9 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a65a6009cc22511950a84e6cadf07ae27}{}\label{class_vec2_a65a6009cc22511950a84e6cadf07ae27}
-length\+Squared function \begin{DoxyReturn}{Returns}
+length\+Squared function
+
+\begin{DoxyReturn}{Returns}
 length\+Squared 
 \end{DoxyReturn}
 
@@ -204,7 +218,9 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a3bd229e267428daddca2645a7679bb8e}{}\label{class_vec2_a3bd229e267428daddca2645a7679bb8e}
-normalize function \begin{DoxyReturn}{Returns}
+normalize function
+
+\begin{DoxyReturn}{Returns}
 $\ast$this 
 \end{DoxyReturn}
 
@@ -225,9 +241,11 @@ Here is the call graph for this function\+:\nopagebreak
 \item[{float}]{c}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a41b7293b6a348ee4d33b8fa396db9adb}{}\label{class_vec2_a41b7293b6a348ee4d33b8fa396db9adb}
-operator$\ast$ function 
+operator$\ast$ function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (float} & c) \\
+{\em (float} & c)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -240,14 +258,15 @@ result
 \item[{const {\bf Vec2} \&}]{v}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a55982187727e6fef357273be8e269526}{}\label{class_vec2_a55982187727e6fef357273be8e269526}
-operator+ function 
+operator+ function
+
+
 \begin{DoxyParams}{Parameters}
 {\em (const} & \hyperlink{class_vec2}{Vec2}\& v) \\
 \hline
+{\em } & \\
+\hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-result 
-\end{DoxyReturn}
 \index{Vec2@{Vec2}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!Vec2@{Vec2}}
 \subsubsection[{\texorpdfstring{operator+=(const Vec2 \&v)}{operator+=(const Vec2 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vec2}\& Vec2\+::operator+= (
@@ -255,9 +274,11 @@ result
 \item[{const {\bf Vec2} \&}]{v}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a7f062667506f94bc207bdf492ca5b89c}{}\label{class_vec2_a7f062667506f94bc207bdf492ca5b89c}
-operator+= function 
+operator+= function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& v) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& v)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -270,9 +291,11 @@ $\ast$this
 \item[{const {\bf Vec2} \&}]{v}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_adfaf0492c67e51fc89e3f7f484519de7}{}\label{class_vec2_adfaf0492c67e51fc89e3f7f484519de7}
-operator-\/ function 
+operator-\/ function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& v) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& v)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -285,7 +308,9 @@ result
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a39640496ed941cf3d7e8cc7ee96eea36}{}\label{class_vec2_a39640496ed941cf3d7e8cc7ee96eea36}
-operator-\/ function \begin{DoxyReturn}{Returns}
+operator-\/ function
+
+\begin{DoxyReturn}{Returns}
 result 
 \end{DoxyReturn}
 \index{Vec2@{Vec2}!reflection@{reflection}}
@@ -295,9 +320,11 @@ result
 \item[{const {\bf Vec2} \&}]{normal}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_accb52253548abc22b6cadc167cd883b0}{}\label{class_vec2_accb52253548abc22b6cadc167cd883b0}
-reflection function 
+reflection function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& normal) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& normal)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -321,7 +348,9 @@ Here is the call graph for this function\+:\nopagebreak
 \item[{float}]{millimeters\+Per\+Second}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a2ed56672ba73c4eef930c71526517cfe}{}\label{class_vec2_a2ed56672ba73c4eef930c71526517cfe}
-set\+Length function 
+set\+Length function
+
+
 \begin{DoxyParams}{Parameters}
 {\em (float} & millimeters\+Per\+Second) \\
 \hline
@@ -355,9 +384,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{const {\bf Vec2} \&}]{destination}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_af5391376cde50cef728ad4318c29dad7}{}\label{class_vec2_af5391376cde50cef728ad4318c29dad7}
-to\+Target function 
+to\+Target function
+
+Returns the vector from -\/this-\/ to the parameter -\/destination-\/.
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & \hyperlink{class_vec2}{Vec2}\& destination) \\
+{\em (const} & \hyperlink{class_vec2}{Vec2}\& destination)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -382,7 +415,9 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{float}]{newy}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a5f0514a17c52784e5f6d5b10911ee996}{}\label{class_vec2_a5f0514a17c52784e5f6d5b10911ee996}
-update function 
+update function
+
+
 \begin{DoxyParams}{Parameters}
 {\em (float} & newx, float newy) \\
 \hline
@@ -405,7 +440,9 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{{\bf Vec2} $\ast$}]{newp}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_vec2_a8464794a7667794393aa347a5ba505cc}{}\label{class_vec2_a8464794a7667794393aa347a5ba505cc}
-update function 
+update function
+
+
 \begin{DoxyParams}{Parameters}
 {\em (\+Vec2$\ast$} & newp) \\
 \hline
@@ -423,4 +460,4 @@ update function
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-5\+\_\+\+Data\+Type/\hyperlink{_vec2_8hpp}{Vec2.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/5\+\_\+\+Data\+Type/\hyperlink{_vec2_8hpp}{Vec2.\+hpp}\end{DoxyCompactItemize}

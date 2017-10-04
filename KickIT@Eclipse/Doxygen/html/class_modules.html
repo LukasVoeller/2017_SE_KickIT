@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: Modules Class Reference</title>
+<title>KickIT: Modules Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -186,7 +186,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_modules.html">Modules</a> function </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="class_modules.html">Modules</a> function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">(const</td><td><a class="el" href="class_modules.html">Modules</a>&amp;) </td></tr>
   </table>
@@ -251,12 +252,15 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>execute funktion </p><dl class="params"><dt>Parameters</dt><dd>
+<p>execute function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">(const</td><td>char* algo, std::vector&lt;void*&gt;* params) </td></tr>
+    <tr><td class="paramname">(const</td><td>char* algo, vector&lt;void*&gt;* params)</td></tr>
   </table>
   </dd>
 </dl>
+<p>Find out which function is referenced by config-file. Look up if that function has been registered.</p>
+<p>Throws <a class="el" href="class_function_not_found_exception.html">FunctionNotFoundException</a> if the name has not been registered or cannot be found in config file. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -301,7 +305,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>instance function </p><dl class="section return"><dt>Returns</dt><dd>_instance; </dd></dl>
+<p>instance function</p>
+<dl class="section return"><dt>Returns</dt><dd>_instance; </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -347,7 +352,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>registerFunction funktion </p><dl class="params"><dt>Parameters</dt><dd>
+<p>registerFunction funktion</p>
+<p>Throws <a class="el" href="class_function_allready_registered_exception.html">FunctionAllreadyRegisteredException</a> if the function has been registered before.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">(const</td><td>char* name, fp function) </td></tr>
   </table>
@@ -428,8 +435,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>4_Utilities/<a class="el" href="_modules_8hpp_source.html">Modules.hpp</a></li>
-<li><a class="el" href="_kick_i_t_0D_eclipse_8cpp.html">KickIT@Eclipse.cpp</a></li>
+<li>KickIT@Eclipse/4_Utilities/<a class="el" href="_modules_8hpp_source.html">Modules.hpp</a></li>
+<li>KickIT@Eclipse/<a class="el" href="_kick_i_t_0D_eclipse_8cpp.html">KickIT@Eclipse.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

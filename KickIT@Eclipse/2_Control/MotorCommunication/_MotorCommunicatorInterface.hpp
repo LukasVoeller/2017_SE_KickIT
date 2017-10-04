@@ -112,6 +112,8 @@ protected:
 
 	/**frameInit function
 	 *
+	 * Packs the data into a can_frame an sends it to the driver.
+	 *
 	 * @param (int ID, int DLC, int Data_0, int Data_1, int Data_2,
 			   int Data_3, int Data_4, int Data_5, int Data_6, int Data_7)
 	 */

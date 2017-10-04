@@ -97,15 +97,17 @@ Here is the call graph for this function\+:\nopagebreak
 \item[{float}]{y\+Pixel}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{class_table_controller_interface_a26c1aa23fd09f8d16e4c6437ca8e8b4d}{}\label{class_table_controller_interface_a26c1aa23fd09f8d16e4c6437ca8e8b4d}
-Pixel\+To\+MM function 
+Pixel\+To\+MM function
+
+
 \begin{DoxyParams}{Parameters}
-{\em float} & x\+Pixel, float y\+Pixel \\
+{\em float} & x\+Pixel, float y\+Pixel\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 result
 \end{DoxyReturn}
-the function gets pixes as a parameter and converts it into milimeters 
+The function receives coordinates as pixels and converts it to millimeters. 
 
 Implemented in \hyperlink{class_table_controller_mock_a9191e66b5b0b26f04fc71408f2516c8c}{Table\+Controller\+Mock}, and \hyperlink{class_table_controller_impl_a8e5631578a95b69889e1acd64fd31abc}{Table\+Controller\+Impl}.
 
@@ -117,7 +119,11 @@ Implemented in \hyperlink{class_table_controller_mock_a9191e66b5b0b26f04fc71408f
 \item[{float}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_table_controller_interface_ac699a40e0bec06283eb955829982cf07}{}\label{class_table_controller_interface_ac699a40e0bec06283eb955829982cf07}
-set\+Ball\+Pos function 
+set\+Ball\+Pos function
+
+This function should be called everytime a ne ball-\/position was detected by the Ball\+Tracking Unit.
+
+
 \begin{DoxyParams}{Parameters}
 {\em float} & x, float y \\
 \hline
@@ -168,4 +174,4 @@ Here is the caller graph for this function\+:\nopagebreak
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-2\+\_\+\+Control/\+Table\+Control/\hyperlink{___table_controller_interface_8hpp}{\+\_\+\+Table\+Controller\+Interface.\+hpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Table\+Control/\hyperlink{___table_controller_interface_8hpp}{\+\_\+\+Table\+Controller\+Interface.\+hpp}\end{DoxyCompactItemize}

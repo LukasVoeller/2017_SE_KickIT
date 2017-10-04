@@ -35,7 +35,7 @@ void \hyperlink{class_table_controller_mock_a616270aef92ad4e78f90ca4c10ff0ef0}{s
 \item 
 void \hyperlink{class_table_controller_mock_abdfceff1485c7ad42a5d34159a27d796}{set\+Ball\+Pos} (float x, float y)
 \item 
-void \hyperlink{class_table_controller_mock_a4ca15421d6fe242682de756a01af719c}{set\+Kicker\+Window} (\hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} $\ast$\hyperlink{jquery_8js_a2335e57f79b6acfb6de59c235dc8a83e}{p})
+void \hyperlink{class_table_controller_mock_a4ca15421d6fe242682de756a01af719c}{set\+Kicker\+Window} (\hyperlink{class_virtual_kicker_window}{Virtual\+Kicker\+Window} $\ast$p)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -78,15 +78,17 @@ virtual \hyperlink{class_vec2}{Vec2} \hyperlink{class_table_controller_mock_a919
 \item[{float}]{y\+Pixel}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_table_controller_mock_a9191e66b5b0b26f04fc71408f2516c8c}{}\label{class_table_controller_mock_a9191e66b5b0b26f04fc71408f2516c8c}
-poxel\+To\+MM function 
+Pixel\+To\+MM function
+
+
 \begin{DoxyParams}{Parameters}
-{\em float} & x\+Pixel, float y\+Pixel \\
+{\em float} & x\+Pixel, float y\+Pixel\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 result
 \end{DoxyReturn}
-the function gets pixes as a parameter and converts it into milimeters 
+The function receives coordinates as pixels and converts it to millimeters. 
 
 Implements \hyperlink{class_table_controller_interface_a26c1aa23fd09f8d16e4c6437ca8e8b4d}{Table\+Controller\+Interface}.
 
@@ -105,7 +107,11 @@ run function \index{Table\+Controller\+Mock@{Table\+Controller\+Mock}!set\+Ball\
 \item[{float}]{y}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_table_controller_mock_abdfceff1485c7ad42a5d34159a27d796}{}\label{class_table_controller_mock_abdfceff1485c7ad42a5d34159a27d796}
-set\+Ball\+Pos function 
+set\+Ball\+Pos function
+
+This function should be called everytime a ne ball-\/position was detected by the Ball\+Tracking Unit.
+
+
 \begin{DoxyParams}{Parameters}
 {\em float} & x, float y \\
 \hline
@@ -121,22 +127,13 @@ Implements \hyperlink{class_table_controller_interface_ac699a40e0bec06283eb95582
 \item[{{\bf Virtual\+Kicker\+Window} $\ast$}]{p}
 \end{DoxyParamCaption}
 )}\hypertarget{class_table_controller_mock_a4ca15421d6fe242682de756a01af719c}{}\label{class_table_controller_mock_a4ca15421d6fe242682de756a01af719c}
-set\+Kicker\+Window function 
+set\+Kicker\+Window function
+
+
 \begin{DoxyParams}{Parameters}
 {\em Virtual\+Kicker\+Window$\ast$} & p \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=252pt]{class_table_controller_mock_a4ca15421d6fe242682de756a01af719c_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 Here is the caller graph for this function\+:\nopagebreak
@@ -165,5 +162,5 @@ stop function
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_mock_8hpp}{Table\+Controller\+Mock.\+hpp}\item 
-2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_mock_8cpp}{Table\+Controller\+Mock.\+cpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_mock_8hpp}{Table\+Controller\+Mock.\+hpp}\item 
+Kick\+I\+T@\+Eclipse/2\+\_\+\+Control/\+Table\+Control/\hyperlink{_table_controller_mock_8cpp}{Table\+Controller\+Mock.\+cpp}\end{DoxyCompactItemize}

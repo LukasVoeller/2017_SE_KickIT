@@ -1,6 +1,6 @@
-<map id="2_Control/RowControl/_RowControllerInterface.hpp" name="2_Control/RowControl/_RowControllerInterface.hpp">
-<area shape="rect" id="node3" href="$_table_config_8hpp.html" title="../../5_DataType/TableConfig.hpp" alt="" coords="1155,184,1371,211"/>
-<area shape="rect" id="node11" href="$___motor_communicator_interface_8hpp.html" title="../MotorCommunication\l/_MotorCommunicatorInterface.hpp" alt="" coords="596,95,823,136"/>
-<area shape="rect" id="node7" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="414,259,616,285"/>
-<area shape="rect" id="node21" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="33,184,250,211"/>
+<map id="KickIT@Eclipse/2_Control/RowControl/_RowControllerInterface.hpp" name="KickIT@Eclipse/2_Control/RowControl/_RowControllerInterface.hpp">
+<area shape="rect" id="node3" href="$_table_config_8hpp.html" title="../../5_DataType/TableConfig.hpp" alt="" coords="5,184,221,211"/>
+<area shape="rect" id="node11" href="$___motor_communicator_interface_8hpp.html" title="../MotorCommunication\l/_MotorCommunicatorInterface.hpp" alt="" coords="629,95,856,136"/>
+<area shape="rect" id="node4" href="$_config_reader_8hpp.html" title="../4_Utilities/ConfigReader.hpp" alt="" coords="638,259,839,285"/>
+<area shape="rect" id="node21" href="$_motor_config_8hpp.html" title="../../5_DataType/MotorConfig.hpp" alt="" coords="1003,184,1221,211"/>
 </map>

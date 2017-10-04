@@ -57,7 +57,9 @@ std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{class_config_reader_ac
 \item[{const char $\ast$}]{filename}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a}{}\label{class_config_reader_a4c1909efc98e8d6308c7871554f68a1a}
-\hyperlink{class_config_reader}{Config\+Reader} constructor 
+\hyperlink{class_config_reader}{Config\+Reader} constructor
+
+
 \begin{DoxyParams}{Parameters}
 {\em (const} & char$\ast$ filename) \\
 \hline
@@ -83,14 +85,13 @@ Here is the call graph for this function\+:\nopagebreak
 \item[{const char $\ast$}]{name}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80}{}\label{class_config_reader_a6843a6aecc2bc7115d1052bafb77df80}
-get\+Int\+Value function 
+get\+Int\+Value function
+
+Throws \hyperlink{class_parameter_not_found_exception}{Parameter\+Not\+Found\+Exception} if the parameter cannot be found.
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & char$\ast$ name)\\
-\hline
-\end{DoxyParams}
-get\+Int\+Value function 
-\begin{DoxyParams}{Parameters}
-{\em (const} & char $\ast$name) \\
+{\em (const} & char$\ast$ name) \\
 \hline
 \end{DoxyParams}
 
@@ -111,14 +112,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{const char $\ast$}]{name}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a94455bd2a38611704e4b4523b5be538c}{}\label{class_config_reader_a94455bd2a38611704e4b4523b5be538c}
-get\+String\+Value function 
+get\+String\+Value function
+
+Throws \hyperlink{class_parameter_not_found_exception}{Parameter\+Not\+Found\+Exception} if the parameter cannot be found.
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & char$\ast$ name)\\
-\hline
-\end{DoxyParams}
-get\+String\+Value function 
-\begin{DoxyParams}{Parameters}
-{\em (const} & char $\ast$name) \\
+{\em (const} & char$\ast$ name) \\
 \hline
 \end{DoxyParams}
 
@@ -158,14 +158,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{const int}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a}{}\label{class_config_reader_a82d8f2ba319008e3479f2b4d0b80592a}
-set\+Int\+Value function 
+set\+Int\+Value function
+
+Function to update a value. If the value doesn\textquotesingle{}t exist yet, it will be added to the data set.
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & char$\ast$ name, const int value)\\
-\hline
-\end{DoxyParams}
-set\+Int\+Value function 
-\begin{DoxyParams}{Parameters}
-{\em (const} & char $\ast$name, const int value) \\
+{\em (const} & char$\ast$ name, const int value) \\
 \hline
 \end{DoxyParams}
 
@@ -187,14 +186,13 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{const char $\ast$}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304}{}\label{class_config_reader_a91fbf7d656050bd20f17075f6e8c6304}
-set\+String\+Value function 
+set\+String\+Value function
+
+Function to update a value. If the value doesn\textquotesingle{}t exist yet, it will be added to the data set.
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & char$\ast$ name, const char$\ast$ value)\\
-\hline
-\end{DoxyParams}
-set\+String\+Value function 
-\begin{DoxyParams}{Parameters}
-{\em (const} & char $\ast$name, const char $\ast$value) \\
+{\em (const} & char$\ast$ name, const char$\ast$ value) \\
 \hline
 \end{DoxyParams}
 
@@ -215,7 +213,9 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e}{}\label{class_config_reader_a40c8fc72bb2a097398c821cfec78ba6e}
-write\+Out function 
+write\+Out function
+
+Function to rewrite the file in case that any of the values have changed. 
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -245,5 +245,5 @@ Here is the caller graph for this function\+:\nopagebreak
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-4\+\_\+\+Utilities/\hyperlink{_config_reader_8hpp}{Config\+Reader.\+hpp}\item 
-4\+\_\+\+Utilities/\hyperlink{_config_reader_8cpp}{Config\+Reader.\+cpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/4\+\_\+\+Utilities/\hyperlink{_config_reader_8hpp}{Config\+Reader.\+hpp}\item 
+Kick\+I\+T@\+Eclipse/4\+\_\+\+Utilities/\hyperlink{_config_reader_8cpp}{Config\+Reader.\+cpp}\end{DoxyCompactItemize}

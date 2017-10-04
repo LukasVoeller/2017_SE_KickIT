@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: RowControllerInterface Class Reference</title>
+<title>KickIT: RowControllerInterface Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -133,12 +133,12 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a14b23ce7b593d4be9907f6ffea7f9531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_motor_communicator_interface.html">MotorCommunicatorInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_row_controller_interface.html#a14b23ce7b593d4be9907f6ffea7f9531">mcomm</a></td></tr>
 <tr class="separator:a14b23ce7b593d4be9907f6ffea7f9531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1c698ede5467ee0f60acf8b5a38f96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_table_config.html">TableConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_row_controller_interface.html#abb1c698ede5467ee0f60acf8b5a38f96">tc</a></td></tr>
+<tr class="separator:abb1c698ede5467ee0f60acf8b5a38f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d25dba642a119990388be3452963cc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_row_controller_interface.html#a7d25dba642a119990388be3452963cc5">isUp</a> = false</td></tr>
 <tr class="separator:a7d25dba642a119990388be3452963cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fc755412d807cf54d7b0649c0beb42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_row_controller_interface.html#a65fc755412d807cf54d7b0649c0beb42">isShooting</a> = false</td></tr>
 <tr class="separator:a65fc755412d807cf54d7b0649c0beb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1c698ede5467ee0f60acf8b5a38f96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_table_config.html">TableConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_row_controller_interface.html#abb1c698ede5467ee0f60acf8b5a38f96">tc</a></td></tr>
-<tr class="separator:abb1c698ede5467ee0f60acf8b5a38f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_row_controller_interface.html">RowControllerInterface</a> class </p>
@@ -163,6 +163,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="class_row_controller_interface.html">RowControllerInterface</a> destructor </p>
 
 </div>
 </div>
@@ -187,7 +188,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>down function </p>
+<p>down function</p>
+<p>Function to set the row back to vertical position. </p>
 
 <p>Reimplemented in <a class="el" href="class_row_controller_defense.html#a50317aa64bcf854972f23eb22099921d">RowControllerDefense</a>.</p>
 
@@ -214,7 +216,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>kick function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>kick function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">int</td><td>strength </td></tr>
   </table>
@@ -257,14 +260,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>moveTo </p><dl class="params"><dt>Parameters</dt><dd>
+<p>moveTo function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">float</td><td>y </td></tr>
+    <tr><td class="paramname">float</td><td>y as the position on the table at which you need a player. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_row_controller_defense.html#a4633acf0b0bfb904b8eba74cf05b24fa">RowControllerDefense</a>, <a class="el" href="class_row_controller_keeper.html#adeddc7c24785ee86461635c13fab70c0">RowControllerKeeper</a>, <a class="el" href="class_row_controller_midfield.html#abb18143035197d88503063f747aa1d2a">RowControllerMidfield</a>, and <a class="el" href="class_row_controller_offense.html#aad9b0e8ef1af0445f6e22fb111db907f">RowControllerOffense</a>.</p>
+<p>Implemented in <a class="el" href="class_row_controller_keeper.html#adeddc7c24785ee86461635c13fab70c0">RowControllerKeeper</a>, <a class="el" href="class_row_controller_defense.html#a4633acf0b0bfb904b8eba74cf05b24fa">RowControllerDefense</a>, <a class="el" href="class_row_controller_midfield.html#abb18143035197d88503063f747aa1d2a">RowControllerMidfield</a>, and <a class="el" href="class_row_controller_offense.html#aad9b0e8ef1af0445f6e22fb111db907f">RowControllerOffense</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -299,7 +303,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>up function </p>
+<p>up function</p>
+<p>Function to set the row to horizontal position. </p>
 
 <p>Reimplemented in <a class="el" href="class_row_controller_defense.html#a59de61112af1c45d6757a879c2e10ff1">RowControllerDefense</a>.</p>
 
@@ -387,7 +392,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>2_Control/RowControl/<a class="el" href="___row_controller_interface_8hpp_source.html">_RowControllerInterface.hpp</a></li>
+<li>KickIT@Eclipse/2_Control/RowControl/<a class="el" href="___row_controller_interface_8hpp_source.html">_RowControllerInterface.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

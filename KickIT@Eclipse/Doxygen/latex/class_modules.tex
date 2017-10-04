@@ -66,7 +66,9 @@ static \hyperlink{class_modules}{Modules} $\ast$ \hyperlink{class_modules_ad8283
 \item[{const {\bf Modules} \&}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_modules_a48ae2b32b914d75ce26cd9886cc07ffc}{}\label{class_modules_a48ae2b32b914d75ce26cd9886cc07ffc}
-\hyperlink{class_modules}{Modules} function 
+\hyperlink{class_modules}{Modules} function
+
+
 \begin{DoxyParams}{Parameters}
 {\em (const} & \hyperlink{class_modules}{Modules}\&) \\
 \hline
@@ -89,12 +91,16 @@ static \hyperlink{class_modules}{Modules} $\ast$ \hyperlink{class_modules_ad8283
 \item[{std\+::vector$<$ void $\ast$ $>$ $\ast$}]{params}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_modules_a37a7813533ef4fdce805609ace458207}{}\label{class_modules_a37a7813533ef4fdce805609ace458207}
-execute funktion 
+execute function
+
+
 \begin{DoxyParams}{Parameters}
-{\em (const} & char$\ast$ algo, std\+::vector$<$void$\ast$$>$$\ast$ params) \\
+{\em (const} & char$\ast$ algo, vector$<$void$\ast$$>$$\ast$ params)\\
 \hline
 \end{DoxyParams}
+Find out which function is referenced by config-\/file. Look up if that function has been registered.
 
+Throws \hyperlink{class_function_not_found_exception}{Function\+Not\+Found\+Exception} if the name has not been registered or cannot be found in config file. 
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -123,7 +129,9 @@ Here is the caller graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_modules_a89c623a11268379d1f8516434d775460}{}\label{class_modules_a89c623a11268379d1f8516434d775460}
-instance function \begin{DoxyReturn}{Returns}
+instance function
+
+\begin{DoxyReturn}{Returns}
 \+\_\+instance; 
 \end{DoxyReturn}
 
@@ -145,7 +153,11 @@ Here is the caller graph for this function\+:\nopagebreak
 \item[{{\bf fp}}]{function}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_modules_a01735870f0eb88e2847a822be229f927}{}\label{class_modules_a01735870f0eb88e2847a822be229f927}
-register\+Function funktion 
+register\+Function funktion
+
+Throws \hyperlink{class_function_allready_registered_exception}{Function\+Allready\+Registered\+Exception} if the function has been registered before.
+
+
 \begin{DoxyParams}{Parameters}
 {\em (const} & char$\ast$ name, fp function) \\
 \hline
@@ -177,5 +189,5 @@ Here is the caller graph for this function\+:\nopagebreak
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-4\+\_\+\+Utilities/\hyperlink{_modules_8hpp}{Modules.\+hpp}\item 
-\hyperlink{_kick_i_t_0D_eclipse_8cpp}{Kick\+I\+T@\+Eclipse.\+cpp}\end{DoxyCompactItemize}
+Kick\+I\+T@\+Eclipse/4\+\_\+\+Utilities/\hyperlink{_modules_8hpp}{Modules.\+hpp}\item 
+Kick\+I\+T@\+Eclipse/\hyperlink{_kick_i_t_0D_eclipse_8cpp}{Kick\+I\+T@\+Eclipse.\+cpp}\end{DoxyCompactItemize}

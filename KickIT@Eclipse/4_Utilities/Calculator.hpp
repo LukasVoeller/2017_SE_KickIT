@@ -21,6 +21,8 @@ namespace Calculator {
 
 	/**calcPositionsSimple function
 	 *
+	 * Function for calculation of all needed row-positions.
+	 *
 	 * @param (vector<void*>* params)
 	 */
 	static void calcPositionsSimple(std::vector<void*>* params) {
@@ -55,6 +57,8 @@ namespace Calculator {
 
 	/**calcIfKickSimple function
 	 *
+	 * Function to check which rows should do a kick.
+	 *
 	 * @param (vector<void*>* params)
 	 */
 	static void calcIfKickSimple(std::vector<void*>* params) {
@@ -68,6 +72,8 @@ namespace Calculator {
 	}
 
 	/**calcIfUp function
+	 *
+	 * Function to bring players of a row in horizontal position to not-block own attacks.
 	 *
 	 * @param (vector<void*>* params)
 	 */

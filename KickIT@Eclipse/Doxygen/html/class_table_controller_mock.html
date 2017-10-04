@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>KickIT@Eclipse: TableControllerMock Class Reference</title>
+<title>KickIT: TableControllerMock Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">KickIT@Eclipse
+   <div id="projectname">KickIT
    </div>
   </td>
  </tr>
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a616270aef92ad4e78f90ca4c10ff0ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdfceff1485c7ad42a5d34159a27d796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_controller_mock.html#abdfceff1485c7ad42a5d34159a27d796">setBallPos</a> (float x, float y)</td></tr>
 <tr class="separator:abdfceff1485c7ad42a5d34159a27d796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ca15421d6fe242682de756a01af719c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_controller_mock.html#a4ca15421d6fe242682de756a01af719c">setKickerWindow</a> (<a class="el" href="class_virtual_kicker_window.html">VirtualKickerWindow</a> *<a class="el" href="jquery_8js.html#a2335e57f79b6acfb6de59c235dc8a83e">p</a>)</td></tr>
+<tr class="memitem:a4ca15421d6fe242682de756a01af719c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_controller_mock.html#a4ca15421d6fe242682de756a01af719c">setKickerWindow</a> (<a class="el" href="class_virtual_kicker_window.html">VirtualKickerWindow</a> *p)</td></tr>
 <tr class="separator:a4ca15421d6fe242682de756a01af719c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_table_controller_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_table_controller_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_table_controller_interface.html">TableControllerInterface</a></td></tr>
 <tr class="memitem:a414f5b11a136161d4808bc8ef0e6077c inherit pub_methods_class_table_controller_interface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_controller_interface.html#a414f5b11a136161d4808bc8ef0e6077c">~TableControllerInterface</a> ()</td></tr>
@@ -242,14 +242,15 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>poxelToMM function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>PixelToMM function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">float</td><td>xPixel, float yPixel </td></tr>
+    <tr><td class="paramname">float</td><td>xPixel, float yPixel</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>result</dd></dl>
-<p>the function gets pixes as a parameter and converts it into milimeters </p>
+<p>The function receives coordinates as pixels and converts it to millimeters. </p>
 
 <p>Implements <a class="el" href="class_table_controller_interface.html#a26c1aa23fd09f8d16e4c6437ca8e8b4d">TableControllerInterface</a>.</p>
 
@@ -302,7 +303,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>setBallPos function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>setBallPos function</p>
+<p>This function should be called everytime a ne ball-position was detected by the BallTracking Unit.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">float</td><td>x, float y </td></tr>
   </table>
@@ -326,22 +329,13 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>setKickerWindow function </p><dl class="params"><dt>Parameters</dt><dd>
+<p>setKickerWindow function</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">VirtualKickerWindow*</td><td>p </td></tr>
   </table>
   </dd>
 </dl>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_controller_mock_a4ca15421d6fe242682de756a01af719c_cgraph.png" border="0" usemap="#class_table_controller_mock_a4ca15421d6fe242682de756a01af719c_cgraph" alt=""/></div>
-<map name="class_table_controller_mock_a4ca15421d6fe242682de756a01af719c_cgraph" id="class_table_controller_mock_a4ca15421d6fe242682de756a01af719c_cgraph">
-<area shape="rect" id="node2" href="jquery_8js.html#a2335e57f79b6acfb6de59c235dc8a83e" title="p" alt="" coords="196,13,235,39"/>
-</map>
-</div>
-</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -394,8 +388,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>2_Control/TableControl/<a class="el" href="_table_controller_mock_8hpp_source.html">TableControllerMock.hpp</a></li>
-<li>2_Control/TableControl/<a class="el" href="_table_controller_mock_8cpp.html">TableControllerMock.cpp</a></li>
+<li>KickIT@Eclipse/2_Control/TableControl/<a class="el" href="_table_controller_mock_8hpp_source.html">TableControllerMock.hpp</a></li>
+<li>KickIT@Eclipse/2_Control/TableControl/<a class="el" href="_table_controller_mock_8cpp.html">TableControllerMock.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

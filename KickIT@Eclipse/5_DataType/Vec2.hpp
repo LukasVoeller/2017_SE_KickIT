@@ -45,6 +45,8 @@ public:
 
 	/**toTarget function
 	 *
+	 * Returns the vector from -this- to the parameter -destination-.
+	 *
 	 * @param (const Vec2& destination)
 	 *
 	 * @return res

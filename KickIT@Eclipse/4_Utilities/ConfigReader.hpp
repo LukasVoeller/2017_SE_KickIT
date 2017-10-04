@@ -16,7 +16,7 @@
  */
 class ParameterNotFoundException: public std::exception {
 public:
-	/**ParameterNotFoundException function
+	/**ParameterNotFoundException constructor
 	 *
 	 * @param (const char* name):p(name)
 	 */
@@ -34,7 +34,7 @@ protected:
  */
 class UnknownParameterTypeException: public std::exception {
 public:
-	/**UnknownParameterTypeException function
+	/**UnknownParameterTypeException constructor
 	 *
 	 * @param (const char* type):t(type)
 	 */
@@ -52,7 +52,7 @@ protected:
  */
 class CannotOpenConfigFileException: public std::exception {
 public:
-	/**CannotOpenConfigFileException function
+	/**CannotOpenConfigFileException constructor
 	 *
 	 * @param (const char* filename):fn(filename)
 	 */
@@ -70,7 +70,7 @@ protected:
  */
 class ConfigFileChangedException: public std::exception {
 public:
-	/**ConfigFileChangedException function
+	/**ConfigFileChangedException constructor
 	 *
 	 * @param (const char* filename)
 	 */
@@ -96,11 +96,15 @@ public:
 
 	/**getStringValue function
 	 *
+	 * Throws ParameterNotFoundException if the parameter cannot be found.
+	 *
 	 * @param (const char* name)
 	 */
     std::string getStringValue(const char* name);
 
     /**getIntValue function
+     *
+     * Throws ParameterNotFoundException if the parameter cannot be found.
      *
      * @param (const char* name)
      */
@@ -108,17 +112,25 @@ public:
 
     /**setStringValue function
      *
+     * Function to update a value.
+     * If the value doesn't exist yet, it will be added to the data set.
+     *
      * @param (const char* name, const char* value)
      */
     void setStringValue(const char* name, const char* value);
 
     /**setIntValue function
      *
+     * Function to update a value.
+     * If the value doesn't exist yet, it will be added to the data set.
+     *
      * @param (const char* name, const int value)
      */
     void setIntValue(const char* name, const int value);
 
     /**writeOut function
+     *
+     * Function to rewrite the file in case that any of the values have changed.
      *
      */
     void writeOut();
