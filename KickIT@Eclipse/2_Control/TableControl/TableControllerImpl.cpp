@@ -32,9 +32,9 @@ TableControllerImpl::TableControllerImpl(VirtualKickerWindow* v):vkw(v) {
 }
 
 void TableControllerImpl::setBallPos(float x, float y) {
-	float* positions = new float[tc.isKeeperActive ? 1 : 0 + tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
-	bool* up = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
-	bool* kick = new bool[tc.isDefenseActive ? 1 : 0 + tc.isMidfieldActive ? 1 : 0 + tc.isOffenseActive ? 1 : 0];
+	float* positions = new float[4];
+	bool* up = new bool[3];
+	bool* kick = new bool[3];
 
 	Vec2 v = this->pixelToMM(x, y);
 	ballStatus.update(v.x, v.y);		//Ballposition from now on in milimeters
