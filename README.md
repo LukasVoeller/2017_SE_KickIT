@@ -9,4 +9,8 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=QViL1nncUuw
 " target="_blank"><img src="http://img.youtube.com/vi/QViL1nncUuw/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="420" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=lwOu3c2qh20
+" target="_blank"><img src="http://img.youtube.com/vi/lwOu3c2qh20/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="420" border="10" /></a>
 </p>
