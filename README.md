@@ -8,4 +8,5 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
   alt="IMAGE ALT TEXT HERE" width="440" /></a>
   
   <img src="https://github.com/LukasVoeller/SWE_2017_KickIT/blob/master/Images/New/IMG_2755.jpg" width="440"/>
+  (Video: https://goo.gl/5wDqBV)
 </p>
