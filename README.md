@@ -10,5 +10,5 @@ alt="IMAGE ALT TEXT HERE" width="420" border="10" /></a>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=lwOu3c2qh20
 " target="_blank"><img src="http://img.youtube.com/vi/lwOu3c2qh20/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="420"/></a>
+alt="IMAGE ALT TEXT HERE" width="410" border="10" /></a>
 </p>
