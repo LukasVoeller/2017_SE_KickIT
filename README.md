@@ -8,8 +8,6 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
   alt="IMAGE ALT TEXT HERE" width="440" /></a>
   
    <a href="https://www.youtube.com/watch?v=lwOu3c2qh20
-  " target="_blank"><img src="http://img.youtube.com/vi/QViL1nncUuw/0.jpg" 
+  " target="_blank"><img src="http://i3.ytimg.com/vi/lwOu3c2qh20/maxresdefault.jpg" 
   alt="IMAGE ALT TEXT HERE" width="440" /></a>
-  
-  <iframe width="1274" height="721" src="https://www.youtube.com/embed/lwOu3c2qh20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
