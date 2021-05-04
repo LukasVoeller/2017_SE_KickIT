@@ -7,6 +7,12 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
   " target="_blank"><img src="http://img.youtube.com/vi/QViL1nncUuw/0.jpg" 
   alt="IMAGE ALT TEXT HERE" width="440" /></a>
   
+   <a href="https://www.youtube.com/watch?v=lwOu3c2qh20
+  " target="_blank"><img src="http://img.youtube.com/vi/QViL1nncUuw/0.jpg" 
+  alt="IMAGE ALT TEXT HERE" width="440" /></a>
+  
+  
+  
   <img src="https://github.com/LukasVoeller/SWE_2017_KickIT/blob/master/Images/New/IMG_2755.jpg" width="440"/>
   (Video: https://goo.gl/5wDqBV)
 </p>
