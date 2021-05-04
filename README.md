@@ -8,6 +8,5 @@ created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
   alt="IMAGE ALT TEXT HERE" width="440" /></a>
   
    <a href="https://www.youtube.com/watch?v=lwOu3c2qh20
-  " target="_blank"><img src="http://i3.ytimg.com/vi/lwOu3c2qh20/maxresdefault.jpg" 
-  alt="IMAGE ALT TEXT HERE" width="440" /></a>
+  " target="_blank"></a>
 </p>
