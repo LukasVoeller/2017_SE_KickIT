@@ -1,4 +1,4 @@
-# SWE_2017_KickIT
+# SW_2017_KickIT
 A framework for an autonomous soccer table
 created by: Philip Baumgartner, Viktor Koschmann, Lukas Völler
 
