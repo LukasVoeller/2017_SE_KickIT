@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_row_controller_interface.html" title="RowControllerInterface" alt="" coords="5,81,161,108"/>
-<area shape="rect" id="node2" href="$class_row_controller_defense.html" title="RowControllerDefense" alt="" coords="209,5,364,32"/>
-<area shape="rect" id="node3" href="$class_row_controller_keeper.html" title="RowControllerKeeper" alt="" coords="213,56,360,83"/>
-<area shape="rect" id="node4" href="$class_row_controller_midfield.html" title="RowControllerMidfield" alt="" coords="211,107,362,133"/>
-<area shape="rect" id="node5" href="$class_row_controller_offense.html" title="RowControllerOffense" alt="" coords="211,157,362,184"/>
-</map>

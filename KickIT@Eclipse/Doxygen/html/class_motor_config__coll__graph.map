@@ -1,3 +1,0 @@
-<map id="MotorConfig" name="MotorConfig">
-<area shape="rect" id="node2" href="$class_config_reader.html" title="{ConfigReader\n|# filename\l# valueChanged\l# values\l# strings\l|+ ConfigReader()\l+ getStringValue()\l+ getIntValue()\l+ setStringValue()\l+ setIntValue()\l+ writeOut()\l# readFile()\l}" alt="" coords="55,5,182,215"/>
-</map>

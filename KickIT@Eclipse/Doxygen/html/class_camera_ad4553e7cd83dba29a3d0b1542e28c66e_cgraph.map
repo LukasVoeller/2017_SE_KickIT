@@ -1,5 +1,0 @@
-<map id="Camera::threshold" name="Camera::threshold">
-<area shape="rect" id="node2" href="$class_camera_config.html#a4c686a638a68bfa37b7490ad5fb235f6" title="CameraConfig::saveConfig" alt="" coords="183,31,363,57"/>
-<area shape="rect" id="node3" href="$class_config_reader.html#a82d8f2ba319008e3479f2b4d0b80592a" title="ConfigReader::setIntValue" alt="" coords="411,5,587,32"/>
-<area shape="rect" id="node4" href="$class_config_reader.html#a40c8fc72bb2a097398c821cfec78ba6e" title="ConfigReader::writeOut" alt="" coords="419,56,578,83"/>
-</map>

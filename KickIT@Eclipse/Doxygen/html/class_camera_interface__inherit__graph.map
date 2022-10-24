@@ -1,3 +1,0 @@
-<map id="CameraInterface" name="CameraInterface">
-<area shape="rect" id="node2" href="$class_camera.html" title="{Camera\n|# camera\l|+ Camera()\l+ ~Camera()\l+ getImage()\l+ threshold()\l# calibrate()\l# getCameraSettings()\l# setCameraSettings()\l}" alt="" coords="5,204,159,369"/>
-</map>

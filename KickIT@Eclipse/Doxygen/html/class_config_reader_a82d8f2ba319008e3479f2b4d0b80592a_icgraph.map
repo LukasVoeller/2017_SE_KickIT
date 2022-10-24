@@ -1,6 +1,0 @@
-<map id="ConfigReader::setIntValue" name="ConfigReader::setIntValue">
-<area shape="rect" id="node2" href="$class_camera_config.html#a4c686a638a68bfa37b7490ad5fb235f6" title="CameraConfig::saveConfig" alt="" coords="229,5,409,32"/>
-<area shape="rect" id="node4" href="$class_motor_config.html#aa9d5ac8fd14a9e7ed1c4c73e0030b161" title="MotorConfig::saveConfig" alt="" coords="236,56,403,83"/>
-<area shape="rect" id="node5" href="$class_table_config.html#a1ae1eb31d65be7f73b8ddedf43fd2fa6" title="TableConfig::saveConfig" alt="" coords="236,107,403,133"/>
-<area shape="rect" id="node3" href="$class_camera.html#ad4553e7cd83dba29a3d0b1542e28c66e" title="Camera::threshold" alt="" coords="457,5,587,32"/>
-</map>

@@ -1,3 +1,0 @@
-<map id="TableControllerImpl" name="TableControllerImpl">
-<area shape="rect" id="node3" href="$class_table_controller_interface.html" title="{TableControllerInterface\n|# cc\l# tc\l# ballStatus\l# currentBallStaus\l# keeperControl\l# defenseControl\l# midfieldControl\l# offenseControl\l|+ setBallPos()\l+ ~TableControllerInterface()\l+ motorByHand()\l# pixelToMM()\l}" alt="" coords="101,5,290,229"/>
-</map>

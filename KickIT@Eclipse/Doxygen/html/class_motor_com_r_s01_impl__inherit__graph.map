@@ -1,3 +1,0 @@
-<map id="MotorComRS01Impl" name="MotorComRS01Impl">
-<area shape="rect" id="node2" href="$class_motor_communicator_interface.html" title="{MotorCommunicatorInterface\n|# mc\l# port\l# socketId\l# nibbleTranslational\l# nibbleRotary\l|+ linearMovement()\l+ rotate()\l+ ~MotorCommunicatorInterface()\l# driverInit()\l# switchedNibbleT()\l# switchedNibbleR()\l# openPort()\l# frameInit()\l# sendPort()\l# closePort()\l}" alt="" coords="5,5,224,273"/>
-</map>

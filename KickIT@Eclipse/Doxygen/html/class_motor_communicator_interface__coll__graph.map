@@ -1,4 +1,0 @@
-<map id="MotorCommunicatorInterface" name="MotorCommunicatorInterface">
-<area shape="rect" id="node2" href="$class_motor_config.html" title="{MotorConfig\n|+ homingRequired\l+ port\l+ keeperAccelerationTranslational\l+ keeperDecelerationTranslational\l+ keeperSpeedTranslational\l+ keeperSleepAfterReset\l+ keeperSleepAfterHoming\l+ keeperBoundaryInwards\l+ keeperBoundaryOutwards\l+ defenseAccelerationTranslational\land 9 more...\l|+ MotorConfig()\l+ loadConfig()\l+ saveConfig()\l}" alt="" coords="5,277,232,531"/>
-<area shape="rect" id="node3" href="$class_config_reader.html" title="{ConfigReader\n|# filename\l# valueChanged\l# values\l# strings\l|+ ConfigReader()\l+ getStringValue()\l+ getIntValue()\l+ setStringValue()\l+ setIntValue()\l+ writeOut()\l# readFile()\l}" alt="" coords="55,5,182,215"/>
-</map>
